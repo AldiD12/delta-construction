@@ -10,7 +10,9 @@ export default function Home() {
   const [activeSvc, setActiveSvc] = useState('extensions');
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [carouselProgress, setCarouselProgress] = useState(0);
+  const [reviewProgress, setReviewProgress] = useState(0);
   const carouselRef = useRef<HTMLDivElement>(null);
+  const reviewRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 12);
@@ -58,6 +60,20 @@ export default function Home() {
       const maxScroll = el.scrollWidth - el.clientWidth;
       if (maxScroll > 0) {
         setCarouselProgress(el.scrollLeft / maxScroll);
+      }
+    };
+    el.addEventListener('scroll', onScroll, { passive: true });
+    return () => el.removeEventListener('scroll', onScroll);
+  }, []);
+
+  // Review carousel scroll progress tracking
+  useEffect(() => {
+    const el = reviewRef.current;
+    if (!el) return;
+    const onScroll = () => {
+      const maxScroll = el.scrollWidth - el.clientWidth;
+      if (maxScroll > 0) {
+        setReviewProgress(el.scrollLeft / maxScroll);
       }
     };
     el.addEventListener('scroll', onScroll, { passive: true });
@@ -577,7 +593,7 @@ export default function Home() {
       <a className="btn ghost" style={{ marginTop: "24px" }} href="#contact">Check your postcode <span className="arr"></span></a>
 
       <div className="areas-radius">
-        <svg viewBox="0 0 200 200" aria-hidden="true" style={{display:"block", width:"130px", height:"130px"}}>
+        <svg viewBox="0 0 200 200" aria-hidden="true" className="areas-radius-svg">
           
           <circle cx="100" cy="100" r="92" fill="none" stroke="#27241e" stroke-width="1"/>
           <circle cx="100" cy="100" r="62" fill="none" stroke="#27241e" stroke-width="1" stroke-dasharray="2 4"/>
@@ -607,44 +623,82 @@ export default function Home() {
     </div>
     <div className="right reveal d1">
       <h2 className="section-title">The reason most of our work comes from <em>recommendation.</em></h2>
-      <p style={{ marginTop: "24px", maxWidth: "54ch", fontSize: "16px", lineHeight: "1.55" }}>16 verified Google reviews and counting. A selection below — the rest are on our Google Business profile, where every reviewer can be checked.</p>
+      <p style={{ marginTop: "24px", maxWidth: "54ch", fontSize: "16px", lineHeight: "1.55" }}>16 verified Google reviews · <strong>5.0 ★</strong> average. A selection below — every reviewer can be verified on our Google Business profile.</p>
     </div>
   </div>
 
   <div className="testimonials">
-    <div className="t-grid">
-      <div className="t-card reveal">
+    <div className="t-grid review-carousel" ref={reviewRef}>
+      <div className="t-card review-card reveal">
         <div className="stars" aria-label="5 out of 5"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-        <blockquote>“We have built three homes in London now. Delta is the first contractor we've used twice. The discipline on site — clean, quiet, on programme — is genuinely rare.”</blockquote>
-        <div className="who">
-          <span className="av">A</span>
-          <div>
-            <div className="name">Alexei R.</div>
-            <div className="role">Private client · Holland Park</div>
-          </div>
-        </div>
-      </div>
-      <div className="t-card reveal d1">
-        <div className="stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-        <blockquote>“They picked up a build another contractor walked off. Within a fortnight the programme was rewritten, the budget re-baselined, and we were back on track.”</blockquote>
+        <blockquote>"I want to thank Delta Construction for its great job. Tani and his team did a brilliant job with high quality finishing in a very short time we had to move to our new house. I strongly recommend them!!!"</blockquote>
         <div className="who">
           <span className="av">S</span>
           <div>
-            <div className="name">Sarah K., RIBA</div>
-            <div className="role">Project Architect · Studio Maren</div>
+            <div className="name">saeid modhej</div>
+            <div className="role">Verified Google review</div>
           </div>
         </div>
       </div>
-      <div className="t-card reveal d2">
+      <div className="t-card review-card reveal d1">
         <div className="stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-        <blockquote>“Three months into our basement dig and not a single change-order. The weekly written report is sent at 5pm every Friday, without fail. That alone tells you everything.”</blockquote>
+        <blockquote>"My family and I would like to extend our utmost appreciation to Tani and his team at Delta Construction. Their professionalism is second to none. Tani himself provided valuable input regarding the interior layout and space saving units to maximise space..."</blockquote>
         <div className="who">
-          <span className="av">M</span>
+          <span className="av">D</span>
           <div>
-            <div className="name">Michael &amp; Tara D.</div>
-            <div className="role">Homeowners · Belgravia SW1</div>
+            <div className="name">DMC</div>
+            <div className="role">Verified Google review</div>
           </div>
         </div>
+      </div>
+      <div className="t-card review-card reveal d2">
+        <div className="stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <blockquote>"Delta did a fantastic job removing a big bay tree from our front garden, and re-building the brick wall that had been damaged by its roots. The work was done quickly but carefully, and the price was great."</blockquote>
+        <div className="who">
+          <span className="av">J</span>
+          <div>
+            <div className="name">J Paterson</div>
+            <div className="role">Verified Google review</div>
+          </div>
+        </div>
+      </div>
+      <div className="t-card review-card reveal">
+        <div className="stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <blockquote>"So happy with the work they did on our garden. Everything went as planned and was done to really high level and also completed quickly - so happy with the results! Definitely recommend!"</blockquote>
+        <div className="who">
+          <span className="av">K</span>
+          <div>
+            <div className="name">Keira D</div>
+            <div className="role">Verified Google review</div>
+          </div>
+        </div>
+      </div>
+      <div className="t-card review-card reveal d1">
+        <div className="stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <blockquote>"We were very skeptical to using someone we didn't know even though recommended. Our usual builder unfortunately couldn't assist. I am extremely happy that we decided to go ahead. Full house renovation and we also extended the ground floor."</blockquote>
+        <div className="who">
+          <span className="av">E</span>
+          <div>
+            <div className="name">Elena Tsela</div>
+            <div className="role">Verified Google review</div>
+          </div>
+        </div>
+      </div>
+      <div className="t-card review-card reveal d2">
+        <div className="stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <blockquote>"Thank you very much guys. I am elderly and I needed help with my garden, a few things done to my extension and the whole brick facade clean and repointed. Tani & team were so helpful. They prioritized me and did an amazing job in no time."</blockquote>
+        <div className="who">
+          <span className="av">S</span>
+          <div>
+            <div className="name">Semiha Hoxha</div>
+            <div className="role">Verified Google review</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div className="review-progress carousel-progress" style={{ display: "none" }}>
+      <div className="carousel-track-bg">
+        <div className="carousel-track-fill" style={{ transform: `scaleX(${0.17 + reviewProgress * 0.83})` }}></div>
       </div>
     </div>
   </div>
