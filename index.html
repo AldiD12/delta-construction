@@ -143,7 +143,7 @@
   .btn .arr::before{content:"→";position:absolute;left:0;top:-3px;transition:transform .25s}
   .btn:hover .arr::before{transform:translateX(2px)}
 
-  /* ---------- Mobile Menu ---------- */
+  /* ---------- Mobile Menu Button ---------- */
   .mobile-menu-btn{
     display:none;
     flex-direction:column;
@@ -158,34 +158,6 @@
     height:2px;
     background:var(--ink);
     transition:all .3s ease;
-  }
-  .mobile-menu{
-    display:none;
-    position:fixed;
-    top:64px;
-    left:0;
-    right:0;
-    background:var(--bg);
-    border-bottom:1px solid var(--rule);
-    z-index:40;
-    padding:20px;
-  }
-  .mobile-menu.open{display:block}
-  .mobile-menu nav{
-    display:flex;
-    flex-direction:column;
-    gap:16px;
-  }
-  .mobile-menu a{
-    font-size:16px;
-    color:var(--ink-2);
-    padding:12px 0;
-    border-bottom:1px solid var(--rule);
-  }
-  .mobile-menu a:hover{color:var(--accent)}
-  
-  @media (max-width: 980px){
-    .mobile-menu-btn{display:flex}
   }
 
   /* ---------- Hero ---------- */
@@ -324,9 +296,7 @@
   .project.tall .img{aspect-ratio:3/4}
   .project.wide{grid-column:span 8}
   .project.wide .img{aspect-ratio:16/10}
-  @media (max-width: 980px){
-    .project.feat-wide,.project.feat-tall,.project.std,.project.tall,.project.wide{grid-column:span 12}
-  }
+  /* projects mobile → see consolidated mobile block below */
 
   /* ---------- Services ---------- */
   .services{
@@ -372,11 +342,7 @@
   .services-caption .ks div{display:flex;flex-direction:column;gap:2px}
   .services-caption .ks .k{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:rgba(249,250,251,.5)}
   .services-caption .ks .v{font-family:var(--serif);font-size:18px}
-  @media (max-width: 980px){
-    .services{grid-template-columns:1fr}
-    .services-list{border-right:0;border-bottom:1px solid var(--rule)}
-    .services-media{min-height:420px}
-  }
+  /* services mobile → see consolidated mobile block below */
 
   /* ---------- Why us split ---------- */
   .why{display:grid;grid-template-columns:1.2fr 1fr;gap:0;max-width:var(--max);margin:0 auto;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
@@ -397,7 +363,7 @@
   .why-quote .q em{font-style:italic;color:#93c5fd}
   .why-quote .att{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(249,250,251,.65);margin-top:18px;display:flex;gap:10px;align-items:center}
   .why-quote .att::before{content:"";width:18px;height:1px;background:var(--accent)}
-  @media (max-width: 980px){.why{grid-template-columns:1fr}.why-left{border-right:0;border-bottom:1px solid var(--rule)} .why-right{min-height:520px}}
+  /* why mobile → see consolidated mobile block below */
 
   /* ---------- Process ---------- */
   .process{
@@ -418,7 +384,7 @@
   .prow .pdesc{color:var(--ink-2);font-size:14.5px;line-height:1.5;max-width:46ch}
   .prow .ptime{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.16em;color:var(--mute);text-align:right;display:flex;flex-direction:column;gap:6px;align-items:flex-end}
   .prow .ptime .dur{font-family:var(--serif);font-style:italic;font-size:22px;letter-spacing:0;color:var(--ink);text-transform:none}
-  @media (max-width: 980px){.prow{grid-template-columns: 60px 1fr;gap:18px}.prow .pdesc{grid-column:1/-1}.prow .ptime{grid-column:1/-1;text-align:left;align-items:flex-start}}
+  /* process mobile → see consolidated mobile block below */
 
   /* ---------- Stats ---------- */
   .stats{
@@ -432,7 +398,7 @@
   .stat .sv .unit{font-style:italic;color:var(--accent);font-size:0.45em;vertical-align:top;margin-left:4px}
   .stat .sl{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--mute)}
   .stat .sd{color:var(--ink-2);font-size:13.5px;line-height:1.55;max-width:30ch}
-  @media (max-width: 980px){.stats{grid-template-columns:1fr 1fr} .stat:nth-child(2n){border-right:0} .stat{border-bottom:1px solid var(--rule)}}
+  /* stats mobile → see consolidated mobile block below */
 
   /* ---------- Areas ---------- */
   .areas-wrap{
@@ -461,10 +427,7 @@
   .areas-radius-meta div{display:flex;flex-direction:column}
   .areas-radius-meta .k{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--mute)}
   .areas-radius-meta .v{font-family:var(--serif);font-size:17px;letter-spacing:-0.005em;color:var(--ink);font-style:italic}
-  @media (max-width: 980px){
-    .areas-wrap{grid-template-columns:1fr}
-    .areas-col{border-right:0;border-bottom:1px solid var(--rule)}
-  }
+  /* areas mobile → see consolidated mobile block below */
 
   /* ---------- Testimonials ---------- */
   .testimonials{padding:0 var(--pad);max-width:var(--max);margin:0 auto}
@@ -477,7 +440,7 @@
   .t-card .who .av{width:42px;height:42px;border:1px solid var(--rule-2);display:grid;place-items:center;font-family:var(--serif);font-style:italic;font-size:18px;color:var(--ink-2)}
   .t-card .who .name{font-size:14px;color:var(--ink)}
   .t-card .who .role{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--mute);text-transform:uppercase;margin-top:2px}
-  @media (max-width: 980px){.t-grid{grid-template-columns:1fr}}
+  /* testimonials mobile → see consolidated mobile block below */
 
   /* ---------- CTA ---------- */
   .cta{
@@ -514,7 +477,7 @@
     border-right:0;transition: background .2s;
   }
   .cta-form button:hover{background:#1d4ed8}
-  @media (max-width: 720px){.cta-form{grid-template-columns:1fr}.cta-form input,.cta-form select{border-right:0;border-bottom:1px solid var(--rule)} .cta-form button{padding:18px}}
+  /* cta mobile → see consolidated mobile block below */
 
   .quick-contact{display:flex;gap:32px;flex-wrap:wrap;justify-content:center;font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);margin-top:12px}
   .quick-contact a{color:var(--ink-2)}
@@ -530,8 +493,7 @@
   .foot-col a{font-size:14px;color:var(--ink-2)}
   .foot-col a:hover{color:var(--ink)}
   .foot-bottom{max-width:var(--max);margin:24px auto 0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
-  @media (max-width: 980px){.foot-inner{grid-template-columns:1fr 1fr}}
-  @media (max-width: 600px){.foot-inner{grid-template-columns:1fr}}
+  /* footer mobile → see consolidated mobile block below */
 
   /* ---------- Reveal animation ---------- */
   .reveal{opacity:0;transform:translateY(24px);transition: opacity .9s cubic-bezier(.2,.7,.2,1), transform .9s cubic-bezier(.2,.7,.2,1)}
@@ -541,122 +503,533 @@
   .reveal.d3{transition-delay:.24s}
   .reveal.d4{transition-delay:.32s}
 
-  /* ---------- Mobile Optimization ---------- */
+  /* ============================================================
+     PREMIUM MOBILE EXPERIENCE — Complete Overhaul
+     ============================================================ */
+
+  /* ---------- Smooth scroll for all devices ---------- */
+  html{scroll-behavior:smooth}
+
+  /* ---------- Mobile menu overlay (replaces basic dropdown) ---------- */
+  .mobile-menu{
+    display:none;
+    position:fixed;
+    inset:0;
+    z-index:45;
+    background:var(--bg);
+    padding:0;
+    border:none;
+    opacity:0;
+    transform:translateY(-8px);
+    transition:opacity .4s cubic-bezier(.2,.7,.2,1), transform .4s cubic-bezier(.2,.7,.2,1);
+    overflow-y:auto;
+    -webkit-overflow-scrolling:touch;
+  }
+  .mobile-menu.open{
+    display:flex;
+    flex-direction:column;
+    opacity:1;
+    transform:none;
+  }
+  .mobile-menu nav{
+    display:flex;
+    flex-direction:column;
+    padding:100px var(--pad) 48px;
+    gap:0;
+    flex:1;
+  }
+  .mobile-menu a{
+    font-family:var(--serif);
+    font-size:clamp(32px,8vw,48px);
+    color:var(--ink);
+    padding:20px 0;
+    border-bottom:1px solid var(--rule);
+    letter-spacing:-0.02em;
+    line-height:1.1;
+    transition:color .25s, padding-left .25s;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+  }
+  .mobile-menu a::after{
+    content:"→";
+    font-family:var(--serif);
+    font-size:24px;
+    color:var(--mute);
+    transition:transform .25s, color .25s;
+  }
+  .mobile-menu a:hover,
+  .mobile-menu a:active{
+    color:var(--accent);
+    padding-left:8px;
+  }
+  .mobile-menu a:hover::after,
+  .mobile-menu a:active::after{
+    color:var(--accent);
+    transform:translateX(4px);
+  }
+  .mobile-menu a.btn{
+    font-family:var(--sans);
+    font-size:15px;
+    letter-spacing:0.01em;
+    margin-top:32px;
+    padding:18px 24px;
+    justify-content:center;
+    border:1px solid var(--ink);
+    background:var(--ink);
+    color:var(--bg);
+  }
+  .mobile-menu a.btn::after{display:none}
+  .mobile-menu-footer{
+    padding:24px var(--pad) 40px;
+    border-top:1px solid var(--rule);
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+  .mobile-menu-footer a,
+  .mobile-menu-footer span{
+    font-family:var(--mono);
+    font-size:12px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--mute);
+  }
+  .mobile-menu-footer a{color:var(--ink-2)}
+
+  /* Hamburger → X animation */
+  .mobile-menu-btn.active span:nth-child(1){
+    transform:rotate(45deg) translate(4px, 4px);
+  }
+  .mobile-menu-btn.active span:nth-child(2){
+    opacity:0;
+    transform:scaleX(0);
+  }
+  .mobile-menu-btn.active span:nth-child(3){
+    transform:rotate(-45deg) translate(4px, -4px);
+  }
+
+  /* ---------- Tablet breakpoint (980px) ---------- */
   @media (max-width: 980px){
     .nav-links{display:none}
+    .mobile-menu-btn{display:flex}
+    .nav-inner{height:64px}
+    .nav-right .btn.ghost{display:none}
+
+    /* Hero — dramatic single column */
     .hero-grid{grid-template-columns:1fr}
-    .hero-left,.hero-right{min-height:auto}
-    .hero-left{border-right:0;border-bottom:1px solid var(--rule);min-height:70vh;padding:clamp(24px,4vw,48px) var(--pad) clamp(20px,3vw,32px)}
-    .hero-right{min-height:50vh}
-    .section-head{grid-template-columns:1fr;gap:24px;align-items:start}
-    .section{padding:clamp(48px,8vw,80px) 0}
-    
-    /* Better mobile typography */
-    .display{font-size:clamp(36px,8vw,72px);line-height:0.95}
-    h2.section-title{font-size:clamp(28px,6vw,48px)}
-    .lead{font-size:clamp(18px,4vw,24px)}
-    
-    /* Mobile navigation improvements */
-    .nav-inner{height:64px;padding:0 20px}
-    .brand-name{font-size:18px}
-    .brand-mark{width:30px;height:30px}
-    .phone{font-size:11px}
-    
-    /* Mobile hero improvements */
-    .hero-top-meta{flex-direction:column;align-items:flex-start;gap:16px}
-    .hero-title{margin-top:24px;margin-bottom:20px}
-    .hero-cta{flex-direction:column;align-items:flex-start;gap:12px}
-    .hero-cta .since{border-left:0;border-top:1px solid var(--rule-2);padding-left:0;padding-top:12px;margin-left:0}
-  }
-  
-  @media (max-width: 640px){
-    :root{--pad:16px}
-    
-    .hero-sub{grid-template-columns:1fr;gap:16px}
-    .trust-inner{flex-direction:column;align-items:flex-start;gap:16px}
-    .trust-logos{justify-content:flex-start;gap:20px;flex-wrap:wrap}
-    .nav-right .btn{display:none}
-    
-    /* Mobile-first hero */
-    .hero-left{min-height:60vh;padding:20px 16px}
-    .hero-right{min-height:40vh}
-    .display{font-size:clamp(32px,9vw,56px)}
-    
-    /* Mobile projects grid */
-    .projects{gap:16px}
-    .project .info{flex-direction:column;align-items:flex-start;gap:12px}
-    .project .info .right{text-align:left}
-    
-    /* Mobile services */
-    .svc{grid-template-columns:40px 1fr;gap:16px;padding:20px 16px}
-    .svc .arrow{display:none}
-    .svc .name{font-size:24px}
-    
-    /* Mobile stats */
-    .stats{grid-template-columns:1fr;gap:0}
-    .stat{border-right:0;border-bottom:1px solid var(--rule);padding:32px 20px}
-    .stat:last-child{border-bottom:0}
-    
-    /* Mobile process */
-    .prow{grid-template-columns:1fr;gap:12px;padding:20px 0}
-    .prow .pn{font-size:36px}
-    .prow .ptitle{font-size:22px}
-    .prow .pdesc{font-size:14px;max-width:none}
-    .prow .ptime{text-align:left;align-items:flex-start}
-    
-    /* Mobile testimonials */
-    .t-grid{grid-template-columns:1fr;gap:24px}
-    .t-card blockquote{font-size:18px}
-    
-    /* Mobile CTA */
-    .cta{padding:clamp(48px,8vw,80px) 16px;text-align:center}
-    .cta-inner h2{font-size:clamp(32px,8vw,56px)}
-    .cta-form{grid-template-columns:1fr;width:100%}
-    .cta-form input,.cta-form select{border-right:0;border-bottom:1px solid var(--rule)}
-    .cta-form button{padding:16px;border-bottom:0}
-    
-    /* Mobile footer */
-    .foot-inner{grid-template-columns:1fr;gap:32px}
-    .foot-bottom{flex-direction:column;text-align:center;gap:8px}
-  }
-  
-  /* ---------- Touch-friendly improvements ---------- */
-  @media (max-width: 768px){
-    /* Larger touch targets */
-    .btn{padding:14px 20px;font-size:14px}
-    .filter button{padding:12px 18px}
-    .svc{padding:24px 16px}
-    
-    /* Better spacing */
-    .section-head{margin-bottom:32px}
-    .hero-marquee-track{padding:16px 0}
-    
-    /* Improved readability */
-    body{font-size:16px;line-height:1.6}
-    p{font-size:15px;line-height:1.6}
-    
-    /* Mobile-optimized images */
-    .project .img{border-radius:8px;overflow:hidden}
-    .hero-right img, .hero-right video, .services-media img, .services-media video, .why-right img{object-position:center}
-  }
-  
-  /* ---------- Very small screens ---------- */
-  @media (max-width: 480px){
-    .display{font-size:clamp(28px,10vw,48px)}
-    .hero-left{min-height:50vh}
-    .hero-right{min-height:35vh}
-    
-    .brand-name span{display:none} /* Hide "Construction" on very small screens */
-    .trust-logos .tl{font-size:16px}
-    
-    /* Stack everything vertically */
-    .why{grid-template-columns:1fr}
-    .areas-wrap{grid-template-columns:1fr}
+    .hero-left{
+      border-right:0;
+      border-bottom:0;
+      min-height:auto;
+      padding:clamp(28px,4vw,48px) var(--pad) clamp(32px,4vw,48px);
+      display:flex;flex-direction:column;justify-content:flex-end;
+    }
+    .hero-right{
+      min-height:56vh;
+      border-top:1px solid var(--rule);
+    }
+    .hero-top-meta{flex-direction:column;align-items:flex-start;gap:12px}
+    .hero-title{margin-top:32px;margin-bottom:24px}
+    .display{font-size:clamp(44px,9vw,80px);line-height:0.92}
+
+    /* Section heads */
+    .section-head{grid-template-columns:1fr;gap:20px;align-items:start}
+    .section{padding:clamp(56px,8vw,96px) 0}
+    h2.section-title{font-size:clamp(32px,5.5vw,52px)}
+
+    /* Projects */
+    .project.feat-wide,.project.feat-tall,.project.std,.project.tall,.project.wide{grid-column:span 12}
+
+    /* Services */
     .services{grid-template-columns:1fr}
-    
-    /* Compact spacing */
-    .section{padding:40px 0}
-    .hero-card{left:16px;right:16px;bottom:16px}
+    .services-list{border-right:0;border-bottom:1px solid var(--rule)}
+    .services-media{min-height:420px}
+
+    /* Why */
+    .why{grid-template-columns:1fr}
+    .why-left{border-right:0;border-bottom:1px solid var(--rule)}
+    .why-right{min-height:480px}
+
+    /* Process */
+    .prow{grid-template-columns:60px 1fr;gap:18px}
+    .prow .pdesc{grid-column:1/-1}
+    .prow .ptime{grid-column:1/-1;text-align:left;align-items:flex-start}
+
+    /* Stats */
+    .stats{grid-template-columns:1fr 1fr}
+    .stat:nth-child(2n){border-right:0}
+    .stat{border-bottom:1px solid var(--rule)}
+
+    /* Areas */
+    .areas-wrap{grid-template-columns:1fr}
+    .areas-col{border-right:0;border-bottom:1px solid var(--rule)}
+
+    /* Testimonials */
+    .t-grid{grid-template-columns:1fr}
+
+    /* Footer */
+    .foot-inner{grid-template-columns:1fr 1fr}
+  }
+
+  /* ---------- Mobile breakpoint (640px) — the real magic ---------- */
+  @media (max-width: 640px){
+    :root{--pad:20px}
+
+    /* --- Typography rhythm --- */
+    body{font-size:16px;line-height:1.6}
+    .display{font-size:clamp(36px,10vw,64px);line-height:0.9}
+    h2.section-title{font-size:clamp(28px,7vw,44px)}
+    .lead{font-size:clamp(18px,4.5vw,24px)}
+    p{line-height:1.6}
+
+    /* --- Nav: clean & tight --- */
+    .nav-inner{height:60px;grid-template-columns:1fr auto}
+    .brand-mark{width:28px;height:28px}
+    .brand-mark img, .brand-mark svg{width:18px;height:18px}
+    .brand-name{font-size:17px}
+    .brand-name span{display:none}
+    .phone{display:none}
+    .nav-right{gap:8px}
+
+    /* --- Hero: immersive full-screen feel --- */
+    .hero{padding-top:60px}
+    .hero-grid{grid-template-columns:1fr;border-bottom:none}
+    .hero-left{
+      min-height:auto;
+      padding:28px 20px 32px;
+      border-bottom:none;
+      position:relative;
+    }
+    .hero-right{
+      min-height:52vh;
+      position:relative;
+    }
+    .hero-right::before{
+      content:"";
+      position:absolute;top:-1px;left:20px;right:20px;
+      height:1px;
+      background:linear-gradient(90deg, transparent, var(--accent), transparent);
+      z-index:2;
+      opacity:.4;
+    }
+    .hero-sub{
+      grid-template-columns:1fr;
+      gap:20px;
+      padding-top:24px;
+    }
+    .hero-sub p{font-size:14.5px;max-width:none;line-height:1.6}
+    .hero-cta{
+      flex-direction:column;
+      align-items:stretch;
+      gap:10px;
+      width:100%;
+    }
+    .hero-cta .btn{
+      justify-content:center;
+      padding:16px 24px;
+      font-size:14px;
+    }
+    .hero-cta .since{
+      border-left:0;
+      padding-left:0;
+      margin-left:0;
+      text-align:center;
+      padding-top:16px;
+      margin-top:4px;
+      border-top:1px solid var(--rule);
+    }
+    .hero-card{
+      left:16px;right:16px;bottom:16px;
+      flex-direction:column;
+      gap:16px;
+      align-items:flex-start;
+    }
+    .hero-card .title{font-size:18px;max-width:none}
+    .hero-card .meta-row{text-align:left}
+    .hero-card .meta-row div{text-align:left}
+
+    /* Marquee */
+    .hero-marquee{border-top:1px solid var(--rule)}
+    .hero-marquee-track{padding:14px 0;gap:40px}
+    .hero-marquee-track > span{font-size:16px;gap:40px}
+
+    /* --- Trust strip: horizontal scroll for polish --- */
+    .trust{padding:20px var(--pad);overflow:hidden}
+    .trust-inner{
+      flex-direction:column;
+      align-items:flex-start;
+      gap:14px;
+    }
+    .trust-label{font-size:10px;letter-spacing:.2em}
+    .trust-logos{
+      display:flex;
+      gap:24px;
+      flex-wrap:nowrap;
+      overflow-x:auto;
+      -webkit-overflow-scrolling:touch;
+      padding-bottom:8px;
+      scrollbar-width:none;
+      -ms-overflow-style:none;
+      width:calc(100% + var(--pad));
+    }
+    .trust-logos::-webkit-scrollbar{display:none}
+    .trust-logos .tl{
+      font-size:15px;
+      white-space:nowrap;
+      flex-shrink:0;
+      opacity:.85;
+    }
+
+    /* --- Sections: add visual breaks --- */
+    .section{padding:clamp(48px,10vw,80px) 0;position:relative}
+    .section-head{
+      gap:16px;
+      margin-bottom:clamp(32px,6vw,56px);
+    }
+    .section-head .num .big{font-size:36px}
+    .section-head .right p{font-size:14.5px}
+
+    /* --- Projects: card-based mobile layout --- */
+    .projects{gap:20px;padding:0 var(--pad)}
+    .project .img{
+      border-radius:12px;
+      overflow:hidden;
+    }
+    .project .img .corner{
+      border-radius:6px;
+      font-size:10px;
+      padding:5px 8px;
+    }
+    .project .info{
+      flex-direction:column;
+      align-items:flex-start;
+      gap:8px;
+      padding:0 4px;
+    }
+    .project .info h3{font-size:22px}
+    .project .info .right{text-align:left;font-size:10px}
+    .project .info .loc{font-size:10px}
+
+    /* Filter: horizontal scroll */
+    .filter{
+      flex-wrap:nowrap;
+      overflow-x:auto;
+      -webkit-overflow-scrolling:touch;
+      padding-bottom:8px;
+      scrollbar-width:none;
+      gap:8px;
+    }
+    .filter::-webkit-scrollbar{display:none}
+    .filter button{
+      flex-shrink:0;
+      padding:10px 16px;
+      font-size:10.5px;
+      white-space:nowrap;
+      border-radius:6px;
+    }
+
+    /* --- Services: polished mobile cards --- */
+    .services{border-radius:0}
+    .svc{
+      grid-template-columns:44px 1fr 24px;
+      gap:14px;
+      padding:20px var(--pad);
+    }
+    .svc .n{font-size:10px}
+    .svc .name{font-size:22px;line-height:1.15}
+    .svc .name em{font-size:13px;display:block;margin-left:0;margin-top:4px}
+    .svc .arrow{font-size:18px}
+    .services-media{min-height:340px;position:relative}
+    .services-caption{
+      left:20px;right:20px;bottom:20px;
+      flex-direction:column;
+      gap:16px;
+      align-items:flex-start;
+    }
+    .services-caption .ks{text-align:left;gap:20px}
+    .services-caption .ks div{text-align:left}
+    .services-caption .body p{font-size:13.5px}
+
+    /* --- Why us: breathing room --- */
+    .why-left{padding:clamp(32px,6vw,56px) var(--pad)}
+    .why-left h2{margin-bottom:20px}
+    .why-pillars{grid-template-columns:1fr;gap:0;background:transparent;margin-top:32px}
+    .pillar{
+      padding:24px 0;
+      border-bottom:1px solid var(--rule);
+      position:relative;
+    }
+    .pillar:last-child{border-bottom:0}
+    .pillar::before{
+      content:"";
+      position:absolute;
+      left:0;top:24px;
+      width:3px;height:calc(100% - 48px);
+      background:var(--accent);
+      border-radius:2px;
+      opacity:.3;
+    }
+    .pillar{padding-left:16px}
+    .pillar h4{font-size:20px}
+    .pillar p{font-size:13px;max-width:none}
+    .why-right{min-height:380px}
+    .why-quote{left:20px;right:20px;bottom:20px}
+    .why-quote .q{font-size:clamp(18px,4.5vw,26px)}
+
+    /* --- Process: clean timeline feel --- */
+    .prow{
+      grid-template-columns:1fr;
+      gap:10px;
+      padding:24px 0;
+      position:relative;
+      padding-left:20px;
+    }
+    .prow::before{
+      content:"";
+      position:absolute;
+      left:0;top:24px;
+      width:3px;
+      height:calc(100% - 24px);
+      background:linear-gradient(180deg, var(--accent) 0%, transparent 100%);
+      border-radius:2px;
+      opacity:.25;
+    }
+    .prow .pn{
+      font-size:28px;
+      display:flex;align-items:baseline;gap:8px;
+    }
+    .prow .ptitle{font-size:22px}
+    .prow .pdesc{font-size:14px;max-width:none;grid-column:auto}
+    .prow .ptime{
+      grid-column:auto;
+      text-align:left;
+      align-items:flex-start;
+      flex-direction:row;
+      gap:16px;
+    }
+    .prow .ptime .dur{font-size:18px}
+
+    /* --- Stats: dramatic 2-up with accent borders --- */
+    .stats{grid-template-columns:1fr 1fr;gap:0}
+    .stat{
+      padding:28px 20px;
+      border-bottom:1px solid var(--rule);
+      position:relative;
+    }
+    .stat:nth-child(odd){border-right:1px solid var(--rule)}
+    .stat:nth-child(2n){border-right:0}
+    .stat .sv{font-size:clamp(40px,10vw,72px)}
+    .stat .sl{font-size:10px;margin-top:4px}
+    .stat .sd{font-size:12.5px;max-width:none}
+
+    /* --- Areas: compact accordion-style --- */
+    .areas-col{padding:28px var(--pad) 32px}
+    .areas-tag{font-size:22px}
+    .areas-list li{padding:14px 0}
+    .aname{font-size:19px}
+    .areas-side{padding:28px var(--pad) 36px}
+    .areas-radius{
+      grid-template-columns:100px 1fr;
+      gap:16px;
+    }
+    .areas-radius svg{width:100px;height:100px}
+
+    /* --- Testimonials: card style --- */
+    .t-grid{
+      grid-template-columns:1fr;
+      gap:0;
+      padding-top:0;
+      border-top:none;
+    }
+    .t-card{
+      padding:28px 0;
+      border-bottom:1px solid var(--rule);
+      gap:16px;
+    }
+    .t-card:first-child{border-top:1px solid var(--rule)}
+    .t-card blockquote{font-size:19px;line-height:1.35}
+    .t-card .who{padding-top:16px;border-top:none}
+    .t-card .who .av{width:38px;height:38px;font-size:16px}
+
+    /* --- CTA: fullscreen impact --- */
+    .cta{padding:clamp(56px,12vw,100px) 20px}
+    .cta-inner h2{font-size:clamp(32px,9vw,64px);max-width:10ch}
+    .cta-inner > p{font-size:15px;max-width:none}
+    .cta-form{
+      grid-template-columns:1fr;
+      width:100%;
+      border-radius:12px;
+      overflow:hidden;
+    }
+    .cta-form input,
+    .cta-form select{
+      border-right:0;
+      border-bottom:1px solid var(--rule);
+      padding:16px 20px;
+      font-size:16px; /* prevents iOS zoom */
+    }
+    .cta-form button{
+      padding:18px;
+      font-size:15px;
+      border-radius:0;
+    }
+    .quick-contact{
+      flex-direction:column;
+      gap:12px;
+      font-size:11px;
+      margin-top:24px;
+    }
+
+    /* --- Footer: single column, clean --- */
+    .foot-inner{
+      grid-template-columns:1fr;
+      gap:28px;
+      padding-bottom:32px;
+    }
+    .foot-brand .brand-name{font-size:22px}
+    .foot-brand p{font-size:13.5px}
+    .foot-col h5{margin-bottom:12px}
+    .foot-col ul{gap:8px}
+    .foot-col a{font-size:13.5px}
+    .foot-bottom{
+      flex-direction:column;
+      text-align:center;
+      gap:6px;
+      font-size:10px;
+    }
+
+    /* --- Touch-friendly minimums --- */
+    .btn{
+      padding:15px 22px;
+      font-size:14px;
+      min-height:48px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    /* --- Reveal animation: snappier on mobile --- */
+    .reveal{
+      transform:translateY(16px);
+      transition-duration:.6s;
+    }
+  }
+
+  /* ---------- Small phone (≤400px) ---------- */
+  @media (max-width: 400px){
+    :root{--pad:16px}
+    .display{font-size:clamp(28px,11vw,44px)}
+    .hero-left{padding:24px 16px 28px}
+    .hero-right{min-height:44vh}
+    h2.section-title{font-size:clamp(24px,7vw,36px)}
+    .svc .name{font-size:19px}
+    .stat .sv{font-size:clamp(32px,12vw,56px)}
+    .stats{grid-template-columns:1fr}
+    .stat{border-right:0!important}
+    .t-card blockquote{font-size:17px}
+    .cta-inner h2{font-size:clamp(28px,10vw,48px)}
+    .project .info h3{font-size:19px}
   }
 </style>
 </head>
@@ -689,16 +1062,21 @@
     </div>
   </div>
   
-  <!-- Mobile Menu -->
+  <!-- Mobile Menu — fullscreen overlay -->
   <div class="mobile-menu" id="mobile-menu">
     <nav>
       <a href="#projects" onclick="closeMobileMenu()">Projects</a>
       <a href="#services" onclick="closeMobileMenu()">Services</a>
       <a href="#process" onclick="closeMobileMenu()">Process</a>
       <a href="#areas" onclick="closeMobileMenu()">Areas</a>
-      <a href="#contact" onclick="closeMobileMenu()">Contact</a>
+      <a href="#testimonials" onclick="closeMobileMenu()">Testimonials</a>
       <a href="#contact" class="btn" onclick="closeMobileMenu()">Request a quote <span class="arr"></span></a>
     </nav>
+    <div class="mobile-menu-footer">
+      <a href="tel:+447479389996">+44 (0) 7479 389 996</a>
+      <a href="mailto:info@deltaconstructionltd.co.uk">info@deltaconstructionltd.co.uk</a>
+      <span>7 Southland Way · Hounslow TW3 2RH</span>
+    </div>
   </div>
 </header>
 
@@ -1410,39 +1788,57 @@
 </script>
 
 <script>
-// Mobile menu functionality
+// Mobile menu — fullscreen overlay with body scroll lock
+const menuBtn = document.querySelector('.mobile-menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+
 function toggleMobileMenu() {
-  const menu = document.getElementById('mobile-menu');
-  menu.classList.toggle('open');
+  const isOpen = mobileMenu.classList.contains('open');
+  if (isOpen) {
+    closeMobileMenu();
+  } else {
+    openMobileMenu();
+  }
+}
+
+function openMobileMenu() {
+  mobileMenu.style.display = 'flex';
+  // Force reflow before adding class for transition
+  mobileMenu.offsetHeight;
+  mobileMenu.classList.add('open');
+  menuBtn.classList.add('active');
+  document.body.style.overflow = 'hidden';
 }
 
 function closeMobileMenu() {
-  const menu = document.getElementById('mobile-menu');
-  menu.classList.remove('open');
+  mobileMenu.classList.remove('open');
+  menuBtn.classList.remove('active');
+  document.body.style.overflow = '';
+  // Hide after transition
+  setTimeout(() => {
+    if (!mobileMenu.classList.contains('open')) {
+      mobileMenu.style.display = '';
+    }
+  }, 400);
 }
 
-// Close mobile menu when clicking outside
-document.addEventListener('click', function(event) {
-  const menu = document.getElementById('mobile-menu');
-  const menuBtn = document.querySelector('.mobile-menu-btn');
-  
-  if (!menu.contains(event.target) && !menuBtn.contains(event.target)) {
-    menu.classList.remove('open');
-  }
-});
-
-// Smooth scrolling for mobile links
+// Smooth scrolling for all anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
     e.preventDefault();
+    closeMobileMenu();
     const target = document.querySelector(this.getAttribute('href'));
     if (target) {
-      target.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
+      setTimeout(() => {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 50);
     }
   });
+});
+
+// Close on Escape key
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeMobileMenu();
 });
 </script>
 </body>

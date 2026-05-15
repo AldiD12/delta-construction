@@ -38,6 +38,25 @@ export default function Home() {
 
   const closeMenu = () => setMenuOpen(false);
 
+  // Body scroll lock when mobile menu is open
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => { document.body.style.overflow = ''; };
+  }, [menuOpen]);
+
+  // Close menu on Escape key
+  useEffect(() => {
+    const handleEsc = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setMenuOpen(false);
+    };
+    document.addEventListener('keydown', handleEsc);
+    return () => document.removeEventListener('keydown', handleEsc);
+  }, []);
+
   // Dynamic values for services
   const svcMeta: Record<string, {label: string, desc: string, lead: string, from: string}> = {
     extensions: {label:'Extensions · 01', desc:'Single and double-storey rears, side-returns and wrap-arounds. Steel design coordinated with the structural engineer, party-wall awards handled in-house, glazing schedule managed end-to-end. Wet UFH and full kitchen fit-out delivered under the same contract.', lead:'18–28 wks', from:'£185k'},
@@ -90,9 +109,14 @@ export default function Home() {
       <a href="#services" onClick={closeMenu}>Services</a>
       <a href="#process" onClick={closeMenu}>Process</a>
       <a href="#areas" onClick={closeMenu}>Areas</a>
-      <a href="#contact" onClick={closeMenu}>Contact</a>
-      <a href="#contact" className="btn" style={{marginTop: '8px'}} onClick={closeMenu}>Request a quote <span className="arr"></span></a>
+      <a href="#testimonials" onClick={closeMenu}>Testimonials</a>
+      <a href="#contact" className="btn" onClick={closeMenu}>Request a quote <span className="arr"></span></a>
     </nav>
+    <div className="mobile-menu-footer">
+      <a href="tel:+447479389996">+44 (0) 7479 389 996</a>
+      <a href="mailto:info@deltaconstructionltd.co.uk">info@deltaconstructionltd.co.uk</a>
+      <span>7 Southland Way · Hounslow TW3 2RH</span>
+    </div>
   </div>
 </header>
 
