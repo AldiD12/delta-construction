@@ -63,24 +63,27 @@ export default function Home() {
       <span className="brand-name">Delta<span>&nbsp;Construction</span></span>
     </a>
     <nav className="nav-links" aria-label="Primary">
-      <a href="#projects" className="dot">Projects</a>
-      <a href="#services">Services</a>
-      <a href="#process">Process</a>
-      <a href="#areas">Areas</a>
-      <a href="#contact">Contact</a>
+      <a href="#projects" className="dot" onClick={closeMenu}>Projects</a>
+      <a href="#services" onClick={closeMenu}>Services</a>
+      <a href="#process" onClick={closeMenu}>Process</a>
+      <a href="#areas" onClick={closeMenu}>Areas</a>
+      <a href="#contact" onClick={closeMenu}>Contact</a>
     </nav>
     <div className="nav-right">
       <span className="phone">+44 (0) 7479 389 996</span>
       <a className="btn ghost" href="#contact">Request a quote <span className="arr"></span></a>
-      <button className="mobile-menu-btn" aria-label="Toggle menu" onClick={() => setMenuOpen(!menuOpen)}>
+      <button
+        className={`mobile-menu-btn ${menuOpen ? 'is-open' : ''}`}
+        aria-label="Toggle menu"
+        onClick={() => setMenuOpen(!menuOpen)}
+      >
         <span></span>
         <span></span>
         <span></span>
       </button>
     </div>
   </div>
-  
-  
+
   <div className={`mobile-menu ${menuOpen ? 'open' : ''}`} id="mobile-menu">
     <nav>
       <a href="#projects" onClick={closeMenu}>Projects</a>
@@ -88,7 +91,7 @@ export default function Home() {
       <a href="#process" onClick={closeMenu}>Process</a>
       <a href="#areas" onClick={closeMenu}>Areas</a>
       <a href="#contact" onClick={closeMenu}>Contact</a>
-      <a href="#contact" className="btn" onClick={closeMenu}>Request a quote <span className="arr"></span></a>
+      <a href="#contact" className="btn" style={{marginTop: '8px'}} onClick={closeMenu}>Request a quote <span className="arr"></span></a>
     </nav>
   </div>
 </header>
@@ -126,7 +129,7 @@ export default function Home() {
 
     <div className="hero-right">
       <video autoPlay muted loop playsInline>
-        <source src="/uploads/site-video-02.mp4" type="video/mp4" />
+        <source src="/uploads/site-video-01.mp4" type="video/mp4" />
         
         <img src="/uploads/project-11.jpg" alt="Modern construction project" />
       </video>

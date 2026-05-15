@@ -99,19 +99,28 @@ section{position:relative}
 }
 .nav.scrolled{border-bottom-color:var(--rule); background: color-mix(in srgb, var(--bg) 94%, transparent)}
 .nav-inner{
-  display:grid;grid-template-columns: 1fr auto 1fr;align-items:center;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
   height:72px;
+  gap:24px;
+}
+/* Desktop: centre nav links absolutely so brand stays left */
+.nav-links{
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  display:flex;gap:32px;align-items:center;
 }
 .brand{display:flex;align-items:center;gap:12px}
 .brand-mark{width:34px;height:34px;display:grid;place-items:center;border:1px solid var(--rule-2);position:relative;background:var(--bg-2)}
 .brand-mark svg{width:22px;height:22px;display:block}
 .brand-name{font-family:var(--serif);font-size:21px;letter-spacing:-0.01em}
 .brand-name span{color:var(--mute);font-style:italic;font-size:15px;margin-left:4px}
-.nav-links{display:flex;gap:32px;justify-content:center;align-items:center}
 .nav-links a{font-size:13px;color:var(--ink-2);position:relative}
 .nav-links a:hover{color:var(--ink)}
 .nav-links a.dot::after{content:"";display:inline-block;width:4px;height:4px;border-radius:50%;background:var(--accent);margin-left:8px;vertical-align:middle;opacity:.4}
-.nav-right{display:flex;gap:14px;justify-content:flex-end;align-items:center}
+.nav-right{display:flex;gap:14px;justify-content:flex-end;align-items:center;flex-shrink:0}
 .phone{font-family:var(--mono);font-size:12px;letter-spacing:0.06em;color:var(--ink-2)}
 .phone::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:#7bbf6a;margin-right:8px;vertical-align:middle;box-shadow:0 0 0 3px rgba(123,191,106,.15);animation:pulse 2.4s infinite}
 @keyframes pulse{0%,100%{box-shadow:0 0 0 3px rgba(123,191,106,.15)}50%{box-shadow:0 0 0 6px rgba(123,191,106,.06)}}
@@ -149,27 +158,55 @@ section{position:relative}
   top:64px;
   left:0;
   right:0;
+  bottom:0;
   background:var(--bg);
-  border-bottom:1px solid var(--rule);
+  border-top:1px solid var(--rule);
   z-index:40;
-  padding:20px;
+  padding:24px 20px;
+  overflow-y:auto;
 }
-.mobile-menu.open{display:block}
+.mobile-menu.open{display:flex;flex-direction:column}
 .mobile-menu nav{
   display:flex;
   flex-direction:column;
-  gap:16px;
+  gap:0;
+  flex:1;
 }
 .mobile-menu a{
-  font-size:16px;
-  color:var(--ink-2);
-  padding:12px 0;
+  font-family:var(--serif);
+  font-size:28px;
+  letter-spacing:-0.01em;
+  color:var(--ink);
+  padding:16px 0;
   border-bottom:1px solid var(--rule);
+  display:block;
 }
+.mobile-menu a:last-child{border-bottom:0}
 .mobile-menu a:hover{color:var(--accent)}
+.mobile-menu .btn{
+  font-family:var(--sans);
+  font-size:14px;
+  letter-spacing:0.01em;
+  color:var(--bg);
+  background:var(--ink);
+  text-align:center;
+  justify-content:center;
+  margin-top:24px;
+  padding:16px;
+  border-bottom:0 !important;
+}
+/* Hamburger → X animation */
+.mobile-menu-btn.is-open span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.mobile-menu-btn.is-open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.mobile-menu-btn.is-open span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+
+html{scroll-behavior:smooth}
 
 @media (max-width: 980px){
   .mobile-menu-btn{display:flex}
+  .nav-links{display:none}
+  .nav-inner{height:64px;padding:0 20px}
+  .mobile-menu{top:64px}
 }
 
 .hero{padding-top:72px;position:relative;overflow:hidden}
@@ -520,8 +557,8 @@ footer{padding: clamp(48px,5vw,80px) var(--pad) 32px;background:var(--bg)}
 @media (max-width: 980px) {
 
   /* NAV */
-  .nav-links { display: none; }
-  .nav-inner { height: 64px; padding: 0 20px; grid-template-columns: 1fr auto; }
+  .nav-links { display: none; position: static; transform: none; }
+  .nav-inner { height: 64px; padding: 0 20px; }
   .mobile-menu-btn { display: flex; }
   .phone { display: none; }
 
