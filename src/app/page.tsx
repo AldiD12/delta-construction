@@ -9,6 +9,8 @@ export default function Home() {
   const [filter, setFilter] = useState('all');
   const [activeSvc, setActiveSvc] = useState('extensions');
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [carouselProgress, setCarouselProgress] = useState(0);
+  const carouselRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 12);
@@ -47,6 +49,20 @@ export default function Home() {
     }
     return () => { document.body.style.overflow = ''; };
   }, [menuOpen]);
+
+  // Carousel scroll progress tracking
+  useEffect(() => {
+    const el = carouselRef.current;
+    if (!el) return;
+    const onScroll = () => {
+      const maxScroll = el.scrollWidth - el.clientWidth;
+      if (maxScroll > 0) {
+        setCarouselProgress(el.scrollLeft / maxScroll);
+      }
+    };
+    el.addEventListener('scroll', onScroll, { passive: true });
+    return () => el.removeEventListener('scroll', onScroll);
+  }, []);
 
   // Close menu on Escape key
   useEffect(() => {
@@ -206,9 +222,9 @@ export default function Home() {
     </div>
   </div>
 
-  <div className="projects" id="projects-grid">
+  <div className="projects" id="projects-grid" ref={carouselRef}>
 
-    <article className="project feat-wide reveal">
+    <article className="project carousel-card reveal">
       <div className="img">
         <img src="/uploads/project-01.jpg" alt="Delta Construction project" loading="lazy" />
         <span className="index">N° 01</span>
@@ -216,7 +232,7 @@ export default function Home() {
       <div className="info"><div><span className="meta">London · 2026</span></div></div>
     </article>
 
-    <article className="project feat-tall reveal d1">
+    <article className="project carousel-card reveal d1">
       <div className="img">
         <img src="/uploads/project-02.jpg" alt="Delta Construction project" loading="lazy" />
         <span className="index">N° 02</span>
@@ -224,7 +240,7 @@ export default function Home() {
       <div className="info"><div><span className="meta">London · 2026</span></div></div>
     </article>
 
-    <article className="project std reveal">
+    <article className="project carousel-card reveal">
       <div className="img">
         <img src="/uploads/project-03.jpg" alt="Delta Construction project" loading="lazy" />
         <span className="index">N° 03</span>
@@ -232,7 +248,7 @@ export default function Home() {
       <div className="info"><div><span className="meta">London · 2026</span></div></div>
     </article>
 
-    <article className="project std reveal d1">
+    <article className="project carousel-card reveal d1">
       <div className="img">
         <img src="/uploads/project-04.jpg" alt="Delta Construction project" loading="lazy" />
         <span className="index">N° 04</span>
@@ -240,7 +256,7 @@ export default function Home() {
       <div className="info"><div><span className="meta">London · 2026</span></div></div>
     </article>
 
-    <article className="project tall reveal">
+    <article className="project carousel-card reveal">
       <div className="img">
         <img src="/uploads/project-05.jpg" alt="Delta Construction project" loading="lazy" />
         <span className="index">N° 05</span>
@@ -248,7 +264,7 @@ export default function Home() {
       <div className="info"><div><span className="meta">London · 2026</span></div></div>
     </article>
 
-    <article className="project wide reveal d1">
+    <article className="project carousel-card reveal d1">
       <div className="img">
         <img src="/uploads/project-06.jpg" alt="Delta Construction project" loading="lazy" />
         <span className="index">N° 06</span>
@@ -256,7 +272,7 @@ export default function Home() {
       <div className="info"><div><span className="meta">London · 2026</span></div></div>
     </article>
 
-    <article className="project std reveal">
+    <article className="project carousel-card reveal">
       <div className="img">
         <img src="/uploads/project-07.jpg" alt="Delta Construction project" loading="lazy" />
         <span className="index">N° 07</span>
@@ -264,7 +280,7 @@ export default function Home() {
       <div className="info"><div><span className="meta">London · 2026</span></div></div>
     </article>
 
-    <article className="project std reveal d1">
+    <article className="project carousel-card reveal d1">
       <div className="img">
         <img src="/uploads/project-08.jpg" alt="Delta Construction project" loading="lazy" />
         <span className="index">N° 08</span>
@@ -272,7 +288,7 @@ export default function Home() {
       <div className="info"><div><span className="meta">London · 2026</span></div></div>
     </article>
 
-    <article className="project tall reveal d2">
+    <article className="project carousel-card reveal d2">
       <div className="img">
         <img src="/uploads/project-09.jpg" alt="Delta Construction project" loading="lazy" />
         <span className="index">N° 09</span>
@@ -280,7 +296,7 @@ export default function Home() {
       <div className="info"><div><span className="meta">London · 2026</span></div></div>
     </article>
 
-    <article className="project wide reveal d3">
+    <article className="project carousel-card reveal d3">
       <div className="img">
         <img src="/uploads/project-10.jpg" alt="Delta Construction project" loading="lazy" />
         <span className="index">N° 10</span>
@@ -288,7 +304,7 @@ export default function Home() {
       <div className="info"><div><span className="meta">London · 2026</span></div></div>
     </article>
 
-    <article className="project feat-wide reveal">
+    <article className="project carousel-card reveal">
       <div className="img">
         <img src="/uploads/project-11.jpg" alt="Delta Construction project" loading="lazy" />
         <span className="index">N° 11</span>
@@ -296,7 +312,7 @@ export default function Home() {
       <div className="info"><div><span className="meta">London · 2026</span></div></div>
     </article>
 
-    <article className="project feat-tall reveal d1">
+    <article className="project carousel-card reveal d1">
       <div className="img">
         <img src="/uploads/project-12.jpg" alt="Delta Construction project" loading="lazy" />
         <span className="index">N° 12</span>
@@ -304,7 +320,7 @@ export default function Home() {
       <div className="info"><div><span className="meta">London · 2025</span></div></div>
     </article>
 
-    <article className="project std reveal d2">
+    <article className="project carousel-card reveal d2">
       <div className="img">
         <img src="/uploads/project-13.jpg" alt="Delta Construction project" loading="lazy" />
         <span className="index">N° 13</span>
@@ -312,6 +328,14 @@ export default function Home() {
       <div className="info"><div><span className="meta">London · 2025</span></div></div>
     </article>
 
+  </div>
+
+  {/* Carousel progress bar — mobile only */}
+  <div className="carousel-progress">
+    <div className="carousel-track-bg">
+      <div className="carousel-track-fill" style={{ transform: `scaleX(${carouselProgress})` }} />
+    </div>
+    <span className="carousel-hint">Swipe to explore</span>
   </div>
 </section>
 

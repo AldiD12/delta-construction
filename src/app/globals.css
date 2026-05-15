@@ -379,6 +379,44 @@ html{scroll-behavior:smooth}
 .project.wide .img{aspect-ratio:16/10}
 /* projects mobile → consolidated below */
 
+/* ---------- Carousel progress bar (hidden on desktop) ---------- */
+.carousel-progress{
+  display:none;
+  padding:20px var(--pad) 0;
+  max-width:var(--max);
+  margin:0 auto;
+  align-items:center;
+  gap:16px;
+}
+.carousel-track-bg{
+  flex:1;
+  height:3px;
+  background:var(--rule);
+  border-radius:3px;
+  overflow:hidden;
+}
+.carousel-track-fill{
+  height:100%;
+  background:var(--accent);
+  border-radius:3px;
+  transform-origin:left;
+  transform:scaleX(0);
+  transition:transform .15s ease-out;
+}
+.carousel-hint{
+  font-family:var(--mono);
+  font-size:10px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--mute);
+  white-space:nowrap;
+  animation:carousel-hint-fade 3s ease-out forwards;
+}
+@keyframes carousel-hint-fade{
+  0%,60%{opacity:1}
+  100%{opacity:0}
+}
+
 .services{
   display:grid;grid-template-columns: 1fr 1.1fr;gap:0;
   border-top:1px solid var(--rule);
@@ -607,11 +645,29 @@ footer{padding: clamp(48px,5vw,80px) var(--pad) 32px;background:var(--bg)}
   .section{padding:clamp(56px,8vw,96px) 0}
   h2.section-title{font-size:clamp(32px,5.5vw,52px)}
 
-  /* Projects — 2-up tablet grid */
-  .projects{grid-template-columns:1fr 1fr;gap:16px}
-  .project.feat-wide,.project.feat-tall,.project.std,.project.tall,.project.wide{grid-column:span 1}
-  .project.feat-wide,.project.wide{grid-column:span 2}
-  .project .img{border-radius:4px}
+  /* Projects — horizontal carousel on tablet too */
+  .projects{
+    display:flex !important;
+    flex-wrap:nowrap;
+    overflow-x:auto;
+    overflow-y:hidden;
+    scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;
+    gap:20px;
+    padding:0 var(--pad);
+    scrollbar-width:none;
+    scroll-padding-left:var(--pad);
+  }
+  .projects::-webkit-scrollbar{display:none}
+  .project.carousel-card{
+    flex:0 0 55vw;
+    max-width:55vw;
+    scroll-snap-align:start;
+    grid-column:auto !important;
+  }
+  .project.feat-wide,.project.feat-tall,.project.std,.project.tall,.project.wide{grid-column:auto !important}
+  .project .img{border-radius:8px}
+  .carousel-progress{display:flex}
 
   /* Services */
   .services{grid-template-columns:1fr}
@@ -724,15 +780,46 @@ footer{padding: clamp(48px,5vw,80px) var(--pad) 32px;background:var(--bg)}
   .section-head .num .big{font-size:36px}
   .section-head .right p{font-size:14.5px}
 
-  /* Projects — card layout */
-  .projects{grid-template-columns:1fr;gap:20px}
-  .project.feat-wide,.project.feat-tall,.project.std,.project.tall,.project.wide{grid-column:span 1}
-  .project .img{border-radius:12px;overflow:hidden}
-  .project .img .corner{border-radius:6px;font-size:10px;padding:5px 8px}
-  .project .info{flex-direction:column;align-items:flex-start;gap:8px;padding:0 4px}
-  .project .info h3{font-size:22px}
+  /* Projects — HORIZONTAL SWIPE CAROUSEL */
+  .projects{
+    display:flex !important;
+    flex-wrap:nowrap;
+    overflow-x:auto;
+    overflow-y:hidden;
+    scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;
+    gap:16px;
+    padding:0 var(--pad);
+    scrollbar-width:none;
+    scroll-padding-left:var(--pad);
+  }
+  .projects::-webkit-scrollbar{display:none}
+
+  .project.carousel-card{
+    flex:0 0 78vw;
+    max-width:78vw;
+    scroll-snap-align:start;
+    grid-column:auto !important;
+  }
+  .project.feat-wide,.project.feat-tall,.project.std,.project.tall,.project.wide{
+    grid-column:auto !important;
+  }
+  .project .img{
+    border-radius:14px;
+    overflow:hidden;
+    aspect-ratio:4/3 !important;
+  }
+  .project .img img{
+    transition:transform .6s cubic-bezier(.2,.7,.2,1);
+  }
+  .project .img .corner{border-radius:8px;font-size:10px;padding:6px 10px}
+  .project .info{flex-direction:column;align-items:flex-start;gap:6px;padding:8px 4px 0}
+  .project .info h3{font-size:20px}
   .project .info .right{text-align:left;font-size:10px}
   .project .info .loc{font-size:10px}
+
+  /* Show the progress bar on mobile */
+  .carousel-progress{display:flex}
 
   /* Filter — scrollable */
   .filter{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:8px;scrollbar-width:none;gap:8px}
@@ -849,5 +936,6 @@ footer{padding: clamp(48px,5vw,80px) var(--pad) 32px;background:var(--bg)}
   .project .info h3{font-size:19px}
   .brand-name span{display:none}
   .hero-card{display:none}
+  .project.carousel-card{flex:0 0 84vw;max-width:84vw}
 }
 
