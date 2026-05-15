@@ -126,7 +126,7 @@ export default function Home() {
 
     <div className="hero-right">
       <video autoPlay muted loop playsInline>
-        <source src="/uploads/site-video-03.mp4" type="video/mp4" />
+        <source src="/uploads/site-video-02.mp4" type="video/mp4" />
         
         <img src="/uploads/project-11.jpg" alt="Modern construction project" />
       </video>
