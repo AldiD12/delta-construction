@@ -114,15 +114,15 @@ export default function Home() {
       <span className="brand-name">Delta<span>&nbsp;Construction</span></span>
     </a>
     <nav className="nav-links" aria-label="Primary">
-      <a href="#projects" className="dot" onClick={closeMenu}>Projects</a>
-      <a href="#services" onClick={closeMenu}>Services</a>
-      <a href="#process" onClick={closeMenu}>Process</a>
-      <a href="#areas" onClick={closeMenu}>Areas</a>
-      <a href="#contact" onClick={closeMenu}>Contact</a>
+      <a href="/services" onClick={closeMenu}>Services</a>
+      <a href="/gallery" className="dot" onClick={closeMenu}>Projects</a>
+      <a href="/areas" onClick={closeMenu}>Areas</a>
+      <a href="/about" onClick={closeMenu}>About</a>
+      <a href="/contact" onClick={closeMenu}>Contact</a>
     </nav>
     <div className="nav-right">
       <span className="phone">+44 (0) 7479 389 996</span>
-      <a className="btn ghost" href="#contact">Request a quote <span className="arr"></span></a>
+      <a className="btn ghost" href="/contact">Request a quote <span className="arr"></span></a>
       <button
         className={`mobile-menu-btn ${menuOpen ? 'is-open' : ''}`}
         aria-label="Toggle menu"
@@ -137,12 +137,13 @@ export default function Home() {
 
   <div className={`mobile-menu ${menuOpen ? 'open' : ''}`} id="mobile-menu">
     <nav>
-      <a href="#projects" onClick={closeMenu}>Projects</a>
-      <a href="#services" onClick={closeMenu}>Services</a>
-      <a href="#process" onClick={closeMenu}>Process</a>
-      <a href="#areas" onClick={closeMenu}>Areas</a>
-      <a href="#testimonials" onClick={closeMenu}>Testimonials</a>
-      <a href="#contact" className="btn" onClick={closeMenu}>Request a quote <span className="arr"></span></a>
+      <a href="/services" onClick={closeMenu}>Services</a>
+      <a href="/gallery" onClick={closeMenu}>Projects</a>
+      <a href="/areas" onClick={closeMenu}>Areas</a>
+      <a href="/about" onClick={closeMenu}>About</a>
+      <a href="/reviews" onClick={closeMenu}>Reviews</a>
+      <a href="/faq" onClick={closeMenu}>FAQ</a>
+      <a href="/contact" className="btn" onClick={closeMenu}>Request a quote <span className="arr"></span></a>
     </nav>
     <div className="mobile-menu-footer">
       <a href="tel:+447479389996">+44 (0) 7479 389 996</a>
@@ -176,7 +177,7 @@ export default function Home() {
       <div className="hero-sub">
         <p>Delta Construction Ltd UK is a full-service construction company — residential and commercial — founded in 2019 by an experienced project manager and a building specialist with over ten years combined experience across the UK and Europe.</p>
         <div className="hero-cta">
-          <a className="btn" href="#contact">Start a project <span className="arr"></span></a>
+          <a className="btn" href="/contact">Start a project <span className="arr"></span></a>
           <a className="btn ghost" href="#projects">View portfolio <span className="arr"></span></a>
           <span className="since">Based in London · working UK-wide</span>
         </div>
@@ -579,7 +580,7 @@ export default function Home() {
     <aside className="areas-side">
       <span className="eyebrow">Outside this list?</span>
       <p style={{ marginTop: "18px", fontSize: "15.5px", lineHeight: "1.55", maxWidth: "34ch" }}>We will still travel for the right project — particularly for full refurbishments, listed buildings and architect-led new-builds. Send the brief and we will tell you straight whether we are the right firm for it.</p>
-      <a className="btn ghost" style={{ marginTop: "24px" }} href="#contact">Check your postcode <span className="arr"></span></a>
+      <a className="btn ghost" style={{ marginTop: "24px" }} href="/contact">Check your postcode <span className="arr"></span></a>
 
       <div className="areas-radius">
         <svg viewBox="0 0 200 200" aria-hidden="true" className="areas-radius-svg">
@@ -735,8 +736,8 @@ export default function Home() {
       <div className="brand">
         <span className="brand-mark" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none">
-            <path d="M2 20 L12 4 L22 20 Z" stroke="#ece7dd" stroke-width="1.4"/>
-            <path d="M7.5 20 L12 12.5 L16.5 20" stroke="#c89372" stroke-width="1.2"/>
+            <path d="M2 20 L12 4 L22 20 Z" stroke="#ece7dd" strokeWidth="1.4"/>
+            <path d="M7.5 20 L12 12.5 L16.5 20" stroke="#c89372" strokeWidth="1.2"/>
           </svg>
         </span>
         <span className="brand-name">Delta<span>&nbsp;Construction Ltd</span></span>
@@ -744,12 +745,14 @@ export default function Home() {
       <p>London-based, working UK-wide. Founded 2019 by a project manager and a building specialist with 10+ years combined experience across UK &amp; Europe.</p>
     </div>
     <div className="foot-col">
-      <h5>Studio</h5>
+      <h5>Company</h5>
       <ul>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#approach">About us</a></li>
-        <li><a href="#process">Process</a></li>
+        <li><a href="/services">Services</a></li>
+        <li><a href="/gallery">Projects</a></li>
+        <li><a href="/about">About us</a></li>
+        <li><a href="/areas">Areas we cover</a></li>
+        <li><a href="/reviews">Reviews</a></li>
+        <li><a href="/faq">FAQ</a></li>
       </ul>
     </div>
     <div className="foot-col">
@@ -758,7 +761,7 @@ export default function Home() {
         <li><a href="tel:+447479389996">+44 (0) 7479 389 996</a></li>
         <li><a href="mailto:info@deltaconstructionltd.co.uk">info@deltaconstructionltd.co.uk</a></li>
         <li>7 Southland Way<br />Hounslow TW3 2RH</li>
-        <li><a href="#contact">Request a quote</a></li>
+        <li><a href="/contact">Request a quote</a></li>
       </ul>
     </div>
     <div className="foot-col">
@@ -772,9 +775,9 @@ export default function Home() {
     </div>
   </div>
   <div className="foot-bottom">
-    <span>© 2019–2026 Delta Construction Ltd UK</span>
+    <span>© 2019–2026 Delta Construction Ltd UK · Company No. 00000000</span>
     <span>Photography of our own projects · All rights reserved</span>
-    <span>Privacy · Terms · Cookies</span>
+    <span><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/cookies">Cookies</a></span>
   </div>
 </footer>
 
