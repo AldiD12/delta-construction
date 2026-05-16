@@ -185,9 +185,9 @@ export default function Home() {
 
     <div className="hero-right">
       <video autoPlay muted loop playsInline>
-        <source src="/uploads/site-video-01.mp4" type="video/mp4" />
-        
-        <img src="/uploads/project-11.jpg" alt="Modern construction project" />
+        <source src="/uploads/site-video-03.mp4" type="video/mp4" />
+
+        <img src="/assets/building-foundation-work.jpg" alt="Construction project in progress" />
       </video>
       <div className="hero-card">
         <div>
@@ -240,7 +240,7 @@ export default function Home() {
 
   <div className="projects" id="projects-grid" ref={carouselRef}>
 
-    {/* Row 1: hero wide + tall portrait */}
+    {/* Row 1: wide + single */}
     <article className="project feat-wide carousel-card reveal">
       <div className="img">
         <img src="/uploads/project-01.jpg" alt="Delta Construction project" loading="lazy" />
@@ -249,7 +249,7 @@ export default function Home() {
       <div className="info"><div><span className="meta">London · 2026</span></div></div>
     </article>
 
-    <article className="project feat-tall carousel-card reveal d1">
+    <article className="project carousel-card reveal d1">
       <div className="img">
         <img src="/uploads/project-02.jpg" alt="Delta Construction project" loading="lazy" />
         <span className="index">N° 02</span>
@@ -258,7 +258,7 @@ export default function Home() {
     </article>
 
     {/* Row 2: three equal */}
-    <article className="project std carousel-card reveal">
+    <article className="project carousel-card reveal">
       <div className="img">
         <img src="/uploads/project-03.jpg" alt="Delta Construction project" loading="lazy" />
         <span className="index">N° 03</span>
@@ -266,7 +266,7 @@ export default function Home() {
       <div className="info"><div><span className="meta">London · 2026</span></div></div>
     </article>
 
-    <article className="project std carousel-card reveal d1">
+    <article className="project carousel-card reveal d1">
       <div className="img">
         <img src="/uploads/project-04.jpg" alt="Delta Construction project" loading="lazy" />
         <span className="index">N° 04</span>
@@ -274,8 +274,7 @@ export default function Home() {
       <div className="info"><div><span className="meta">London · 2026</span></div></div>
     </article>
 
-    {/* Row 3: tall + wide */}
-    <article className="project feat-tall carousel-card reveal">
+    <article className="project carousel-card reveal d2">
       <div className="img">
         <img src="/uploads/project-05.jpg" alt="Delta Construction project" loading="lazy" />
         <span className="index">N° 05</span>
@@ -283,7 +282,8 @@ export default function Home() {
       <div className="info"><div><span className="meta">London · 2026</span></div></div>
     </article>
 
-    <article className="project feat-wide carousel-card reveal d1">
+    {/* Row 3: single + wide */}
+    <article className="project carousel-card reveal">
       <div className="img">
         <img src="/uploads/project-06.jpg" alt="Delta Construction project" loading="lazy" />
         <span className="index">N° 06</span>
@@ -291,8 +291,7 @@ export default function Home() {
       <div className="info"><div><span className="meta">London · 2026</span></div></div>
     </article>
 
-    {/* Row 4: wide + tall */}
-    <article className="project wide carousel-card reveal">
+    <article className="project feat-wide carousel-card reveal d1">
       <div className="img">
         <img src="/uploads/project-07.jpg" alt="Delta Construction project" loading="lazy" />
         <span className="index">N° 07</span>
@@ -300,7 +299,8 @@ export default function Home() {
       <div className="info"><div><span className="meta">London · 2026</span></div></div>
     </article>
 
-    <article className="project tall carousel-card reveal d1">
+    {/* Row 4: three equal */}
+    <article className="project carousel-card reveal">
       <div className="img">
         <img src="/uploads/project-08.jpg" alt="Delta Construction project" loading="lazy" />
         <span className="index">N° 08</span>
@@ -308,8 +308,7 @@ export default function Home() {
       <div className="info"><div><span className="meta">London · 2026</span></div></div>
     </article>
 
-    {/* Row 5: two equal */}
-    <article className="project std carousel-card reveal">
+    <article className="project carousel-card reveal d1">
       <div className="img">
         <img src="/uploads/project-09.jpg" alt="Delta Construction project" loading="lazy" />
         <span className="index">N° 09</span>
@@ -317,38 +316,12 @@ export default function Home() {
       <div className="info"><div><span className="meta">London · 2026</span></div></div>
     </article>
 
-    <article className="project std carousel-card reveal d1">
+    <article className="project carousel-card reveal d2">
       <div className="img">
         <img src="/uploads/project-10.jpg" alt="Delta Construction project" loading="lazy" />
         <span className="index">N° 10</span>
       </div>
       <div className="info"><div><span className="meta">London · 2026</span></div></div>
-    </article>
-
-    {/* Row 6: tall + wide */}
-    <article className="project feat-tall carousel-card reveal">
-      <div className="img">
-        <img src="/uploads/project-11.jpg" alt="Delta Construction project" loading="lazy" />
-        <span className="index">N° 11</span>
-      </div>
-      <div className="info"><div><span className="meta">London · 2026</span></div></div>
-    </article>
-
-    <article className="project feat-wide carousel-card reveal d1">
-      <div className="img">
-        <img src="/uploads/project-12.jpg" alt="Delta Construction project" loading="lazy" />
-        <span className="index">N° 12</span>
-      </div>
-      <div className="info"><div><span className="meta">London · 2025</span></div></div>
-    </article>
-
-    {/* Row 7: full-width closer */}
-    <article className="project full carousel-card reveal">
-      <div className="img">
-        <img src="/uploads/project-13.jpg" alt="Delta Construction project" loading="lazy" />
-        <span className="index">N° 13</span>
-      </div>
-      <div className="info"><div><span className="meta">London · 2025</span></div></div>
     </article>
 
   </div>
@@ -359,6 +332,10 @@ export default function Home() {
       <div className="carousel-track-fill" style={{ transform: `scaleX(${carouselProgress})` }} />
     </div>
     <span className="carousel-hint">Swipe to explore</span>
+  </div>
+
+  <div className="projects-cta reveal">
+    <a className="btn" href="/gallery">View all projects <span className="arr"></span></a>
   </div>
 </section>
 
@@ -406,14 +383,19 @@ export default function Home() {
     <div className="services-media">
       <div className={`pane ${activeSvc === 'extensions' ? 'show' : ''}`}>
         <video autoPlay muted loop playsInline>
-          <source src="/uploads/site-video-01.mp4" type="video/mp4" />
-          <img src="/uploads/project-05.jpg" alt="Construction work in progress" />
+          <source src="/uploads/site-video-02.mp4" type="video/mp4" />
+          <img src="/assets/residential-extension-project.jpg" alt="Residential extension project" />
         </video>
       </div>
-      <div className={`pane ${activeSvc === 'lofts' ? 'show' : ''}`}><img src="/uploads/project-07.jpg" alt="" /></div>
-      <div className={`pane ${activeSvc === 'roofing' ? 'show' : ''}`}><img src="/uploads/project-03.jpg" alt="" /></div>
-      <div className={`pane ${activeSvc === 'brick' ? 'show' : ''}`}><img src="/uploads/project-06.jpg" alt="" /></div>
-      <div className={`pane ${activeSvc === 'landscape' ? 'show' : ''}`}><img src="/uploads/project-08.jpg" alt="" /></div>
+      <div className={`pane ${activeSvc === 'lofts' ? 'show' : ''}`}>
+        <video autoPlay muted loop playsInline>
+          <source src="/assets/construction-site-walkthrough.mp4" type="video/mp4" />
+          <img src="/assets/structural-extension-work.jpg" alt="Structural extension work" />
+        </video>
+      </div>
+      <div className={`pane ${activeSvc === 'roofing' ? 'show' : ''}`}><img src="/assets/02-roofing-slate.jpg" alt="Slate roofing work" /></div>
+      <div className={`pane ${activeSvc === 'brick' ? 'show' : ''}`}><img src="/assets/concrete-framework-construction.jpg" alt="Brickwork and structural construction" /></div>
+      <div className={`pane ${activeSvc === 'landscape' ? 'show' : ''}`}><img src="/assets/modern-extension-exterior.png" alt="Modern extension with landscaping" /></div>
 
       <div className="services-caption">
         <div className="body">
@@ -461,7 +443,7 @@ export default function Home() {
       </div>
     </div>
     <div className="why-right">
-      <img src="/uploads/project-12.jpg" alt="UFH installation on site, rear extension under construction" />
+      <img src="/assets/03-underfloor.jpg" alt="Underfloor heating installation on site" />
       <div className="why-quote">
         <div className="q">“Whatever your needs are with regards to construction, our expertise goes <em>beyond building.</em>”</div>
         <div className="att">Delta Construction Ltd UK — since 2019</div>
@@ -714,7 +696,7 @@ export default function Home() {
 
 <section className="cta invert" id="contact">
   <div className="cta-bg" aria-hidden="true">
-    <img src="/uploads/project-01.jpg" alt="" />
+    <img src="/assets/interior-renovation-progress.jpg" alt="" />
   </div>
   <div className="cta-inner">
     <span className="eyebrow reveal">§ 07 — Begin</span>
