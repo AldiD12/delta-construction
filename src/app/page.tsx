@@ -240,7 +240,8 @@ export default function Home() {
 
   <div className="projects" id="projects-grid" ref={carouselRef}>
 
-    <article className="project carousel-card reveal">
+    {/* Row 1: hero wide + tall portrait */}
+    <article className="project feat-wide carousel-card reveal">
       <div className="img">
         <img src="/uploads/project-01.jpg" alt="Delta Construction project" loading="lazy" />
         <span className="index">N° 01</span>
@@ -248,7 +249,7 @@ export default function Home() {
       <div className="info"><div><span className="meta">London · 2026</span></div></div>
     </article>
 
-    <article className="project carousel-card reveal d1">
+    <article className="project feat-tall carousel-card reveal d1">
       <div className="img">
         <img src="/uploads/project-02.jpg" alt="Delta Construction project" loading="lazy" />
         <span className="index">N° 02</span>
@@ -256,7 +257,8 @@ export default function Home() {
       <div className="info"><div><span className="meta">London · 2026</span></div></div>
     </article>
 
-    <article className="project carousel-card reveal">
+    {/* Row 2: three equal */}
+    <article className="project std carousel-card reveal">
       <div className="img">
         <img src="/uploads/project-03.jpg" alt="Delta Construction project" loading="lazy" />
         <span className="index">N° 03</span>
@@ -264,7 +266,7 @@ export default function Home() {
       <div className="info"><div><span className="meta">London · 2026</span></div></div>
     </article>
 
-    <article className="project carousel-card reveal d1">
+    <article className="project std carousel-card reveal d1">
       <div className="img">
         <img src="/uploads/project-04.jpg" alt="Delta Construction project" loading="lazy" />
         <span className="index">N° 04</span>
@@ -272,7 +274,8 @@ export default function Home() {
       <div className="info"><div><span className="meta">London · 2026</span></div></div>
     </article>
 
-    <article className="project carousel-card reveal">
+    {/* Row 3: tall + wide */}
+    <article className="project feat-tall carousel-card reveal">
       <div className="img">
         <img src="/uploads/project-05.jpg" alt="Delta Construction project" loading="lazy" />
         <span className="index">N° 05</span>
@@ -280,7 +283,7 @@ export default function Home() {
       <div className="info"><div><span className="meta">London · 2026</span></div></div>
     </article>
 
-    <article className="project carousel-card reveal d1">
+    <article className="project feat-wide carousel-card reveal d1">
       <div className="img">
         <img src="/uploads/project-06.jpg" alt="Delta Construction project" loading="lazy" />
         <span className="index">N° 06</span>
@@ -288,7 +291,8 @@ export default function Home() {
       <div className="info"><div><span className="meta">London · 2026</span></div></div>
     </article>
 
-    <article className="project carousel-card reveal">
+    {/* Row 4: wide + tall */}
+    <article className="project wide carousel-card reveal">
       <div className="img">
         <img src="/uploads/project-07.jpg" alt="Delta Construction project" loading="lazy" />
         <span className="index">N° 07</span>
@@ -296,7 +300,7 @@ export default function Home() {
       <div className="info"><div><span className="meta">London · 2026</span></div></div>
     </article>
 
-    <article className="project carousel-card reveal d1">
+    <article className="project tall carousel-card reveal d1">
       <div className="img">
         <img src="/uploads/project-08.jpg" alt="Delta Construction project" loading="lazy" />
         <span className="index">N° 08</span>
@@ -304,7 +308,8 @@ export default function Home() {
       <div className="info"><div><span className="meta">London · 2026</span></div></div>
     </article>
 
-    <article className="project carousel-card reveal d2">
+    {/* Row 5: two equal */}
+    <article className="project std carousel-card reveal">
       <div className="img">
         <img src="/uploads/project-09.jpg" alt="Delta Construction project" loading="lazy" />
         <span className="index">N° 09</span>
@@ -312,7 +317,7 @@ export default function Home() {
       <div className="info"><div><span className="meta">London · 2026</span></div></div>
     </article>
 
-    <article className="project carousel-card reveal d3">
+    <article className="project std carousel-card reveal d1">
       <div className="img">
         <img src="/uploads/project-10.jpg" alt="Delta Construction project" loading="lazy" />
         <span className="index">N° 10</span>
@@ -320,7 +325,8 @@ export default function Home() {
       <div className="info"><div><span className="meta">London · 2026</span></div></div>
     </article>
 
-    <article className="project carousel-card reveal">
+    {/* Row 6: tall + wide */}
+    <article className="project feat-tall carousel-card reveal">
       <div className="img">
         <img src="/uploads/project-11.jpg" alt="Delta Construction project" loading="lazy" />
         <span className="index">N° 11</span>
@@ -328,7 +334,7 @@ export default function Home() {
       <div className="info"><div><span className="meta">London · 2026</span></div></div>
     </article>
 
-    <article className="project carousel-card reveal d1">
+    <article className="project feat-wide carousel-card reveal d1">
       <div className="img">
         <img src="/uploads/project-12.jpg" alt="Delta Construction project" loading="lazy" />
         <span className="index">N° 12</span>
@@ -336,7 +342,8 @@ export default function Home() {
       <div className="info"><div><span className="meta">London · 2025</span></div></div>
     </article>
 
-    <article className="project carousel-card reveal d2">
+    {/* Row 7: full-width closer */}
+    <article className="project full carousel-card reveal">
       <div className="img">
         <img src="/uploads/project-13.jpg" alt="Delta Construction project" loading="lazy" />
         <span className="index">N° 13</span>

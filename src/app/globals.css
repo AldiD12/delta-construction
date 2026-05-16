@@ -377,6 +377,8 @@ html{scroll-behavior:smooth}
 .project.tall .img{aspect-ratio:3/4}
 .project.wide{grid-column:span 8}
 .project.wide .img{aspect-ratio:16/10}
+.project.full{grid-column:1/-1}
+.project.full .img{aspect-ratio:21/9}
 /* projects mobile → consolidated below */
 
 /* ---------- Carousel progress bar (hidden on desktop) ---------- */
@@ -668,8 +670,9 @@ footer{padding: clamp(48px,5vw,80px) var(--pad) 32px;background:var(--bg)}
     scroll-snap-align:start;
     grid-column:auto !important;
   }
-  .project.feat-wide,.project.feat-tall,.project.std,.project.tall,.project.wide{grid-column:auto !important}
+  .project.feat-wide,.project.feat-tall,.project.std,.project.tall,.project.wide,.project.full{grid-column:auto !important}
   .project .img{border-radius:8px}
+  .project .img{aspect-ratio:4/3 !important}
   .carousel-progress{display:flex}
 
   /* Services */
@@ -886,7 +889,7 @@ footer{padding: clamp(48px,5vw,80px) var(--pad) 32px;background:var(--bg)}
     scroll-snap-align:start;
     grid-column:auto !important;
   }
-  .project.feat-wide,.project.feat-tall,.project.std,.project.tall,.project.wide{
+  .project.feat-wide,.project.feat-tall,.project.std,.project.tall,.project.wide,.project.full{
     grid-column:auto !important;
   }
   .project .img{
