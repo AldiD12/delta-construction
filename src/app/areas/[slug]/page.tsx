@@ -42,23 +42,6 @@ export default async function LocationPage({
   const location = locations.find((l) => l.slug === slug);
   if (!location) return null;
 
-  const faqs = [
-    {
-      question: `Do you cover ${location.name}?`,
-      answer: `Yes, ${location.name} is one of our core areas. A director will visit your property for a free survey and fixed-price quote.`,
-    },
-    {
-      question: "Are you fully insured?",
-      answer:
-        "Yes, we carry £2 million public liability insurance for complete peace of mind.",
-    },
-    {
-      question: "Do you provide a guarantee?",
-      answer:
-        "Yes, every project comes with a 1-year workmanship guarantee as standard.",
-    },
-  ];
-
   return (
     <>
       <LocalBusinessSchema />
@@ -79,7 +62,7 @@ export default async function LocationPage({
         description={location.description}
         areaServed={location.name}
       />
-      <FAQSchema faqs={faqs} />
+      <FAQSchema faqs={location.faqs} />
       <LocationClient location={location} />
     </>
   );

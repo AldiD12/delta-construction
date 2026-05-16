@@ -105,23 +105,6 @@ export default function LocationClient({
     .map((slug) => locations.find((l) => l.slug === slug))
     .filter(Boolean) as Location[];
 
-  const faqs = [
-    {
-      question: `Do you cover ${location.name}?`,
-      answer: `Yes, ${location.name} is one of our core areas. A director will visit your property for a free survey and fixed-price quote.`,
-    },
-    {
-      question: "Are you fully insured?",
-      answer:
-        "Yes, we carry £2 million public liability insurance for complete peace of mind.",
-    },
-    {
-      question: "Do you provide a guarantee?",
-      answer:
-        "Yes, every project comes with a 1-year workmanship guarantee as standard.",
-    },
-  ];
-
   return (
     <>
       <SharedNav
@@ -171,6 +154,64 @@ export default function LocationClient({
             }}
           >
             {location.description}
+          </p>
+        </div>
+      </section>
+
+      {/* Local context */}
+      <section
+        style={{
+          padding: "96px 0",
+          borderBottom: "1px solid var(--rule)",
+        }}
+      >
+        <div className="container" style={{ maxWidth: "720px" }}>
+          <h2
+            className="reveal"
+            style={{
+              fontFamily: "var(--serif)",
+              fontSize: "clamp(28px, 3.5vw, 42px)",
+              fontWeight: 400,
+              lineHeight: 1.15,
+              letterSpacing: "-0.015em",
+              color: "var(--ink)",
+              marginBottom: "40px",
+            }}
+          >
+            Construction in {location.name}
+          </h2>
+          <p
+            className="reveal"
+            style={{
+              fontSize: "17px",
+              lineHeight: 1.7,
+              color: "var(--ink-2)",
+              marginBottom: "24px",
+            }}
+          >
+            {location.propertyTypes}
+          </p>
+          <p
+            className="reveal d1"
+            style={{
+              fontSize: "17px",
+              lineHeight: 1.7,
+              color: "var(--ink-2)",
+              marginBottom: "24px",
+            }}
+          >
+            {location.typicalProjects}
+          </p>
+          <p
+            className="reveal d2"
+            style={{
+              fontSize: "17px",
+              lineHeight: 1.7,
+              color: "var(--ink-2)",
+              margin: 0,
+            }}
+          >
+            {location.localContext}
           </p>
         </div>
       </section>
@@ -377,7 +418,7 @@ export default function LocationClient({
           >
             Frequently asked questions
           </h2>
-          {faqs.map((faq, i) => (
+          {location.faqs.map((faq, i) => (
             <details
               key={i}
               className="reveal faq-item"
