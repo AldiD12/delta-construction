@@ -8,7 +8,7 @@ export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [filter, setFilter] = useState('all');
   const [activeSvc, setActiveSvc] = useState('extensions');
-  const [formSubmitted, setFormSubmitted] = useState(false);
+
   const [carouselProgress, setCarouselProgress] = useState(0);
   const [reviewProgress, setReviewProgress] = useState(0);
   const carouselRef = useRef<HTMLDivElement>(null);
@@ -34,11 +34,6 @@ export default function Home() {
     document.querySelectorAll('.reveal').forEach(el => io.observe(el));
     return () => io.disconnect();
   }, [filter]); // re-run if filter changes and reveals new items
-
-  const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setFormSubmitted(true);
-  };
 
   const closeMenu = () => setMenuOpen(false);
 
@@ -102,7 +97,30 @@ export default function Home() {
 
   return (
     <>
-      
+      {/* LocalBusiness Schema */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": ["LocalBusiness", "GeneralContractor"],
+        "name": "Delta Construction Ltd UK",
+        "image": "https://deltaconstructionltd.co.uk/assets/logo.png",
+        "url": "https://deltaconstructionltd.co.uk",
+        "telephone": "+447479389996",
+        "email": "info@deltaconstructionltd.co.uk",
+        "address": { "@type": "PostalAddress", "streetAddress": "7 Southland Way", "addressLocality": "Hounslow", "postalCode": "TW3 2RH", "addressRegion": "London", "addressCountry": "GB" },
+        "geo": { "@type": "GeoCoordinates", "latitude": 51.4685, "longitude": -0.3654 },
+        "areaServed": [{ "@type": "City", "name": "London" }, { "@type": "Country", "name": "United Kingdom" }],
+        "priceRange": "££-££££",
+        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "16", "bestRating": "5" },
+        "foundingDate": "2019",
+        "description": "Premium residential and commercial construction across London. Extensions, loft conversions, roofing, brickwork and landscaping. Director-led, fixed-price, guaranteed.",
+        "hasOfferCatalog": { "@type": "OfferCatalog", "name": "Construction Services", "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "House Extensions" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Loft Conversions" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Roofing" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Brickwork" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Landscaping" } }
+        ]}
+      }) }} />
 
 
 <header className={`nav ${scrolled ? 'scrolled' : ''}`} id="nav">
@@ -244,7 +262,7 @@ export default function Home() {
     {/* Row 1: wide + single */}
     <article className="project feat-wide carousel-card reveal">
       <div className="img">
-        <img src="/uploads/project-01.jpg" alt="Delta Construction project" loading="lazy" />
+        <img src="/uploads/project-01.jpg" alt="Rear extension and kitchen fit-out completed by Delta Construction in West London" loading="lazy" />
         <span className="index">N° 01</span>
       </div>
       <div className="info"><div><span className="meta">London · 2026</span></div></div>
@@ -252,7 +270,7 @@ export default function Home() {
 
     <article className="project carousel-card reveal d1">
       <div className="img">
-        <img src="/uploads/project-02.jpg" alt="Delta Construction project" loading="lazy" />
+        <img src="/uploads/project-02.jpg" alt="Loft conversion with dormer window installed in North London" loading="lazy" />
         <span className="index">N° 02</span>
       </div>
       <div className="info"><div><span className="meta">London · 2026</span></div></div>
@@ -261,7 +279,7 @@ export default function Home() {
     {/* Row 2: three equal */}
     <article className="project carousel-card reveal">
       <div className="img">
-        <img src="/uploads/project-03.jpg" alt="Delta Construction project" loading="lazy" />
+        <img src="/uploads/project-03.jpg" alt="Full house refurbishment — structural work and interior remodel in Hounslow" loading="lazy" />
         <span className="index">N° 03</span>
       </div>
       <div className="info"><div><span className="meta">London · 2026</span></div></div>
@@ -269,7 +287,7 @@ export default function Home() {
 
     <article className="project carousel-card reveal d1">
       <div className="img">
-        <img src="/uploads/project-04.jpg" alt="Delta Construction project" loading="lazy" />
+        <img src="/uploads/project-04.jpg" alt="Open-plan kitchen extension with bifold doors and underfloor heating" loading="lazy" />
         <span className="index">N° 04</span>
       </div>
       <div className="info"><div><span className="meta">London · 2026</span></div></div>
@@ -277,7 +295,7 @@ export default function Home() {
 
     <article className="project carousel-card reveal d2">
       <div className="img">
-        <img src="/uploads/project-05.jpg" alt="Delta Construction project" loading="lazy" />
+        <img src="/uploads/project-05.jpg" alt="Brickwork and repointing on a Victorian terrace in Richmond" loading="lazy" />
         <span className="index">N° 05</span>
       </div>
       <div className="info"><div><span className="meta">London · 2026</span></div></div>
@@ -286,7 +304,7 @@ export default function Home() {
     {/* Row 3: single + wide */}
     <article className="project carousel-card reveal">
       <div className="img">
-        <img src="/uploads/project-06.jpg" alt="Delta Construction project" loading="lazy" />
+        <img src="/uploads/project-06.jpg" alt="Slate roof replacement and chimney rebuild in South West London" loading="lazy" />
         <span className="index">N° 06</span>
       </div>
       <div className="info"><div><span className="meta">London · 2026</span></div></div>
@@ -294,7 +312,7 @@ export default function Home() {
 
     <article className="project feat-wide carousel-card reveal d1">
       <div className="img">
-        <img src="/uploads/project-07.jpg" alt="Delta Construction project" loading="lazy" />
+        <img src="/uploads/project-07.jpg" alt="Double-storey rear extension with structural steelwork in Ealing" loading="lazy" />
         <span className="index">N° 07</span>
       </div>
       <div className="info"><div><span className="meta">London · 2026</span></div></div>
@@ -303,7 +321,7 @@ export default function Home() {
     {/* Row 4: three equal */}
     <article className="project carousel-card reveal">
       <div className="img">
-        <img src="/uploads/project-08.jpg" alt="Delta Construction project" loading="lazy" />
+        <img src="/uploads/project-08.jpg" alt="Modern bathroom renovation with walk-in shower and heated towel rail" loading="lazy" />
         <span className="index">N° 08</span>
       </div>
       <div className="info"><div><span className="meta">London · 2026</span></div></div>
@@ -311,7 +329,7 @@ export default function Home() {
 
     <article className="project carousel-card reveal d1">
       <div className="img">
-        <img src="/uploads/project-09.jpg" alt="Delta Construction project" loading="lazy" />
+        <img src="/uploads/project-09.jpg" alt="Hard landscaping with porcelain paving and cedar pergola in Twickenham" loading="lazy" />
         <span className="index">N° 09</span>
       </div>
       <div className="info"><div><span className="meta">London · 2026</span></div></div>
@@ -319,7 +337,7 @@ export default function Home() {
 
     <article className="project carousel-card reveal d2">
       <div className="img">
-        <img src="/uploads/project-10.jpg" alt="Delta Construction project" loading="lazy" />
+        <img src="/uploads/project-10.jpg" alt="Whole-house refurbishment — plastering and second-fix joinery in progress" loading="lazy" />
         <span className="index">N° 10</span>
       </div>
       <div className="info"><div><span className="meta">London · 2026</span></div></div>
@@ -697,32 +715,19 @@ export default function Home() {
 
 <section className="cta invert" id="contact">
   <div className="cta-bg" aria-hidden="true">
-    <img src="/assets/interior-renovation-progress.jpg" alt="" />
+    <img src="/assets/interior-renovation-progress.jpg" alt="Interior renovation in progress by Delta Construction" />
   </div>
   <div className="cta-inner">
     <span className="eyebrow reveal">§ 07 — Begin</span>
-    <h2 className="reveal d1">Let's build something that <em>outlasts us.</em></h2>
+    <h2 className="reveal d1">Let&apos;s build something that <em>outlasts us.</em></h2>
     <p className="reveal d2" style={{ fontSize: "17px", maxWidth: "50ch", textAlign: "center", color: "#cfc8bb" }}>Send the drawings, the address, and a rough budget — a director will reply within one working day with availability and a sensible next step.</p>
 
-    <form className="cta-form reveal d3" onSubmit={handleFormSubmit}>
-      <input type="email" placeholder="Your email address" required />
-      <select required>
-        <option value="">Project type</option>
-        <option>Whole-house refurbishment</option>
-        <option>Rear / side extension</option>
-        <option>Loft conversion</option>
-        <option>Bespoke kitchen</option>
-        <option>Bathroom</option>
-        <option>Roofing</option>
-        <option>Other</option>
-      </select>
-      <button type="submit" style={formSubmitted ? {background: '#7bbf6a'} : {}}>
-        {formSubmitted ? "Thank you — we will be in touch ✓" : "Request a call →"}
-      </button>
-    </form>
+    <div className="reveal d3" style={{ display: "flex", gap: "14px", flexWrap: "wrap", justifyContent: "center", marginTop: "32px" }}>
+      <a className="btn" href="/contact">Request a free quote <span className="arr"></span></a>
+      <a className="btn ghost" href="tel:+447479389996">Call +44 7479 389 996 <span className="arr"></span></a>
+    </div>
 
     <div className="quick-contact reveal d4">
-      <a href="tel:+447479389996">+44 (0) 7479 389 996</a>
       <a href="mailto:info@deltaconstructionltd.co.uk">info@deltaconstructionltd.co.uk</a>
       <span>7 Southland Way · Hounslow TW3 2RH</span>
     </div>
