@@ -110,7 +110,7 @@ export default function GalleryPage() {
         <div className="container nav-inner">
           <a className="brand" href="/" aria-label="Delta Construction">
             <span className="brand-mark" aria-hidden="true">
-              <img src="/assets/logo.png" alt="Delta Construction Logo" style={{ width: "22px", height: "22px", objectFit: "contain" }} />
+              <img src="/assets/logo.png" alt="Delta Construction Logo" />
             </span>
             <span className="brand-name">Delta<span>&nbsp;Construction</span></span>
           </a>
