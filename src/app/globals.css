@@ -112,7 +112,7 @@ section{position:relative}
   transform:translateX(-50%);
   display:flex;gap:32px;align-items:center;
 }
-.brand{display:flex;align-items:center;gap:12px}
+.brand{display:flex;align-items:center;gap:10px}
 .brand-mark{width:34px;height:34px;display:grid;place-items:center;border:1px solid var(--rule-2);position:relative;background:var(--bg-2)}
 .brand-mark svg{width:22px;height:22px;display:block}
 .brand-name{font-family:var(--serif);font-size:21px;letter-spacing:-0.01em}
@@ -738,9 +738,10 @@ footer{padding: clamp(48px,5vw,80px) var(--pad) 32px;background:var(--bg)}
   p{line-height:1.6}
 
   /* Nav — clean & tight */
-  .nav-inner{height:60px;grid-template-columns:1fr auto}
-  .brand-mark{width:40px;height:40px;border:1.5px solid var(--rule-2)}
-  .brand-mark img,.brand-mark svg{width:26px;height:26px}
+  .nav-inner{height:56px;grid-template-columns:1fr auto;padding:0 16px}
+  .brand{gap:8px} /* Reduce gap between logo and text */
+  .brand-mark{width:36px;height:36px;border:1.5px solid var(--rule-2)}
+  .brand-mark img,.brand-mark svg{width:24px;height:24px}
   .brand-name{font-size:19px}
   .brand-name span{display:inline} /* Show full "Delta Construction" on mobile */
   .phone{display:none}
