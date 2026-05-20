@@ -7,18 +7,7 @@ export default function SharedFooter() {
         <div className="foot-brand">
           <Link href="/" className="brand">
             <span className="brand-mark" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none">
-                <path
-                  d="M2 20 L12 4 L22 20 Z"
-                  stroke="#ece7dd"
-                  strokeWidth="1.4"
-                />
-                <path
-                  d="M7.5 20 L12 12.5 L16.5 20"
-                  stroke="#c89372"
-                  strokeWidth="1.2"
-                />
-              </svg>
+              <img src="/assets/logo.png" alt="Delta Construction Logo" />
             </span>
             <span className="brand-name">
               Delta<span>&nbsp;Construction Ltd</span>
