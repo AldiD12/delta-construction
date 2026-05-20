@@ -739,10 +739,10 @@ footer{padding: clamp(48px,5vw,80px) var(--pad) 32px;background:var(--bg)}
 
   /* Nav — clean & tight */
   .nav-inner{height:60px;grid-template-columns:1fr auto}
-  .brand-mark{width:28px;height:28px}
-  .brand-mark img,.brand-mark svg{width:18px;height:18px}
-  .brand-name{font-size:17px}
-  .brand-name span{display:none}
+  .brand-mark{width:40px;height:40px;border:1.5px solid var(--rule-2)}
+  .brand-mark img,.brand-mark svg{width:26px;height:26px}
+  .brand-name{font-size:19px}
+  .brand-name span{display:inline} /* Show full "Delta Construction" on mobile */
   .phone{display:none}
   .nav-right{gap:8px}
 
@@ -1070,7 +1070,7 @@ footer{padding: clamp(48px,5vw,80px) var(--pad) 32px;background:var(--bg)}
   .t-card.review-card{flex:0 0 86vw;max-width:86vw;padding:20px}
   .cta-inner h2{font-size:clamp(28px,10vw,48px)}
   .project .info h3{font-size:19px}
-  .brand-name span{display:none}
+  /* Keep full "Delta Construction" visible on very small screens */
   .project.carousel-card{flex:0 0 84vw;max-width:84vw}
   .areas-list li{padding:8px 12px}
   .aname{font-size:14px}
