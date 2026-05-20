@@ -745,17 +745,27 @@ footer{padding: clamp(48px,5vw,80px) var(--pad) 32px;background:var(--bg)}
   p{line-height:1.6}
 
   /* Nav — prominent, professional mobile branding */
-  .nav-inner{height:75px;padding:0 20px}
+  .nav-inner{height:75px;padding:0 20px;grid-template-columns:1fr auto}
   .brand{gap:0}
   .brand-mark{width:auto;height:auto;border:none;background:transparent;padding:0}
   .brand-mark img,.brand-mark svg{
     width:70px;
     height:70px;
-    border-radius:12px; /* Rounded corners */
+    border-radius:12px;
   }
-  .brand-name{display:none}
+  .brand-name{display:none} /* Hide text on mobile, logo only */
   .phone{display:none}
-  .nav-right{gap:8px}
+  .nav-right{gap:12px;display:flex;align-items:center}
+  
+  /* Make hamburger menu more prominent */
+  .mobile-menu-btn{
+    padding:10px;
+    gap:5px;
+  }
+  .mobile-menu-btn span{
+    width:24px;
+    height:2.5px;
+  }
 
   /* Nav — transparent over hero on mobile */
   .nav{
