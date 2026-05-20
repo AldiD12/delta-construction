@@ -85,12 +85,12 @@ export default function Home() {
   }, []);
 
   // Dynamic values for services
-  const svcMeta: Record<string, {label: string, desc: string, lead: string, from: string}> = {
-    extensions: {label:'Extensions · 01', desc:'Single and double-storey rears, side-returns and wrap-arounds. Steel design coordinated with the structural engineer, party-wall awards handled in-house, glazing schedule managed end-to-end. Wet UFH and full kitchen fit-out delivered under the same contract.', lead:'18–28 wks', from:'£185k'},
-    lofts:      {label:'Loft conversions · 02', desc:'Mansard, dormer, hip-to-gable, L-shape. Planning & permitted-development applications handled. Steel-frame design, sprinkler systems, building-regs sign-off, full second-fix joinery included.', lead:'14–20 wks', from:'£82k'},
-    roofing:    {label:'Roof repairs & reroofs · 03', desc:'From a slipped tile to a full strip-and-reroof. Natural Welsh slate, clay tile, single-ply membrane, GRP flat. Code 5 leadwork by our own roofers — flashings, valleys, parapets, chimney rebuilds.', lead:'1–4 wks', from:'£480'},
-    brick:      {label:'Brickwork · 04', desc:'Structural openings, full repointing in lime or sand-cement, garden walls, restoration of period façades. London-stock and reclaimed yellow stock matched on conservation-area builds.', lead:'1–6 wks', from:'£1,200'},
-    landscape:  {label:'Landscaping · 05', desc:'Hard landscaping done to the same standard as the build it sits next to. Porcelain, stone and clay paving, resin-bound and block-paved driveways, retaining walls, planters, pergolas and outdoor lighting.', lead:'2–6 wks', from:'£6k'}
+  const svcMeta: Record<string, {label: string, desc: string, lead: string}> = {
+    extensions: {label:'Extensions · 01', desc:'Single and double-storey rears, side-returns and wrap-arounds. Steel design coordinated with the structural engineer, party-wall awards handled in-house, glazing schedule managed end-to-end. Wet UFH and full kitchen fit-out delivered under the same contract.', lead:'18–28 wks'},
+    lofts:      {label:'Loft conversions · 02', desc:'Mansard, dormer, hip-to-gable, L-shape. Planning & permitted-development applications handled. Steel-frame design, sprinkler systems, building-regs sign-off, full second-fix joinery included.', lead:'14–20 wks'},
+    roofing:    {label:'Roof repairs & reroofs · 03', desc:'From a slipped tile to a full strip-and-reroof. Natural Welsh slate, clay tile, single-ply membrane, GRP flat. Code 5 leadwork by our own roofers — flashings, valleys, parapets, chimney rebuilds.', lead:'1–4 wks'},
+    brick:      {label:'Brickwork · 04', desc:'Structural openings, full repointing in lime or sand-cement, garden walls, restoration of period façades. London-stock and reclaimed yellow stock matched on conservation-area builds.', lead:'1–6 wks'},
+    landscape:  {label:'Landscaping · 05', desc:'Hard landscaping done to the same standard as the build it sits next to. Porcelain, stone and clay paving, resin-bound and block-paved driveways, retaining walls, planters, pergolas and outdoor lighting.', lead:'2–6 wks'}
   };
   
   const m = svcMeta[activeSvc];
@@ -204,8 +204,7 @@ export default function Home() {
 
     <div className="hero-right">
       <video autoPlay muted loop playsInline>
-        <source src="/uploads/site-video-03.mp4" type="video/mp4" />
-
+        <source src="/assets/building-progress-timelapse.mp4" type="video/mp4" />
         <img src="/assets/building-foundation-work.jpg" alt="Construction project in progress" />
       </video>
       <div className="hero-card">
@@ -422,8 +421,7 @@ export default function Home() {
           <p>{m?.desc}</p>
         </div>
         <div className="ks">
-          <div><span className="k">Typical lead</span><span className="v">{m?.lead}</span></div>
-          <div><span className="k">From</span><span className="v">{m?.from}</span></div>
+          <div><span className="k">Typical timeline</span><span className="v">{m?.lead}</span></div>
         </div>
       </div>
     </div>
