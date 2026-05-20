@@ -2,6 +2,7 @@
 "use client";
 import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   const [scrolled, setScrolled] = useState(false);
@@ -132,15 +133,15 @@ export default function Home() {
       <span className="brand-name">Delta<span>&nbsp;Construction</span></span>
     </a>
     <nav className="nav-links" aria-label="Primary">
-      <a href="/services" onClick={closeMenu}>Services</a>
-      <a href="/gallery" className="dot" onClick={closeMenu}>Projects</a>
-      <a href="/areas" onClick={closeMenu}>Areas</a>
-      <a href="/about" onClick={closeMenu}>About</a>
-      <a href="/contact" onClick={closeMenu}>Contact</a>
+      <Link href="/services" onClick={closeMenu}>Services</Link>
+      <Link href="/gallery" className="dot" onClick={closeMenu}>Projects</Link>
+      <Link href="/areas" onClick={closeMenu}>Areas</Link>
+      <Link href="/about" onClick={closeMenu}>About</Link>
+      <Link href="/contact" onClick={closeMenu}>Contact</Link>
     </nav>
     <div className="nav-right">
       <span className="phone">+44 (0) 7479 389 996</span>
-      <a className="btn ghost" href="/contact">Request a quote <span className="arr"></span></a>
+      <Link className="btn ghost" href="/contact">Request a quote <span className="arr"></span></Link>
       <button
         className={`mobile-menu-btn ${menuOpen ? 'is-open' : ''}`}
         aria-label="Toggle menu"
@@ -155,13 +156,13 @@ export default function Home() {
 
   <div className={`mobile-menu ${menuOpen ? 'open' : ''}`} id="mobile-menu">
     <nav>
-      <a href="/services" onClick={closeMenu}>Services</a>
-      <a href="/gallery" onClick={closeMenu}>Projects</a>
-      <a href="/areas" onClick={closeMenu}>Areas</a>
-      <a href="/about" onClick={closeMenu}>About</a>
-      <a href="/reviews" onClick={closeMenu}>Reviews</a>
-      <a href="/faq" onClick={closeMenu}>FAQ</a>
-      <a href="/contact" className="btn" onClick={closeMenu}>Request a quote <span className="arr"></span></a>
+      <Link href="/services" onClick={closeMenu}>Services</Link>
+      <Link href="/gallery" onClick={closeMenu}>Projects</Link>
+      <Link href="/areas" onClick={closeMenu}>Areas</Link>
+      <Link href="/about" onClick={closeMenu}>About</Link>
+      <Link href="/reviews" onClick={closeMenu}>Reviews</Link>
+      <Link href="/faq" onClick={closeMenu}>FAQ</Link>
+      <Link href="/contact" className="btn" onClick={closeMenu}>Request a quote <span className="arr"></span></Link>
     </nav>
     <div className="mobile-menu-footer">
       <a href="tel:+447479389996">+44 (0) 7479 389 996</a>
@@ -195,7 +196,7 @@ export default function Home() {
       <div className="hero-sub">
         <p>Delta Construction Ltd UK is a full-service construction company — residential and commercial — founded in 2019 by an experienced project manager and a building specialist with over ten years combined experience across the UK and Europe.</p>
         <div className="hero-cta">
-          <a className="btn" href="/contact">Start a project <span className="arr"></span></a>
+          <Link className="btn" href="/contact">Start a project <span className="arr"></span></Link>
           <a className="btn ghost" href="#projects">View portfolio <span className="arr"></span></a>
           <span className="since">Based in London · working UK-wide</span>
         </div>
@@ -353,7 +354,7 @@ export default function Home() {
   </div>
 
   <div className="projects-cta reveal">
-    <a className="btn" href="/gallery">View all projects <span className="arr"></span></a>
+    <Link className="btn" href="/gallery">View all projects <span className="arr"></span></Link>
   </div>
 </section>
 
@@ -596,7 +597,7 @@ export default function Home() {
     <aside className="areas-side">
       <span className="eyebrow">Outside this list?</span>
       <p style={{ marginTop: "18px", fontSize: "15.5px", lineHeight: "1.55", maxWidth: "34ch" }}>We will still travel for the right project — particularly for full refurbishments, listed buildings and architect-led new-builds. Send the brief and we will tell you straight whether we are the right firm for it.</p>
-      <a className="btn ghost" style={{ marginTop: "24px" }} href="/contact">Check your postcode <span className="arr"></span></a>
+      <Link className="btn ghost" style={{ marginTop: "24px" }} href="/contact">Check your postcode <span className="arr"></span></Link>
 
       <div className="areas-radius">
         <svg viewBox="0 0 200 200" aria-hidden="true" className="areas-radius-svg">
@@ -721,7 +722,7 @@ export default function Home() {
     <p className="reveal d2" style={{ fontSize: "17px", maxWidth: "50ch", textAlign: "center", color: "#cfc8bb" }}>Send the drawings, the address, and a rough budget — a director will reply within one working day with availability and a sensible next step.</p>
 
     <div className="reveal d3" style={{ display: "flex", gap: "14px", flexWrap: "wrap", justifyContent: "center", marginTop: "32px" }}>
-      <a className="btn" href="/contact">Request a free quote <span className="arr"></span></a>
+      <Link className="btn" href="/contact">Request a free quote <span className="arr"></span></Link>
       <a className="btn ghost" href="tel:+447479389996">Call +44 7479 389 996 <span className="arr"></span></a>
     </div>
 
@@ -747,12 +748,12 @@ export default function Home() {
     <div className="foot-col">
       <h5>Company</h5>
       <ul>
-        <li><a href="/services">Services</a></li>
-        <li><a href="/gallery">Projects</a></li>
-        <li><a href="/about">About us</a></li>
-        <li><a href="/areas">Areas we cover</a></li>
-        <li><a href="/reviews">Reviews</a></li>
-        <li><a href="/faq">FAQ</a></li>
+        <li><Link href="/services">Services</Link></li>
+        <li><Link href="/gallery">Projects</Link></li>
+        <li><Link href="/about">About us</Link></li>
+        <li><Link href="/areas">Areas we cover</Link></li>
+        <li><Link href="/reviews">Reviews</Link></li>
+        <li><Link href="/faq">FAQ</Link></li>
       </ul>
     </div>
     <div className="foot-col">
@@ -761,7 +762,7 @@ export default function Home() {
         <li><a href="tel:+447479389996">+44 (0) 7479 389 996</a></li>
         <li><a href="mailto:info@deltaconstructionltd.co.uk">info@deltaconstructionltd.co.uk</a></li>
         <li>7 Southland Way<br />Hounslow TW3 2RH</li>
-        <li><a href="/contact">Request a quote</a></li>
+        <li><Link href="/contact">Request a quote</Link></li>
       </ul>
     </div>
     <div className="foot-col">
@@ -777,7 +778,7 @@ export default function Home() {
   <div className="foot-bottom">
     <span>© 2019–2026 Delta Construction Ltd UK · Company No. 00000000</span>
     <span>Photography of our own projects · All rights reserved</span>
-    <span><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/cookies">Cookies</a></span>
+    <span><Link href="/privacy">Privacy</Link> · <Link href="/terms">Terms</Link> · <Link href="/cookies">Cookies</Link></span>
   </div>
 </footer>
 
