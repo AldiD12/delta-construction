@@ -116,6 +116,7 @@ export default function LocationClient({
 
       {/* Hero */}
       <section
+        className="loc-hero"
         style={{
           paddingTop: "140px",
           paddingBottom: "80px",
@@ -160,6 +161,7 @@ export default function LocationClient({
 
       {/* Local context */}
       <section
+        className="loc-section"
         style={{
           padding: "96px 0",
           borderBottom: "1px solid var(--rule)",
@@ -218,6 +220,7 @@ export default function LocationClient({
 
       {/* Services in this area */}
       <section
+        className="loc-section"
         style={{
           padding: "96px 0",
           borderBottom: "1px solid var(--rule)",
@@ -293,6 +296,7 @@ export default function LocationClient({
 
       {/* Sub-areas */}
       <section
+        className="loc-section"
         style={{
           padding: "96px 0",
           borderBottom: "1px solid var(--rule)",
@@ -344,6 +348,7 @@ export default function LocationClient({
       {/* Nearby locations */}
       {nearbyLocations.length > 0 && (
         <section
+          className="loc-section"
           style={{
             padding: "96px 0",
             borderBottom: "1px solid var(--rule)",
@@ -398,6 +403,7 @@ export default function LocationClient({
 
       {/* FAQ */}
       <section
+        className="loc-section"
         style={{
           padding: "96px 0",
           borderBottom: "1px solid var(--rule)",
@@ -474,6 +480,7 @@ export default function LocationClient({
 
       {/* CTA */}
       <section
+        className="loc-section"
         style={{
           padding: "96px 0",
           textAlign: "center",
@@ -540,6 +547,13 @@ export default function LocationClient({
         @media (max-width: 640px) {
           .services-mini-grid {
             grid-template-columns: 1fr !important;
+          }
+          .loc-section {
+            padding: 48px 0 !important;
+          }
+          .loc-hero {
+            padding-top: 100px !important;
+            padding-bottom: 40px !important;
           }
         }
       `}</style>

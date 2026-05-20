@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import SharedNav from "@/components/SharedNav";
 import SharedFooter from "@/components/SharedFooter";
 import Breadcrumbs from "@/components/Breadcrumbs";
@@ -17,7 +18,6 @@ const services = [
       "Every extension is backed by our 1-year workmanship guarantee, £2M public liability insurance, and full building regulations sign-off. You receive all certification — structural completion, electrical, gas safe, and building control — in a branded handover pack on the day we leave.",
     ],
     timeline: "18–28 weeks",
-    price: "From £185k",
   },
   {
     id: "loft-conversions",
@@ -33,7 +33,6 @@ const services = [
       "Finish quality is where we separate ourselves. Plastering to a Level 5 finish throughout, bespoke joinery for awkward eaves storage that turns dead space into fitted wardrobes, and underfloor heating as standard on every bathroom. The result is a new floor that feels as though it has always been part of the house, not an afterthought bolted on above it.",
     ],
     timeline: "14–20 weeks",
-    price: "From £82k",
   },
   {
     id: "roofing",
@@ -45,7 +44,6 @@ const services = [
       "Our specialist capabilities include full chimney rebuilds and re-rendering, parapet capping and coping stone replacement, valley and hip re-leading, and heritage roof restoration for listed buildings and properties in conservation areas. Every stage of work is photographed and documented, giving you a full visual record of what was done, what was found underneath, and how it was resolved.",
     ],
     timeline: "1–4 weeks",
-    price: "From £480",
   },
   {
     id: "brickwork",
@@ -60,7 +58,6 @@ const services = [
       "We've restored facades on Victorian terraces in Richmond, Edwardian semis in Ealing, and Georgian townhouses in Mayfair — always matching the original bond pattern, mortar colour, and brick coursing. Where original bricks are unavailable, we work with specialist brick-matching services and, where appropriate, commission bespoke runs from heritage brickmakers to ensure an authentic restoration.",
     ],
     timeline: "1–6 weeks",
-    price: "From £1,200",
   },
   {
     id: "landscaping",
@@ -75,7 +72,6 @@ const services = [
       "We also design and build bespoke timber pergolas in treated softwood or Western red cedar, composite or hardwood decking with hidden fixings, outdoor lighting schemes using 12V LED systems with bollards, uplighters, and step lights, automated irrigation preparation for planting beds, and raised planters constructed in matching brick or sleeper to tie the landscape back to the architecture of the house.",
     ],
     timeline: "2–6 weeks",
-    price: "From £6k",
   },
 ];
 
@@ -104,7 +100,6 @@ export default function ServicesClient() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  /* Scroll state for nav */
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 12);
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -112,7 +107,6 @@ export default function ServicesClient() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  /* Reveal animations via IntersectionObserver */
   useEffect(() => {
     const io = new IntersectionObserver(
       (entries) => {
@@ -129,15 +123,11 @@ export default function ServicesClient() {
     return () => io.disconnect();
   }, []);
 
-  /* Body scroll lock when mobile menu is open */
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
-    return () => {
-      document.body.style.overflow = "";
-    };
+    return () => { document.body.style.overflow = ""; };
   }, [menuOpen]);
 
-  /* Close menu on Escape */
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") setMenuOpen(false);
@@ -158,39 +148,11 @@ export default function ServicesClient() {
       />
 
       {/* Hero */}
-      <section
-        style={{
-          paddingTop: "140px",
-          paddingBottom: "80px",
-          borderBottom: "1px solid var(--rule)",
-        }}
-      >
+      <section className="svc-hero">
         <div className="container">
           <Breadcrumbs items={[{ name: "Services", href: "/services" }]} />
-          <h1
-            className="reveal"
-            style={{
-              fontFamily: "var(--serif)",
-              fontSize: "clamp(40px, 6vw, 72px)",
-              fontWeight: 400,
-              lineHeight: 1.08,
-              letterSpacing: "-0.02em",
-              marginTop: "32px",
-              color: "var(--ink)",
-            }}
-          >
-            What we build
-          </h1>
-          <p
-            className="reveal d1"
-            style={{
-              marginTop: "20px",
-              maxWidth: "56ch",
-              fontSize: "17px",
-              lineHeight: 1.6,
-              color: "var(--ink-2)",
-            }}
-          >
+          <h1 className="svc-hero-title reveal">What we build</h1>
+          <p className="svc-hero-sub reveal d1">
             Five core trades delivered under one contract — from foundations to
             finishing touches.
           </p>
@@ -208,13 +170,7 @@ export default function ServicesClient() {
               muted
               loop
               playsInline
-              style={{
-                width: "100%",
-                height: "100%",
-                borderRadius: "2px",
-                objectFit: "cover",
-                display: "block",
-              }}
+              className="svc-media-asset"
             >
               <source src={svc.media.src} type="video/mp4" />
             </video>
@@ -223,13 +179,7 @@ export default function ServicesClient() {
               src={svc.media.src}
               alt={svc.title}
               loading="lazy"
-              style={{
-                width: "100%",
-                height: "auto",
-                borderRadius: "2px",
-                objectFit: "cover",
-                display: "block",
-              }}
+              className="svc-media-asset"
             />
           );
 
@@ -237,95 +187,22 @@ export default function ServicesClient() {
           <section
             key={svc.id}
             id={svc.id}
-            className="service-block reveal"
-            style={{
-              padding: "80px 0",
-              borderBottom: "1px solid var(--rule)",
-            }}
+            className="svc-block reveal"
           >
-            <div
-              className="container"
-              style={{
-                display: "grid",
-                gridTemplateColumns: "1fr 1fr",
-                gap: "48px",
-                alignItems: "center",
-              }}
-            >
-              {/* Image / Video column */}
-              <div
-                style={{
-                  order: reversed ? 2 : 1,
-                  overflow: "hidden",
-                  borderRadius: "2px",
-                  minHeight: "320px",
-                }}
-              >
+            <div className={`container svc-grid ${reversed ? "svc-grid-reversed" : ""}`}>
+              <div className="svc-media">
                 {mediaElement}
               </div>
 
-              {/* Text column */}
-              <div style={{ order: reversed ? 1 : 2 }}>
-                <h2
-                  style={{
-                    fontFamily: "var(--serif)",
-                    fontSize: "clamp(28px, 3.5vw, 42px)",
-                    fontWeight: 400,
-                    lineHeight: 1.15,
-                    letterSpacing: "-0.015em",
-                    color: "var(--ink)",
-                    marginBottom: "20px",
-                  }}
-                >
-                  {svc.title}
-                </h2>
+              <div className="svc-text">
+                <h2 className="svc-title">{svc.title}</h2>
 
                 {svc.paragraphs.map((p, pi) => (
-                  <p
-                    key={pi}
-                    style={{
-                      fontSize: "16px",
-                      lineHeight: 1.65,
-                      color: "var(--ink-2)",
-                      marginBottom: pi < svc.paragraphs.length - 1 ? "14px" : "24px",
-                      maxWidth: "52ch",
-                    }}
-                  >
-                    {p}
-                  </p>
+                  <p key={pi} className="svc-paragraph">{p}</p>
                 ))}
 
-                <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
-                  <span
-                    style={{
-                      fontFamily: "var(--mono)",
-                      fontSize: "11px",
-                      letterSpacing: "0.08em",
-                      textTransform: "uppercase",
-                      color: "var(--ink-2)",
-                      border: "1px solid var(--rule)",
-                      padding: "6px 12px",
-                      display: "inline-block",
-                      borderRadius: "2px",
-                    }}
-                  >
-                    {svc.timeline}
-                  </span>
-                  <span
-                    style={{
-                      fontFamily: "var(--mono)",
-                      fontSize: "11px",
-                      letterSpacing: "0.08em",
-                      textTransform: "uppercase",
-                      color: "var(--ink-2)",
-                      border: "1px solid var(--rule)",
-                      padding: "6px 12px",
-                      display: "inline-block",
-                      borderRadius: "2px",
-                    }}
-                  >
-                    {svc.price}
-                  </span>
+                <div className="svc-meta">
+                  <span className="svc-tag">{svc.timeline}</span>
                 </div>
               </div>
             </div>
@@ -333,73 +210,16 @@ export default function ServicesClient() {
         );
       })}
 
-      {/* Process mini-section */}
-      <section
-        style={{
-          padding: "96px 0",
-          borderBottom: "1px solid var(--rule)",
-        }}
-      >
+      {/* Process */}
+      <section className="svc-process">
         <div className="container">
-          <h2
-            className="reveal"
-            style={{
-              fontFamily: "var(--serif)",
-              fontSize: "clamp(28px, 3.5vw, 42px)",
-              fontWeight: 400,
-              lineHeight: 1.15,
-              letterSpacing: "-0.015em",
-              color: "var(--ink)",
-              marginBottom: "56px",
-              textAlign: "center",
-            }}
-          >
-            How every project runs
-          </h2>
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(3, 1fr)",
-              gap: "48px",
-            }}
-          >
+          <h2 className="svc-process-title reveal">How every project runs</h2>
+          <div className="svc-process-grid">
             {processSteps.map((step) => (
-              <div key={step.number} className="reveal">
-                <span
-                  style={{
-                    fontFamily: "var(--mono)",
-                    fontSize: "11px",
-                    letterSpacing: "0.1em",
-                    textTransform: "uppercase",
-                    color: "var(--mute)",
-                    display: "block",
-                    marginBottom: "12px",
-                  }}
-                >
-                  {step.number}
-                </span>
-                <h3
-                  style={{
-                    fontFamily: "var(--serif)",
-                    fontSize: "22px",
-                    fontWeight: 400,
-                    lineHeight: 1.3,
-                    color: "var(--ink)",
-                    marginBottom: "10px",
-                  }}
-                >
-                  {step.title}
-                </h3>
-                <p
-                  style={{
-                    fontSize: "15px",
-                    lineHeight: 1.6,
-                    color: "var(--ink-2)",
-                    maxWidth: "38ch",
-                  }}
-                >
-                  {step.description}
-                </p>
+              <div key={step.number} className="svc-step reveal">
+                <span className="svc-step-num">{step.number}</span>
+                <h3 className="svc-step-title">{step.title}</h3>
+                <p className="svc-step-desc">{step.description}</p>
               </div>
             ))}
           </div>
@@ -407,10 +227,7 @@ export default function ServicesClient() {
       </section>
 
       {/* CTA */}
-      <section
-        className="cta invert"
-        style={{ borderTop: "1px solid var(--rule)" }}
-      >
+      <section className="cta invert" style={{ borderTop: "1px solid var(--rule)" }}>
         <div className="cta-bg" aria-hidden="true">
           <img src="/assets/interior-renovation-progress.jpg" alt="" />
         </div>
@@ -419,38 +236,245 @@ export default function ServicesClient() {
           <h2 className="reveal d1">
             Let&apos;s build something that <em>outlasts us.</em>
           </h2>
-          <p
-            className="reveal d2"
-            style={{
-              fontSize: "17px",
-              maxWidth: "50ch",
-              textAlign: "center",
-              color: "#cfc8bb",
-            }}
-          >
+          <p className="reveal d2" style={{ fontSize: "17px", maxWidth: "50ch", textAlign: "center", color: "#cfc8bb" }}>
             Send the drawings, the address, and a rough budget — a director will
             reply within one working day.
           </p>
-          <div
-            className="reveal d3"
-            style={{
-              display: "flex",
-              gap: "14px",
-              flexWrap: "wrap",
-              justifyContent: "center",
-            }}
-          >
-            <a className="btn" href="/contact">
+          <div className="reveal d3" style={{ display: "flex", gap: "14px", flexWrap: "wrap", justifyContent: "center" }}>
+            <Link className="btn" href="/contact">
               Start your project <span className="arr"></span>
-            </a>
-            <a className="btn ghost" href="/">
+            </Link>
+            <Link className="btn ghost" href="/">
               Back to homepage <span className="arr"></span>
-            </a>
+            </Link>
           </div>
         </div>
       </section>
 
       <SharedFooter />
+
+      <style>{`
+        /* ===== Services Page Styles ===== */
+        .svc-hero {
+          padding: 140px 0 80px;
+          border-bottom: 1px solid var(--rule);
+        }
+        .svc-hero-title {
+          font-family: var(--serif);
+          font-size: clamp(40px, 6vw, 72px);
+          font-weight: 400;
+          line-height: 1.08;
+          letter-spacing: -0.02em;
+          margin-top: 32px;
+          color: var(--ink);
+        }
+        .svc-hero-sub {
+          margin-top: 20px;
+          max-width: 56ch;
+          font-size: 17px;
+          line-height: 1.6;
+          color: var(--ink-2);
+        }
+
+        /* Service blocks */
+        .svc-block {
+          padding: 80px 0;
+          border-bottom: 1px solid var(--rule);
+        }
+        .svc-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 48px;
+          align-items: center;
+        }
+        .svc-grid-reversed .svc-media { order: 2; }
+        .svc-grid-reversed .svc-text { order: 1; }
+
+        .svc-media {
+          overflow: hidden;
+          border-radius: 2px;
+          min-height: 320px;
+        }
+        .svc-media-asset {
+          width: 100%;
+          height: 100%;
+          border-radius: 2px;
+          object-fit: cover;
+          display: block;
+        }
+
+        .svc-title {
+          font-family: var(--serif);
+          font-size: clamp(28px, 3.5vw, 42px);
+          font-weight: 400;
+          line-height: 1.15;
+          letter-spacing: -0.015em;
+          color: var(--ink);
+          margin-bottom: 20px;
+        }
+        .svc-paragraph {
+          font-size: 16px;
+          line-height: 1.65;
+          color: var(--ink-2);
+          margin-bottom: 14px;
+          max-width: 52ch;
+        }
+        .svc-paragraph:last-of-type {
+          margin-bottom: 24px;
+        }
+        .svc-meta {
+          display: flex;
+          gap: 12px;
+          flex-wrap: wrap;
+        }
+        .svc-tag {
+          font-family: var(--mono);
+          font-size: 11px;
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+          color: var(--ink-2);
+          border: 1px solid var(--rule);
+          padding: 6px 12px;
+          display: inline-block;
+          border-radius: 2px;
+        }
+
+        /* Process */
+        .svc-process {
+          padding: 96px 0;
+          border-bottom: 1px solid var(--rule);
+        }
+        .svc-process-title {
+          font-family: var(--serif);
+          font-size: clamp(28px, 3.5vw, 42px);
+          font-weight: 400;
+          line-height: 1.15;
+          letter-spacing: -0.015em;
+          color: var(--ink);
+          margin-bottom: 56px;
+          text-align: center;
+        }
+        .svc-process-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 48px;
+        }
+        .svc-step-num {
+          font-family: var(--mono);
+          font-size: 11px;
+          letter-spacing: 0.1em;
+          text-transform: uppercase;
+          color: var(--mute);
+          display: block;
+          margin-bottom: 12px;
+        }
+        .svc-step-title {
+          font-family: var(--serif);
+          font-size: 22px;
+          font-weight: 400;
+          line-height: 1.3;
+          color: var(--ink);
+          margin-bottom: 10px;
+        }
+        .svc-step-desc {
+          font-size: 15px;
+          line-height: 1.6;
+          color: var(--ink-2);
+          max-width: 38ch;
+        }
+
+        /* ===== Tablet ===== */
+        @media (max-width: 980px) {
+          .svc-hero {
+            padding: 110px 0 56px;
+          }
+          .svc-grid {
+            grid-template-columns: 1fr;
+            gap: 32px;
+          }
+          .svc-grid-reversed .svc-media { order: 1; }
+          .svc-grid-reversed .svc-text { order: 2; }
+          .svc-media {
+            min-height: 260px;
+            max-height: 400px;
+          }
+          .svc-block {
+            padding: 56px 0;
+          }
+          .svc-process-grid {
+            grid-template-columns: 1fr;
+            gap: 40px;
+          }
+          .svc-process {
+            padding: 64px 0;
+          }
+          .svc-process-title {
+            margin-bottom: 40px;
+          }
+          .svc-step-desc {
+            max-width: none;
+          }
+        }
+
+        /* ===== Mobile ===== */
+        @media (max-width: 640px) {
+          .svc-hero {
+            padding: 100px 0 40px;
+          }
+          .svc-hero-title {
+            margin-top: 20px;
+          }
+          .svc-hero-sub {
+            margin-top: 14px;
+            font-size: 16px;
+          }
+          .svc-block {
+            padding: 40px 0;
+          }
+          .svc-grid {
+            gap: 24px;
+          }
+          .svc-media {
+            min-height: 220px;
+            max-height: 300px;
+            border-radius: 6px;
+          }
+          .svc-media-asset {
+            border-radius: 6px;
+          }
+          .svc-title {
+            font-size: clamp(24px, 7vw, 32px);
+            margin-bottom: 16px;
+          }
+          .svc-paragraph {
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 12px;
+            max-width: none;
+          }
+          .svc-process {
+            padding: 48px 0;
+          }
+          .svc-process-title {
+            font-size: clamp(24px, 7vw, 32px);
+            margin-bottom: 32px;
+            text-align: left;
+          }
+          .svc-process-grid {
+            gap: 32px;
+          }
+          .svc-step {
+            padding-left: 20px;
+            border-left: 2px solid var(--rule);
+          }
+          .svc-step-title {
+            font-size: 20px;
+          }
+          .svc-step-desc {
+            font-size: 14.5px;
+          }
+        }
+      `}</style>
     </>
   );
 }
