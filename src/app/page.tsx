@@ -204,7 +204,7 @@ export default function Home() {
 
     <div className="hero-right">
       <video autoPlay muted loop playsInline>
-        <source src="/assets/building-progress-timelapse.mp4" type="video/mp4" />
+        <source src="/uploads/site-video-01.mp4" type="video/mp4" />
         <img src="/assets/building-foundation-work.jpg" alt="Construction project in progress" />
       </video>
       <div className="hero-card">
@@ -401,7 +401,7 @@ export default function Home() {
     <div className="services-media">
       <div className={`pane ${activeSvc === 'extensions' ? 'show' : ''}`}>
         <video autoPlay muted loop playsInline>
-          <source src="/uploads/site-video-02.mp4" type="video/mp4" />
+          <source src="/uploads/site-video-01.mp4" type="video/mp4" />
           <img src="/assets/residential-extension-project.jpg" alt="Residential extension project" />
         </video>
       </div>

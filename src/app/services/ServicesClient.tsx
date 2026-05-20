@@ -9,7 +9,7 @@ const services = [
   {
     id: "extensions",
     title: "Extensions",
-    media: { type: "video" as const, src: "/assets/site-video-02.mp4" },
+    media: { type: "video" as const, src: "/uploads/site-video-01.mp4" },
     paragraphs: [
       "Most extension projects fail not because of bad builders, but because of poor coordination between trades. The steelwork arrives late, the glazing schedule slips, the kitchen fitter blames the electrician, and suddenly your twelve-week build is running into month six. At Delta, every trade — structural, mechanical, electrical, plumbing, joinery, decorating — works under one contract and one programme, managed by a founding director who is on your site every single week.",
       "Our scope covers the full build from foundations to finishing touches: structural engineer coordination and steel beam design, party-wall surveyor liaison and award management, building control applications, glazing schedules, wet underfloor heating throughout, full kitchen fit-out, complete electrical rewire to BS 7671, and plumbing first and second fix. Nothing is subcontracted out to firms we haven't worked with for years.",
