@@ -737,18 +737,18 @@ footer{padding: clamp(48px,5vw,80px) var(--pad) 32px;background:var(--bg)}
   .lead{font-size:clamp(18px,4.5vw,24px)}
   p{line-height:1.6}
 
-  /* Nav — clean & tight */
-  .nav-inner{height:56px;grid-template-columns:1fr auto;padding:0 16px}
-  .brand{gap:8px} /* Reduce gap between logo and text */
-  .brand-mark{width:36px;height:36px;border:1.5px solid var(--rule-2)}
-  .brand-mark img,.brand-mark svg{width:24px;height:24px}
-  .brand-name{font-size:18px;font-weight:500}
+  /* Nav — clean & prominent logo */
+  .nav-inner{height:70px;grid-template-columns:1fr auto;padding:0 20px}
+  .brand{gap:12px} /* More space between logo and text */
+  .brand-mark{width:48px;height:48px;border:2px solid var(--rule-2)} /* Bigger, bolder logo */
+  .brand-mark img,.brand-mark svg{width:32px;height:32px} /* Larger logo image */
+  .brand-name{font-size:20px;font-weight:500} /* Bigger text */
   .brand-name span{
-    display:inline; /* Show full "Delta Construction" on mobile */
-    color:var(--ink); /* Make "Construction" same color as "Delta" */
-    font-style:normal; /* Remove italic */
-    font-size:18px; /* Same size as "Delta" */
-    margin-left:0; /* Remove extra margin */
+    display:inline;
+    color:var(--ink);
+    font-style:normal;
+    font-size:20px;
+    margin-left:0;
   }
   .phone{display:none}
   .nav-right{gap:8px}
