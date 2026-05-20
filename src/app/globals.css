@@ -112,11 +112,11 @@ section{position:relative}
   transform:translateX(-50%);
   display:flex;gap:32px;align-items:center;
 }
-.brand{display:flex;align-items:center;gap:10px}
-.brand-mark{width:34px;height:34px;display:grid;place-items:center;border:1px solid var(--rule-2);position:relative;background:var(--bg-2)}
-.brand-mark svg{width:22px;height:22px;display:block}
-.brand-name{font-family:var(--serif);font-size:21px;letter-spacing:-0.01em;font-weight:400}
-.brand-name span{color:var(--ink-2);font-style:italic;font-size:15px;margin-left:4px}
+.brand{display:flex;align-items:center;gap:16px}
+.brand-mark{display:grid;place-items:center;position:relative;}
+.brand-mark svg,.brand-mark img{width:144px;height:144px;margin-bottom:-72px;display:block;object-fit:contain}
+.brand-name{font-family:var(--serif);font-size:28px;letter-spacing:-0.01em;font-weight:400}
+.brand-name span{color:var(--ink-2);font-style:italic;font-size:18px;margin-left:4px}
 .nav-links a{font-size:13px;color:var(--ink-2);position:relative}
 .nav-links a:hover{color:var(--ink)}
 .nav-links a.dot::after{content:"";display:inline-block;width:4px;height:4px;border-radius:50%;background:var(--accent);margin-left:8px;vertical-align:middle;opacity:.4}
@@ -737,17 +737,18 @@ footer{padding: clamp(48px,5vw,80px) var(--pad) 32px;background:var(--bg)}
   .lead{font-size:clamp(18px,4.5vw,24px)}
   p{line-height:1.6}
 
-  /* Nav — clean & prominent logo */
-  .nav-inner{height:70px;grid-template-columns:1fr auto;padding:0 20px}
-  .brand{gap:12px} /* More space between logo and text */
-  .brand-mark{width:48px;height:48px;border:2px solid var(--rule-2)} /* Bigger, bolder logo */
-  .brand-mark img,.brand-mark svg{width:32px;height:32px} /* Larger logo image */
-  .brand-name{font-size:20px;font-weight:500} /* Bigger text */
+  /* Nav — prominent, professional mobile branding */
+  .nav-inner{height:72px;padding:0 20px}
+  .brand{gap:14px}
+  .brand-mark{width:auto;height:auto;border:none;background:transparent;padding:0}
+  .brand-mark img,.brand-mark svg{width:44px;height:44px}
+  .brand-name{font-size:22px;font-weight:600;letter-spacing:-0.02em}
   .brand-name span{
     display:inline;
     color:var(--ink);
     font-style:normal;
-    font-size:20px;
+    font-size:22px;
+    font-weight:600;
     margin-left:0;
   }
   .phone{display:none}
@@ -767,9 +768,8 @@ footer{padding: clamp(48px,5vw,80px) var(--pad) 32px;background:var(--bg)}
     border-bottom-color:var(--rule);
   }
   .nav:not(.scrolled) .brand-name,
-  .nav:not(.scrolled) .brand-mark{
+  .nav:not(.scrolled) .brand-name span{
     color:#fff;
-    border-color:rgba(255,255,255,.2);
   }
   .nav:not(.scrolled) .mobile-menu-btn span{
     background:#fff;

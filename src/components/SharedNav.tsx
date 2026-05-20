@@ -21,7 +21,6 @@ export default function SharedNav({
             <img
               src="/assets/logo.png"
               alt="Delta Construction Logo"
-              style={{ width: "22px", height: "22px", objectFit: "contain" }}
             />
           </span>
           <span className="brand-name">
