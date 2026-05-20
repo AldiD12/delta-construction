@@ -17,9 +17,7 @@ const allMedia = [
   { src: "/uploads/project-11.jpg", type: "image" as const, label: "N° 11", loc: "London · 2026" },
   { src: "/uploads/project-12.jpg", type: "image" as const, label: "N° 12", loc: "London · 2025" },
   { src: "/uploads/project-13.jpg", type: "image" as const, label: "N° 13", loc: "London · 2025" },
-  { src: "/uploads/project-14.jpg", type: "image" as const, label: "N° 14", loc: "London · 2025" },
   { src: "/uploads/project-15.jpg", type: "image" as const, label: "N° 15", loc: "London · 2025" },
-  { src: "/uploads/project-16.jpg", type: "image" as const, label: "N° 16", loc: "London · 2024" },
   { src: "/uploads/project-17.jpg", type: "image" as const, label: "N° 17", loc: "London · 2024" },
   // Uploads — site videos
   { src: "/uploads/site-video-01.mp4", type: "video" as const, label: "Site reel 01", loc: "London" },
