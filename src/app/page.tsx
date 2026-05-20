@@ -194,7 +194,7 @@ export default function Home() {
       </div>
 
       <div className="hero-sub">
-        <p>Delta Construction Ltd UK is a full-service construction company — residential and commercial — founded in 2019 by an experienced project manager and a building specialist with over ten years combined experience across the UK and Europe.</p>
+        <p>Delta Construction Ltd UK is a full-service construction company dedicated to building and improving residential and commercial properties. Founded in 2019 by a team — one an experienced project manager, the other a building specialist — with over 10 years combined experience across the UK and Europe.</p>
         <div className="hero-cta">
           <Link className="btn" href="/contact">Start a project <span className="arr"></span></Link>
           <a className="btn ghost" href="#projects">View portfolio <span className="arr"></span></a>
@@ -435,7 +435,7 @@ export default function Home() {
     <div className="why-left">
       <span className="eyebrow reveal">§ 03 — About us</span>
       <h2 className="section-title reveal d1" style={{ marginTop: "24px" }}>A full-service builder — <em>and peace of mind</em> on the way through.</h2>
-      <p className="reveal d2" style={{ marginTop: "28px", maxWidth: "50ch", fontSize: "16.5px", lineHeight: "1.55" }}>Delta Construction Ltd UK is dedicated to building and improving residential and commercial properties to the client's brief. Our expertise goes beyond building — with our partners we cover planning, interior design and complete construction, so you have one team to speak to from first sketch to handover keys.</p>
+      <p className="reveal d2" style={{ marginTop: "28px", maxWidth: "50ch", fontSize: "16.5px", lineHeight: "1.55" }}>Delta Construction Ltd UK is dedicated to building and improving residential and commercial properties according to clients' needs and desires. Our expertise goes beyond building — we and our partners can help you have peace of mind, from planning and interior design to complete construction.</p>
 
       <div className="why-pillars">
         <div className="pillar reveal">
@@ -743,7 +743,7 @@ export default function Home() {
         </span>
         <span className="brand-name">Delta<span>&nbsp;Construction Ltd</span></span>
       </div>
-      <p>London-based, working UK-wide. Founded 2019 by a project manager and a building specialist with 10+ years combined experience across UK &amp; Europe.</p>
+      <p>Based in London, working UK-wide. Founded 2019 by a team with over 10 years combined experience across the UK &amp; Europe.</p>
     </div>
     <div className="foot-col">
       <h5>Company</h5>

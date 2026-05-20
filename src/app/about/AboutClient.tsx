@@ -8,7 +8,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 const values = [
   {
     title: "Director-led",
-    text: "A founding director is on every site, every week — not once a month. You get Aldi’s direct number, a WhatsApp group with daily photo updates, and weekly progress meetings. No project managers relaying messages. The person making decisions is the person on your site.",
+    text: "A founding director is on every site, every week — not once a month. You get a direct number, a WhatsApp group with daily photo updates, and weekly progress meetings. No project managers relaying messages. The person making decisions is the person on your site.",
   },
   {
     title: "Fixed-price quotes",
@@ -44,12 +44,12 @@ const stats = [
 const testimonials = [
   {
     quote:
-      "Aldi is a true professional. Our rear extension was a big project but Delta handled it brilliantly from planning to completion.",
+      "True professionals. Our rear extension was a big project but Delta handled it brilliantly from planning to completion.",
     name: "Mark Stevens",
   },
   {
     quote:
-      "Every room was finished with care and precision. Aldi kept us informed at every stage.",
+      "Every room was finished with care and precision. The team kept us informed at every stage.",
     name: "Omar A",
   },
   {
@@ -140,8 +140,9 @@ export default function AboutClient() {
               color: "var(--mute)",
             }}
           >
-            Founded by a project manager and a building specialist with 10+
-            years combined experience across the UK&nbsp;&amp;&nbsp;Europe.
+            Founded in 2019 by a team — one an experienced project manager,
+            the other a building specialist — with over 10 years combined
+            experience across the UK&nbsp;&amp;&nbsp;Europe.
           </p>
         </div>
       </section>
@@ -173,7 +174,7 @@ export default function AboutClient() {
                 marginBottom: "24px",
               }}
             >
-              From two builders to a full-service team
+              A full-service construction company
             </h2>
             <p
               style={{
@@ -183,13 +184,13 @@ export default function AboutClient() {
                 marginBottom: "16px",
               }}
             >
-              Delta Construction started in 2019 when Aldi — a project manager
-              with experience across residential and commercial builds in the UK
-              and Europe — decided London homeowners deserved better. Better
-              communication, better site management, and a finish that matched
-              the prices being charged. The first year was extensions and loft
-              conversions in Hounslow, working directly with homeowners who were
-              tired of missed deadlines and disappearing tradesmen.
+              Delta Construction Ltd UK is a full-service construction company
+              dedicated to building and improving residential and commercial
+              properties according to clients' needs and desires. Founded in 2019
+              by a team — one an experienced project manager, the other a building
+              specialist — with over 10 years combined experience across the UK
+              and Europe. We are based in London but are not limited by location
+              and can assist you wherever you reside in the United Kingdom.
             </p>
             <p
               style={{
@@ -199,13 +200,10 @@ export default function AboutClient() {
                 marginBottom: "16px",
               }}
             >
-              By 2021 the workload had grown beyond what two people could handle.
-              We brought on dedicated teams for roofing, brickwork, and interior
-              fit-out — tradespeople we'd worked alongside for years and trusted
-              with our own reputation. That decision to grow slowly and
-              deliberately, hiring only people we knew, is why our quality has
-              stayed consistent even as project values have climbed from £15k
-              loft conversions to £300k whole-house refurbishments.
+              Whatever your needs are with regards to construction, our expertise
+              goes beyond building. We and our partners can help you have peace of
+              mind — from planning and interior design to complete construction.
+              Just call or contact us to arrange a quotation.
             </p>
             <p
               style={{
@@ -215,12 +213,12 @@ export default function AboutClient() {
                 marginBottom: "16px",
               }}
             >
-              Today the team runs three to four projects simultaneously. That's a
-              deliberate cap — it means a founding director is physically on
-              every site every week, not managing from a phone screen. You'll
-              have Aldi's mobile number, a dedicated WhatsApp group with daily
-              photo updates, and a level of transparency most contractors avoid
-              because it holds them accountable.
+              Over the years we have grown from a two-person operation into a
+              full-service team with dedicated trades for roofing, brickwork,
+              and interior fit-out — people we have worked alongside for years
+              and trust with our own reputation. We deliberately cap the number
+              of projects we run at any one time so that a director is physically
+              on every site every week, not managing from a phone screen.
             </p>
             <p
               style={{
@@ -229,11 +227,11 @@ export default function AboutClient() {
                 color: "var(--mute)",
               }}
             >
-              We've delivered over 80 projects across London — from emergency
-              roof repairs completed in a day to 28-week whole-house
-              transformations. The brief changes, but the standard doesn't:
-              fixed-price quotes with no hidden extras, daily site clearance,
-              trades in uniform, and a 1-year workmanship guarantee on every job.
+              With over 80 projects delivered across London — from emergency roof
+              repairs completed in a day to whole-house transformations running
+              28 weeks — the brief changes but the standard never does:
+              fixed-price quotes, daily site clearance, trades in uniform, and a
+              workmanship guarantee on every job.
             </p>
           </div>
         </div>

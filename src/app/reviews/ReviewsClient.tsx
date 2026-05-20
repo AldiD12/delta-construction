@@ -32,7 +32,7 @@ const reviews = [
   },
   {
     name: "Sam M",
-    text: "Brilliant loft conversion. Aldi and his team were professional, reliable and delivered exactly what was promised. The quality speaks for itself.",
+    text: "Brilliant loft conversion. The team were professional, reliable and delivered exactly what was promised. The quality speaks for itself.",
   },
   {
     name: "James R",
@@ -44,7 +44,7 @@ const reviews = [
   },
   {
     name: "Mark Stevens",
-    text: "Aldi is a true professional. Our rear extension was a big project but Delta handled it brilliantly from planning to completion.",
+    text: "True professionals. Our rear extension was a big project but Delta handled it brilliantly from planning to completion.",
   },
   {
     name: "Sarah W",
@@ -68,7 +68,7 @@ const reviews = [
   },
   {
     name: "Omar A",
-    text: "Full house refurbishment completed to an exceptional standard. Every room was finished with care and precision. Aldi kept us informed at every stage.",
+    text: "Full house refurbishment completed to an exceptional standard. Every room was finished with care and precision. The team kept us informed at every stage.",
   },
 ];
 
