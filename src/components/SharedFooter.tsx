@@ -66,10 +66,8 @@ export default function SharedFooter() {
         <div className="foot-col">
           <h5>Accreditations</h5>
           <ul>
-            <li>NHBC Registered Builder</li>
-            <li>Federation of Master Builders</li>
-            <li>CHAS · TrustMark · Build UK</li>
-            <li>ISO 9001 : 2015</li>
+            <li>Gas Safe Registered</li>
+            <li>NICEIC Approved Contractor</li>
           </ul>
         </div>
       </div>

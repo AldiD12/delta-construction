@@ -25,12 +25,8 @@ const values = [
 ];
 
 const accreditations = [
-  "NHBC Registered",
-  "Federation of Master Builders",
-  "CHAS",
-  "TrustMark",
-  "Build UK",
-  "ISO 9001:2015",
+  "Gas Safe Registered",
+  "NICEIC Approved Contractor",
   "£2M Public Liability Insurance",
 ];
 
