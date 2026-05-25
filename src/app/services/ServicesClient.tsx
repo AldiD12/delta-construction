@@ -23,8 +23,8 @@ const services = [
     id: "loft-conversions",
     title: "Loft Conversions",
     media: {
-      type: "video" as const,
-      src: "/assets/construction-site-walkthrough.mp4",
+      type: "image" as const,
+      src: "/uploads/project-04.jpg",
     },
     paragraphs: [
       "A loft conversion is the single most cost-effective way to add a bedroom and bathroom to a London home — if it's done properly. Poor structural detailing, inadequate fire strategy, or a staircase that fails Part K compliance can turn what should be a straightforward permitted-development build into a planning nightmare. Delta manages the entire process from initial feasibility through to building regulations sign-off.",
@@ -50,7 +50,7 @@ const services = [
     title: "Brickwork",
     media: {
       type: "image" as const,
-      src: "/assets/concrete-framework-construction.jpg",
+      src: "/assets/modern-extension-exterior.png",
     },
     paragraphs: [
       "London brickwork demands London expertise. Matching the right brick is not simply a matter of colour — it requires an understanding of size, texture, firing method, and regional provenance. We source and match London stock, yellow stock, and reclaimed imperial bricks for conservation-area projects, working with specialist salvage yards and manufacturers to achieve an indistinguishable blend with the existing facade.",
@@ -64,7 +64,7 @@ const services = [
     title: "Landscaping",
     media: {
       type: "image" as const,
-      src: "/assets/modern-extension-exterior.png",
+      src: "/uploads/project-10.jpg",
     },
     paragraphs: [
       "Landscaping is the final ten percent of a project, but it accounts for the entire first impression. A beautifully finished extension deserves an outdoor space that meets it at the threshold with the same level of thought and craftsmanship. We deliver hard landscaping to the same specification as the build it sits beside — because it is part of the build, not an afterthought.",

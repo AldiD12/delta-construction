@@ -206,7 +206,7 @@ export default function Home() {
     <div className="hero-right">
       <video autoPlay muted loop playsInline>
         <source src="/uploads/site-video-01.mp4" type="video/mp4" />
-        <img src="/assets/building-foundation-work.jpg" alt="Construction project in progress" />
+        <img src="/assets/01-kitchen-navy.jpg" alt="The Belsize Park Kitchen — bespoke night-blue joinery with brushed copper details completed by Delta Construction" />
       </video>
       <div className="hero-card">
         <div>
@@ -258,85 +258,85 @@ export default function Home() {
     {/* Row 1: wide + single */}
     <article className="project feat-wide carousel-card reveal">
       <div className="img">
-        <img src="/uploads/project-01.jpg" alt="Rear extension and kitchen fit-out completed by Delta Construction in West London" loading="lazy" />
+        <img src="/uploads/extension-kitchen-glass-roof.jpeg" alt="Kitchen Extension with Glass Roof completed by Delta Construction in West London" loading="lazy" />
         <span className="index">N° 01</span>
       </div>
-      <div className="info"><div><span className="meta">London · 2026</span></div></div>
+      <div className="info"><div><span className="meta">West London · 2026</span></div></div>
     </article>
 
     <article className="project carousel-card reveal d1">
       <div className="img">
-        <img src="/uploads/project-02.jpg" alt="Loft conversion with dormer window installed in North London" loading="lazy" />
+        <img src="/assets/01-kitchen-navy.jpg" alt="Belsize Park Kitchen — Bespoke night-blue joinery with brushed copper details completed by Delta Construction" loading="lazy" />
         <span className="index">N° 02</span>
       </div>
-      <div className="info"><div><span className="meta">London · 2026</span></div></div>
+      <div className="info"><div><span className="meta">Camden · 2025</span></div></div>
     </article>
 
     {/* Row 2: three equal */}
     <article className="project carousel-card reveal">
       <div className="img">
-        <img src="/uploads/project-03.jpg" alt="Full house refurbishment — structural work and interior remodel in Hounslow" loading="lazy" />
+        <img src="/assets/02-roofing-slate.jpg" alt="Slate Roof Replacement using natural Welsh slate in South West London" loading="lazy" />
         <span className="index">N° 03</span>
       </div>
-      <div className="info"><div><span className="meta">London · 2026</span></div></div>
+      <div className="info"><div><span className="meta">South West London · 2026</span></div></div>
     </article>
 
     <article className="project carousel-card reveal d1">
       <div className="img">
-        <img src="/uploads/project-04.jpg" alt="Open-plan kitchen extension with bifold doors and underfloor heating" loading="lazy" />
+        <img src="/uploads/project-04.jpg" alt="Loft conversion in progress — timber frame with Velux windows" loading="lazy" />
         <span className="index">N° 04</span>
       </div>
-      <div className="info"><div><span className="meta">London · 2026</span></div></div>
+      <div className="info"><div><span className="meta">Muswell Hill · 2026</span></div></div>
     </article>
 
     <article className="project carousel-card reveal d2">
       <div className="img">
-        <img src="/uploads/project-05.jpg" alt="Brickwork and repointing on a Victorian terrace in Richmond" loading="lazy" />
+        <img src="/assets/03-underfloor.jpg" alt="Wet Underfloor Heating Installation and prep on site in Enfield" loading="lazy" />
         <span className="index">N° 05</span>
       </div>
-      <div className="info"><div><span className="meta">London · 2026</span></div></div>
+      <div className="info"><div><span className="meta">Enfield · 2026</span></div></div>
     </article>
 
     {/* Row 3: single + wide */}
     <article className="project carousel-card reveal">
       <div className="img">
-        <img src="/uploads/project-06.jpg" alt="Slate roof replacement and chimney rebuild in South West London" loading="lazy" />
+        <img src="/assets/04-bathroom-sage.jpg" alt="Sage Bathroom Renovation featuring custom walk-in shower in Chelsea" loading="lazy" />
         <span className="index">N° 06</span>
       </div>
-      <div className="info"><div><span className="meta">London · 2026</span></div></div>
+      <div className="info"><div><span className="meta">Chelsea · 2026</span></div></div>
     </article>
 
     <article className="project feat-wide carousel-card reveal d1">
       <div className="img">
-        <img src="/uploads/project-07.jpg" alt="Double-storey rear extension with structural steelwork in Ealing" loading="lazy" />
+        <img src="/uploads/open-plan-renovation-wide.jpeg" alt="Open-Plan Renovation & Kitchen Fit-Out completed in Ealing" loading="lazy" />
         <span className="index">N° 07</span>
       </div>
-      <div className="info"><div><span className="meta">London · 2026</span></div></div>
+      <div className="info"><div><span className="meta">Ealing · 2026</span></div></div>
     </article>
 
     {/* Row 4: three equal */}
     <article className="project carousel-card reveal">
       <div className="img">
-        <img src="/uploads/project-08.jpg" alt="Modern bathroom renovation with walk-in shower and heated towel rail" loading="lazy" />
+        <img src="/uploads/bespoke-dresser-bar.jpeg" alt="Bespoke Dresser and Home Bar joinery completed in Hounslow" loading="lazy" />
         <span className="index">N° 08</span>
       </div>
-      <div className="info"><div><span className="meta">London · 2026</span></div></div>
+      <div className="info"><div><span className="meta">Hounslow · 2026</span></div></div>
     </article>
 
     <article className="project carousel-card reveal d1">
       <div className="img">
-        <img src="/uploads/project-09.jpg" alt="Hard landscaping with porcelain paving and cedar pergola in Twickenham" loading="lazy" />
+        <img src="/uploads/cloakroom-renovation.jpeg" alt="Guest Cloakroom Bathroom Renovation with micro-cement finish in Richmond" loading="lazy" />
         <span className="index">N° 09</span>
       </div>
-      <div className="info"><div><span className="meta">London · 2026</span></div></div>
+      <div className="info"><div><span className="meta">Richmond · 2026</span></div></div>
     </article>
 
     <article className="project carousel-card reveal d2">
       <div className="img">
-        <img src="/uploads/project-10.jpg" alt="Whole-house refurbishment — plastering and second-fix joinery in progress" loading="lazy" />
+        <img src="/uploads/bespoke-media-unit.jpeg" alt="Bespoke Media Unit with integrated LED lighting and joinery in Kensal Rise" loading="lazy" />
         <span className="index">N° 10</span>
       </div>
-      <div className="info"><div><span className="meta">London · 2026</span></div></div>
+      <div className="info"><div><span className="meta">Kensal Rise · 2026</span></div></div>
     </article>
 
   </div>
@@ -399,18 +399,13 @@ export default function Home() {
       <div className={`pane ${activeSvc === 'extensions' ? 'show' : ''}`}>
         <video autoPlay muted loop playsInline>
           <source src="/uploads/site-video-01.mp4" type="video/mp4" />
-          <img src="/assets/residential-extension-project.jpg" alt="Residential extension project" />
+          <img src="/uploads/extension-kitchen-island.jpeg" alt="Completed kitchen extension with island, built-in appliances and Crittall doors" />
         </video>
       </div>
-      <div className={`pane ${activeSvc === 'lofts' ? 'show' : ''}`}>
-        <video autoPlay muted loop playsInline>
-          <source src="/assets/construction-site-walkthrough.mp4" type="video/mp4" />
-          <img src="/assets/structural-extension-work.jpg" alt="Structural extension work" />
-        </video>
-      </div>
-      <div className={`pane ${activeSvc === 'roofing' ? 'show' : ''}`}><img src="/assets/02-roofing-slate.jpg" alt="Slate roofing work" /></div>
-      <div className={`pane ${activeSvc === 'brick' ? 'show' : ''}`}><img src="/assets/concrete-framework-construction.jpg" alt="Brickwork and structural construction" /></div>
-      <div className={`pane ${activeSvc === 'landscape' ? 'show' : ''}`}><img src="/assets/modern-extension-exterior.png" alt="Modern extension with landscaping" /></div>
+      <div className={`pane ${activeSvc === 'lofts' ? 'show' : ''}`}><img src="/uploads/project-04.jpg" alt="Loft conversion in progress — timber frame with Velux windows" /></div>
+      <div className={`pane ${activeSvc === 'roofing' ? 'show' : ''}`}><img src="/assets/02-roofing-slate.jpg" alt="Slate roof replacement with breathable membrane and lead flashings" /></div>
+      <div className={`pane ${activeSvc === 'brick' ? 'show' : ''}`}><img src="/assets/modern-extension-exterior.png" alt="Modern brick extension with custom detailing and slot window" /></div>
+      <div className={`pane ${activeSvc === 'landscape' ? 'show' : ''}`}><img src="/uploads/project-10.jpg" alt="Landscaped garden with patterned paving, artificial turf and garden office" /></div>
 
       <div className="services-caption">
         <div className="body">

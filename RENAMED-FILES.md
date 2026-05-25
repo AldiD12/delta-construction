@@ -40,6 +40,34 @@
    → `modern-kitchen-installation.jpg`
    - Used in: Modern Kitchen project (Shoreditch)
 
+10. **WhatsApp Image 2026-05-25 at 4.41.16 PM.jpeg**
+    → `bespoke-media-unit.jpeg`
+    - Used in: Bespoke Media Unit (Kensal Rise)
+
+11. **WhatsApp Image 2026-05-25 at 4.41.16 PM (1).jpeg**
+    → `extension-kitchen-glass-roof.jpeg`
+    - Used in: Kitchen Extension with Glass Roof (West London)
+
+12. **WhatsApp Image 2026-05-25 at 4.41.16 PM (2).jpeg**
+    → `bespoke-dresser-bar.jpeg`
+    - Used in: Bespoke Dresser & Bar (Hounslow)
+
+13. **WhatsApp Image 2026-05-25 at 4.41.16 PM (3).jpeg**
+    → `extension-kitchen-island.jpeg`
+    - Used in: Services section (Extensions)
+
+14. **WhatsApp Image 2026-05-25 at 4.41.16 PM (4).jpeg**
+    → `cloakroom-renovation.jpeg`
+    - Used in: Cloakroom Renovation (Richmond)
+
+15. **WhatsApp Image 2026-05-25 at 4.41.16 PM (5).jpeg**
+    → `open-plan-renovation-wide.jpeg`
+    - Used in: Open-Plan Renovation (Ealing)
+
+16. **WhatsApp Image 2026-05-25 at 4.41.16 PM (6).jpeg**
+    → `open-plan-renovation-angle.jpeg`
+    - Used in: Gallery (Open-Plan Renovation Angle)
+
 ## Videos Renamed and Organized
 
 1. **WhatsApp Video 2026-05-13 at 10.47.25 PM.mp4**
