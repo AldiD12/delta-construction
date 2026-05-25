@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import WhatsAppButton from "@/components/WhatsAppButton";
+import ChatBot from "@/components/ChatBot";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://deltaconstructionltd.co.uk"),
@@ -88,7 +90,11 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        <WhatsAppButton />
+        <ChatBot />
+      </body>
     </html>
   );
 }
