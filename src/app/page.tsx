@@ -412,15 +412,6 @@ export default function Home() {
       <div className={`pane ${activeSvc === 'brick' ? 'show' : ''}`}><img src="/assets/modern-extension-exterior.png" alt="Modern brick extension with custom detailing and slot window" /></div>
       <div className={`pane ${activeSvc === 'landscape' ? 'show' : ''}`}><img src="/uploads/project-10.jpg" alt="Landscaped garden with patterned paving, artificial turf and garden office" /></div>
 
-      <div className="services-caption">
-        <div className="body">
-          <span className="lbl">{m?.label}</span>
-          <p>{m?.desc}</p>
-        </div>
-        <div className="ks">
-          <div><span className="k">Typical timeline</span><span className="v">{m?.lead}</span></div>
-        </div>
-      </div>
     </div>
   </div>
 </section>
