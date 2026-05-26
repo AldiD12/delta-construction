@@ -23,8 +23,8 @@ const services = [
     id: "loft-conversions",
     title: "Loft Conversions",
     media: {
-      type: "image" as const,
-      src: "/uploads/project-04.jpg",
+      type: "video" as const,
+      src: "/assets/building-progress-timelapse.mp4",
     },
     paragraphs: [
       "A loft conversion is the single most cost-effective way to add a bedroom and bathroom to a London home — if it's done properly. Poor structural detailing, inadequate fire strategy, or a staircase that fails Part K compliance can turn what should be a straightforward permitted-development build into a planning nightmare. Delta manages the entire process from initial feasibility through to building regulations sign-off.",

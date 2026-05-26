@@ -402,7 +402,12 @@ export default function Home() {
           <img src="/uploads/extension-kitchen-island.jpeg" alt="Completed kitchen extension with island, built-in appliances and Crittall doors" />
         </video>
       </div>
-      <div className={`pane ${activeSvc === 'lofts' ? 'show' : ''}`}><img src="/uploads/project-04.jpg" alt="Loft conversion in progress — timber frame with Velux windows" /></div>
+      <div className={`pane ${activeSvc === 'lofts' ? 'show' : ''}`}>
+        <video autoPlay muted loop playsInline>
+          <source src="/assets/building-progress-timelapse.mp4" type="video/mp4" />
+          <img src="/uploads/project-04.jpg" alt="Loft conversion in progress — timber frame with Velux windows" />
+        </video>
+      </div>
       <div className={`pane ${activeSvc === 'roofing' ? 'show' : ''}`}><img src="/assets/02-roofing-slate.jpg" alt="Slate roof replacement with breathable membrane and lead flashings" /></div>
       <div className={`pane ${activeSvc === 'brick' ? 'show' : ''}`}><img src="/assets/modern-extension-exterior.png" alt="Modern brick extension with custom detailing and slot window" /></div>
       <div className={`pane ${activeSvc === 'landscape' ? 'show' : ''}`}><img src="/uploads/project-10.jpg" alt="Landscaped garden with patterned paving, artificial turf and garden office" /></div>
