@@ -137,6 +137,7 @@ export default function Home() {
       <Link href="/gallery" className="dot" onClick={closeMenu}>Projects</Link>
       <Link href="/areas" onClick={closeMenu}>Areas</Link>
       <Link href="/about" onClick={closeMenu}>About</Link>
+      <Link href="/blog" onClick={closeMenu}>Blog</Link>
       <Link href="/contact" onClick={closeMenu}>Contact</Link>
     </nav>
     <div className="nav-right">
@@ -160,6 +161,7 @@ export default function Home() {
       <Link href="/gallery" onClick={closeMenu}>Projects</Link>
       <Link href="/areas" onClick={closeMenu}>Areas</Link>
       <Link href="/about" onClick={closeMenu}>About</Link>
+      <Link href="/blog" onClick={closeMenu}>Blog</Link>
       <Link href="/reviews" onClick={closeMenu}>Reviews</Link>
       <Link href="/faq" onClick={closeMenu}>FAQ</Link>
       <Link href="/contact" className="btn" onClick={closeMenu}>Request a quote <span className="arr"></span></Link>
@@ -739,6 +741,7 @@ export default function Home() {
         <li><Link href="/gallery">Projects</Link></li>
         <li><Link href="/about">About us</Link></li>
         <li><Link href="/areas">Areas we cover</Link></li>
+        <li><Link href="/blog">Blog</Link></li>
         <li><Link href="/reviews">Reviews</Link></li>
         <li><Link href="/faq">FAQ</Link></li>
       </ul>

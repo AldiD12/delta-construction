@@ -40,6 +40,9 @@ export default function SharedNav({
           <Link href="/about" onClick={closeMenu}>
             About
           </Link>
+          <Link href="/blog" onClick={closeMenu}>
+            Blog
+          </Link>
           <Link href="/contact" onClick={closeMenu}>
             Contact
           </Link>
@@ -74,6 +77,9 @@ export default function SharedNav({
           </Link>
           <Link href="/about" onClick={closeMenu}>
             About
+          </Link>
+          <Link href="/blog" onClick={closeMenu}>
+            Blog
           </Link>
           <Link href="/reviews" onClick={closeMenu}>
             Reviews

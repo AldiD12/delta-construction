@@ -107,6 +107,7 @@ export default function GalleryPage() {
             <a href="/#services">Services</a>
             <a href="/#process">Process</a>
             <a href="/#areas">Areas</a>
+            <a href="/blog">Blog</a>
             <a href="/#contact">Contact</a>
           </nav>
           <div className="nav-right">

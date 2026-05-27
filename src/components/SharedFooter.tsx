@@ -35,6 +35,9 @@ export default function SharedFooter() {
               <Link href="/areas">Areas we cover</Link>
             </li>
             <li>
+              <Link href="/blog">Blog</Link>
+            </li>
+            <li>
               <Link href="/reviews">Reviews</Link>
             </li>
             <li>
