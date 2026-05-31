@@ -75,7 +75,7 @@ export default function SharedFooter() {
         </div>
       </div>
       <div className="foot-bottom">
-        <span>© 2019–2026 Delta Construction Ltd UK · Company No. 00000000</span>
+        <span>© 2019–2026 Delta Construction Ltd UK · Company No. 12023312</span>
         <span>Photography of our own projects · All rights reserved</span>
         <span>
           <Link href="/privacy">Privacy</Link>
