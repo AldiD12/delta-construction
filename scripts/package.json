@@ -1,0 +1,12 @@
+{
+  "name": "delta-construction-indexing",
+  "version": "1.0.0",
+  "description": "Google Indexing API script for Delta Construction",
+  "main": "index-pages.js",
+  "scripts": {
+    "index": "node index-pages.js"
+  },
+  "dependencies": {
+    "googleapis": "^140.0.0"
+  }
+}
