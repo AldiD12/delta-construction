@@ -111,7 +111,7 @@ export default function ContactClient() {
         >
           {/* Left — Form */}
           <div className="reveal">
-            <MultiStepForm formspreeId="xyzgopqw" />
+            <MultiStepForm formspreeId="xgoqbrbk" />
           </div>
 
           {/* Right — Details card */}
