@@ -5,8 +5,8 @@ const path = require('path');
 // Load service account credentials
 const serviceAccount = require('./service-account.json');
 
-// Your website URL
-const SITE_URL = 'https://delta-construction-neon.vercel.app';
+// Your website URL — must match exactly what's verified in Google Search Console
+const SITE_URL = 'https://www.deltaconstructionltd.co.uk';
 
 // Pages to index
 const pages = [

@@ -1,0 +1,1252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IRuci Construction Ltd — Specialist Drylining Contractor</title>
+<meta name="description" content="IRuci Construction Ltd. Specialist drylining contractor working with principal contractors and developers across England. Partitioning, ceilings, plastering, insulation.">
+<link rel="icon" type="image/jpg" href="/uploads/logo_iruci.jpg">
+<link rel="apple-touch-icon" href="/uploads/logo_iruci.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+
+<style>
+/* ══════════════════════════════════════════════════════════
+   DESIGN TOKENS
+   ══════════════════════════════════════════════════════════ */
+:root{
+  --navy:    #0c1219;
+  --navy2:   #101a26;
+  --navy3:   #162033;
+  --steel:   #1b2a42;
+  --border:  #1e2f4a;
+  --border2: #283d5e;
+  --ink:     #e8edf5;
+  --ink2:    #8e9bb5;
+  --ink3:    #556580;
+  --gold:    #c5a44e;
+  --gold2:   #d9bb6e;
+  --gold3:   #a88b3a;
+  --gold-glow: rgba(197,164,78,.10);
+  --white:   #ffffff;
+  --max:     1200px;
+  --pad:     clamp(24px, 4.5vw, 64px);
+  --serif:   'DM Serif Display', Georgia, serif;
+  --sans:    'DM Sans', -apple-system, system-ui, sans-serif;
+  --ease:    cubic-bezier(.16, 1, .3, 1);
+  --ease2:   cubic-bezier(.4, 0, .2, 1);
+}
+
+/* ══════════════════════════════════════════════════════════
+   RESET & BASE
+   ══════════════════════════════════════════════════════════ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:hidden;-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--sans);
+  background:var(--navy);
+  color:var(--ink);
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  font-size:15px;
+  line-height:1.65;
+  font-feature-settings:"ss01","ss02";
+}
+img,video{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
+::selection{background:var(--gold);color:var(--navy)}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+/* ══════════════════════════════════════════════════════════
+   TYPOGRAPHY
+   ══════════════════════════════════════════════════════════ */
+.h1{
+  font-family:var(--serif);
+  font-size:clamp(52px, 8vw, 120px);
+  line-height:.92;
+  letter-spacing:-.025em;
+  font-weight:400;
+  color:var(--ink);
+}
+.h1 i{font-style:italic;color:var(--gold)}
+.h2{
+  font-family:var(--serif);
+  font-size:clamp(38px, 5.2vw, 76px);
+  line-height:.98;
+  letter-spacing:-.02em;
+  font-weight:400;
+}
+.h2 i{font-style:italic;color:var(--gold)}
+.h3{
+  font-family:var(--serif);
+  font-size:clamp(22px, 2.6vw, 36px);
+  line-height:1.12;
+  letter-spacing:-.015em;
+  font-weight:400;
+}
+.h3 i{font-style:italic;color:var(--gold)}
+.eyebrow{
+  font-family:var(--sans);
+  font-size:10.5px;
+  font-weight:500;
+  letter-spacing:.24em;
+  text-transform:uppercase;
+  color:var(--gold);
+  display:inline-flex;
+  align-items:center;
+  gap:16px;
+}
+.eyebrow::before{content:"";width:36px;height:1px;background:linear-gradient(90deg, var(--gold), transparent);flex-shrink:0}
+.lead{font-size:16.5px;line-height:1.8;color:var(--ink2);font-weight:300;max-width:52ch}
+p{color:var(--ink2);line-height:1.7}
+
+/* ══════════════════════════════════════════════════════════
+   BUTTONS
+   ══════════════════════════════════════════════════════════ */
+.btn{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:var(--sans);font-size:11px;font-weight:600;
+  letter-spacing:.14em;text-transform:uppercase;
+  padding:15px 30px;
+  border-radius:0;
+  transition:all .35s var(--ease2);
+  position:relative;
+  overflow:hidden;
+}
+.btn-gold{
+  background:var(--gold);color:var(--navy);border:1px solid var(--gold);
+}
+.btn-gold:hover{
+  background:var(--gold2);
+  box-shadow:0 16px 48px rgba(197,164,78,.22), 0 2px 8px rgba(197,164,78,.15);
+  transform:translateY(-1px);
+}
+.btn-line{
+  background:transparent;color:var(--ink);border:1px solid var(--border2);
+}
+.btn-line:hover{border-color:var(--gold);color:var(--gold)}
+.btn svg{width:13px;height:13px;transition:transform .35s var(--ease)}
+.btn:hover svg{transform:translateX(4px)}
+
+/* ══════════════════════════════════════════════════════════
+   NAVIGATION
+   ══════════════════════════════════════════════════════════ */
+.nav{
+  position:fixed;inset:0 0 auto;z-index:100;
+  transition:all .45s var(--ease2);
+}
+.nav::after{
+  content:"";position:absolute;bottom:0;left:0;right:0;height:1px;
+  background:var(--border);opacity:0;transition:opacity .45s;
+}
+.nav.scrolled{
+  background:rgba(12,18,25,.92);
+  backdrop-filter:blur(28px) saturate(1.4);
+  -webkit-backdrop-filter:blur(28px) saturate(1.4);
+}
+.nav.scrolled::after{opacity:1}
+.nav-inner{
+  max-width:var(--max);margin:0 auto;padding:0 var(--pad);
+  height:80px;
+  display:flex;align-items:center;justify-content:space-between;gap:48px;
+}
+
+/* Logo */
+.logo{display:flex;align-items:center;gap:14px;flex-shrink:0}
+.logo img{height:42px;width:auto;object-fit:contain;border-radius:6px}
+.logo-text{display:flex;flex-direction:column;gap:0}
+.logo-text b{font-family:var(--serif);font-size:18px;font-weight:400;letter-spacing:.01em;color:var(--ink);line-height:1.2}
+.logo-text span{font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink3);line-height:1}
+
+/* Nav links */
+.nav-links{
+  position:absolute;left:50%;transform:translateX(-50%);
+  display:flex;align-items:center;gap:40px;
+}
+.nav-links a{
+  font-size:11.5px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--ink3);transition:color .25s;position:relative;
+}
+.nav-links a::after{
+  content:"";position:absolute;bottom:-4px;left:0;right:0;height:1px;
+  background:var(--gold);transform:scaleX(0);transform-origin:right;
+  transition:transform .35s var(--ease);
+}
+.nav-links a:hover{color:var(--ink)}
+.nav-links a:hover::after{transform:scaleX(1);transform-origin:left}
+
+/* Nav right */
+.nav-right{display:flex;align-items:center;gap:20px;flex-shrink:0}
+.nav-tel{
+  font-size:12.5px;font-weight:500;color:var(--ink2);
+  display:flex;align-items:center;gap:10px;
+  letter-spacing:.02em;
+}
+.nav-tel::before{
+  content:"";width:6px;height:6px;border-radius:50%;
+  background:#4ade80;
+  box-shadow:0 0 0 3px rgba(74,222,128,.15);
+  animation:pulse 2.4s ease-in-out infinite;
+  flex-shrink:0;
+}
+@keyframes pulse{
+  0%,100%{box-shadow:0 0 0 3px rgba(74,222,128,.15)}
+  50%{box-shadow:0 0 0 7px rgba(74,222,128,.04)}
+}
+
+/* Hamburger */
+.burger{
+  display:none;
+  flex-direction:column;gap:5px;
+  width:48px;height:48px;
+  align-items:center;justify-content:center;
+  border-radius:8px;
+  transition:background .2s;
+}
+.burger:hover{background:rgba(255,255,255,.04)}
+.burger span{
+  width:22px;height:1.5px;background:var(--ink);
+  border-radius:2px;transition:all .3s var(--ease);
+}
+.burger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.burger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+
+/* Mobile nav overlay */
+.mob-nav{
+  position:fixed;inset:0;z-index:90;
+  background:var(--navy);
+  display:flex;flex-direction:column;
+  padding:96px var(--pad) 48px;
+  opacity:0;visibility:hidden;
+  transition:opacity .3s var(--ease2), visibility 0s .3s;
+  overflow-y:auto;-webkit-overflow-scrolling:touch;
+}
+.mob-nav.open{opacity:1;visibility:visible;transition:opacity .3s var(--ease2), visibility 0s}
+.mob-nav nav{display:flex;flex-direction:column;flex:1}
+.mob-nav a{
+  font-family:var(--serif);
+  font-size:clamp(34px, 8vw, 56px);
+  color:var(--ink);
+  padding:18px 0;
+  border-bottom:1px solid var(--border);
+  display:flex;justify-content:space-between;align-items:center;
+  transition:color .2s, padding-left .25s;
+  letter-spacing:-.01em;line-height:1;
+}
+.mob-nav a::after{
+  content:"\2192";font-family:var(--serif);font-size:20px;color:var(--ink3);
+  transition:transform .3s var(--ease), color .2s;
+}
+.mob-nav a:hover,.mob-nav a:active{color:var(--gold);padding-left:8px}
+.mob-nav a:hover::after{color:var(--gold);transform:translateX(6px)}
+.mob-nav a.mob-cta-link{
+  font-family:var(--sans);font-size:14px;letter-spacing:.12em;text-transform:uppercase;
+  margin-top:36px;padding:20px 0;
+  justify-content:center;
+  background:var(--gold);color:var(--navy);
+  border:none;border-radius:0;
+  font-weight:600;
+}
+.mob-nav a.mob-cta-link::after{display:none}
+.mob-foot{margin-top:auto;padding-top:32px;border-top:1px solid var(--border);display:flex;flex-direction:column;gap:10px}
+.mob-foot a,.mob-foot span{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink3);font-family:var(--sans)}
+.mob-foot a:hover{color:var(--gold)}
+
+/* ══════════════════════════════════════════════════════════
+   HERO
+   ══════════════════════════════════════════════════════════ */
+.hero{
+  position:relative;
+  min-height:100vh;min-height:100svh;
+  display:flex;align-items:flex-end;
+  overflow:hidden;
+}
+.hero-vid{position:absolute;inset:0}
+.hero-vid video,.hero-vid img{
+  width:100%;height:100%;object-fit:cover;
+  filter:brightness(.32) contrast(1.15) saturate(.8);
+}
+.hero-vid::after{
+  content:"";position:absolute;inset:0;
+  background:
+    linear-gradient(to top, var(--navy) 0%, rgba(12,18,25,.85) 25%, rgba(12,18,25,.2) 55%, rgba(12,18,25,.35) 100%),
+    linear-gradient(135deg, rgba(12,18,25,.4) 0%, transparent 60%);
+}
+.hero-body{
+  position:relative;z-index:2;width:100%;
+  max-width:var(--max);margin:0 auto;
+  padding:0 var(--pad) clamp(56px, 8vh, 96px);
+}
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.4fr 1fr;
+  align-items:flex-end;
+  gap:64px;
+}
+.hero-label{margin-bottom:28px}
+.hero-sub{display:flex;flex-direction:column;gap:28px;padding-bottom:8px}
+.hero-sub p{
+  font-size:15.5px;line-height:1.8;
+  color:rgba(232,237,245,.55);font-weight:300;max-width:40ch;
+}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+
+/* Hero divider */
+.hero-line{
+  width:100%;height:1px;
+  background:linear-gradient(90deg, var(--border), var(--border2), var(--border));
+  margin:clamp(36px, 5vh, 56px) 0 clamp(28px, 4vh, 40px);
+}
+
+/* Hero stats */
+.hero-stats{display:flex;gap:0}
+.hstat{
+  flex:1;
+  padding:0 0 0 clamp(20px, 2.5vw, 32px);
+  border-left:1px solid var(--border);
+}
+.hstat:first-child{padding-left:0;border-left:none}
+.hstat-n{
+  font-family:var(--serif);
+  font-size:clamp(30px, 3.8vw, 48px);
+  color:var(--ink);line-height:1;letter-spacing:-.02em;
+}
+.hstat-n em{color:var(--gold);font-style:normal}
+.hstat-l{
+  font-size:10px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--ink3);margin-top:6px;font-weight:500;
+}
+
+/* ══════════════════════════════════════════════════════════
+   MARQUEE
+   ══════════════════════════════════════════════════════════ */
+.ticker{
+  overflow:hidden;
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  background:var(--navy2);
+}
+.ticker-track{
+  display:flex;
+  animation:tick 40s linear infinite;
+  white-space:nowrap;
+}
+.ticker-track span{
+  font-family:var(--sans);font-size:10.5px;font-weight:500;
+  letter-spacing:.22em;text-transform:uppercase;
+  color:var(--ink3);padding:15px 0;
+  display:inline-flex;align-items:center;
+}
+.ticker-track .sep{
+  color:var(--gold);font-size:7px;padding:15px 32px;
+  opacity:.5;
+}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ══════════════════════════════════════════════════════════
+   SERVICES
+   ══════════════════════════════════════════════════════════ */
+.services{padding:clamp(100px, 13vw, 176px) 0}
+.sec-inner{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+.sec-top{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:clamp(40px, 6vw, 80px);align-items:end;
+  margin-bottom:clamp(64px, 8vw, 104px);
+}
+
+.svc-grid{
+  display:grid;grid-template-columns:repeat(2, 1fr);
+  gap:1px;background:var(--border);
+}
+.svc{
+  background:var(--navy2);
+  padding:clamp(36px, 4.5vw, 56px);
+  display:flex;flex-direction:column;gap:18px;
+  transition:background .4s var(--ease2);
+  position:relative;overflow:hidden;
+  cursor:default;
+}
+.svc::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg, var(--gold), var(--gold3));
+  transform:scaleX(0);transform-origin:left;
+  transition:transform .5s var(--ease);
+}
+.svc:hover{background:var(--navy3)}
+.svc:hover::before{transform:scaleX(1)}
+.svc-n{
+  font-family:var(--serif);font-size:12px;font-style:italic;
+  color:var(--ink3);transition:color .3s;
+}
+.svc:hover .svc-n{color:var(--gold)}
+.svc-name{
+  font-family:var(--serif);font-size:clamp(21px, 2.4vw, 30px);
+  font-weight:400;color:var(--ink);line-height:1.15;letter-spacing:-.01em;
+}
+.svc-desc{font-size:13.5px;line-height:1.75;color:var(--ink3);font-weight:300;max-width:40ch}
+.svc-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
+.svc-tag{
+  font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--ink3);border:1px solid var(--border);
+  padding:5px 12px;transition:all .3s;
+}
+.svc:hover .svc-tag{border-color:var(--border2);color:var(--ink2)}
+
+/* ══════════════════════════════════════════════════════════
+   VIDEO BREAK
+   ══════════════════════════════════════════════════════════ */
+.vid-break{
+  position:relative;overflow:hidden;
+  min-height:clamp(440px, 56vh, 680px);
+  display:flex;align-items:center;
+}
+.vid-break video,.vid-break > img{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  filter:brightness(.38) contrast(1.12) saturate(.8);
+}
+.vid-break::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(90deg, rgba(12,18,25,.9) 0%, rgba(12,18,25,.35) 55%, rgba(12,18,25,.65) 100%);
+}
+.vid-break-body{
+  position:relative;z-index:2;
+  max-width:var(--max);margin:0 auto;padding:clamp(64px,8vw,96px) var(--pad);
+  width:100%;
+}
+.vid-break-box{max-width:540px;display:flex;flex-direction:column;gap:24px}
+
+/* ══════════════════════════════════════════════════════════
+   STATS
+   ══════════════════════════════════════════════════════════ */
+.stats-wrap{padding:0 var(--pad)}
+.stats{
+  display:grid;grid-template-columns:repeat(4, 1fr);
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  max-width:var(--max);margin:0 auto;
+}
+.stat{
+  padding:clamp(40px, 5vw, 68px) clamp(28px, 3.5vw, 48px);
+  border-right:1px solid var(--border);
+  display:flex;flex-direction:column;gap:14px;
+  transition:background .4s var(--ease2);
+}
+.stat:last-child{border-right:none}
+.stat:hover{background:var(--navy2)}
+.stat-n{
+  font-family:var(--serif);
+  font-size:clamp(52px, 6.5vw, 88px);
+  line-height:.92;letter-spacing:-.03em;
+  color:var(--ink);
+}
+.stat-n em{color:var(--gold);font-style:normal;font-size:.48em;vertical-align:top;margin-left:2px}
+.stat-l{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink3);font-weight:500}
+.stat-d{font-size:13px;color:var(--ink3);line-height:1.65;font-weight:300;max-width:24ch;margin-top:2px}
+
+/* ══════════════════════════════════════════════════════════
+   ABOUT
+   ══════════════════════════════════════════════════════════ */
+.about{border-top:1px solid var(--border);padding:0 var(--pad)}
+.about-grid{
+  display:grid;grid-template-columns:1.15fr 1fr;
+  max-width:var(--max);margin:0 auto;
+  border-left:1px solid var(--border);
+  border-right:1px solid var(--border);
+}
+.about-left{
+  padding:clamp(72px, 9vw, 120px) clamp(36px, 4.5vw, 64px);
+  display:flex;flex-direction:column;gap:36px;
+  border-right:1px solid var(--border);
+}
+.about-right{position:relative;overflow:hidden;min-height:640px}
+.about-right video,.about-right > img{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  filter:brightness(.5) contrast(1.12) saturate(.85);
+}
+.about-right::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(160deg, rgba(12,18,25,.5) 0%, transparent 50%, rgba(12,18,25,.7) 100%);
+}
+.about-caption{
+  position:absolute;bottom:44px;left:44px;right:44px;z-index:2;
+}
+.about-caption blockquote{
+  font-family:var(--serif);font-size:clamp(18px, 2.2vw, 26px);
+  font-style:italic;color:var(--ink);line-height:1.4;max-width:36ch;
+  text-wrap:balance;
+}
+.about-caption cite{
+  font-size:10px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--gold);margin-top:16px;display:flex;align-items:center;gap:12px;font-style:normal;
+}
+.about-caption cite::before{content:"";width:20px;height:1px;background:var(--gold)}
+
+/* Pillars */
+.pillars{display:grid;grid-template-columns:1fr 1fr;gap:36px;margin-top:12px}
+.pillar{display:flex;flex-direction:column;gap:7px}
+.pillar-num{
+  font-family:var(--serif);font-size:11px;font-style:italic;
+  color:var(--gold);margin-bottom:3px;
+}
+.pillar h4{
+  font-family:var(--sans);font-size:12.5px;font-weight:600;
+  color:var(--ink);letter-spacing:.06em;text-transform:uppercase;
+}
+.pillar p{font-size:13px;color:var(--ink3);line-height:1.65;font-weight:300}
+
+/* ══════════════════════════════════════════════════════════
+   PROCESS
+   ══════════════════════════════════════════════════════════ */
+.process{
+  padding:clamp(100px, 13vw, 176px) 0;
+  border-bottom:1px solid var(--border);
+}
+.process-rows{margin-top:clamp(56px, 7vw, 96px);border-top:1px solid var(--border)}
+.prow{
+  display:grid;grid-template-columns:72px 1fr 1fr 160px;
+  gap:36px;padding:clamp(28px, 3.5vw, 40px) 0;
+  border-bottom:1px solid var(--border);
+  align-items:start;
+  transition:background .3s var(--ease2), padding .3s;
+}
+.prow:hover{background:var(--navy2);padding-left:20px;padding-right:20px}
+.prow-n{
+  font-family:var(--serif);font-size:46px;font-style:italic;
+  color:var(--border2);line-height:1;
+  transition:color .4s var(--ease);
+}
+.prow:hover .prow-n{color:var(--gold)}
+.prow-stage{
+  font-size:10px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:8px;font-weight:500;
+}
+.prow-title{font-family:var(--serif);font-size:clamp(19px, 2.2vw, 26px);color:var(--ink);line-height:1.2}
+.prow-title i{font-style:italic;color:var(--ink2)}
+.prow-desc{font-size:13.5px;color:var(--ink3);line-height:1.7;font-weight:300;max-width:44ch}
+.prow-meta{text-align:right;display:flex;flex-direction:column;gap:6px}
+.prow-time{font-family:var(--serif);font-size:21px;font-style:italic;color:var(--ink)}
+.prow-cost{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink3)}
+
+/* ══════════════════════════════════════════════════════════
+   CONTACT
+   ══════════════════════════════════════════════════════════ */
+.contact-wrap{padding:0 var(--pad)}
+.contact{
+  display:grid;grid-template-columns:1fr 1fr;
+  border-top:1px solid var(--border);
+  max-width:var(--max);margin:0 auto;
+  border-left:1px solid var(--border);
+  border-right:1px solid var(--border);
+}
+.contact-left{
+  padding:clamp(64px, 8vw, 100px) clamp(40px, 5vw, 64px);
+  display:flex;flex-direction:column;gap:36px;
+  border-right:1px solid var(--border);
+}
+.contact-right{
+  background:var(--navy2);
+  padding:clamp(64px, 8vw, 100px) clamp(40px, 5vw, 64px);
+}
+.c-detail{display:flex;flex-direction:column;gap:5px}
+.c-detail-label{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink3);font-weight:500}
+.c-detail-val{font-family:var(--serif);font-size:clamp(19px, 2.2vw, 28px);color:var(--ink)}
+.c-detail-val a{transition:color .2s}
+.c-detail-val a:hover{color:var(--gold)}
+
+/* Form */
+.form-field{display:flex;flex-direction:column;gap:8px;margin-bottom:20px}
+.form-label{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink3);font-weight:500}
+.form-input{
+  padding:14px 18px;
+  background:var(--navy3);border:1px solid var(--border);
+  font:inherit;font-size:14px;color:var(--ink);
+  outline:none;
+  transition:border-color .25s, box-shadow .25s;
+  width:100%;
+  -webkit-appearance:none;
+}
+.form-input:focus{border-color:var(--gold);box-shadow:0 0 0 3px var(--gold-glow)}
+.form-input::placeholder{color:var(--ink3)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+select.form-input{
+  appearance:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23556580'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 16px center;padding-right:44px;
+}
+textarea.form-input{resize:vertical;min-height:110px}
+.form-submit{
+  width:100%;padding:16px;
+  font-family:var(--sans);font-size:11px;font-weight:600;
+  letter-spacing:.2em;text-transform:uppercase;
+  background:var(--gold);color:var(--navy);
+  border:none;cursor:pointer;
+  transition:all .35s var(--ease2);margin-top:6px;
+}
+.form-submit:hover{
+  background:var(--gold2);
+  box-shadow:0 12px 40px rgba(197,164,78,.22);
+  transform:translateY(-1px);
+}
+.form-submit:disabled{opacity:.7;transform:none;cursor:default}
+
+/* ══════════════════════════════════════════════════════════
+   FOOTER
+   ══════════════════════════════════════════════════════════ */
+footer{
+  background:var(--navy2);border-top:1px solid var(--border);
+  padding:clamp(56px, 7vw, 88px) var(--pad) 32px;
+}
+.foot-inner{
+  max-width:var(--max);margin:0 auto;
+  display:grid;grid-template-columns:2fr 1fr 1fr 1fr;
+  gap:48px;padding-bottom:48px;
+  border-bottom:1px solid var(--border);
+}
+.foot-logo{display:flex;align-items:center;gap:13px;margin-bottom:20px}
+.foot-logo img{height:38px;object-fit:contain;border-radius:6px}
+.foot-logo b{font-family:var(--serif);font-size:17px;font-weight:400;color:var(--ink)}
+.foot-brand p{font-size:13px;color:var(--ink3);line-height:1.7;font-weight:300;max-width:30ch}
+.foot-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  border:1px solid var(--border);padding:9px 16px;
+  font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink3);margin-top:20px;
+}
+.foot-badge strong{color:var(--gold)}
+.foot-col h5{
+  font-size:10px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--ink3);margin-bottom:20px;font-weight:500;
+}
+.foot-col ul{list-style:none;display:flex;flex-direction:column;gap:11px}
+.foot-col a{font-size:13px;color:var(--ink3);font-weight:300;transition:color .2s}
+.foot-col a:hover{color:var(--ink)}
+.foot-col address{font-style:normal;font-size:13px;color:var(--ink3);line-height:1.85;font-weight:300}
+.foot-bottom{
+  max-width:var(--max);margin:28px auto 0;
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
+  font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink3);
+}
+
+/* ══════════════════════════════════════════════════════════
+   REVEAL ANIMATIONS
+   ══════════════════════════════════════════════════════════ */
+.reveal{
+  opacity:0;transform:translateY(22px);
+  transition:opacity 1s var(--ease), transform 1s var(--ease);
+}
+.reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.1s}
+.reveal.d2{transition-delay:.2s}
+.reveal.d3{transition-delay:.3s}
+.reveal.d4{transition-delay:.4s}
+
+/* ══════════════════════════════════════════════════════════
+   MOBILE STICKY CTA
+   ══════════════════════════════════════════════════════════ */
+.mob-cta{
+  display:none;
+  position:fixed;bottom:0;left:0;right:0;z-index:200;
+  padding:12px 16px calc(12px + env(safe-area-inset-bottom, 0px));
+  background:linear-gradient(to top, var(--navy) 60%, transparent);
+  gap:10px;
+}
+.mob-cta a{
+  flex:1;display:flex;align-items:center;justify-content:center;gap:8px;
+  padding:16px;border-radius:0;
+  font-family:var(--sans);font-size:11px;font-weight:600;
+  letter-spacing:.1em;text-transform:uppercase;
+}
+
+/* ══════════════════════════════════════════════════════════
+   RESPONSIVE — TABLET (≤1080px)
+   ══════════════════════════════════════════════════════════ */
+@media(max-width:1080px){
+  .nav-links,.nav-tel,.nav-right .btn{display:none}
+  .burger{display:flex}
+  .nav-inner{height:72px}
+
+  .hero-grid{grid-template-columns:1fr;gap:36px}
+  .hero-sub{max-width:100%}
+
+  .sec-top{grid-template-columns:1fr;gap:28px}
+  .svc-grid{grid-template-columns:1fr}
+
+  .about-grid{grid-template-columns:1fr}
+  .about-left{border-right:none;border-bottom:1px solid var(--border)}
+  .about-right{min-height:480px}
+
+  .stats{grid-template-columns:1fr 1fr}
+  .stat:nth-child(2n){border-right:none}
+  .stat{border-bottom:1px solid var(--border)}
+  .stat:nth-child(n+3){border-bottom:none}
+
+  .prow{grid-template-columns:52px 1fr;gap:20px}
+  .prow-desc,.prow-meta{grid-column:1/-1}
+  .prow-meta{text-align:left;flex-direction:row;gap:20px;align-items:baseline}
+
+  .contact{grid-template-columns:1fr}
+  .contact-left{border-right:none;border-bottom:1px solid var(--border)}
+
+  .foot-inner{grid-template-columns:1fr 1fr;gap:36px}
+  .form-row{grid-template-columns:1fr}
+}
+
+/* ══════════════════════════════════════════════════════════
+   RESPONSIVE — MOBILE (≤640px)
+   ══════════════════════════════════════════════════════════ */
+@media(max-width:640px){
+  :root{--pad:20px}
+
+  /* Nav — solid background on mobile */
+  .nav{background:var(--navy);border-bottom:1px solid var(--border)}
+  .nav.scrolled{background:var(--navy)}
+  .nav-inner{height:68px}
+  .logo img{height:36px}
+  .logo-text b{font-size:16px}
+
+  /* Hero — full cinematic */
+  .hero{min-height:100svh}
+  .hero-body{padding-bottom:clamp(32px, 5vh, 56px)}
+  .h1{font-size:clamp(42px, 11vw, 72px);line-height:.9}
+  .hero-sub p{font-size:14.5px;max-width:none;color:rgba(232,237,245,.5)}
+  .hero-actions{flex-direction:column;width:100%}
+  .hero-actions .btn{justify-content:center;width:100%;padding:17px 24px}
+  .hero-actions .btn-gold{
+    box-shadow:0 8px 32px rgba(197,164,78,.2);
+  }
+  .hero-stats{flex-wrap:wrap;gap:0}
+  .hstat{flex:1 0 50%;padding:16px 0 16px 16px;border-left:1px solid var(--border)}
+  .hstat:first-child,.hstat:nth-child(3){border-left:none;padding-left:0}
+  .hstat:nth-child(n+3){border-top:1px solid var(--border);padding-top:20px;margin-top:4px}
+  .hstat-n{font-size:clamp(24px, 6vw, 36px)}
+  .hero-line{margin:clamp(28px, 4vh, 40px) 0 clamp(20px, 3vh, 28px)}
+
+  /* Section typography */
+  .h2{font-size:clamp(32px, 8vw, 48px)}
+  .lead{font-size:15px}
+
+  /* Services */
+  .services{padding:clamp(72px, 10vw, 120px) 0}
+  .svc{padding:clamp(28px, 5vw, 44px)}
+  .svc-name{font-size:clamp(20px, 5vw, 26px)}
+  .svc-desc{font-size:13px}
+
+  /* Video break */
+  .vid-break{min-height:clamp(400px, 70vh, 560px)}
+
+  /* Stats */
+  .stats{grid-template-columns:1fr 1fr}
+  .stat{padding:clamp(28px, 5vw, 44px) clamp(20px, 3vw, 32px)}
+  .stat-n{font-size:clamp(42px, 10vw, 64px)}
+  .stat-d{font-size:12.5px;max-width:none}
+
+  /* About */
+  .about-left{padding:clamp(48px, 7vw, 80px) var(--pad)}
+  .about-right{min-height:400px}
+  .about-caption{bottom:28px;left:24px;right:24px}
+  .about-caption blockquote{font-size:clamp(16px, 4vw, 22px)}
+  .pillars{grid-template-columns:1fr;gap:28px}
+  .pillar{
+    padding-left:18px;
+    border-left:2px solid var(--border);
+    transition:border-color .3s;
+  }
+  .pillar:hover{border-left-color:var(--gold)}
+
+  /* Process */
+  .process{padding:clamp(72px, 10vw, 120px) 0}
+  .prow{grid-template-columns:1fr;gap:12px;padding:clamp(24px, 4vw, 36px) 0}
+  .prow:hover{padding-left:16px;padding-right:8px}
+  .prow-n{font-size:34px;display:flex;align-items:baseline;gap:8px}
+  .prow-title{font-size:clamp(18px, 4.5vw, 24px)}
+  .prow-desc{font-size:13px;max-width:none}
+  .prow-meta{flex-direction:row;gap:16px;align-items:baseline}
+  .prow-time{font-size:18px}
+
+  /* Contact */
+  .contact-left,.contact-right{padding:clamp(48px, 7vw, 72px) var(--pad)}
+
+  /* Footer */
+  .foot-inner{grid-template-columns:1fr;gap:32px}
+  .foot-bottom{flex-direction:column;text-align:center;gap:8px;font-size:9.5px}
+
+  /* Buttons */
+  .btn{padding:16px 24px;font-size:12px;min-height:50px}
+
+  /* Mobile CTA bar */
+  .mob-cta{display:flex}
+
+  /* Faster reveals */
+  .reveal{transform:translateY(14px);transition-duration:.7s}
+
+  /* Extra bottom padding for fixed CTA */
+  footer{padding-bottom:100px}
+}
+
+/* ══════════════════════════════════════════════════════════
+   RESPONSIVE — SMALL PHONE (≤400px)
+   ══════════════════════════════════════════════════════════ */
+@media(max-width:400px){
+  :root{--pad:16px}
+  .h1{font-size:clamp(36px, 12vw, 52px)}
+  .h2{font-size:clamp(28px, 8vw, 40px)}
+  .hstat{flex:1 0 100%;border-left:none!important;padding-left:0!important;padding:12px 0;border-top:1px solid var(--border)}
+  .hstat:first-child{border-top:none}
+  .stats{grid-template-columns:1fr}
+  .stat{border-right:none!important;border-bottom:1px solid var(--border)}
+  .stat:last-child{border-bottom:none}
+  .stat-n{font-size:clamp(36px, 12vw, 52px)}
+  .svc-name{font-size:20px}
+  .prow-n{font-size:28px}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     NAVIGATION
+     ═══════════════════════════════════════════ -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#top" class="logo">
+      <img src="/uploads/logo_iruci.jpg" alt="IRuci Construction">
+      <div class="logo-text">
+        <b>IRuci Construction</b>
+        <span>Specialist Drylining</span>
+      </div>
+    </a>
+    <nav class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#process">Process</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-right">
+      <span class="nav-tel">+44 7471 775 761</span>
+      <a href="#contact" class="btn btn-gold" style="padding:11px 22px;font-size:10px">Enquire
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+      </a>
+      <button class="burger" id="burger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile nav -->
+<div class="mob-nav" id="mob-nav">
+  <nav>
+    <a href="#services" onclick="closeNav()">Services</a>
+    <a href="#about" onclick="closeNav()">About</a>
+    <a href="#process" onclick="closeNav()">Process</a>
+    <a href="#contact" onclick="closeNav()">Contact</a>
+    <a href="#contact" class="mob-cta-link" onclick="closeNav()">Start a conversation &rarr;</a>
+  </nav>
+  <div class="mob-foot">
+    <a href="tel:+447471775761">+44 7471 775 761</a>
+    <a href="mailto:info@iruci.co.uk">info@iruci.co.uk</a>
+    <a href="https://instagram.com/iruci_construction_ltd" target="_blank" rel="noopener">@iruci_construction_ltd</a>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     HERO
+     ═══════════════════════════════════════════ -->
+<section id="top" class="hero">
+  <div class="hero-vid">
+    <video autoplay muted loop playsinline poster="/uploads/1.webp">
+      <source src="/uploads/hero-clip.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="hero-body">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-label reveal in"><span class="eyebrow">Specialist Drylining Contractor</span></div>
+        <h1 class="h1 reveal in" style="margin-top:24px">
+          Precision<br>at <i>every scale.</i>
+        </h1>
+      </div>
+      <div class="hero-sub reveal in" style="transition-delay:.12s">
+        <p>From high-specification residential to large-scale commercial — IRuci delivers drylining systems that meet the demands of today's principal contractors and developers.</p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-gold">Start a conversation
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </a>
+          <a href="#services" class="btn btn-line">Our services</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-line"></div>
+    <div class="hero-stats reveal in" style="transition-delay:.22s">
+      <div class="hstat"><div class="hstat-n" data-target="7" data-suffix="+">0<em>+</em></div><div class="hstat-l">Years Experience</div></div>
+      <div class="hstat"><div class="hstat-n" data-target="25" data-suffix="+">0<em>+</em></div><div class="hstat-l">Projects Delivered</div></div>
+      <div class="hstat"><div class="hstat-n" data-target="99" data-suffix="%">0<em>%</em></div><div class="hstat-l">Quality Guarantee</div></div>
+      <div class="hstat"><div class="hstat-n">&pound;1M<em>+</em></div><div class="hstat-l">Min. Project Value</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Marquee -->
+<div class="ticker">
+  <div class="ticker-track" id="ticker"></div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SERVICES
+     ═══════════════════════════════════════════ -->
+<section class="services" id="services">
+  <div class="sec-inner">
+    <div class="sec-top">
+      <div class="reveal">
+        <span class="eyebrow">What we do</span>
+        <h2 class="h2" style="margin-top:22px">Specialist systems.<br><i>Exceptional finish.</i></h2>
+      </div>
+      <p class="lead reveal d1">Every service is executed by specialists using industry-leading materials and techniques — engineered for performance, built to programme, finished to specification.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc reveal">
+        <span class="svc-n">01</span>
+        <h3 class="svc-name">Ceiling Systems</h3>
+        <p class="svc-desc">Drylining, gypline, grid, and MF ceiling installations. We enhance acoustic performance, lighting integration, and architectural harmony across commercial and residential environments.</p>
+        <div class="svc-tags"><span class="svc-tag">Grid</span><span class="svc-tag">MF</span><span class="svc-tag">Gypline</span><span class="svc-tag">Acoustic</span></div>
+      </div>
+      <div class="svc reveal d1">
+        <span class="svc-n">02</span>
+        <h3 class="svc-name">Boarding &amp; Partitioning</h3>
+        <p class="svc-desc">Precision-engineered partition systems — loft boarding, staircase boarding, wall lining, and insulation. Solutions that balance functionality with thermal and acoustic performance.</p>
+        <div class="svc-tags"><span class="svc-tag">Loft</span><span class="svc-tag">Staircase</span><span class="svc-tag">Wall Lining</span><span class="svc-tag">Insulation</span></div>
+      </div>
+      <div class="svc reveal">
+        <span class="svc-n">03</span>
+        <h3 class="svc-name">Floor Soundproofing</h3>
+        <p class="svc-desc">Advanced acoustic technologies and precision engineering. We deploy state-of-the-art sound absorption solutions that transform problematic environments into harmonious spaces.</p>
+        <div class="svc-tags"><span class="svc-tag">Acoustic</span><span class="svc-tag">Dampening</span><span class="svc-tag">Isolation</span></div>
+      </div>
+      <div class="svc reveal d1">
+        <span class="svc-n">04</span>
+        <h3 class="svc-name">Renovation</h3>
+        <p class="svc-desc">A balance between preserving architectural heritage and introducing contemporary performance. We assess, plan, and execute holistic transformation strategies with precision.</p>
+        <div class="svc-tags"><span class="svc-tag">Structural</span><span class="svc-tag">Thermal</span><span class="svc-tag">Aesthetic</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     VIDEO BREAK
+     ═══════════════════════════════════════════ -->
+<div class="vid-break">
+  <video autoplay muted loop playsinline poster="/uploads/2.webp">
+    <source src="/uploads/about-clip.mp4" type="video/mp4">
+  </video>
+  <div class="vid-break-body">
+    <div class="vid-break-box reveal">
+      <span class="eyebrow">Our commitment</span>
+      <h2 class="h2" style="margin-top:22px;color:var(--ink)">Built on integrity,<br><i>excellence &amp; trust.</i></h2>
+      <p class="lead">We believe our work is a direct reflection of our values. Every wall we build, every ceiling we install — it carries our name and our reputation.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     STATS
+     ═══════════════════════════════════════════ -->
+<div class="stats-wrap">
+  <div class="stats">
+    <div class="stat reveal">
+      <div class="stat-n" data-target="7" data-suffix="+">0<em>+</em></div>
+      <div class="stat-l">Years Experience</div>
+      <p class="stat-d">Proven expertise across residential and commercial sectors.</p>
+    </div>
+    <div class="stat reveal d1">
+      <div class="stat-n" data-target="25" data-suffix="+">0<em>+</em></div>
+      <div class="stat-l">Projects Delivered</div>
+      <p class="stat-d">On time and within budget, every time.</p>
+    </div>
+    <div class="stat reveal d2">
+      <div class="stat-n" data-target="99" data-suffix="%">0<em>%</em></div>
+      <div class="stat-l">Quality Guarantee</div>
+      <p class="stat-d">Best materials and techniques for superior finishes.</p>
+    </div>
+    <div class="stat reveal d3">
+      <div class="stat-n">&pound;1M<em>+</em></div>
+      <div class="stat-l">Min. Project Value</div>
+      <p class="stat-d">Working with principal contractors across England.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     ABOUT
+     ═══════════════════════════════════════════ -->
+<section class="about" id="about">
+  <div class="about-grid">
+    <div class="about-left">
+      <span class="eyebrow reveal">About IRuci</span>
+      <h2 class="h2 reveal d1">We don&rsquo;t just<br><i>build walls.</i></h2>
+      <p class="lead reveal d2">Specialising in drylining, we bring deep expertise to every project. From residential to large commercial — our team handles all aspects with precision and care.</p>
+      <p class="reveal d3" style="font-size:13.5px;line-height:1.7;color:var(--ink3);font-weight:300;max-width:48ch">Our success is built on experienced professionals who work collaboratively, stay current with industry developments, and deliver innovative solutions on every project.</p>
+      <div class="pillars reveal d4">
+        <div class="pillar">
+          <div class="pillar-num">&mdash; 01</div>
+          <h4>Expertise</h4>
+          <p>7+ years of proven drylining expertise across all sectors.</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-num">&mdash; 02</div>
+          <h4>Quality</h4>
+          <p>99% quality guarantee — best materials, superior finishes.</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-num">&mdash; 03</div>
+          <h4>Reliability</h4>
+          <p>On time, on budget. Consistent delivery on every project.</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-num">&mdash; 04</div>
+          <h4>Innovation</h4>
+          <p>Latest techniques and industry standards, always applied.</p>
+        </div>
+      </div>
+    </div>
+    <div class="about-right">
+      <video autoplay muted loop playsinline poster="/uploads/2.webp">
+        <source src="/uploads/services-clip.mp4" type="video/mp4">
+      </video>
+      <div class="about-caption">
+        <blockquote>&ldquo;At IRuci, we don&rsquo;t just build walls — we build relationships.&rdquo;</blockquote>
+        <cite>IRuci Construction Ltd</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     PROCESS
+     ═══════════════════════════════════════════ -->
+<section class="process sec-inner" id="process">
+  <div class="sec-top">
+    <div class="reveal">
+      <span class="eyebrow">How we work</span>
+      <h2 class="h2" style="margin-top:22px">Clear stages.<br><i>No surprises.</i></h2>
+    </div>
+    <p class="lead reveal d1">A transparent, structured process designed to work seamlessly within your programme — from initial tender to final sign-off.</p>
+  </div>
+  <div class="process-rows" id="process-rows"></div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     CONTACT
+     ═══════════════════════════════════════════ -->
+<section class="contact-wrap" id="contact">
+  <div class="contact">
+    <div class="contact-left">
+      <span class="eyebrow reveal">Get in touch</span>
+      <h2 class="h2 reveal d1">Let&rsquo;s discuss<br><i>your project.</i></h2>
+      <p class="lead reveal d2" style="max-width:42ch">Whether you&rsquo;re a principal contractor, developer, or private client — tell us about your project and we&rsquo;ll respond within one working day.</p>
+      <div style="display:flex;flex-direction:column;gap:32px;margin-top:8px">
+        <div class="c-detail reveal d3">
+          <div class="c-detail-label">Phone</div>
+          <div class="c-detail-val"><a href="tel:+447471775761">+44 7471 775 761</a></div>
+        </div>
+        <div class="c-detail reveal d3">
+          <div class="c-detail-label">Email</div>
+          <div class="c-detail-val"><a href="mailto:info@iruci.co.uk">info@iruci.co.uk</a></div>
+        </div>
+        <div class="c-detail reveal d4">
+          <div class="c-detail-label">Instagram</div>
+          <div class="c-detail-val"><a href="https://instagram.com/iruci_construction_ltd" target="_blank" rel="noopener">@iruci_construction_ltd</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-right">
+      <h3 class="h3 reveal" style="margin-bottom:36px">Send an <i>enquiry</i></h3>
+      <form id="contact-form" onsubmit="handleSubmit(event)">
+        <div class="form-row">
+          <div class="form-field"><label class="form-label">First Name</label><input class="form-input" type="text" placeholder="John" required></div>
+          <div class="form-field"><label class="form-label">Last Name</label><input class="form-input" type="text" placeholder="Smith" required></div>
+        </div>
+        <div class="form-row">
+          <div class="form-field"><label class="form-label">Phone</label><input class="form-input" type="tel" placeholder="+44 7xxx xxx xxx"></div>
+          <div class="form-field"><label class="form-label">Email</label><input class="form-input" type="email" placeholder="john@company.co.uk" required></div>
+        </div>
+        <div class="form-field">
+          <label class="form-label">Service Required</label>
+          <select class="form-input" required>
+            <option value="">Select a service&hellip;</option>
+            <option>Ceiling Systems</option>
+            <option>Boarding &amp; Partitioning</option>
+            <option>Floor Soundproofing</option>
+            <option>Renovation</option>
+            <option>Full Drylining Package</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label class="form-label">Project Details</label>
+          <textarea class="form-input" rows="4" placeholder="Describe your project — type, scale, location, timeline&hellip;"></textarea>
+        </div>
+        <button type="submit" class="form-submit" id="submit-btn">Submit Enquiry &rarr;</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     FOOTER
+     ═══════════════════════════════════════════ -->
+<footer>
+  <div class="foot-inner">
+    <div class="foot-brand">
+      <div class="foot-logo">
+        <img src="/uploads/logo_iruci.jpg" alt="IRuci">
+        <b>IRuci Construction Ltd</b>
+      </div>
+      <p>Specialist drylining contractor working with principal contractors and developers across England.</p>
+      <div class="foot-badge">Registered in <strong>England &amp; Wales</strong></div>
+    </div>
+    <div class="foot-col">
+      <h5>Services</h5>
+      <ul>
+        <li><a href="#services">Ceiling Systems</a></li>
+        <li><a href="#services">Boarding &amp; Partitioning</a></li>
+        <li><a href="#services">Floor Soundproofing</a></li>
+        <li><a href="#services">Renovation</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h5>Company</h5>
+      <ul>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#process">Our Process</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h5>Contact</h5>
+      <address>
+        <a href="tel:+447471775761">+44 7471 775 761</a><br>
+        <a href="mailto:info@iruci.co.uk">info@iruci.co.uk</a><br>
+        <a href="https://instagram.com/iruci_construction_ltd" target="_blank" rel="noopener">@iruci_construction_ltd</a>
+      </address>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>&copy; 2025 IRuci Construction Ltd &middot; All rights reserved</span>
+    <span>Specialist Drylining &middot; England</span>
+  </div>
+</footer>
+
+<!-- Mobile sticky CTA -->
+<div class="mob-cta">
+  <a href="tel:+447471775761" class="btn btn-gold">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .84h3a2 2 0 012 1.72c.127.96.361 1.9.7 2.81a2 2 0 01-.45 2.11L6.91 8.34a16 16 0 006.72 6.72l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+    Call
+  </a>
+  <a href="#contact" class="btn btn-line" style="background:rgba(12,18,25,.92);backdrop-filter:blur(12px)">Enquire</a>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SCRIPTS
+     ═══════════════════════════════════════════ -->
+<script>
+(function(){
+  'use strict';
+
+  /* ── Ticker ── */
+  var items = ['Drylining','Partitioning','Ceiling Systems','Plastering','Insulation','Floor Soundproofing','MF Ceilings','Grid Ceilings','Renovation'];
+  var tickerHTML = items.map(function(t){ return '<span>'+t+'</span><span class="sep">◆</span>'; }).join('');
+  document.getElementById('ticker').innerHTML = tickerHTML + tickerHTML;
+
+  /* ── Process rows ── */
+  var steps = [
+    {n:'01',s:'Initial Contact',t:'Tender & <i>scope review</i>',d:'We review your tender package, drawings, and specifications. Within 24 hours we’ll confirm interest and request any additional information needed.',tm:'24h response',c:'Free'},
+    {n:'02',s:'Site Assessment',t:'Survey & <i>programme review</i>',d:'Our team visits site to assess conditions, coordinate with the principal contractor, and confirm the works programme aligns with the overall timeline.',tm:'2–3 days',c:'Free'},
+    {n:'03',s:'Proposal',t:'Fixed-price <i>quotation</i>',d:'A detailed, itemised quotation covering labour, materials, and programme. No ambiguity — everything transparent and fixed before we start.',tm:'3–5 days',c:'Included'},
+    {n:'04',s:'Mobilisation',t:'Pre-start & <i>planning</i>',d:'RAMS submitted, materials procured, team briefed. We integrate fully with your site management team and confirm weekly milestones.',tm:'1–2 weeks',c:'Deposit'},
+    {n:'05',s:'Execution',t:'Installation & <i>quality control</i>',d:'Specialist teams work to programme with daily progress reporting. All work inspected in-house before snagging sign-off is requested.',tm:'Per programme',c:'Progress claims'},
+    {n:'06',s:'Handover',t:'Sign-off & <i>aftercare</i>',d:'Full handover documentation, O&M manuals where required, and defects liability cover. Available for the full DLP period.',tm:'Agreed date',c:'Retention release'}
+  ];
+  document.getElementById('process-rows').innerHTML = steps.map(function(s,i){
+    return '<div class="prow reveal'+(i?' d'+(i%4):'')+'">'+
+      '<span class="prow-n">'+s.n+'</span>'+
+      '<div><p class="prow-stage">'+s.s+'</p><h3 class="prow-title">'+s.t+'</h3></div>'+
+      '<p class="prow-desc">'+s.d+'</p>'+
+      '<div class="prow-meta"><div class="prow-time">'+s.tm+'</div><div class="prow-cost">'+s.c+'</div></div>'+
+    '</div>';
+  }).join('');
+
+  /* ── Scroll reveal + counter animation ── */
+  function animateCounter(el){
+    var target = parseInt(el.dataset.target);
+    if(!target) return;
+    var suffix = el.dataset.suffix || '';
+    var current = 0;
+    var step = Math.max(1, Math.ceil(target / 50));
+    var interval = setInterval(function(){
+      current = Math.min(current + step, target);
+      el.innerHTML = current + '<em>' + suffix + '</em>';
+      if(current >= target) clearInterval(interval);
+    }, 28);
+  }
+
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(!e.isIntersecting) return;
+      e.target.classList.add('in');
+      // Check for counters within this element
+      var counters = e.target.querySelectorAll('[data-target]');
+      counters.forEach(animateCounter);
+      // Or if the element itself is a counter
+      if(e.target.dataset && e.target.dataset.target){
+        animateCounter(e.target);
+      }
+      io.unobserve(e.target);
+    });
+  }, {threshold: 0.08, rootMargin: '0px 0px -30px 0px'});
+
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+
+  /* ── Nav scroll ── */
+  var lastScroll = 0;
+  window.addEventListener('scroll', function(){
+    document.getElementById('nav').classList.toggle('scrolled', scrollY > 32);
+    lastScroll = scrollY;
+  }, {passive: true});
+
+  /* ── Mobile menu ── */
+  var menuOpen = false;
+  document.getElementById('burger').addEventListener('click', function(){
+    menuOpen = !menuOpen;
+    this.classList.toggle('open', menuOpen);
+    document.getElementById('mob-nav').classList.toggle('open', menuOpen);
+    document.body.style.overflow = menuOpen ? 'hidden' : '';
+  });
+
+  window.closeNav = function(){
+    menuOpen = false;
+    document.getElementById('burger').classList.remove('open');
+    document.getElementById('mob-nav').classList.remove('open');
+    document.body.style.overflow = '';
+  };
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape') closeNav();
+  });
+
+  /* ── Form submit ── */
+  window.handleSubmit = function(e){
+    e.preventDefault();
+    var btn = document.getElementById('submit-btn');
+    btn.textContent = '✓ Received — we’ll be in touch within 24h';
+    btn.style.background = '#1a7a4c';
+    btn.style.color = '#fff';
+    btn.disabled = true;
+  };
+
+})();
+</script>
+</body>
+</html>

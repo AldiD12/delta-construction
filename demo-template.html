@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="page-title">Company Name — Tagline</title>
+<meta name="description" content="">
+
+<!--
+  ╔══════════════════════════════════════════════════════════════╗
+  ║  AD GROUP — REUSABLE HOMEPAGE TEMPLATE                       ║
+  ║  Same design as deltaconstructionltd.co.uk                   ║
+  ║                                                              ║
+  ║  HOW TO USE:                                                 ║
+  ║  1. Edit the CONFIG object in the <script> below             ║
+  ║  2. Replace images in the /assets/ and /uploads/ folders     ║
+  ║  3. Deploy as a Next.js app or static site                   ║
+  ╚══════════════════════════════════════════════════════════════╝
+-->
+
+<style>
+/* ══════════════════════════════════════════
+   DESIGN SYSTEM — Edit :root for brand colours
+   ══════════════════════════════════════════ */
+:root{
+  --bg:#ffffff;
+  --bg-2:#f8f9fa;
+  --panel:#fdfdfd;
+  --ink:#1a1a1a;
+  --ink-2:#4a4a4a;
+  --mute:#6b7280;
+  --rule:#e5e7eb;
+  --rule-2:#d1d5db;
+  --accent:#2563eb;        /* ← CHANGE THIS: primary brand colour */
+  --accent-deep:#1d4ed8;   /* ← CHANGE THIS: darker shade */
+  --max:1440px;
+  --pad: clamp(20px, 4vw, 56px);
+  --sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --serif: "Instrument Serif", "Times New Roman", serif;
+  --mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+.invert{
+  --bg:#111827;--bg-2:#1f2937;--panel:#1f2937;--ink:#f9fafb;--ink-2:#d1d5db;--mute:#9ca3af;--rule:#374151;--rule-2:#4b5563;--accent:#60a5fa;--accent-deep:#2563eb;
+  background:var(--bg);color:var(--ink);
+}
+section,footer{background:var(--bg);color:var(--ink);position:relative}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body{font-size:15px;line-height:1.55;letter-spacing:-0.005em;font-feature-settings:"ss01","ss02","tnum"}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+::selection{background:var(--accent);color:#fff}
+
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--mute);display:inline-flex;align-items:center;gap:10px}
+.eyebrow::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--accent)}
+.display{font-family:var(--serif);font-weight:400;font-size:clamp(56px,10vw,168px);line-height:0.92;letter-spacing:-0.025em;text-wrap:balance}
+.display em{font-style:italic;color:var(--ink-2);font-weight:400}
+h2.section-title{font-family:var(--serif);font-weight:400;font-size:clamp(40px,5.4vw,84px);line-height:0.98;letter-spacing:-0.02em;margin:0;text-wrap:balance}
+h2.section-title em{font-style:italic;color:var(--accent)}
+p{margin:0;color:var(--ink-2);text-wrap:pretty}
+.meta{font-family:var(--mono);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--mute)}
+.container{max-width:var(--max);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
+
+/* Nav */
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);background:color-mix(in srgb,var(--bg) 80%,transparent);border-bottom:1px solid transparent;transition:border-color .3s,background .3s}
+.nav.scrolled{border-bottom-color:var(--rule);background:color-mix(in srgb,var(--bg) 94%,transparent)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px;gap:24px}
+.nav-links{position:absolute;left:50%;transform:translateX(-50%);display:flex;gap:32px;align-items:center}
+.brand{display:flex;align-items:center;gap:16px}
+.brand-mark{display:grid;place-items:center;position:relative}
+.brand-mark img{width:110px;height:110px;margin:15px 0 10px;display:block;object-fit:contain;border-radius:14px}
+.brand-name{font-family:var(--serif);font-size:28px;letter-spacing:-0.01em;font-weight:400}
+.brand-name span{color:var(--ink-2);font-style:italic;font-size:18px;margin-left:4px}
+.nav-links a{font-size:13px;color:var(--ink-2);position:relative}
+.nav-links a:hover{color:var(--ink)}
+.nav-links a.dot::after{content:"";display:inline-block;width:4px;height:4px;border-radius:50%;background:var(--accent);margin-left:8px;vertical-align:middle;opacity:.4}
+.nav-right{display:flex;gap:14px;justify-content:flex-end;align-items:center;flex-shrink:0}
+.phone{font-family:var(--mono);font-size:12px;letter-spacing:0.06em;color:var(--ink-2)}
+.phone::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:#7bbf6a;margin-right:8px;vertical-align:middle;box-shadow:0 0 0 3px rgba(123,191,106,.15);animation:pulse 2.4s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 3px rgba(123,191,106,.15)}50%{box-shadow:0 0 0 6px rgba(123,191,106,.06)}}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:11px 18px;border:1px solid var(--ink);color:var(--bg);background:var(--ink);font-size:13px;letter-spacing:0.01em;transition:background .25s,color .25s,border-color .25s}
+.btn:hover{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--rule-2)}
+.btn.ghost:hover{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.btn .arr{width:14px;height:10px;display:inline-block;position:relative;overflow:hidden}
+.btn .arr::before{content:"\2192";position:absolute;left:0;top:-3px;transition:transform .25s}
+.btn:hover .arr::before{transform:translateX(2px)}
+
+/* Mobile menu */
+.mobile-menu-btn{display:none;flex-direction:column;gap:4px;padding:8px;cursor:pointer;background:none;border:none}
+.mobile-menu-btn span{width:20px;height:2px;background:var(--ink);transition:all .15s}
+.mobile-menu-btn.is-open span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.mobile-menu-btn.is-open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.mobile-menu-btn.is-open span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.mobile-menu{display:flex;position:fixed;inset:0;z-index:45;background:var(--bg);opacity:0;pointer-events:none;visibility:hidden;transition:opacity .12s,visibility 0s .12s;overflow-y:auto;flex-direction:column}
+.mobile-menu.open{opacity:1;pointer-events:auto;visibility:visible;transition:opacity .12s,visibility 0s 0s}
+.mobile-menu nav{display:flex;flex-direction:column;padding:80px var(--pad) 48px;gap:0;flex:1}
+.mobile-menu a{font-family:var(--serif);font-size:clamp(30px,8vw,48px);color:var(--ink);padding:18px 0;border-bottom:1px solid var(--rule);letter-spacing:-0.02em;line-height:1.1;transition:color .15s,padding-left .15s;display:flex;align-items:center;justify-content:space-between}
+.mobile-menu a::after{content:"\2192";font-family:var(--serif);font-size:22px;color:var(--mute);transition:transform .25s,color .25s}
+.mobile-menu a:hover{color:var(--accent);padding-left:8px}
+.mobile-menu a:hover::after{color:var(--accent);transform:translateX(4px)}
+.mobile-menu a.btn{font-family:var(--sans);font-size:15px;letter-spacing:0.01em;margin-top:32px;padding:18px 24px;justify-content:center;border:1px solid var(--ink);background:var(--ink);color:var(--bg)}
+.mobile-menu a.btn::after{display:none}
+.mobile-menu-footer{padding:24px var(--pad) 40px;border-top:1px solid var(--rule);display:flex;flex-direction:column;gap:12px}
+.mobile-menu-footer a,.mobile-menu-footer span{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
+.mobile-menu-footer a{color:var(--ink-2)}
+html{scroll-behavior:smooth}
+
+/* Hero */
+.hero{padding-top:72px;position:relative;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.55fr 1fr;gap:0;align-items:stretch;border-bottom:1px solid var(--rule)}
+.hero-left{padding:clamp(36px,5vw,76px) var(--pad) clamp(28px,4vw,44px);border-right:1px solid var(--rule);position:relative;display:flex;flex-direction:column;justify-content:space-between;min-height:88vh}
+.hero-top-meta{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.hero-top-meta .crumbs{display:flex;gap:20px;align-items:center}
+.hero-top-meta .crumbs span{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--mute)}
+.hero-title{margin-top:auto;margin-bottom:24px}
+.hero-sub{display:grid;grid-template-columns:1fr 1fr;gap:32px;border-top:1px solid var(--rule);padding-top:28px}
+.hero-sub p{font-size:15px;max-width:38ch}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.hero-cta .since{font-family:var(--mono);font-size:11px;color:var(--mute);letter-spacing:.14em;text-transform:uppercase;border-left:1px solid var(--rule-2);padding-left:14px;margin-left:6px}
+.hero-right{position:relative;background:#000;min-height:88vh;overflow:hidden}
+.hero-right video,.hero-right img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(0.06) contrast(1.02) brightness(0.88)}
+.hero-right::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,13,11,.5) 0%,rgba(13,13,11,0) 22%,rgba(13,13,11,0) 60%,rgba(13,13,11,.85) 100%);pointer-events:none}
+.hero-card{position:absolute;left:24px;bottom:24px;right:24px;display:flex;justify-content:space-between;align-items:flex-end;gap:24px;color:var(--ink)}
+.hero-card .label{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(249,250,251,.7)}
+.hero-card .title{font-family:var(--serif);font-size:24px;line-height:1.1;margin-top:6px;max-width:22ch}
+.hero-card .title em{font-style:italic;color:#93c5fd}
+.hero-card .meta-row{display:flex;gap:18px}
+.hero-card .meta-row div{display:flex;flex-direction:column;gap:2px;text-align:right}
+.hero-card .meta-row .k{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:rgba(249,250,251,.55)}
+.hero-card .meta-row .v{font-family:var(--serif);font-size:18px}
+.hero-marquee{border-top:1px solid var(--rule);overflow:hidden}
+.hero-marquee-track{display:flex;gap:64px;padding:18px 0;animation:scroll 50s linear infinite;white-space:nowrap}
+.hero-marquee-track > span{font-family:var(--serif);font-size:22px;color:var(--ink-2);font-style:italic;display:inline-flex;align-items:center;gap:64px}
+.hero-marquee-track > span::after{content:"\2726";color:var(--accent);font-style:normal;font-size:12px;opacity:.6}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* Trust */
+.trust{padding:28px var(--pad);border-bottom:1px solid var(--rule);background:var(--bg)}
+.trust-inner{display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap;max-width:var(--max);margin:0 auto}
+.trust-label{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--mute);white-space:nowrap}
+.trust-logos{display:flex;gap:48px;flex-wrap:wrap;align-items:center;justify-content:flex-end;flex:1}
+.trust-logos .tl{font-family:var(--serif);font-size:20px;color:var(--ink-2);display:inline-flex;align-items:center;gap:10px;opacity:.78}
+
+/* Sections */
+.section{padding:clamp(80px,10vw,160px) 0;border-bottom:1px solid var(--rule);position:relative}
+.section-head{display:grid;grid-template-columns:1fr 2fr;gap:48px;padding:0 var(--pad);align-items:end;max-width:var(--max);margin:0 auto clamp(48px,6vw,96px)}
+.section-head .right{text-align:left}
+.section-head .num{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--mute);display:flex;flex-direction:column;gap:18px}
+.section-head .num .big{font-family:var(--serif);font-size:48px;color:var(--ink);letter-spacing:-0.02em;line-height:1;font-style:italic}
+
+/* Projects */
+.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;padding:0 var(--pad);max-width:var(--max);margin:0 auto}
+.project{position:relative;display:flex;flex-direction:column;gap:18px;transition:opacity .35s,transform .35s}
+.project .img{position:relative;overflow:hidden;background:#000;aspect-ratio:4/3}
+.project .img img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s cubic-bezier(.2,.7,.2,1),filter .6s;filter:grayscale(0.05) contrast(1.02)}
+.project:hover .img img{transform:scale(1.04);filter:grayscale(0) contrast(1.05)}
+.project .img .index{position:absolute;top:14px;right:14px;font-family:var(--mono);font-size:10.5px;color:rgba(249,250,251,.6);letter-spacing:.16em}
+.project .info{display:flex;justify-content:space-between;align-items:flex-end;gap:24px}
+.project.feat-wide{grid-column:span 2}
+.project.feat-wide .img{aspect-ratio:16/10}
+.projects-cta{display:flex;justify-content:center;padding:clamp(40px,5vw,64px) var(--pad) 0;max-width:var(--max);margin:0 auto}
+.projects-cta .btn{font-size:14px;padding:16px 32px;gap:12px}
+
+/* Services */
+.services{display:grid;grid-template-columns:1fr 1.1fr;gap:0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);max-width:var(--max);margin:0 auto}
+.services-list{padding:0;border-right:1px solid var(--rule)}
+.svc{display:grid;grid-template-columns:60px 1fr auto;align-items:center;padding:28px clamp(20px,3vw,40px);border-bottom:1px solid var(--rule);cursor:pointer;transition:background .25s,padding-left .25s;gap:20px}
+.svc:last-child{border-bottom:0}
+.svc:hover{background:var(--bg-2);padding-left:calc(clamp(20px,3vw,40px) + 8px)}
+.svc.active{background:var(--bg-2)}
+.svc .n{font-family:var(--mono);font-size:11px;color:var(--mute);letter-spacing:.12em}
+.svc .name{font-family:var(--serif);font-size:34px;letter-spacing:-0.015em;line-height:1}
+.svc.active .name em,.svc:hover .name em{color:var(--accent)}
+.svc .name em{font-style:italic;color:var(--mute);font-size:18px;letter-spacing:0;margin-left:8px;transition:color .25s}
+.svc .arrow{font-family:var(--serif);font-size:24px;color:var(--mute);transition:transform .25s,color .25s}
+.svc:hover .arrow,.svc.active .arrow{color:var(--accent);transform:translateX(4px)}
+.services-media{position:relative;background:#000;min-height:100%;overflow:hidden}
+.services-media .pane{position:absolute;inset:0;opacity:0;transition:opacity .6s;pointer-events:none}
+.services-media .pane.show{opacity:1;pointer-events:auto}
+.services-media .pane img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:contrast(1.05) brightness(.92)}
+.services-media .pane::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(17,24,39,.85) 100%)}
+
+/* About / Why */
+.why{display:grid;grid-template-columns:1.2fr 1fr;gap:0;max-width:var(--max);margin:0 auto;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.why-left{padding:clamp(48px,6vw,96px) clamp(28px,4vw,72px);border-right:1px solid var(--rule)}
+.why-pillars{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);margin-top:48px}
+.pillar{background:var(--bg);padding:28px 0;display:flex;flex-direction:column;gap:10px}
+.pillar .pn{font-family:var(--mono);font-size:11px;color:var(--accent);letter-spacing:.18em}
+.pillar h4{margin:0;font-family:var(--serif);font-size:22px;letter-spacing:-0.01em;font-weight:400}
+.pillar p{font-size:13.5px;line-height:1.55;color:var(--ink-2);max-width:32ch}
+.why-right{position:relative;background:#000;min-height:680px;overflow:hidden}
+.why-right img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.85) contrast(1.05)}
+.why-quote{position:absolute;left:32px;right:32px;bottom:32px;color:var(--ink)}
+.why-quote .q{font-family:var(--serif);font-size:clamp(22px,2vw,30px);line-height:1.2;text-wrap:balance;letter-spacing:-0.01em}
+.why-quote .q em{font-style:italic;color:#93c5fd}
+.why-quote .att{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(249,250,251,.65);margin-top:18px;display:flex;gap:10px;align-items:center}
+.why-quote .att::before{content:"";width:18px;height:1px;background:var(--accent)}
+
+/* Process */
+.process{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+.process-rows{border-top:1px solid var(--rule)}
+.prow{display:grid;grid-template-columns:110px 1fr 1fr 200px;gap:32px;align-items:center;padding:28px 0;border-bottom:1px solid var(--rule);transition:background .25s}
+.prow:hover{background:var(--bg-2)}
+.prow .pn{font-family:var(--serif);font-size:52px;font-style:italic;color:var(--ink-2);letter-spacing:-0.02em;line-height:1}
+.prow .pn .small{font-family:var(--mono);font-size:11px;font-style:normal;color:var(--mute);margin-left:8px;letter-spacing:.16em;text-transform:uppercase;vertical-align:top}
+.prow .ptitle{font-family:var(--serif);font-size:30px;letter-spacing:-0.015em;line-height:1.05}
+.prow .ptitle em{font-style:italic;color:var(--ink-2)}
+.prow .pdesc{color:var(--ink-2);font-size:14.5px;line-height:1.5;max-width:46ch}
+.prow .ptime{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.16em;color:var(--mute);text-align:right;display:flex;flex-direction:column;gap:6px;align-items:flex-end}
+.prow .ptime .dur{font-family:var(--serif);font-style:italic;font-size:22px;letter-spacing:0;color:var(--ink);text-transform:none}
+
+/* Stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);max-width:var(--max);margin:0 auto}
+.stat{padding:clamp(36px,4vw,64px) clamp(24px,3vw,40px);border-right:1px solid var(--rule);display:flex;flex-direction:column;gap:16px}
+.stat:last-child{border-right:0}
+.stat .sv{font-family:var(--serif);font-size:clamp(56px,7vw,108px);line-height:0.95;letter-spacing:-0.03em}
+.stat .sv .unit{font-style:italic;color:var(--accent);font-size:0.45em;vertical-align:top;margin-left:4px}
+.stat .sl{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--mute)}
+.stat .sd{color:var(--ink-2);font-size:13.5px;line-height:1.55;max-width:30ch}
+
+/* Testimonials */
+.testimonials{padding:0 var(--pad);max-width:var(--max);margin:0 auto}
+.t-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.t-card{display:flex;flex-direction:column;gap:24px;position:relative}
+.t-card.review-card{padding:28px;border:1px solid var(--rule);border-radius:12px;transition:border-color .25s,box-shadow .25s}
+.t-card.review-card:hover{border-color:var(--accent);box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.t-card .stars{display:flex;gap:3px}
+.t-card .stars span{color:var(--accent);font-size:14px}
+.t-card blockquote{margin:0;font-family:var(--serif);font-size:22px;line-height:1.3;letter-spacing:-0.005em;color:var(--ink);font-weight:400;text-wrap:pretty}
+.t-card .who{display:flex;gap:14px;align-items:center;margin-top:auto;padding-top:24px;border-top:1px solid var(--rule)}
+.t-card .who .av{width:42px;height:42px;border:1px solid var(--rule-2);display:grid;place-items:center;font-family:var(--serif);font-style:italic;font-size:18px;color:var(--ink-2)}
+.t-card .who .name{font-size:14px;color:var(--ink)}
+.t-card .who .role{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--mute);text-transform:uppercase;margin-top:2px}
+
+/* CTA */
+.cta{position:relative;overflow:hidden;padding:clamp(96px,12vw,180px) var(--pad);border-bottom:1px solid var(--rule);text-align:center}
+.cta-bg{position:absolute;inset:0;z-index:0}
+.cta-bg img{width:100%;height:100%;object-fit:cover;filter:brightness(.32) contrast(1.05) grayscale(.4)}
+.cta-bg::after{content:"";position:absolute;inset:0;background:radial-gradient(60% 80% at 50% 50%,transparent 0%,rgba(17,24,39,.85) 90%)}
+.cta-inner{position:relative;z-index:2;max-width:var(--max);margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:36px}
+.cta-inner h2{font-family:var(--serif);font-weight:400;letter-spacing:-0.025em;font-size:clamp(48px,7vw,124px);line-height:0.95;margin:0;text-wrap:balance;max-width:14ch}
+.cta-inner h2 em{font-style:italic;color:var(--accent)}
+.quick-contact{display:flex;gap:32px;flex-wrap:wrap;justify-content:center;font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);margin-top:12px}
+.quick-contact a{color:var(--ink-2)}
+
+/* Footer */
+footer{padding:clamp(48px,5vw,80px) var(--pad) 32px;background:var(--bg)}
+.foot-inner{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:1.6fr repeat(3,1fr);gap:48px;border-bottom:1px solid var(--rule);padding-bottom:48px}
+.foot-brand .brand-mark img{width:75px;height:75px;border-radius:12px}
+.foot-brand .brand-name{font-size:28px}
+.foot-brand p{margin-top:14px;font-size:14px;max-width:36ch;color:var(--ink-2)}
+.foot-col h5{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--mute);margin:0 0 18px}
+.foot-col ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px}
+.foot-col a{font-size:14px;color:var(--ink-2)}
+.foot-col a:hover{color:var(--ink)}
+.foot-bottom{max-width:var(--max);margin:24px auto 0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+
+/* Reveal animations */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.08s}
+.reveal.d2{transition-delay:.16s}
+.reveal.d3{transition-delay:.24s}
+.reveal.d4{transition-delay:.32s}
+
+/* ── Responsive ── */
+@media (max-width:980px){
+  .nav-links{display:none;position:static;transform:none}
+  .mobile-menu-btn{display:flex}
+  .nav-inner{height:64px}
+  .nav-right .btn.ghost{display:none}
+  .hero{padding-top:64px}
+  .hero-grid{grid-template-columns:1fr}
+  .hero-left{border-right:0;min-height:auto;padding:clamp(28px,4vw,48px) var(--pad)}
+  .hero-right{min-height:56vh;border-top:1px solid var(--rule)}
+  .display{font-size:clamp(44px,9vw,80px)}
+  .section-head{grid-template-columns:1fr;gap:20px}
+  h2.section-title{font-size:clamp(32px,5.5vw,52px)}
+  .projects{display:flex!important;flex-wrap:nowrap;overflow-x:auto;scroll-snap-type:x mandatory;gap:20px;scrollbar-width:none}
+  .projects::-webkit-scrollbar{display:none}
+  .project{flex:0 0 55vw;max-width:55vw;scroll-snap-align:start}
+  .project.feat-wide{grid-column:auto!important}
+  .services{grid-template-columns:1fr}
+  .services-list{border-right:0;border-bottom:1px solid var(--rule)}
+  .services-media{min-height:420px}
+  .svc .name{font-size:26px}
+  .why{grid-template-columns:1fr}
+  .why-left{border-right:0;border-bottom:1px solid var(--rule);padding:40px var(--pad)}
+  .why-right{min-height:480px}
+  .prow{grid-template-columns:60px 1fr;gap:18px}
+  .prow .pdesc,.prow .ptime{grid-column:1/-1}
+  .stats{grid-template-columns:1fr 1fr}
+  .stat:nth-child(2n){border-right:0}
+  .stat{border-bottom:1px solid var(--rule)}
+  .t-grid{grid-template-columns:repeat(2,1fr);gap:20px}
+  .foot-inner{grid-template-columns:1fr 1fr}
+}
+@media (max-width:640px){
+  :root{--pad:20px}
+  .display{font-size:clamp(36px,10vw,64px);line-height:.9}
+  h2.section-title{font-size:clamp(28px,7vw,44px)}
+  .brand-name{display:none}
+  .brand-mark img{width:85px;height:85px}
+  .phone{display:none}
+  .mobile-menu-btn{padding:14px;gap:5px;min-width:48px;min-height:48px;display:flex;align-items:center;justify-content:center}
+  .mobile-menu-btn span{width:26px;height:2.5px}
+  .nav{background:var(--bg);backdrop-filter:none;border-bottom:1px solid var(--rule)}
+  .hero{padding-top:75px}
+  .hero-grid{grid-template-rows:1fr;min-height:calc(100vh - 75px);min-height:calc(100svh - 75px)}
+  .hero-left{grid-area:1/1;position:relative;z-index:2;justify-content:flex-end;color:#fff;min-height:auto}
+  .hero-left .display{color:#fff}
+  .hero-left .display em{color:rgba(255,255,255,.75)}
+  .hero-left p{color:rgba(255,255,255,.88)}
+  .hero-left .since{color:rgba(255,255,255,.6)}
+  .hero-top-meta .eyebrow{color:rgba(255,255,255,.65)}
+  .hero-top-meta .eyebrow::before{background:rgba(255,255,255,.5)}
+  .hero-top-meta .crumbs span{color:rgba(255,255,255,.5)}
+  .hero-sub{grid-template-columns:1fr;gap:20px;border-top-color:rgba(255,255,255,.15)}
+  .hero-right{grid-area:1/1;z-index:1;min-height:100vh;min-height:100svh}
+  .hero-right video,.hero-right img{filter:grayscale(.06) contrast(1.02) brightness(.55)}
+  .hero-right::after{background:linear-gradient(0deg,rgba(0,0,0,.88) 0%,rgba(0,0,0,.5) 40%,rgba(0,0,0,.15) 65%,transparent 100%)!important}
+  .hero-cta{flex-direction:column;align-items:stretch;width:100%}
+  .hero-cta .btn{justify-content:center;padding:16px 24px;font-size:14px;background:#fff;color:#111;border-color:#fff}
+  .hero-cta .btn.ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.35)}
+  .hero-cta .since{border-left:0;padding-left:0;margin-left:0;text-align:center;padding-top:16px;border-top:1px solid rgba(255,255,255,.15)}
+  .hero-card{display:none}
+  .hero-marquee{position:relative;z-index:3;background:var(--bg)}
+  .project{flex:0 0 78vw;max-width:78vw}
+  .project .img{border-radius:14px}
+  .svc{grid-template-columns:44px 1fr 24px;gap:14px;padding:20px var(--pad)}
+  .svc .name{font-size:22px}
+  .svc .name em{font-size:13px;display:block;margin-left:0;margin-top:4px}
+  .why-pillars{grid-template-columns:1fr;gap:0;background:transparent;margin-top:32px}
+  .pillar{padding:24px 0 24px 16px;border-bottom:1px solid var(--rule);position:relative}
+  .pillar::before{content:"";position:absolute;left:0;top:24px;width:3px;height:calc(100% - 48px);background:var(--accent);border-radius:2px;opacity:.3}
+  .prow{grid-template-columns:1fr;gap:10px;padding:24px 0 24px 20px;position:relative}
+  .prow::before{content:"";position:absolute;left:0;top:24px;width:3px;height:calc(100% - 24px);background:linear-gradient(180deg,var(--accent) 0%,transparent 100%);border-radius:2px;opacity:.25}
+  .stats{grid-template-columns:1fr 1fr}
+  .stat{padding:28px 20px}
+  .t-grid{display:flex!important;flex-wrap:nowrap;overflow-x:auto;scroll-snap-type:x mandatory;gap:16px;scrollbar-width:none}
+  .t-grid::-webkit-scrollbar{display:none}
+  .t-card.review-card{flex:0 0 82vw;max-width:82vw;scroll-snap-align:start;border-radius:16px}
+  .t-card blockquote{font-size:18px}
+  .cta{padding:clamp(56px,12vw,100px) 20px}
+  .cta-inner h2{font-size:clamp(32px,9vw,64px);max-width:10ch}
+  .foot-inner{grid-template-columns:1fr;gap:28px}
+  .foot-bottom{flex-direction:column;text-align:center;gap:6px;font-size:10px}
+  .btn{padding:15px 22px;font-size:14px;min-height:48px;display:inline-flex;align-items:center;justify-content:center}
+  .reveal{transform:translateY(16px);transition-duration:.6s}
+}
+@media (max-width:400px){
+  :root{--pad:16px}
+  .display{font-size:clamp(28px,11vw,44px)}
+  h2.section-title{font-size:clamp(24px,7vw,36px)}
+  .svc .name{font-size:19px}
+  .stats{grid-template-columns:1fr}
+  .stat{border-right:0!important}
+  .project{flex:0 0 84vw;max-width:84vw}
+  .t-card.review-card{flex:0 0 86vw;max-width:86vw;padding:20px}
+  .t-card blockquote{font-size:16px}
+}
+</style>
+</head>
+<body>
+
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║  CONFIG — Edit this section per client                      ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+
+<script>
+// ============================================================
+//  CLIENT CONFIG — Change these values for each new client
+// ============================================================
+const CONFIG = {
+  // Brand
+  companyName:    "Company Name",
+  companySuffix:  "Ltd",          // shown in italic after name
+  tagline:        "Built quietly, to last loudly.",
+  taglineEm:      "to last loudly.",  // italic portion
+  established:    "Est. 2024",
+  location:       "London & UK-wide",
+  phone:          "+44 (0) 7XXX XXX XXX",
+  phoneTel:       "+44XXXXXXXXXX",
+  email:          "info@example.co.uk",
+  address:        "123 Street Name, City, Postcode",
+  logoUrl:        "/assets/logo.png",
+
+  // Hero
+  heroCodes:      ["W11", "W6", "N10", "EN1"],  // area codes shown top-right
+  heroDescription:"A full-service company dedicated to building and improving residential and commercial properties. Founded by a team with over 10 years combined experience.",
+  heroCtaPrimary: "Start a project",
+  heroCtaSecondary:"View portfolio",
+  heroVideoUrl:   "/uploads/site-video-01.mp4",
+  heroFallbackImg:"/assets/01-kitchen-navy.jpg",
+  heroCardLabel:  "Featured · Project N° 001",
+  heroCardTitle:  'The <em>Flagship</em> Project — bespoke finish.',
+  heroCardMeta:   [{k:"Location", v:"London"}, {k:"Year", v:"2025"}],
+
+  // Marquee keywords
+  marquee: ["Service One","Service Two","Service Three","Service Four","Service Five","Service Six","Service Seven","Service Eight"],
+
+  // Trust bar
+  trustLine:  "Accredited · Fully insured · Warranty on every job",
+  trustLogos: [
+    {img: "/uploads/gas-safe.png", alt: "Accreditation 1"},
+    {img: "/uploads/niceic.png",   alt: "Accreditation 2"},
+  ],
+
+  // Portfolio
+  projects: [
+    {img:"/uploads/extension-kitchen-glass-roof.jpeg", alt:"Project 1", loc:"West London · 2026", wide:true},
+    {img:"/assets/01-kitchen-navy.jpg", alt:"Project 2", loc:"Camden · 2025"},
+    {img:"/assets/02-roofing-slate.jpg", alt:"Project 3", loc:"South West London · 2026"},
+    {img:"/assets/04-bathroom-sage.jpg", alt:"Project 4", loc:"Chelsea · 2026"},
+    {img:"/assets/03-underfloor.jpg", alt:"Project 5", loc:"Enfield · 2026"},
+    {img:"/uploads/open-plan-renovation-wide.jpeg", alt:"Project 6", loc:"Ealing · 2026", wide:true},
+  ],
+
+  // Services
+  services: [
+    {key:"svc1", n:"01 /", name:"Service One",    sub:"sub-description here",    desc:"Full description of service one. Include details about what's included and the approach.", lead:"4–8 wks", img:"/uploads/extension-kitchen-island.jpeg"},
+    {key:"svc2", n:"02 /", name:"Service Two",    sub:"sub-description here",    desc:"Full description of service two.", lead:"2–6 wks", img:"/assets/02-roofing-slate.jpg"},
+    {key:"svc3", n:"03 /", name:"Service Three",  sub:"sub-description here",    desc:"Full description of service three.", lead:"1–4 wks", img:"/assets/modern-extension-exterior.png"},
+    {key:"svc4", n:"04 /", name:"Service Four",   sub:"sub-description here",    desc:"Full description of service four.", lead:"1–6 wks", img:"/assets/03-underfloor.jpg"},
+    {key:"svc5", n:"05 /", name:"Service Five",   sub:"sub-description here",    desc:"Full description of service five.", lead:"2–6 wks", img:"/assets/04-bathroom-sage.jpg"},
+  ],
+
+  // About / Why us pillars
+  aboutTitle:     'A full-service provider — <em>and peace of mind</em> on the way through.',
+  aboutDesc:      "Your company description paragraph goes here. Explain what makes you different and why clients should trust you.",
+  aboutImage:     "/assets/03-underfloor.jpg",
+  aboutQuote:     '"Whatever your needs are, our expertise goes <em>beyond expectations.</em>"',
+  aboutAttrib:    "Company Name — since 2024",
+  pillars: [
+    {n:"→ 01", title:"Pillar One",   desc:"Description of your first key differentiator or value proposition."},
+    {n:"→ 02", title:"Pillar Two",   desc:"Description of your second key differentiator."},
+    {n:"→ 03", title:"Pillar Three", desc:"Description of your third key differentiator."},
+    {n:"→ 04", title:"Pillar Four",  desc:"Description of your fourth key differentiator."},
+  ],
+
+  // Process steps
+  process: [
+    {n:"01", stage:"Discovery",  title:'Site visit & <em>scope brief</em>',         desc:"Description of the first step in your process.", dur:"~ 1 week", cost:"No charge"},
+    {n:"02", stage:"Proposal",   title:'Fixed-price <em>quotation</em>',             desc:"Description of the second step.", dur:"2–3 weeks", cost:"From £XXX"},
+    {n:"03", stage:"Pre-start",  title:'Contract, <em>programme & payment plan</em>',desc:"Description of the third step.", dur:"2 weeks", cost:"Pre-work"},
+    {n:"04", stage:"Phase 1",    title:'Main <em>delivery phase</em>',               desc:"Description of the main delivery phase.", dur:"8–14 weeks", cost:"50–60%"},
+    {n:"05", stage:"Phase 2",    title:'Finishing & <em>detailing</em>',              desc:"Description of the finishing phase.", dur:"6–10 weeks", cost:"30–40%"},
+    {n:"06", stage:"Handover",   title:'Completion & <em>warranty</em>',              desc:"Description of the handover process.", dur:"2 weeks", cost:"Final 5%"},
+  ],
+
+  // Stats
+  stats: [
+    {value:"2024", unit:"",       label:"Founded",             desc:"Short description about when and how the company was founded."},
+    {value:"10",   unit:"yrs+",   label:"Combined experience", desc:"Short description about your team's experience."},
+    {value:"£10",  unit:"m",      label:"Insurance certificate",desc:"Short description about your insurance coverage."},
+    {value:"UK",   unit:"-wide",  label:"Based in London",     desc:"Short description about your coverage area."},
+  ],
+
+  // Testimonials
+  reviews: [
+    {stars:5, quote:'"Excellent work, highly recommend! The team was professional from start to finish."', name:"Client Name", initial:"C"},
+    {stars:5, quote:'"Outstanding quality and attention to detail. Would use again without hesitation."', name:"Client Name", initial:"C"},
+    {stars:5, quote:'"Great communication throughout the project. Delivered on time and on budget."', name:"Client Name", initial:"C"},
+  ],
+
+  // CTA
+  ctaImage:    "/assets/interior-renovation-progress.jpg",
+  ctaHeading:  "Let's build something that <em>outlasts us.</em>",
+  ctaDesc:     "Send us your brief and a rough budget — we'll reply within one working day with availability and a sensible next step.",
+  ctaPrimary:  "Request a free quote",
+  ctaSecondary:"Call us",
+
+  // Footer
+  footerDesc:    "Based in London, working UK-wide. Founded by a team with over 10 years combined experience.",
+  footerLinks:   [{label:"Services", href:"#services"}, {label:"Projects", href:"#projects"}, {label:"About us", href:"#approach"}, {label:"Contact", href:"#contact"}],
+  accreditations:["Accreditation 1", "Accreditation 2"],
+  companyNumber: "00000000",
+};
+</script>
+
+<!-- ══════════════════════════════════════════
+     NAV
+     ══════════════════════════════════════════ -->
+<header class="nav" id="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="#top" id="nav-brand">
+      <span class="brand-mark"><img src="/assets/logo.png" alt="Logo" id="nav-logo"></span>
+      <span class="brand-name" id="nav-name">Company<span>&nbsp;Name</span></span>
+    </a>
+    <nav class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#projects" class="dot">Projects</a>
+      <a href="#approach">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-right">
+      <span class="phone" id="nav-phone">+44 (0) 7XXX XXX XXX</span>
+      <a class="btn ghost" href="#contact">Request a quote <span class="arr"></span></a>
+      <button class="mobile-menu-btn" aria-label="Toggle menu" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <nav>
+      <a href="#services" onclick="closeMenu()">Services</a>
+      <a href="#projects" onclick="closeMenu()">Projects</a>
+      <a href="#approach" onclick="closeMenu()">About</a>
+      <a href="#contact" class="btn" onclick="closeMenu()">Request a quote <span class="arr"></span></a>
+    </nav>
+    <div class="mobile-menu-footer" id="mobile-footer"></div>
+  </div>
+</header>
+
+<!-- ══════════════════════════════════════════
+     HERO
+     ══════════════════════════════════════════ -->
+<section class="hero" id="top">
+  <div class="hero-grid">
+    <div class="hero-left">
+      <div class="hero-top-meta">
+        <span class="eyebrow" id="hero-eyebrow">Est. 2024 — London &amp; UK-wide</span>
+        <div class="crumbs" id="hero-crumbs"></div>
+      </div>
+      <div class="hero-title reveal in">
+        <h1 class="display" id="hero-h1">Built quietly,<br><em>to last loudly.</em></h1>
+      </div>
+      <div class="hero-sub">
+        <p id="hero-desc"></p>
+        <div class="hero-cta" id="hero-cta"></div>
+      </div>
+    </div>
+    <div class="hero-right" id="hero-media"></div>
+  </div>
+  <div class="hero-marquee" aria-hidden="true">
+    <div class="hero-marquee-track" id="marquee-track"></div>
+  </div>
+</section>
+
+<!-- Trust bar -->
+<section class="trust">
+  <div class="trust-inner">
+    <span class="trust-label" id="trust-label"></span>
+    <div class="trust-logos" id="trust-logos"></div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     PROJECTS
+     ══════════════════════════════════════════ -->
+<section class="section" id="projects">
+  <div class="section-head">
+    <div class="num reveal"><span>§ 01 — Selected Works</span><span class="big">Portfolio</span></div>
+    <div class="right reveal d1">
+      <h2 class="section-title">A close, considered record of <em>recent builds.</em></h2>
+    </div>
+  </div>
+  <div class="projects" id="projects-grid"></div>
+  <div class="projects-cta reveal">
+    <a class="btn" href="#contact">View all projects <span class="arr"></span></a>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     SERVICES
+     ══════════════════════════════════════════ -->
+<section class="section invert" id="services" style="padding-top:clamp(72px,8vw,128px);padding-bottom:0;border-bottom:0">
+  <div class="section-head">
+    <div class="num reveal"><span>§ 02 — Services</span><span class="big">What we do</span></div>
+    <div class="right reveal d1">
+      <h2 class="section-title">A full-stack provider — <em>one team, one name</em> on the contract.</h2>
+    </div>
+  </div>
+  <div class="services" id="services-block">
+    <div class="services-list" id="services-list"></div>
+    <div class="services-media" id="services-media"></div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     ABOUT / WHY
+     ══════════════════════════════════════════ -->
+<section class="section" id="approach" style="padding-top:0;padding-bottom:0;border-bottom:0">
+  <div class="why">
+    <div class="why-left">
+      <span class="eyebrow reveal">§ 03 — About us</span>
+      <h2 class="section-title reveal d1" style="margin-top:24px" id="about-title"></h2>
+      <p class="reveal d2" style="margin-top:28px;max-width:50ch;font-size:16.5px;line-height:1.55" id="about-desc"></p>
+      <div class="why-pillars" id="pillars"></div>
+    </div>
+    <div class="why-right" id="about-right"></div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     PROCESS
+     ══════════════════════════════════════════ -->
+<section class="section" id="process-section">
+  <div class="section-head">
+    <div class="num reveal"><span>§ 04 — How we work</span><span class="big">Process</span></div>
+    <div class="right reveal d1">
+      <h2 class="section-title">Six clear stages, <em>from first meeting to handover.</em></h2>
+    </div>
+  </div>
+  <div class="process">
+    <div class="process-rows" id="process-rows"></div>
+  </div>
+</section>
+
+<!-- Stats -->
+<section class="section invert" style="padding:clamp(48px,5vw,80px) 0">
+  <div class="stats" id="stats-grid"></div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     TESTIMONIALS
+     ══════════════════════════════════════════ -->
+<section class="section" id="testimonials">
+  <div class="section-head">
+    <div class="num reveal"><span>§ 05 — Client reviews</span><span class="big">In their words</span></div>
+    <div class="right reveal d1">
+      <h2 class="section-title">The reason most of our work comes from <em>recommendation.</em></h2>
+    </div>
+  </div>
+  <div class="testimonials">
+    <div class="t-grid" id="reviews-grid"></div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     CTA
+     ══════════════════════════════════════════ -->
+<section class="cta invert" id="contact">
+  <div class="cta-bg" id="cta-bg"></div>
+  <div class="cta-inner" id="cta-inner"></div>
+</section>
+
+<!-- Footer -->
+<footer class="invert" id="site-footer"></footer>
+
+<!-- ══════════════════════════════════════════
+     RENDER ENGINE — Populates from CONFIG
+     ══════════════════════════════════════════ -->
+<script>
+(function(){
+  const C = CONFIG;
+
+  // Title
+  document.title = `${C.companyName} — ${C.tagline}`;
+
+  // Nav
+  document.getElementById('nav-logo').src = C.logoUrl;
+  document.getElementById('nav-logo').alt = C.companyName + ' Logo';
+  document.getElementById('nav-name').innerHTML = C.companyName.split(' ')[0] + '<span>&nbsp;' + (C.companySuffix || C.companyName.split(' ').slice(1).join(' ')) + '</span>';
+  document.getElementById('nav-phone').textContent = C.phone;
+
+  // Mobile footer
+  document.getElementById('mobile-footer').innerHTML = `
+    <a href="tel:${C.phoneTel}">${C.phone}</a>
+    <a href="mailto:${C.email}">${C.email}</a>
+    <span>${C.address}</span>`;
+
+  // Hero
+  document.getElementById('hero-eyebrow').innerHTML = C.established + ' — ' + C.location;
+  const tagParts = C.tagline.split(C.taglineEm);
+  document.getElementById('hero-h1').innerHTML = (tagParts[0] || '').trim() + '<br><em>' + C.taglineEm + '</em>';
+  document.getElementById('hero-desc').textContent = C.heroDescription;
+
+  // Hero crumbs
+  document.getElementById('hero-crumbs').innerHTML = C.heroCodes.map((c,i) => `<span>${c}</span>${i<C.heroCodes.length-1?'<span>·</span>':''}`).join('');
+
+  // Hero CTA
+  document.getElementById('hero-cta').innerHTML = `
+    <a class="btn" href="#contact">${C.heroCtaPrimary} <span class="arr"></span></a>
+    <a class="btn ghost" href="#projects">${C.heroCtaSecondary} <span class="arr"></span></a>
+    <span class="since">Based in ${C.location}</span>`;
+
+  // Hero media
+  document.getElementById('hero-media').innerHTML = `
+    <video autoplay muted loop playsinline>
+      <source src="${C.heroVideoUrl}" type="video/mp4">
+      <img src="${C.heroFallbackImg}" alt="${C.companyName}">
+    </video>
+    <div class="hero-card">
+      <div>
+        <span class="label">${C.heroCardLabel}</span>
+        <div class="title">${C.heroCardTitle}</div>
+      </div>
+      <div class="meta-row">${C.heroCardMeta.map(m=>`<div><span class="k">${m.k}</span><span class="v">${m.v}</span></div>`).join('')}</div>
+    </div>`;
+
+  // Marquee
+  const mq = C.marquee.map(s=>`<span>${s}</span>`).join('');
+  document.getElementById('marquee-track').innerHTML = mq + mq;
+
+  // Trust
+  document.getElementById('trust-label').textContent = C.trustLine;
+  document.getElementById('trust-logos').innerHTML = C.trustLogos.map(t=>`<span class="tl"><img src="${t.img}" alt="${t.alt}" style="height:28px;width:auto"></span>`).join('');
+
+  // Projects
+  document.getElementById('projects-grid').innerHTML = C.projects.map((p,i)=>`
+    <article class="project ${p.wide?'feat-wide':''} reveal${i%3===1?' d1':''}${i%3===2?' d2':''}">
+      <div class="img">
+        <img src="${p.img}" alt="${p.alt}" loading="lazy">
+        <span class="index">N° ${String(i+1).padStart(2,'0')}</span>
+      </div>
+      <div class="info"><div><span class="meta">${p.loc}</span></div></div>
+    </article>`).join('');
+
+  // Services
+  let activeSvc = C.services[0].key;
+  function renderServices(){
+    document.getElementById('services-list').innerHTML = C.services.map(s=>`
+      <div class="svc ${s.key===activeSvc?'active':''}" onclick="setService('${s.key}')">
+        <span class="n">${s.n}</span>
+        <span class="name">${s.name} <em>— ${s.sub}</em></span>
+        <span class="arrow">→</span>
+      </div>`).join('');
+    document.getElementById('services-media').innerHTML = C.services.map(s=>`
+      <div class="pane ${s.key===activeSvc?'show':''}">
+        <img src="${s.img}" alt="${s.name}">
+      </div>`).join('');
+  }
+  window.setService = function(key){ activeSvc = key; renderServices(); };
+  renderServices();
+
+  // About
+  document.getElementById('about-title').innerHTML = C.aboutTitle;
+  document.getElementById('about-desc').textContent = C.aboutDesc;
+  document.getElementById('about-right').innerHTML = `
+    <img src="${C.aboutImage}" alt="">
+    <div class="why-quote">
+      <div class="q">${C.aboutQuote}</div>
+      <div class="att">${C.aboutAttrib}</div>
+    </div>`;
+  document.getElementById('pillars').innerHTML = C.pillars.map((p,i)=>`
+    <div class="pillar reveal${i?' d'+i:''}">
+      <span class="pn">${p.n}</span>
+      <h4>${p.title}</h4>
+      <p>${p.desc}</p>
+    </div>`).join('');
+
+  // Process
+  document.getElementById('process-rows').innerHTML = C.process.map(p=>`
+    <div class="prow reveal">
+      <div class="pn">${p.n}<span class="small">${p.stage}</span></div>
+      <div class="ptitle">${p.title}</div>
+      <div class="pdesc">${p.desc}</div>
+      <div class="ptime"><span class="dur">${p.dur}</span><span>${p.cost}</span></div>
+    </div>`).join('');
+
+  // Stats
+  document.getElementById('stats-grid').innerHTML = C.stats.map((s,i)=>`
+    <div class="stat reveal${i?' d'+i:''}">
+      <span class="sv">${s.value}<span class="unit">${s.unit}</span></span>
+      <span class="sl">${s.label}</span>
+      <span class="sd">${s.desc}</span>
+    </div>`).join('');
+
+  // Reviews
+  document.getElementById('reviews-grid').innerHTML = C.reviews.map((r,i)=>`
+    <div class="t-card review-card reveal${i?' d'+i:''}">
+      <div class="stars">${'<span>★</span>'.repeat(r.stars)}</div>
+      <blockquote>${r.quote}</blockquote>
+      <div class="who">
+        <span class="av">${r.initial}</span>
+        <div>
+          <div class="name">${r.name}</div>
+          <div class="role">Verified review</div>
+        </div>
+      </div>
+    </div>`).join('');
+
+  // CTA
+  document.getElementById('cta-bg').innerHTML = `<img src="${C.ctaImage}" alt="">`;
+  document.getElementById('cta-inner').innerHTML = `
+    <span class="eyebrow reveal">§ 06 — Begin</span>
+    <h2 class="reveal d1">${C.ctaHeading}</h2>
+    <p class="reveal d2" style="font-size:17px;max-width:50ch;text-align:center;color:#cfc8bb">${C.ctaDesc}</p>
+    <div class="reveal d3" style="display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:32px">
+      <a class="btn" href="mailto:${C.email}">${C.ctaPrimary} <span class="arr"></span></a>
+      <a class="btn ghost" href="tel:${C.phoneTel}">${C.ctaSecondary} <span class="arr"></span></a>
+    </div>
+    <div class="quick-contact reveal d4">
+      <a href="mailto:${C.email}">${C.email}</a>
+      <span>${C.address}</span>
+    </div>`;
+
+  // Footer
+  document.getElementById('site-footer').innerHTML = `
+    <div class="foot-inner">
+      <div class="foot-brand">
+        <div class="brand">
+          <span class="brand-mark"><img src="${C.logoUrl}" alt="${C.companyName} Logo"></span>
+          <span class="brand-name">${C.companyName.split(' ')[0]}<span>&nbsp;${C.companySuffix || ''}</span></span>
+        </div>
+        <p>${C.footerDesc}</p>
+      </div>
+      <div class="foot-col">
+        <h5>Company</h5>
+        <ul>${C.footerLinks.map(l=>`<li><a href="${l.href}">${l.label}</a></li>`).join('')}</ul>
+      </div>
+      <div class="foot-col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="tel:${C.phoneTel}">${C.phone}</a></li>
+          <li><a href="mailto:${C.email}">${C.email}</a></li>
+          <li>${C.address}</li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h5>Accreditations</h5>
+        <ul>${C.accreditations.map(a=>`<li>${a}</li>`).join('')}</ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© ${new Date().getFullYear()} ${C.companyName} ${C.companySuffix} · Company No. ${C.companyNumber}</span>
+      <span>All rights reserved</span>
+    </div>`;
+
+  // ── Scroll & reveal logic ──
+  window.addEventListener('scroll', function(){
+    document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 12);
+  }, {passive:true});
+
+  const io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, {threshold:0.12, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+
+  // Mobile menu
+  let menuOpen = false;
+  window.toggleMenu = function(){
+    menuOpen = !menuOpen;
+    document.getElementById('mobile-menu').classList.toggle('open', menuOpen);
+    document.querySelector('.mobile-menu-btn').classList.toggle('is-open', menuOpen);
+    document.body.style.overflow = menuOpen ? 'hidden' : '';
+  };
+  window.closeMenu = function(){
+    menuOpen = false;
+    document.getElementById('mobile-menu').classList.remove('open');
+    document.querySelector('.mobile-menu-btn').classList.remove('is-open');
+    document.body.style.overflow = '';
+  };
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeMenu(); });
+})();
+</script>
+
+</body>
+</html>

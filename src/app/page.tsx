@@ -619,7 +619,7 @@ export default function Home() {
     </div>
     <div className="right reveal d1">
       <h2 className="section-title">The reason most of our work comes from <em>recommendation.</em></h2>
-      <p style={{ marginTop: "24px", maxWidth: "54ch", fontSize: "16px", lineHeight: "1.55" }}>16 verified Google reviews · <strong>5.0 ★</strong> average. A selection below — every reviewer can be verified on our Google Business profile.</p>
+      <p style={{ marginTop: "24px", maxWidth: "54ch", fontSize: "16px", lineHeight: "1.55" }}>16 verified Google reviews · <strong>5.0 ★</strong> average. Every written review below — each can be verified on our Google Business profile.</p>
     </div>
   </div>
 
@@ -627,7 +627,7 @@ export default function Home() {
     <div className="t-grid review-carousel" ref={reviewRef}>
       <div className="t-card review-card reveal">
         <div className="stars" aria-label="5 out of 5"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-        <blockquote>"I want to thank Delta Construction for its great job. Tani and his team did a brilliant job with high quality finishing in a very short time we had to move to our new house. I strongly recommend them!!!"</blockquote>
+        <blockquote>&ldquo;I want to thank Delta Construction for its great job. Tani and his team did a brilliant job with high quality finishing in a very short time we had to move to our new house. I strongly recommend them!!!&rdquo;</blockquote>
         <div className="who">
           <span className="av">S</span>
           <div>
@@ -638,18 +638,29 @@ export default function Home() {
       </div>
       <div className="t-card review-card reveal d1">
         <div className="stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-        <blockquote>"My family and I would like to extend our utmost appreciation to Tani and his team at Delta Construction. Their professionalism is second to none. Tani himself provided valuable input regarding the interior layout and space saving units to maximise space..."</blockquote>
+        <blockquote>&ldquo;Hi Delta Construction, I just wanted to say a big thank you for the fantastic job your team did fixing the damp issue at my place. You guys were awesome from start to finish. You didn&apos;t just spot the problem, but you sorted everything out perfectly &ndash; from the roof and gutters to the pointing. The attention to detail and quality of the work really stood out. Thanks to your hard work, my home is now damp-free and I feel confident about the repairs. I&apos;ll definitely recommend Delta Construction to anyone who needs construction work done.&rdquo;</blockquote>
         <div className="who">
-          <span className="av">D</span>
+          <span className="av">P</span>
           <div>
-            <div className="name">DMC</div>
+            <div className="name">Power Academy UK (Panny)</div>
             <div className="role">Verified Google review</div>
           </div>
         </div>
       </div>
       <div className="t-card review-card reveal d2">
         <div className="stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-        <blockquote>"Delta did a fantastic job removing a big bay tree from our front garden, and re-building the brick wall that had been damaged by its roots. The work was done quickly but carefully, and the price was great."</blockquote>
+        <blockquote>&ldquo;My family and I would like to extend our utmost appreciation to Tani and his team at Delta Construction. Their professionalism is second to none. Tani himself provided valuable input regarding the interior layout and space saving units to maximise space while still providing an air of spaciousness in smaller areas of access. Since successfully completing our refurbishment, Tani has remained in touch with our family and dealt with a number of smaller projects for us, very often pro bono which shows the passion he has for his work!!!&rdquo;</blockquote>
+        <div className="who">
+          <span className="av">D</span>
+          <div>
+            <div className="name">DMC (David McKenzie-Cook)</div>
+            <div className="role">Twickenham, London · Verified Google review</div>
+          </div>
+        </div>
+      </div>
+      <div className="t-card review-card reveal">
+        <div className="stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <blockquote>&ldquo;Delta did a fantastic job removing a big bay tree from our front garden, and re-building the brick wall that had been damaged by its roots. The work was done quickly but carefully, and the price was great. The guys were very friendly and I will be using Delta again for any future jobs. Very happy to recommend!&rdquo;</blockquote>
         <div className="who">
           <span className="av">J</span>
           <div>
@@ -658,9 +669,9 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="t-card review-card reveal">
+      <div className="t-card review-card reveal d1">
         <div className="stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-        <blockquote>"So happy with the work they did on our garden. Everything went as planned and was done to really high level and also completed quickly - so happy with the results! Definitely recommend!"</blockquote>
+        <blockquote>&ldquo;So happy with the work they did on our garden. Everything went as planned and was done to really high level and also completed quickly &ndash; so happy with the results! Definitely recommend!&rdquo;</blockquote>
         <div className="who">
           <span className="av">K</span>
           <div>
@@ -669,9 +680,9 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="t-card review-card reveal d1">
+      <div className="t-card review-card reveal d2">
         <div className="stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-        <blockquote>"We were very skeptical to using someone we didn't know even though recommended. Our usual builder unfortunately couldn't assist. I am extremely happy that we decided to go ahead. Full house renovation and we also extended the ground floor."</blockquote>
+        <blockquote>&ldquo;We were very skeptical to using someone we didn&apos;t know even though recommended. Our usual builder unfortunately couldn&apos;t assist. I am extremely happy that we decided to go ahead. Full house renovation and we also extended the ground floor. Everything was great and high quality work. So easy to talk to and they accommodated all our requests and amendments. Highly recommend.&rdquo;</blockquote>
         <div className="who">
           <span className="av">E</span>
           <div>
@@ -680,9 +691,9 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="t-card review-card reveal d2">
+      <div className="t-card review-card reveal">
         <div className="stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-        <blockquote>"Thank you very much guys. I am elderly and I needed help with my garden, a few things done to my extension and the whole brick facade clean and repointed. Tani & team were so helpful. They prioritized me and did an amazing job in no time."</blockquote>
+        <blockquote>&ldquo;Thank you very much guys. I am elderly and I needed help with my garden, a few things done to my extension and the whole brick facade clean and repointed. Tani &amp; team were so helpful. They prioritized me (I was in a hurry as I need to sell my house) and did an amazing job in no time. Cannot thank you enough.&rdquo;</blockquote>
         <div className="who">
           <span className="av">S</span>
           <div>
@@ -691,10 +702,76 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <div className="t-card review-card reveal d1">
+        <div className="stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <blockquote>&ldquo;We had our house renovated with Delta company and they are amazing for price and quality of job. Highly recommend them.&rdquo;</blockquote>
+        <div className="who">
+          <span className="av">Z</span>
+          <div>
+            <div className="name">zeinab alboghobeish</div>
+            <div className="role">Verified Google review</div>
+          </div>
+        </div>
+      </div>
+      <div className="t-card review-card reveal d2">
+        <div className="stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <blockquote>&ldquo;Tani and his team were brilliant and completed the work in a timely manner. Always professional and delivered a high standard of work. Changed all of the gutters and fascia boards, rendering of two chimney stacks and painting of whole exterior.&rdquo;</blockquote>
+        <div className="who">
+          <span className="av">J</span>
+          <div>
+            <div className="name">Jimmy Michael</div>
+            <div className="role">Verified Google review</div>
+          </div>
+        </div>
+      </div>
+      <div className="t-card review-card reveal">
+        <div className="stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <blockquote>&ldquo;I have used Delta twice now for rental properties. Both times got a good roof repair carried out at short notice. Very pleasant to deal with, would use again.&rdquo;</blockquote>
+        <div className="who">
+          <span className="av">A</span>
+          <div>
+            <div className="name">Annmarie Flynn</div>
+            <div className="role">Verified Google review</div>
+          </div>
+        </div>
+      </div>
+      <div className="t-card review-card reveal d1">
+        <div className="stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <blockquote>&ldquo;Delta are efficient, and a great quality service, for an affordable price. I would recommend them to anyone.&rdquo;</blockquote>
+        <div className="who">
+          <span className="av">M</span>
+          <div>
+            <div className="name">Michael Thomson</div>
+            <div className="role">Verified Google review</div>
+          </div>
+        </div>
+      </div>
+      <div className="t-card review-card reveal d2">
+        <div className="stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <blockquote>&ldquo;Ken has given us quite a bit of work in the past and always keeps us in the loop on anything he thinks we can help with.&rdquo;</blockquote>
+        <div className="who">
+          <span className="av">G</span>
+          <div>
+            <div className="name">Gary Cassidy</div>
+            <div className="role">Verified Google review</div>
+          </div>
+        </div>
+      </div>
+      <div className="t-card review-card reveal">
+        <div className="stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <blockquote>&ldquo;I was so pleased with the finished product, so tidy throughout and such a nice person to have around. Thank you!&rdquo;</blockquote>
+        <div className="who">
+          <span className="av">M</span>
+          <div>
+            <div className="name">Matilda Goad</div>
+            <div className="role">Verified Google review</div>
+          </div>
+        </div>
+      </div>
     </div>
     <div className="review-progress carousel-progress" style={{ display: "none" }}>
       <div className="carousel-track-bg">
-        <div className="carousel-track-fill" style={{ transform: `scaleX(${0.17 + reviewProgress * 0.83})` }}></div>
+        <div className="carousel-track-fill" style={{ transform: `scaleX(${0.077 + reviewProgress * 0.923})` }}></div>
       </div>
     </div>
   </div>
