@@ -37,6 +37,16 @@ const areas = [
     href: "/areas/central-london",
     subAreas: "Westminster, Kensington, Chelsea, Mayfair, Marylebone",
   },
+  {
+    name: "South East London",
+    href: "/areas/south-east-london",
+    subAreas: "Dulwich, Forest Hill, Lewisham, Beckenham, Bromley, Croydon",
+  },
+  {
+    name: "East London",
+    href: "/areas/east-london",
+    subAreas: "Bethnal Green, Hackney, Walthamstow, Stratford, Loughton",
+  },
 ];
 
 export default function AreasClient() {

@@ -22,7 +22,7 @@ export async function generateMetadata({
   if (!location) return {};
 
   return {
-    title: `Builders in ${location.name} — Delta Construction`,
+    title: `${location.name} Builders | Extensions & Loft Conversions`,
     description: location.description,
     alternates: { canonical: `/areas/${location.slug}` },
     other: {

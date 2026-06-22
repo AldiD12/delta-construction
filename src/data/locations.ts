@@ -171,7 +171,7 @@ export const locations: Location[] = [
       "Crouch End",
       "Highgate",
     ],
-    nearby: ["central-london", "west-london"],
+    nearby: ["central-london", "west-london", "east-london"],
     propertyTypes:
       "North London has enormous variety — grand Edwardian detached houses in Muswell Hill and Highgate, tight Victorian terraces in Crouch End and Finchley, sprawling 1930s semis across Barnet and Enfield. Each type demands a different approach to gaining space.",
     typicalProjects:
@@ -220,7 +220,7 @@ export const locations: Location[] = [
       "Battersea",
       "Balham",
     ],
-    nearby: ["central-london", "twickenham-richmond", "hounslow"],
+    nearby: ["central-london", "twickenham-richmond", "hounslow", "south-east-london"],
     propertyTypes:
       "South West London is dominated by Victorian terraced housing with untapped side-return potential, Edwardian semis and detached villas in Wimbledon, and converted mansion flats in Battersea and Clapham. The classic project here is opening up the ground floor.",
     typicalProjects:
@@ -266,7 +266,7 @@ export const locations: Location[] = [
       "Marylebone",
       "Belgravia",
     ],
-    nearby: ["west-london", "south-west-london", "north-london"],
+    nearby: ["west-london", "south-west-london", "north-london", "south-east-london", "east-london"],
     propertyTypes:
       "Central London is defined by period townhouses (Georgian and Victorian), mansion block apartments, mews houses, and high-end lateral flats. These properties demand specialist knowledge — lime plastering, heritage joinery, lead roofing, and working within the constraints of listed building consent.",
     typicalProjects:
@@ -297,6 +297,100 @@ export const locations: Location[] = [
           "What specification do you typically work to in Central London?",
         answer:
           "Our Central London projects are typically specified to a high residential standard — lime plaster, bespoke joinery, underfloor heating throughout, integrated AV/lighting control, and premium sanitaryware. We work to whatever specification you and your designer set.",
+      },
+    ],
+  },
+  {
+    slug: "south-east-london",
+    name: "South East London",
+    region: "GB-LND",
+    lat: 51.4416,
+    lng: -0.0556,
+    description:
+      "Extensions, loft conversions and full refurbishments across South East London — from Victorian terraces in Dulwich and Forest Hill to suburban semis in Beckenham, Bromley and Croydon. Fixed-price, director-led building with building-regs sign-off as standard.",
+    subAreas: [
+      "Dulwich",
+      "Forest Hill",
+      "Lewisham",
+      "Beckenham",
+      "Bromley",
+      "Croydon",
+    ],
+    nearby: ["south-west-london", "central-london", "east-london"],
+    propertyTypes:
+      "South East London ranges from grand Victorian and Edwardian villas around Dulwich Village and Forest Hill to tight terraced streets in Lewisham and Catford and 1930s suburban semis spreading out through Beckenham, Bromley and Croydon. The period stock is ideal for loft conversions and rear extensions, while the inter-war semis suit side and rear extensions and garage conversions.",
+    typicalProjects:
+      "Rear and side-return extensions are the most common brief across the South East London terraces, opening up narrow kitchens into open-plan family space. In Dulwich and Forest Hill we more often take on full-house refurbishments and loft conversions on period properties, while in Beckenham, Bromley and Croydon the typical projects are double-storey extensions, garage conversions and full reroofs on ageing semis.",
+    localContext:
+      "South East London has become one of the strongest renovation markets in the capital as families priced out of areas further west move in for the space, the schools and the green belt around Dulwich and Beckenham. The common thread is the same: a growing family that loves the area and wants to extend rather than move.",
+    faqs: [
+      {
+        question: "Do you cover Dulwich, Beckenham and Bromley?",
+        answer:
+          "Yes — we work right across South East London, including Dulwich, Forest Hill, Lewisham, Beckenham, Bromley and Croydon. Your initial site survey and fixed-price quote are free with no obligation.",
+      },
+      {
+        question:
+          "What's the most common extension in South East London terraces?",
+        answer:
+          "A side-return or rear extension is the most requested project — knocking the galley kitchen through into the side return to create a wide, open-plan kitchen-diner with roof lights and doors to the garden. Most are permitted development, so no full planning application is needed.",
+      },
+      {
+        question: "Do you handle planning and building regulations?",
+        answer:
+          "Yes. We prepare and submit planning applications or permitted development certificates where needed, and building regulations sign-off is included as standard on every project.",
+      },
+      {
+        question: "Are you insured and do you guarantee the work?",
+        answer:
+          "Every project carries our 1-year workmanship guarantee and £2M public liability insurance. Certificates are available on request.",
+      },
+    ],
+  },
+  {
+    slug: "east-london",
+    name: "East London",
+    region: "GB-LND",
+    lat: 51.5388,
+    lng: -0.0286,
+    description:
+      "Loft conversions, extensions and refurbishments across East London — from Victorian terraces in Hackney and Bethnal Green to larger family homes on the Essex border in Loughton and Chigwell. Director-led, fixed-price and fully guaranteed.",
+    subAreas: [
+      "Bethnal Green",
+      "Hackney",
+      "Walthamstow",
+      "Stratford",
+      "Loughton",
+      "Dagenham",
+    ],
+    nearby: ["central-london", "north-london", "south-east-london"],
+    propertyTypes:
+      "East London spans dense Victorian terraces and warehouse conversions in Hackney, Bethnal Green and Bow, the Edwardian streets of Walthamstow and Leyton, post-war stock around Stratford and Dagenham, and larger detached and semi-detached homes out on the Essex border in Loughton and Chigwell. Each calls for a different approach to adding space.",
+    typicalProjects:
+      "L-shape dormer loft conversions and rear extensions are the staple across the Victorian terraces of Hackney, Bethnal Green and Walthamstow. Toward the Essex border in Loughton and Chigwell we take on larger double-storey extensions, full refurbishments and basement work on detached homes. Across Dagenham and Stratford the typical brief is a rear extension or loft conversion to gain a bedroom and a bigger kitchen.",
+    localContext:
+      "East London has been one of the fastest-changing parts of the capital, with young families buying period terraces in Walthamstow and Hackney and professionals upgrading homes out toward Loughton. The brief we hear most is straightforward: more space and a better kitchen without leaving a neighbourhood they've come to love.",
+    faqs: [
+      {
+        question: "Do you work in Hackney, Walthamstow and out to Loughton?",
+        answer:
+          "Yes — we cover the whole of East London and the Essex border, including Bethnal Green, Hackney, Walthamstow, Stratford, Dagenham, Loughton and Chigwell. The first survey and fixed-price quote are free.",
+      },
+      {
+        question:
+          "Can you do an L-shape loft conversion on an East London terrace?",
+        answer:
+          "Yes — it's one of our most common projects across the Victorian terraces of Hackney, Bethnal Green and Walthamstow. An L-shape dormer typically adds a double bedroom and en-suite, gaining around 25–35sqm of usable space.",
+      },
+      {
+        question: "Do I need planning permission for my project?",
+        answer:
+          "Many loft conversions and rear extensions in East London fall under permitted development, so no full planning application is required. We always check and, where it applies, secure a Lawful Development Certificate to protect your investment.",
+      },
+      {
+        question: "Are you insured and guaranteed?",
+        answer:
+          "Yes — £2M public liability insurance and a 1-year workmanship guarantee on every project, with building regulations sign-off included as standard.",
       },
     ],
   },

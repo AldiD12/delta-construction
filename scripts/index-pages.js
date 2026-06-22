@@ -34,6 +34,8 @@ const pages = [
   '/areas/north-london',
   '/areas/south-west-london',
   '/areas/central-london',
+  '/areas/south-east-london',
+  '/areas/east-london',
 ];
 
 // Initialize Google Auth
