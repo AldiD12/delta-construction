@@ -25,6 +25,7 @@ const pages = [
   '/terms',
   '/cookies',
   '/blog',
+  '/blog/loft-conversion-cost-london',
   '/blog/house-extension-cost-london',
   '/blog/permitted-development-london',
   // Area (location) pages

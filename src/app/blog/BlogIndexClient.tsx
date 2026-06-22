@@ -8,6 +8,16 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 
 const posts = [
   {
+    slug: "loft-conversion-cost-london",
+    title: "How Much Does a Loft Conversion Cost in London? (2026 Guide)",
+    excerpt:
+      "Every loft type priced for London 2026 — rooflight, dormer, hip-to-gable, L-shape and mansard — plus the planning rules, building regs and the cost drivers most guides skip.",
+    date: "23 June 2026",
+    readTime: "11 min read",
+    image: "/assets/residential-extension-project.jpg",
+    tags: ["Loft Conversions", "Costs"],
+  },
+  {
     slug: "house-extension-cost-london",
     title: "How Much Does a House Extension Cost in London? (2026 Guide)",
     excerpt:
