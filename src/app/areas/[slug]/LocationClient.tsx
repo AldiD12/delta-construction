@@ -218,6 +218,213 @@ export default function LocationClient({
         </div>
       </section>
 
+      {/* Area-specific deep dive — only rendered for researched locations */}
+      {location.deepDive && (
+        <section
+          className="loc-section"
+          style={{ padding: "96px 0", borderBottom: "1px solid var(--rule)" }}
+        >
+          <div className="container" style={{ maxWidth: "760px" }}>
+            {location.deepDive.sections.map((s, i) => (
+              <div
+                key={i}
+                className="reveal"
+                style={{ marginBottom: "48px" }}
+              >
+                <h2
+                  style={{
+                    fontFamily: "var(--serif)",
+                    fontSize: "clamp(26px, 3.2vw, 38px)",
+                    fontWeight: 400,
+                    lineHeight: 1.18,
+                    letterSpacing: "-0.015em",
+                    color: "var(--ink)",
+                    marginBottom: "24px",
+                  }}
+                >
+                  {s.heading}
+                </h2>
+                {s.body.map((p, j) => (
+                  <p
+                    key={j}
+                    style={{
+                      fontSize: "17px",
+                      lineHeight: 1.7,
+                      color: "var(--ink-2)",
+                      marginBottom: j === s.body.length - 1 ? 0 : "20px",
+                    }}
+                  >
+                    {p}
+                  </p>
+                ))}
+              </div>
+            ))}
+
+            {/* Planning notes by area */}
+            <div className="reveal" style={{ marginBottom: "48px" }}>
+              <h2
+                style={{
+                  fontFamily: "var(--serif)",
+                  fontSize: "clamp(26px, 3.2vw, 38px)",
+                  fontWeight: 400,
+                  lineHeight: 1.18,
+                  letterSpacing: "-0.015em",
+                  color: "var(--ink)",
+                  marginBottom: "16px",
+                }}
+              >
+                Planning notes by area
+              </h2>
+              {location.deepDive.planningNotes.map((n, i) => (
+                <div
+                  key={i}
+                  style={{
+                    borderTop: "1px solid var(--rule)",
+                    padding: "18px 0",
+                  }}
+                >
+                  <h3
+                    style={{
+                      fontFamily: "var(--sans)",
+                      fontSize: "16px",
+                      fontWeight: 600,
+                      color: "var(--ink)",
+                      marginBottom: "6px",
+                    }}
+                  >
+                    {n.area}
+                  </h3>
+                  <p
+                    style={{
+                      fontSize: "15px",
+                      lineHeight: 1.6,
+                      color: "var(--ink-2)",
+                      margin: 0,
+                    }}
+                  >
+                    {n.note}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            {/* Cost table */}
+            <div className="reveal">
+              <h2
+                style={{
+                  fontFamily: "var(--serif)",
+                  fontSize: "clamp(26px, 3.2vw, 38px)",
+                  fontWeight: 400,
+                  lineHeight: 1.18,
+                  letterSpacing: "-0.015em",
+                  color: "var(--ink)",
+                  marginBottom: "24px",
+                }}
+              >
+                What projects typically cost in {location.name}
+              </h2>
+              <div style={{ overflowX: "auto" }}>
+                <table
+                  style={{
+                    width: "100%",
+                    borderCollapse: "collapse",
+                    fontFamily: "var(--sans)",
+                  }}
+                >
+                  <thead>
+                    <tr>
+                      {["Project", "Typical cost", "Notes"].map((h) => (
+                        <th
+                          key={h}
+                          style={{
+                            textAlign: "left",
+                            padding: "12px 14px",
+                            borderBottom: "2px solid var(--ink)",
+                            fontSize: "12px",
+                            fontWeight: 600,
+                            color: "var(--ink)",
+                            textTransform: "uppercase",
+                            letterSpacing: "0.04em",
+                          }}
+                        >
+                          {h}
+                        </th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {location.deepDive.costTable.map((r, i) => (
+                      <tr key={i}>
+                        <td
+                          style={{
+                            padding: "12px 14px",
+                            borderBottom: "1px solid var(--rule)",
+                            fontSize: "15px",
+                            color: "var(--ink-2)",
+                            lineHeight: 1.5,
+                          }}
+                        >
+                          {r.project}
+                        </td>
+                        <td
+                          style={{
+                            padding: "12px 14px",
+                            borderBottom: "1px solid var(--rule)",
+                            fontSize: "15px",
+                            color: "var(--ink)",
+                            fontWeight: 600,
+                            whiteSpace: "nowrap",
+                          }}
+                        >
+                          {r.range}
+                        </td>
+                        <td
+                          style={{
+                            padding: "12px 14px",
+                            borderBottom: "1px solid var(--rule)",
+                            fontSize: "15px",
+                            color: "var(--ink-2)",
+                            lineHeight: 1.5,
+                          }}
+                        >
+                          {r.note}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p
+                style={{
+                  fontSize: "13px",
+                  color: "var(--mute)",
+                  marginTop: "14px",
+                  lineHeight: 1.6,
+                }}
+              >
+                Honest London ranges for a completed, mid-specification project —
+                a starting point for budgeting, not a fixed quote. For the full
+                breakdowns see our{" "}
+                <Link
+                  href="/blog/loft-conversion-cost-london"
+                  style={{ color: "var(--ink)" }}
+                >
+                  loft conversion
+                </Link>{" "}
+                and{" "}
+                <Link
+                  href="/blog/house-extension-cost-london"
+                  style={{ color: "var(--ink)" }}
+                >
+                  house extension
+                </Link>{" "}
+                cost guides.
+              </p>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Services in this area */}
       <section
         className="loc-section"

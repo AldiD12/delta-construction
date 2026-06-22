@@ -11,6 +11,14 @@ export interface Location {
   typicalProjects: string;
   localContext: string;
   faqs: { question: string; answer: string }[];
+  // Optional long-form, genuinely area-specific content. Only populated for
+  // pages we've researched in depth (real planning context, honest cost ranges)
+  // rather than templated filler. Rendered by LocationClient when present.
+  deepDive?: {
+    sections: { heading: string; body: string[] }[];
+    planningNotes: { area: string; note: string }[];
+    costTable: { project: string; range: string; note: string }[];
+  };
 }
 
 export const locations: Location[] = [
@@ -323,7 +331,49 @@ export const locations: Location[] = [
       "Rear and side-return extensions are the most common brief across the South East London terraces, opening up narrow kitchens into open-plan family space. In Dulwich and Forest Hill we more often take on full-house refurbishments and loft conversions on period properties, while in Beckenham, Bromley and Croydon the typical projects are double-storey extensions, garage conversions and full reroofs on ageing semis.",
     localContext:
       "South East London has become one of the strongest renovation markets in the capital as families priced out of areas further west move in for the space, the schools and the green belt around Dulwich and Beckenham. The common thread is the same: a growing family that loves the area and wants to extend rather than move.",
+    deepDive: {
+      sections: [
+        {
+          heading: "The South East London housing stock",
+          body: [
+            "South East London is really two markets stitched together. Closer in — Dulwich, Forest Hill, Brockley, Honor Oak — you have grand Victorian and Edwardian villas and tight period terraces, much of it untouched for decades and ideal for loft conversions and side-return extensions. Further out, through Beckenham, Bromley and Croydon, the stock shifts to generous 1930s semis and detached homes on wide plots that lend themselves to rear and double-storey extensions and garage conversions.",
+            "One thing nearly every property here shares is what's underneath it: London Clay. It's a shrink-swell soil that moves with the seasons and with nearby trees, which is why extension foundations in this part of London often need to go deeper than homeowners expect — and why a proper site assessment before quoting matters. We design foundations around the actual ground conditions and tree proximity, not a guess.",
+          ],
+        },
+        {
+          heading: "Conservation areas and the Dulwich Estate",
+          body: [
+            "South East London has an unusually high concentration of conservation areas — Dulwich Village, Forest Hill, Sydenham, parts of Beckenham and South Croydon among them — where permitted-development rights are restricted and external changes that would be automatic elsewhere need a full planning application.",
+            "Dulwich carries an extra layer most homeowners don't know about until late: much of the former Dulwich College Estate is governed by the Dulwich Estate Scheme of Management, which requires the Estate's own consent for external alterations — separately from, and on top of, planning permission from Southwark. Miss it and the work isn't lawful. We build both approvals into the programme from the start so neither holds up your job.",
+          ],
+        },
+      ],
+      planningNotes: [
+        { area: "Dulwich (Southwark)", note: "Conservation areas plus the Dulwich Estate Scheme of Management — external alterations typically need the Estate's consent in addition to planning permission. Budget time for both approvals." },
+        { area: "Forest Hill & Sydenham (Lewisham)", note: "Multiple conservation areas where front and roof alterations frequently need permission even where permitted development might otherwise apply." },
+        { area: "Beckenham & Bromley", note: "Leafy suburbs with conservation areas including the private Cator Estate; generous plots suit rear and double-storey extensions and garage conversions." },
+        { area: "Croydon", note: "Suburban conservation areas and Article 4 directions (notably around HMO conversions) apply in several wards — confirm your street's status before assuming permitted development." },
+        { area: "Lewisham & Catford", note: "Denser Victorian terraces; rear dormers and side-returns are usually permitted development outside the conservation areas." },
+      ],
+      costTable: [
+        { project: "Loft conversion (dormer)", range: "£45k–£70k", note: "Common on the area's Victorian and Edwardian terraces" },
+        { project: "Single-storey rear extension", range: "£45k–£75k", note: "15–25m² open-plan kitchen-diner" },
+        { project: "Side-return extension", range: "£55k–£90k", note: "Terraces in Dulwich, Forest Hill and Brockley" },
+        { project: "Double-storey extension", range: "£80k–£130k", note: "Suits the larger Bromley and Croydon semis" },
+        { project: "Full refurbishment", range: "from £1,200/m²", note: "Period homes around Dulwich Village" },
+      ],
+    },
     faqs: [
+      {
+        question: "Do I need permission for work on a house in the Dulwich Estate?",
+        answer:
+          "Quite possibly two consents. Many properties on the former Dulwich College Estate are covered by the Dulwich Estate Scheme of Management, which requires the Estate's approval for external alterations — separately from, and in addition to, planning permission from Southwark. We factor both into the programme so neither holds up your start date.",
+      },
+      {
+        question: "Is my South East London street in a conservation area?",
+        answer:
+          "It might well be — Dulwich Village, Forest Hill, Sydenham, and parts of Beckenham and South Croydon all sit within conservation areas where permitted-development rights are restricted and external changes need permission. We check your exact address against the council's conservation-area maps before designing, so there are no surprises.",
+      },
       {
         question: "Do you cover Dulwich, Beckenham and Bromley?",
         answer:
@@ -370,7 +420,55 @@ export const locations: Location[] = [
       "L-shape dormer loft conversions and rear extensions are the staple across the Victorian terraces of Hackney, Bethnal Green and Walthamstow. Toward the Essex border in Loughton and Chigwell we take on larger double-storey extensions, full refurbishments and basement work on detached homes. Across Dagenham and Stratford the typical brief is a rear extension or loft conversion to gain a bedroom and a bigger kitchen.",
     localContext:
       "East London has been one of the fastest-changing parts of the capital, with young families buying period terraces in Walthamstow and Hackney and professionals upgrading homes out toward Loughton. The brief we hear most is straightforward: more space and a better kitchen without leaving a neighbourhood they've come to love.",
+    deepDive: {
+      sections: [
+        {
+          heading: "The East London housing stock",
+          body: [
+            "East London spans more property types than almost anywhere in the capital. Inner boroughs — Hackney, Bethnal Green, Bow — are dense Victorian terraces interspersed with warehouse and ex-industrial conversions. Walthamstow and Leyton add Edwardian terraced streets. Out through Stratford and Dagenham you find post-war and regeneration stock, and on the Essex border in Loughton and Chigwell, larger detached and semi-detached homes on real plots. Each calls for a different route to more space — and a different planning conversation.",
+            "As across the rest of London, the subsoil is mostly London Clay: a shrink-swell ground that moves with the seasons and with nearby trees. It's the reason extension foundations here often need to go deeper than expected. We assess the actual ground and tree proximity before quoting rather than pricing a standard trench and hoping.",
+          ],
+        },
+        {
+          heading: "Conservation areas and Article 4 — check before you assume permitted development",
+          body: [
+            "East London is where the 'it's only a loft, it's permitted development' assumption catches people out most. Large parts of Hackney are covered by conservation areas and Article 4 directions, which remove permitted-development rights — so a loft or extension that would be automatic in an outer borough can need a full planning application here.",
+            "Tower Hamlets (Bethnal Green and around) combines dense conservation areas with a very high proportion of flats and maisonettes — and permitted development simply doesn't apply to flats, so almost any external change needs both planning permission and freeholder consent. Walthamstow Village and other conservation areas add their own restrictions. The practical upshot: in East London you check the address first and design second. We do exactly that.",
+          ],
+        },
+        {
+          heading: "The Essex border: Loughton, Chigwell and Epping Forest",
+          body: [
+            "Push out to Loughton and Chigwell and the brief changes — bigger homes, bigger plots, and the green setting of Epping Forest. It's prime territory for double-storey extensions, full refurbishments and basement work. But it comes with Green Belt and Epping Forest planning sensitivities and local conservation areas, so larger projects more often need a full planning application than an inner-London loft would. The answer is to design early and engage the council before committing to a scheme.",
+          ],
+        },
+      ],
+      planningNotes: [
+        { area: "Hackney", note: "Large parts fall within conservation areas with Article 4 directions that remove permitted-development rights — many lofts and extensions need a full application here. Always check the address first." },
+        { area: "Bethnal Green (Tower Hamlets)", note: "Dense conservation areas and a high share of flats and maisonettes, which have no permitted-development rights — a planning application (and freeholder consent) is usually required." },
+        { area: "Walthamstow (Waltham Forest)", note: "Walthamstow Village and other conservation areas restrict external changes; terraces outside them are generally permitted-development-friendly for rear dormers and extensions." },
+        { area: "Stratford & Dagenham (Newham / Barking & Dagenham)", note: "Fewer conservation constraints and more post-war stock — often the most straightforward boroughs for permitted-development extensions and lofts." },
+        { area: "Loughton & Chigwell (Epping Forest, Essex)", note: "Larger plots and a greener setting, but Green Belt and Epping Forest sensitivities plus local conservation areas mean bigger projects often need planning — design early." },
+      ],
+      costTable: [
+        { project: "Loft conversion (L-shape dormer)", range: "£60k–£95k", note: "Victorian terraces in Hackney and Walthamstow" },
+        { project: "Single-storey rear extension", range: "£45k–£75k", note: "Open-plan kitchen-diner" },
+        { project: "Side-return extension", range: "£55k–£90k", note: "The classic East London terrace project" },
+        { project: "Double-storey extension", range: "£80k–£135k", note: "Larger Loughton and Chigwell homes" },
+        { project: "Warehouse / flat refurbishment", range: "from £1,200/m²", note: "Hackney and Bow conversions" },
+      ],
+    },
     faqs: [
+      {
+        question: "Can I build a loft conversion under permitted development in Hackney?",
+        answer:
+          "Not always. Large parts of Hackney are covered by conservation areas and Article 4 directions that remove permitted-development rights, so work that would be permitted development in another borough can need a full planning application here. We confirm your address's exact status with Hackney before assuming anything.",
+      },
+      {
+        question: "Do permitted-development rights apply to a flat or maisonette in East London?",
+        answer:
+          "No — permitted development applies to houses, not flats or maisonettes, which are common across Tower Hamlets and inner East London. Almost any external alteration to a flat needs planning permission, and usually freeholder consent too. We handle both as part of the project.",
+      },
       {
         question: "Do you work in Hackney, Walthamstow and out to Loughton?",
         answer:
