@@ -60,9 +60,11 @@ export const metadata: Metadata = {
   verification: {
     // google: "your-google-verification-code", // Add when you have it
   },
-  alternates: {
-    canonical: "https://deltaconstructionltd.co.uk",
-  },
+  // NOTE: Do NOT set a site-wide canonical here. In the App Router, metadata
+  // merges down the tree, so a canonical set in the root layout is inherited by
+  // every page that doesn't override it — which made all sub-pages canonicalise
+  // to the homepage and dropped them from Google's index. Each page now sets its
+  // own self-referencing canonical via `alternates.canonical`.
   other: {
     "geo.region": "GB-ENG",
     "geo.placename": "Hounslow",

@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   title: "FAQ — Delta Construction",
   description:
     "Common questions about our construction services, pricing, timelines, insurance and guarantees. Delta Construction — London's trusted builder.",
+  alternates: { canonical: "/faq" },
 };
 
 const faqs = [

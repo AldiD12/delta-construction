@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "About Us — Delta Construction",
   description:
     "Founded in 2019 by a project manager and building specialist. Delta Construction delivers premium residential and commercial builds across London.",
+  alternates: { canonical: "/about" },
 };
 
 export default function AboutPage() {

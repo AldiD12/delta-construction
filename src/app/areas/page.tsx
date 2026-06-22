@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "Areas We Cover — Delta Construction",
   description:
     "Delta Construction serves West London, Twickenham, Richmond, Hounslow, Ealing and surrounding areas. Director-led construction with fixed-price quotes.",
+  alternates: { canonical: "/areas" },
 };
 
 export default function AreasPage() {

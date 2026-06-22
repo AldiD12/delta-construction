@@ -24,6 +24,7 @@ export async function generateMetadata({
   return {
     title: `Builders in ${location.name} — Delta Construction`,
     description: location.description,
+    alternates: { canonical: `/areas/${location.slug}` },
     other: {
       "geo.region": location.region,
       "geo.placename": location.name,

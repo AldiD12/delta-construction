@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "Our Services — Delta Construction",
   description:
     "From extensions and loft conversions to roofing, brickwork and landscaping. Full-service construction across London — director-led, fixed-price, guaranteed.",
+  alternates: { canonical: "/services" },
 };
 
 export default function ServicesPage() {

@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "Contact Us — Delta Construction",
   description:
     "Request a free quote from Delta Construction. We reply within one working day. Call +44 7479 389 996 or fill in our quick form.",
+  alternates: { canonical: "/contact" },
   other: {
     "geo.region": "GB-ENG",
     "geo.placename": "Hounslow",

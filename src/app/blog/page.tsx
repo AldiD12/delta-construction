@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "Blog — Delta Construction",
   description:
     "Expert guides on house extension costs, permitted development rules, loft conversions and more. Practical advice from London builders with real project experience.",
+  alternates: { canonical: "/blog" },
 };
 
 export default function BlogPage() {

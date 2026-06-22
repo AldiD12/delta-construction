@@ -5,22 +5,35 @@ const path = require('path');
 // Load service account credentials
 const serviceAccount = require('./service-account.json');
 
-// Your website URL — must match exactly what's verified in Google Search Console
-const SITE_URL = 'https://www.deltaconstructionltd.co.uk';
+// Your website URL — must match EXACTLY the canonical host used everywhere else
+// (sitemap.ts, robots.ts, layout metadataBase). The whole site is non-www, so
+// this must be non-www too. Submitting www URLs created duplicate hosts that
+// Google could not reconcile, leaving pages "not indexed".
+const SITE_URL = 'https://deltaconstructionltd.co.uk';
 
-// Pages to index
+// Pages to index — kept in sync with src/app/sitemap.ts (all 20 canonical URLs)
 const pages = [
   '/',
-  '/services',
-  '/gallery',
   '/about',
+  '/services',
   '/contact',
-  '/areas',
-  '/faq',
+  '/gallery',
   '/reviews',
+  '/faq',
+  '/areas',
   '/privacy',
   '/terms',
   '/cookies',
+  '/blog',
+  '/blog/house-extension-cost-london',
+  '/blog/permitted-development-london',
+  // Area (location) pages
+  '/areas/west-london',
+  '/areas/twickenham-richmond',
+  '/areas/hounslow',
+  '/areas/north-london',
+  '/areas/south-west-london',
+  '/areas/central-london',
 ];
 
 // Initialize Google Auth
