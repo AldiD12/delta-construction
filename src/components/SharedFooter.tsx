@@ -46,6 +46,23 @@ export default function SharedFooter() {
           </ul>
         </div>
         <div className="foot-col">
+          <h5>Services</h5>
+          <ul>
+            <li>
+              <Link href="/extensions">House Extensions</Link>
+            </li>
+            <li>
+              <Link href="/loft-conversions">Loft Conversions</Link>
+            </li>
+            <li>
+              <Link href="/roofing">Roofing</Link>
+            </li>
+            <li>
+              <Link href="/kitchens-bathrooms">Kitchens &amp; Bathrooms</Link>
+            </li>
+          </ul>
+        </div>
+        <div className="foot-col">
           <h5>Contact</h5>
           <ul>
             <li>

@@ -32,10 +32,10 @@ const nextConfig: NextConfig = {
     return [
       { source: "/contact-us", destination: "/contact", permanent: true },
       { source: "/about-us", destination: "/about", permanent: true },
-      { source: "/roofing", destination: "/services", permanent: true },
-      { source: "/extensions", destination: "/services", permanent: true },
+      // /roofing, /extensions, /kitchens-bathrooms and /loft-conversions are now
+      // real dedicated pages (reclaiming the legacy URLs' equity directly), so
+      // they are NOT redirected. Slugs below have no dedicated page yet:
       { source: "/carpentry", destination: "/services", permanent: true },
-      { source: "/kitchens-bathrooms", destination: "/services", permanent: true },
       { source: "/brickwork-pointing", destination: "/services", permanent: true },
     ];
   },
