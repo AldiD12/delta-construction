@@ -1,0 +1,32 @@
+# Google disavow file for deltaconstructionltd.co.uk
+# Upload at: https://search.google.com/search-console/disavow-links
+# Select the deltaconstructionltd.co.uk property, then upload this .txt file.
+#
+# These are spam / PBN / link-farm domains found in the Ahrefs backlink export.
+# "domain:" disavows every URL on that domain. One domain per line.
+#
+# NOTE: This covers the toxic domains VISIBLE in the export so far (~20).
+# Your profile has ~183 referring domains — export the full "Referring domains"
+# list from Ahrefs or GSC (Links > Top linking sites) and the rest will be added.
+# ----------------------------------------------------------------------------
+
+domain:seoexpress-best-outreach-experts.store
+domain:seoexpress-outreach-team.store
+domain:expert-organic-seoexpress.store
+domain:expert-search-seoexpress-team.store
+domain:authentic-tier-1-partners-seoexpress.store
+domain:global-authority-seoexpress-group.store
+domain:certified-rank-forge-anchor-text-lab.store
+domain:ranklinkx.shop
+domain:linkforgepro.shop
+domain:linkrankpro.shop
+domain:linkrankboost.shop
+domain:linkseopro.shop
+domain:linkbundle.shop
+domain:linkcrate.shop
+domain:rankbasket.shop
+domain:highseo.shop
+domain:theseohighranking.shop
+domain:seohighranking.shop
+domain:kmoshops.shop
+domain:screenshots.wiki
