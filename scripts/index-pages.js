@@ -20,6 +20,8 @@ const pages = [
   '/loft-conversions',
   '/roofing',
   '/kitchens-bathrooms',
+  '/brickwork-pointing',
+  '/carpentry',
   '/contact',
   '/gallery',
   '/reviews',

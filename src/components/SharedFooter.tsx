@@ -60,6 +60,12 @@ export default function SharedFooter() {
             <li>
               <Link href="/kitchens-bathrooms">Kitchens &amp; Bathrooms</Link>
             </li>
+            <li>
+              <Link href="/brickwork-pointing">Brickwork &amp; Pointing</Link>
+            </li>
+            <li>
+              <Link href="/carpentry">Carpentry &amp; Joinery</Link>
+            </li>
           </ul>
         </div>
         <div className="foot-col">

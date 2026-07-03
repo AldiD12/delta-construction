@@ -30,13 +30,12 @@ const nextConfig: NextConfig = {
   // more old URLs surface in the Search Console "Pages" report.
   async redirects() {
     return [
+      // Legacy URLs that map to an existing page rather than a dedicated rebuild:
       { source: "/contact-us", destination: "/contact", permanent: true },
       { source: "/about-us", destination: "/about", permanent: true },
-      // /roofing, /extensions, /kitchens-bathrooms and /loft-conversions are now
-      // real dedicated pages (reclaiming the legacy URLs' equity directly), so
-      // they are NOT redirected. Slugs below have no dedicated page yet:
-      { source: "/carpentry", destination: "/services", permanent: true },
-      { source: "/brickwork-pointing", destination: "/services", permanent: true },
+      // NOTE: /roofing, /extensions, /kitchens-bathrooms, /loft-conversions,
+      // /brickwork-pointing and /carpentry are now real dedicated pages that
+      // reclaim the legacy URLs' equity directly, so they are NOT redirected.
     ];
   },
 };
