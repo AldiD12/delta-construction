@@ -5,6 +5,7 @@ import Link from "next/link";
 import SharedNav from "@/components/SharedNav";
 import SharedFooter from "@/components/SharedFooter";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import PriceDisclaimer from "@/components/PriceDisclaimer";
 
 export default function LoftConversionClient() {
   const [scrolled, setScrolled] = useState(false);
@@ -86,6 +87,7 @@ export default function LoftConversionClient() {
               </table>
             </div>
             <p style={{ marginTop: "14px", fontSize: "14px", color: "var(--ink-2)" }}>Figures are typical London ranges for a completed conversion including a double bedroom and en-suite, finished to a mid-range specification. Per square metre, that&apos;s roughly £1,500–£2,400/m² — around a third less than a ground-floor extension, because there are no foundations and no roof to build from scratch.</p>
+            <p style={{ marginTop: "10px", fontSize: "13px", color: "var(--ink-2)", fontStyle: "italic" }}><strong>*</strong> Ranges are starting points for typical projects. Premium postcodes (prime central London, high-value SW postcodes), high-end specifications and larger footprints can add £20–40k or more. A big or complex loft can comfortably exceed the top of these ranges — see &ldquo;What pushes the price up&rdquo; below.</p>
           </div>
 
           {/* ── Intro ── */}
@@ -138,6 +140,24 @@ export default function LoftConversionClient() {
               </table>
             </div>
             <p>The honest version most quotes won&apos;t spell out: the <strong>staircase position</strong> is the decision that quietly shapes the whole project. Land it badly and you lose a bedroom below; land it well and the conversion feels like it was always there. Get that drawn properly before you fall in love with a price.</p>
+          </section>
+
+          {/* ── What pushes the price up ── */}
+          <section className="reveal">
+            <h2>What pushes the price up</h2>
+            <p>Two lofts that look identical from the outside can be £30–50k apart. Here&apos;s where the money really goes — so you can read a quote (or a rival&apos;s quote) and know what you&apos;re paying for.</p>
+            <ul>
+              <li><strong>Location.</strong> Prime central and high-value West/SW London postcodes carry a real premium — parking suspensions, restricted delivery windows, tight access and higher labour rates. The same dormer in Zone 1 vs outer London can be 20–30% apart before anything else changes.</li>
+              <li><strong>Size &amp; layout.</strong> A modest single-bedroom rear dormer is a different job to an L-shape that spans the main roof and the back addition. More floor area, more roof structure, more finishes.</li>
+              <li><strong>Specification.</strong> Bespoke joinery, underfloor heating, premium sanitaryware, engineered oak flooring, integrated AV and lighting control all lift the finish — and the price.</li>
+              <li><strong>En-suite complexity.</strong> A basic en-suite is one thing; a walk-in wet room with double vanity, waterproofed and tanked properly, is another. Soil pipe routing on higher floors also adds cost.</li>
+              <li><strong>Structural work.</strong> Longer steel spans, unusual roof geometry, lowering the ceiling below to gain head height, or a mansard rebuild all push structural cost up sharply.</li>
+              <li><strong>Staircase.</strong> A bespoke or tight staircase — especially where it eats into a bedroom below and needs re-planning — costs more than a standard flight.</li>
+              <li><strong>Planning &amp; heritage.</strong> Conservation areas, listed buildings and mansard requirements often mean full planning, heritage-grade materials and specialist detailing.</li>
+              <li><strong>Party wall.</strong> Terraces and semis need Party Wall Awards with each adjoining neighbour — surveyor fees are per neighbour.</li>
+              <li><strong>Access.</strong> A rear-only access, narrow side alley or no drive means more manual handling, crane hire and staged deliveries.</li>
+            </ul>
+            <p>The published ranges assume a <em>typical</em> London loft — mid-spec, standard access, no unusual constraints. When two or three of the factors above stack up, it&apos;s completely reasonable for a real quote to land well above the range. That&apos;s not a builder overcharging — it&apos;s the actual project.</p>
           </section>
 
           {/* ── Planning ── */}
@@ -250,6 +270,7 @@ export default function LoftConversionClient() {
       </article>
 
       <SharedFooter />
+      <PriceDisclaimer />
     </>
   );
 }

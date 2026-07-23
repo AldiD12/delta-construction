@@ -5,6 +5,7 @@ import Link from "next/link";
 import SharedNav from "@/components/SharedNav";
 import SharedFooter from "@/components/SharedFooter";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import PriceDisclaimer from "@/components/PriceDisclaimer";
 
 export default function ExtensionCostClient() {
   const [scrolled, setScrolled] = useState(false);
@@ -86,6 +87,7 @@ export default function ExtensionCostClient() {
               </table>
             </div>
             <p className="blog-table-note">Prices include construction costs. Kitchen/bathroom fitting, professional fees (architect, structural engineer, party wall surveyor) and VAT are additional. Based on Delta Construction project data 2024–2026.</p>
+            <p style={{ marginTop: "10px", fontSize: "13px", color: "var(--ink-2)", fontStyle: "italic" }}><strong>*</strong> Ranges are starting points for typical mid-spec projects. Premium postcodes (prime central, high-value SW/NW London), high-end specifications and larger footprints can add tens of thousands. A big, complex or high-spec build can comfortably exceed the top of these ranges — see &ldquo;What pushes the price up&rdquo; below.</p>
           </div>
 
 
@@ -94,6 +96,24 @@ export default function ExtensionCostClient() {
             <h2>Why London extension costs are different</h2>
             <p>If you&apos;ve been Googling &ldquo;house extension cost UK&rdquo; and seeing figures of £1,500–£2,000 per m², those numbers are national averages that bear almost no relation to what you&apos;ll actually pay in London. Construction costs in the capital are consistently <strong>30–40% higher</strong> than the rest of the UK — driven by higher labour rates, more expensive materials transport, tighter site access, stricter planning requirements, and the sheer complexity of building in a dense city.</p>
             <p>Every figure in this guide comes from projects we&apos;ve completed or quoted in London boroughs between 2024 and 2026. We haven&apos;t averaged out a database — these are the prices our clients have actually paid.</p>
+          </section>
+
+          {/* ── What pushes the price up ── */}
+          <section className="reveal">
+            <h2>What pushes the price up</h2>
+            <p>Two extensions that look identical on paper can be £30–60k apart. Here&apos;s where the money really goes — so you can read a quote and understand what shapes it.</p>
+            <ul>
+              <li><strong>Location.</strong> Prime central and high-value West/SW London postcodes carry a real premium — parking suspensions, restricted delivery windows, tight access and higher labour rates. Zone 1 vs outer London is 20–30% apart before anything else changes.</li>
+              <li><strong>Size &amp; type.</strong> A modest side-return sits at one end; a wrap-around or double-storey with a full open-plan kitchen sits at the other. More footprint, more structure, more finishes.</li>
+              <li><strong>Ground conditions.</strong> London Clay, mature trees nearby or a shallow water table can turn simple foundations into engineered pile or raft designs — sometimes adding £8–20k just below ground.</li>
+              <li><strong>Structural glazing.</strong> Bi-fold doors, sliding doors and Crittall-style openings can add £8–20k over a standard window; a fully glazed roof lantern or structural glass box lifts it further.</li>
+              <li><strong>Kitchen &amp; bathroom fit-out.</strong> The extension shell is one budget; the kitchen and bathroom that go into it are another. A £30k kitchen is a very different number to a £5k one.</li>
+              <li><strong>Specification.</strong> Underfloor heating, bespoke joinery, engineered oak flooring, integrated AV and lighting control — each layer adds meaningful cost to the same square metres.</li>
+              <li><strong>Planning &amp; heritage.</strong> Conservation areas, listed buildings and Article 4 wards mean specialist detailing, heritage-grade materials and often a formal planning application.</li>
+              <li><strong>Party wall.</strong> Every adjoining neighbour needs their own Party Wall Award — surveyor fees stack up per neighbour.</li>
+              <li><strong>Access.</strong> Rear-only access, narrow side alleys or no drive mean manual handling, crane hire and staged deliveries — real, unavoidable cost.</li>
+            </ul>
+            <p>The published ranges assume a <em>typical</em> London project — mid-spec, standard access, no unusual constraints. When two or three of the factors above stack up, a real quote can (and should) land well above the range. That&apos;s not a builder overcharging — it&apos;s the actual project.</p>
           </section>
 
 
@@ -316,6 +336,7 @@ export default function ExtensionCostClient() {
       </article>
 
       <SharedFooter />
+      <PriceDisclaimer />
     </>
   );
 }
