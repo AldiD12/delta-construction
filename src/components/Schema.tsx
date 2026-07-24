@@ -2,7 +2,21 @@ export function LocalBusinessSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": ["LocalBusiness", "GeneralContractor"],
-    name: "Delta Construction Ltd UK",
+    // Short brand-form is the `name` (what people search and see on the logo).
+    // Legal and alternate forms below give Google the disambiguation signals it
+    // was missing — see brand-slip analysis 24 Jul 2026: short-form "delta
+    // construction" was volatile (pos 6→29→8) while long-form terms stayed
+    // rock-steady at pos 1–2. That's an entity ambiguity signal, not a trust
+    // one. These fields explicitly link all the name variants to one entity.
+    name: "Delta Construction",
+    legalName: "Delta Construction Ltd UK",
+    alternateName: [
+      "Delta Construction Ltd",
+      "Delta Construction Ltd UK",
+      "Delta Construction Limited",
+      "Delta Construction Limited UK Ltd",
+      "Delta Builders",
+    ],
     image: "https://deltaconstructionltd.co.uk/assets/logo.png",
     url: "https://deltaconstructionltd.co.uk",
     telephone: "+447479389996",
@@ -37,7 +51,12 @@ export function LocalBusinessSchema() {
       minValue: 5,
       maxValue: 15,
     },
-    sameAs: [],
+    // Entity-linking signals — Google uses sameAs to reconcile the business
+    // across the web. Only include URLs the business genuinely owns/controls.
+    sameAs: [
+      "https://www.facebook.com/p/Delta-Construction-Limited-UK-100032452644596/",
+      "https://www.instagram.com/deltaconstructionuk/",
+    ],
   };
 
   return (
