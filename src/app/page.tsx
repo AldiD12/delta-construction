@@ -102,7 +102,15 @@ export default function Home() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "https://schema.org",
         "@type": ["LocalBusiness", "GeneralContractor"],
-        "name": "Delta Construction Ltd UK",
+        "name": "Delta Construction",
+        "legalName": "Delta Construction Ltd UK",
+        "alternateName": [
+          "Delta Construction Ltd",
+          "Delta Construction Ltd UK",
+          "Delta Construction Limited",
+          "Delta Construction Limited UK Ltd",
+          "Delta Builders"
+        ],
         "image": "https://deltaconstructionltd.co.uk/assets/logo.png",
         "url": "https://deltaconstructionltd.co.uk",
         "telephone": "+447479389996",
@@ -120,7 +128,11 @@ export default function Home() {
           { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Roofing" } },
           { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Brickwork" } },
           { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Landscaping" } }
-        ]}
+        ]},
+        "sameAs": [
+          "https://www.facebook.com/p/Delta-Construction-Limited-UK-100032452644596/",
+          "https://www.instagram.com/deltaconstructionuk/"
+        ]
       }) }} />
 
 
