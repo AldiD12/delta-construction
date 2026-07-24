@@ -52,10 +52,16 @@ export function LocalBusinessSchema() {
       maxValue: 15,
     },
     // Entity-linking signals — Google uses sameAs to reconcile the business
-    // across the web. Only include URLs the business genuinely owns/controls.
+    // across the web. Companies House first — a government-authoritative link
+    // to company number 12023312 is the strongest disambiguation signal we
+    // can give against the 4+ other "Delta Construction" companies in UK SERPs.
     sameAs: [
+      "https://find-and-update.company-information.service.gov.uk/company/12023312",
       "https://www.facebook.com/p/Delta-Construction-Limited-UK-100032452644596/",
       "https://www.instagram.com/deltaconstructionuk/",
+    ],
+    identifier: [
+      { "@type": "PropertyValue", propertyID: "Companies House Number", value: "12023312" },
     ],
   };
 

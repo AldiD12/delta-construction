@@ -130,8 +130,12 @@ export default function Home() {
           { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Landscaping" } }
         ]},
         "sameAs": [
+          "https://find-and-update.company-information.service.gov.uk/company/12023312",
           "https://www.facebook.com/p/Delta-Construction-Limited-UK-100032452644596/",
           "https://www.instagram.com/deltaconstructionuk/"
+        ],
+        "identifier": [
+          { "@type": "PropertyValue", "propertyID": "Companies House Number", "value": "12023312" }
         ]
       }) }} />
 
@@ -864,7 +868,7 @@ export default function Home() {
     </div>
   </div>
   <div className="foot-bottom">
-    <span>© 2019–2026 Delta Construction Ltd UK · Company No. 00000000</span>
+    <span>© 2019–2026 Delta Construction Ltd UK · Company No. 12023312</span>
     <span>Photography of our own projects · All rights reserved</span>
     <span><Link href="/privacy">Privacy</Link> · <Link href="/terms">Terms</Link> · <Link href="/cookies">Cookies</Link></span>
   </div>
