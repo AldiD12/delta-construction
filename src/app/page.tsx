@@ -824,6 +824,17 @@ export default function Home() {
       </ul>
     </div>
     <div className="foot-col">
+      <h5>Services</h5>
+      <ul>
+        <li><Link href="/extensions">House Extensions</Link></li>
+        <li><Link href="/loft-conversions">Loft Conversions</Link></li>
+        <li><Link href="/roofing">Roofing</Link></li>
+        <li><Link href="/kitchens-bathrooms">Kitchens &amp; Bathrooms</Link></li>
+        <li><Link href="/brickwork-pointing">Brickwork &amp; Pointing</Link></li>
+        <li><Link href="/carpentry">Carpentry &amp; Joinery</Link></li>
+      </ul>
+    </div>
+    <div className="foot-col">
       <h5>Contact</h5>
       <ul>
         <li><a href="tel:+447479389996">+44 (0) 7479 389 996</a></li>
