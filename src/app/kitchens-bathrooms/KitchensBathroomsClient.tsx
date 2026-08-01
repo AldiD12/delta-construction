@@ -101,13 +101,8 @@ export default function KitchensBathroomsClient() {
           </section>
 
           <section className="reveal">
-            <h2>Why build with Delta</h2>
-            <ul>
-              <li><strong>One team, start to finish</strong> — building work, plumbing, electrics and finishing coordinated, no gaps between trades.</li>
-              <li><strong>Supply or fit-only</strong> — we can provide the kitchen/bathroom or install what you&apos;ve chosen.</li>
-              <li><strong>Fixed-price, director-led</strong> — an honest number and a clear programme up front.</li>
-              <li><strong>Guaranteed &amp; insured</strong> — 1-year workmanship guarantee, £2M public liability.</li>
-            </ul>
+            <h2>How we deliver kitchens and bathrooms</h2>
+            <p>Because the same team does the building work AND the fit — the structural steel, the plastering, the plumbing runs, the electrics and the units — everything lines up. There&apos;s no handover gap between builder and kitchen or bathroom fitter, no last-minute calibration on where the sockets or waste pipes need to be, and one director accountable from first survey to snagging. We can supply and install a complete kitchen or bathroom, or fit units and suites you&apos;ve bought elsewhere. Fixed-price, 1-year workmanship guarantee, £2M public liability insurance, and building-regulations sign-off where structural or notifiable electrical/plumbing work is involved.</p>
           </section>
 
           <section className="reveal blog-faq">

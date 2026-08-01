@@ -117,14 +117,8 @@ export default function ExtensionsClient() {
           </section>
 
           <section className="reveal">
-            <h2>Why build with Delta</h2>
-            <ul>
-              <li><strong>Director-led</strong> — you deal with the person responsible for the job, not a call centre.</li>
-              <li><strong>Fixed-price quotes</strong> — itemised and honest, so you know the number before we start.</li>
-              <li><strong>Everything under one roof</strong> — design, planning, structure, party wall and build, all coordinated.</li>
-              <li><strong>Guaranteed</strong> — 1-year workmanship guarantee, £2M public liability insurance, building-regs sign-off as standard.</li>
-              <li><strong>Local</strong> — based in Hounslow, working across <Link href="/areas">West, South West, North, South East, East and Central London</Link>.</li>
-            </ul>
+            <h2>Our approach to extensions</h2>
+            <p>Our extensions are managed end to end by a director — first survey, structural design, planning or permitted-development, party-wall coordination with your neighbours, and the fit-out all under one roof. That means fewer gaps between trades, one point of accountability, and no finger-pointing when a detail matters. Every project is fixed-price with an itemised quote before we start, comes with building-regulations completion sign-off, and carries our 1-year workmanship guarantee. Fully insured with £2M public liability, based in <Link href="/areas/hounslow">Hounslow</Link>, working across <Link href="/areas">West, South West, North, South East, East and Central London</Link>.</p>
           </section>
 
           <section className="reveal blog-faq">

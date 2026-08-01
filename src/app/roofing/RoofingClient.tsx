@@ -101,13 +101,8 @@ export default function RoofingClient() {
           </section>
 
           <section className="reveal">
-            <h2>Why build with Delta</h2>
-            <ul>
-              <li><strong>Honest repair-vs-replace advice</strong> — we won&apos;t sell you a roof you don&apos;t need.</li>
-              <li><strong>Finished properly</strong> — correct felt, battens, ventilation and leadwork, not a quick patch.</li>
-              <li><strong>Guaranteed</strong> — workmanship guarantee plus manufacturer material warranties (15–30 years), £2M public liability insurance.</li>
-              <li><strong>Local &amp; responsive</strong> — our yard is in Hounslow, so for urgent leaks and storm damage we can often attend quickly. <Link href="/areas/hounslow">Serving Hounslow</Link> and across West London.</li>
-            </ul>
+            <h2>How we approach roofing</h2>
+            <p>Roofing is where we started, and it&apos;s where honest advice matters most. We&apos;ll tell you when a repair is genuinely enough and when patching is throwing good money after bad — we won&apos;t sell you a new roof you don&apos;t need. Every job gets proper felt, battens and ventilation rather than a quick retile over old work, correct leadwork on flashings and valleys, and any structural rebuild is signed off under building regulations. Because our yard is in <Link href="/areas/hounslow">Hounslow</Link>, urgent leaks and storm damage often get a same-day visit. Workmanship guaranteed, materials carry their own manufacturer warranties of 15–30 years, and £2M public liability insurance.</p>
           </section>
 
           <section className="reveal blog-faq">

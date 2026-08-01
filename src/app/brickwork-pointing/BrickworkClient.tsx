@@ -93,13 +93,8 @@ export default function BrickworkClient() {
           </section>
 
           <section className="reveal">
-            <h2>Why build with Delta</h2>
-            <ul>
-              <li><strong>Brick and mortar matched properly</strong> — extensions and repairs that look like they were always there.</li>
-              <li><strong>Structural work done right</strong> — engineer-designed steel, correct padstones, building-regs sign-off.</li>
-              <li><strong>Period-aware</strong> — lime mortar and sympathetic repair on older London walls.</li>
-              <li><strong>Guaranteed &amp; insured</strong> — 1-year workmanship guarantee, £2M public liability.</li>
-            </ul>
+            <h2>What good brickwork looks like</h2>
+            <p>Matched brickwork is one of the fastest ways to spot a cheap build — the wrong brick, the wrong mortar colour, joints that don&apos;t line through the elevation. We source matching or reclaimed bricks, mix mortar to the correct colour AND to the correct period spec (lime on older London walls where it belongs, cement where cement is right), and any load-bearing work is designed by a structural engineer, sat on proper padstones, and signed off under building regulations. Every job is fixed-price and carries our 1-year workmanship guarantee, backed by £2M public liability insurance.</p>
           </section>
 
           <section className="reveal blog-faq">

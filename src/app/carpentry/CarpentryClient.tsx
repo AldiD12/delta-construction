@@ -90,13 +90,8 @@ export default function CarpentryClient() {
           </section>
 
           <section className="reveal">
-            <h2>Why build with Delta</h2>
-            <ul>
-              <li><strong>Designed for your space</strong> — measured and made to fit exactly.</li>
-              <li><strong>Built and fitted by one team</strong> — joins up seamlessly with the wider build.</li>
-              <li><strong>Proper finish</strong> — the edges, the spray, the details that make it look bought from a showroom.</li>
-              <li><strong>Guaranteed &amp; insured</strong> — 1-year workmanship guarantee, £2M public liability.</li>
-            </ul>
+            <h2>Why bespoke, built by the builder</h2>
+            <p>Because the same team doing the building work also makes and fits your joinery, everything joins up cleanly — the alcove unit sits flush to the plaster because we know how thick it is, the media wall&apos;s wiring is already there because we ran the first fix, the loft eaves storage matches the studwork behind it. There&apos;s no gap between builder and joiner, no measurement mismatch, no waiting for a separate trade to slot in weeks later. Made to your exact space, sprayed properly for a showroom finish, and every project carries our 1-year workmanship guarantee with £2M public liability insurance.</p>
           </section>
 
           <section className="reveal blog-faq">
