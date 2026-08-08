@@ -332,6 +332,17 @@ export default function ExtensionCostClient() {
             <Link className="btn" href="/contact">Request a free quote <span className="arr"></span></Link>
           </section>
 
+          {/* ── Keep reading ── */}
+          <section className="reveal">
+            <h2>Keep reading</h2>
+            <ul>
+              <li><Link href="/extensions">Our house extensions service — rear, side-return, wrap-around and double-storey</Link></li>
+              <li><Link href="/blog/loft-conversion-cost-london">How much does a loft conversion cost in London? (2026 guide)</Link></li>
+              <li><Link href="/blog/permitted-development-london">Permitted development rules for extensions and lofts in London</Link></li>
+              <li><Link href="/kitchens-bathrooms">Kitchens &amp; bathrooms</Link> · <Link href="/brickwork-pointing">Brickwork &amp; pointing</Link> · <Link href="/roofing">Roofing</Link></li>
+            </ul>
+          </section>
+
         </div>
       </article>
 

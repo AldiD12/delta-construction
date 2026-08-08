@@ -253,9 +253,10 @@ export default function LoftConversionClient() {
           <section className="reveal">
             <h2>Keep reading</h2>
             <ul>
+              <li><Link href="/loft-conversions">Our loft conversion service — dormer, hip-to-gable, L-shape and mansard</Link></li>
               <li><Link href="/blog/house-extension-cost-london">How much does a house extension cost in London? (2026 guide)</Link></li>
               <li><Link href="/blog/permitted-development-london">Permitted development rules for extensions and lofts in London</Link></li>
-              <li><Link href="/services">Our construction services — loft conversions, extensions &amp; refurbishments</Link></li>
+              <li><Link href="/extensions">House extensions</Link> · <Link href="/roofing">Roofing</Link> · <Link href="/kitchens-bathrooms">Kitchens &amp; bathrooms</Link></li>
             </ul>
           </section>
 

@@ -300,6 +300,17 @@ export default function PermittedDevClient() {
             <Link className="btn" href="/contact">Get a free planning check <span className="arr"></span></Link>
           </section>
 
+          {/* ── Keep reading ── */}
+          <section className="reveal">
+            <h2>Keep reading</h2>
+            <ul>
+              <li><Link href="/extensions">Our house extensions service — rear, side-return, wrap-around and double-storey</Link></li>
+              <li><Link href="/loft-conversions">Our loft conversion service — dormer, hip-to-gable, L-shape and mansard</Link></li>
+              <li><Link href="/blog/house-extension-cost-london">How much does a house extension cost in London?</Link></li>
+              <li><Link href="/blog/loft-conversion-cost-london">How much does a loft conversion cost in London?</Link></li>
+            </ul>
+          </section>
+
         </div>
       </article>
 
