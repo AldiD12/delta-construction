@@ -3,9 +3,9 @@ import { LocalBusinessSchema, ServiceSchema, BreadcrumbSchema, FAQSchema } from 
 import KitchensBathroomsClient from "./KitchensBathroomsClient";
 
 export const metadata: Metadata = {
-  title: "Kitchens & Bathrooms London | Design, Supply & Installation",
+  title: "Kitchen & Bathroom Renovations London",
   description:
-    "Kitchen and bathroom design, supply and installation across London — open-plan kitchen extensions, bespoke joinery, en-suites, wet rooms and full tiling. Director-led, fixed-price, guaranteed.",
+    "Kitchen and bathroom renovations across London, including design, fitting, plumbing, tiling, wet rooms and open-plan kitchens. Free site survey.",
   keywords: [
     "kitchen fitting london",
     "kitchen extension london",

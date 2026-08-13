@@ -3,11 +3,13 @@ import { LocalBusinessSchema, ServiceSchema, BreadcrumbSchema, FAQSchema } from 
 import LoftConversionsClient from "./LoftConversionsClient";
 
 export const metadata: Metadata = {
-  title: "Loft Conversions London | Dormer, Hip-to-Gable, L-Shape & Mansard",
+  title: "Loft Conversions Hounslow & West London",
   description:
-    "Director-led loft conversions across London — dormer, hip-to-gable, L-shape and mansard. Full structural design, planning and building-regs sign-off. Fixed-price, guaranteed. Free survey.",
+    "Loft conversions in Hounslow and West London — dormer, hip-to-gable, L-shape and mansard. Planning, structural design and building-regulations sign-off managed.",
   keywords: [
     "loft conversions london",
+    "loft conversions west london",
+    "loft conversions hounslow",
     "dormer loft conversion",
     "l shape loft conversion",
     "mansard loft conversion",
@@ -16,7 +18,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "/loft-conversions" },
   openGraph: {
-    title: "Loft Conversions London | Delta Construction",
+    title: "Loft Conversions Hounslow & West London | Delta Construction",
     description:
       "Dormer, hip-to-gable, L-shape and mansard loft conversions across London. Director-led, fixed-price, guaranteed.",
     type: "website",
@@ -63,7 +65,7 @@ export default function LoftConversionsPage() {
       <ServiceSchema
         name="Loft Conversions"
         description="Dormer, hip-to-gable, L-shape and mansard loft conversions across London. Structural design, planning, party-wall and building-regs sign-off managed end to end."
-        areaServed="London"
+        areaServed="Hounslow and West London"
       />
       <FAQSchema faqs={faqs} />
       <LoftConversionsClient />

@@ -28,26 +28,31 @@ function getAnchorText(slug: string, name: string, index: number): string {
 const serviceCards = [
   {
     name: "Extensions",
+    href: "/extensions",
     description:
       "Single and double-storey rear extensions, side-returns and wrap-arounds.",
   },
   {
     name: "Loft Conversions",
+    href: "/loft-conversions",
     description:
       "Mansard, dormer, hip-to-gable and L-shape loft conversions with full sign-off.",
   },
   {
     name: "Roofing",
+    href: "/roofing",
     description:
       "Repairs, reroofs, slate, tile, flat roof and leadwork.",
   },
   {
     name: "Brickwork",
+    href: "/brickwork-pointing",
     description:
       "Structural openings, repointing, garden walls and period restoration.",
   },
   {
     name: "Landscaping",
+    href: "/services",
     description:
       "Paving, driveways, retaining walls, planters, pergolas and lighting.",
   },
@@ -459,7 +464,7 @@ export default function LocationClient({
             {serviceCards.map((svc) => (
               <Link
                 key={svc.name}
-                href="/services"
+                href={svc.href}
                 style={{ textDecoration: "none", color: "inherit" }}
               >
                 <div

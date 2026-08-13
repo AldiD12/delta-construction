@@ -119,4 +119,4 @@ listings.
 
 **Reviews note:** alongside links, actively ask happy customers for **Google
 reviews**. Review quantity/recency is one of the strongest local-pack signals —
-arguably more than links for a local builder. You have 16; aim for a steady drip.
+arguably more than links for a local builder. You have 18; aim for a steady drip.

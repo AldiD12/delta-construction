@@ -30,6 +30,13 @@ const nextConfig: NextConfig = {
   // more old URLs surface in the Search Console "Pages" report.
   async redirects() {
     return [
+      // Keep every legacy host URL on a single permanent canonical host.
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "www.deltaconstructionltd.co.uk" }],
+        destination: "https://deltaconstructionltd.co.uk/:path*",
+        permanent: true,
+      },
       // Legacy URLs that map to an existing page rather than a dedicated rebuild:
       { source: "/contact-us", destination: "/contact", permanent: true },
       { source: "/about-us", destination: "/about", permanent: true },

@@ -1,7 +1,19 @@
+const businessId = "https://deltaconstructionltd.co.uk/#business";
+
+const businessAddress = {
+  "@type": "PostalAddress",
+  streetAddress: "7 Southland Way",
+  addressLocality: "Hounslow",
+  postalCode: "TW3 2RH",
+  addressRegion: "London",
+  addressCountry: "GB",
+};
+
 export function LocalBusinessSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": ["LocalBusiness", "GeneralContractor"],
+    "@id": businessId,
     // Short brand-form is the `name` (what people search and see on the logo).
     // Legal and alternate forms below give Google the disambiguation signals it
     // was missing — see brand-slip analysis 24 Jul 2026: short-form "delta
@@ -9,7 +21,7 @@ export function LocalBusinessSchema() {
     // rock-steady at pos 1–2. That's an entity ambiguity signal, not a trust
     // one. These fields explicitly link all the name variants to one entity.
     name: "Delta Construction",
-    legalName: "Delta Construction Ltd UK",
+    legalName: "DELTA CONSTRUCTION LIMITED UK LTD",
     alternateName: [
       "Delta Construction Ltd",
       "Delta Construction Ltd UK",
@@ -21,14 +33,7 @@ export function LocalBusinessSchema() {
     url: "https://deltaconstructionltd.co.uk",
     telephone: "+447479389996",
     email: "info@deltaconstructionltd.co.uk",
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "7 Southland Way",
-      addressLocality: "Hounslow",
-      postalCode: "TW3 2RH",
-      addressRegion: "London",
-      addressCountry: "GB",
-    },
+    address: businessAddress,
     geo: {
       "@type": "GeoCoordinates",
       latitude: 51.4685,
@@ -39,12 +44,6 @@ export function LocalBusinessSchema() {
       { "@type": "Country", name: "United Kingdom" },
     ],
     priceRange: "££-££££",
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "5.0",
-      reviewCount: "16",
-      bestRating: "5",
-    },
     foundingDate: "2019",
     numberOfEmployees: {
       "@type": "QuantitativeValue",
@@ -89,8 +88,11 @@ export function ServiceSchema({
     description,
     provider: {
       "@type": "LocalBusiness",
-      name: "Delta Construction Ltd UK",
+      "@id": businessId,
+      name: "Delta Construction",
       url: "https://deltaconstructionltd.co.uk",
+      telephone: "+447479389996",
+      address: businessAddress,
     },
   };
 

@@ -103,7 +103,7 @@ export default function Home() {
         "@context": "https://schema.org",
         "@type": ["LocalBusiness", "GeneralContractor"],
         "name": "Delta Construction",
-        "legalName": "Delta Construction Ltd UK",
+        "legalName": "DELTA CONSTRUCTION LIMITED UK LTD",
         "alternateName": [
           "Delta Construction Ltd",
           "Delta Construction Ltd UK",
@@ -119,7 +119,6 @@ export default function Home() {
         "geo": { "@type": "GeoCoordinates", "latitude": 51.4685, "longitude": -0.3654 },
         "areaServed": [{ "@type": "City", "name": "London" }, { "@type": "Country", "name": "United Kingdom" }],
         "priceRange": "££-££££",
-        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "16", "bestRating": "5" },
         "foundingDate": "2019",
         "description": "Premium residential and commercial construction across London. Extensions, loft conversions, roofing, brickwork and landscaping. Director-led, fixed-price, guaranteed.",
         "hasOfferCatalog": { "@type": "OfferCatalog", "name": "Construction Services", "itemListElement": [
@@ -635,12 +634,34 @@ export default function Home() {
     </div>
     <div className="right reveal d1">
       <h2 className="section-title">The reason most of our work comes from <em>recommendation.</em></h2>
-      <p style={{ marginTop: "24px", maxWidth: "54ch", fontSize: "16px", lineHeight: "1.55" }}>16 verified Google reviews · <strong>5.0 ★</strong> average. Every written review below — each can be verified on our Google Business profile.</p>
+      <p style={{ marginTop: "24px", maxWidth: "54ch", fontSize: "16px", lineHeight: "1.55" }}>18 verified Google reviews · <strong>5.0 ★</strong> average. Every written review below — each can be verified on our Google Business profile.</p>
     </div>
   </div>
 
   <div className="testimonials">
     <div className="t-grid review-carousel" ref={reviewRef}>
+      <div className="t-card review-card reveal">
+        <div className="stars" aria-label="5 out of 5"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <blockquote>&ldquo;I had a great experience working with Delta Construction Limited from the beginning to the end of my project. The team was professional, knowledgeable, and always willing to answer my questions. They took the time to understand my requirements and provided practical suggestions that improved the final outcome.&rdquo;</blockquote>
+        <div className="who">
+          <span className="av">D</span>
+          <div>
+            <div className="name">Dylon Scott</div>
+            <div className="role">Verified Google review</div>
+          </div>
+        </div>
+      </div>
+      <div className="t-card review-card reveal d1">
+        <div className="stars" aria-label="5 out of 5"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <blockquote>&ldquo;Absolute game-changers! ⭐⭐⭐⭐⭐ We just had our kitchen and bathroom completely transformed, and the results are stunning. From day one, the team brought a sleek, modern vision to life with flawless execution. They maximized our space, nailed the contemporary aesthetic, and kept the entire process stress-free. Every tile, fixture, and finish looks premium. If you want a top-tier home renovation with zero hassle, this is the company to hire. Highly recommended!&rdquo;</blockquote>
+        <div className="who">
+          <span className="av">M</span>
+          <div>
+            <div className="name">Michaela Virtos</div>
+            <div className="role">Verified Google review</div>
+          </div>
+        </div>
+      </div>
       <div className="t-card review-card reveal">
         <div className="stars" aria-label="5 out of 5"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
         <blockquote>&ldquo;I want to thank Delta Construction for its great job. Tani and his team did a brilliant job with high quality finishing in a very short time we had to move to our new house. I strongly recommend them!!!&rdquo;</blockquote>

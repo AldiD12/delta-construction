@@ -3,9 +3,9 @@ import { LocalBusinessSchema, BreadcrumbSchema, FAQSchema } from "@/components/S
 import ExtensionCostClient from "./ExtensionCostClient";
 
 export const metadata: Metadata = {
-  title: "How Much Does a House Extension Cost in London? (2026 Guide)",
+  title: "House Extension Cost London (2026)",
   description:
-    "Real London extension costs in 2026: single-storey from £2,800/m², double-storey from £2,200/m², kitchen extensions, side-returns and more. Prices from actual projects by Delta Construction.",
+    "2026 London house extension costs by type and size, including single-storey, double-storey, side-return and kitchen extensions, with key cost drivers.",
   keywords: [
     "house extension cost london",
     "extension cost per m2 uk",

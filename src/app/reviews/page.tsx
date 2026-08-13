@@ -3,9 +3,9 @@ import { LocalBusinessSchema, BreadcrumbSchema } from "@/components/Schema";
 import ReviewsClient from "./ReviewsClient";
 
 export const metadata: Metadata = {
-  title: "Reviews — Delta Construction",
+  title: "Customer Reviews",
   description:
-    "Read what our clients say. 16 five-star Google reviews from homeowners across London. Delta Construction — rated 5.0 on Google.",
+    "Read what our clients say. 18 five-star Google reviews for Delta Construction, rated 5.0 on Google.",
   alternates: { canonical: "/reviews" },
 };
 

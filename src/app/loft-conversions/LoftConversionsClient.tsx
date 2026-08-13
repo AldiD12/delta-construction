@@ -44,10 +44,10 @@ export default function LoftConversionsClient() {
           <div className="container">
             <div className="blog-article-tags">
               <span className="blog-tag">Loft Conversions</span>
-              <span className="blog-tag">London</span>
+              <span className="blog-tag">Hounslow &amp; West London</span>
             </div>
-            <h1 className="display reveal in">Loft Conversions&nbsp;in&nbsp;London</h1>
-            <p className="blog-article-subtitle reveal in d1">The cheapest square metre you&apos;ll ever add — the structure&apos;s already there. We build dormer, hip-to-gable, L-shape and mansard conversions across London, with the structural design, planning and building-regs all handled in-house.</p>
+            <h1 className="display reveal in">Loft Conversions in Hounslow &amp; West London</h1>
+            <p className="blog-article-subtitle reveal in d1">The cheapest square metre you&apos;ll ever add — the structure&apos;s already there. We build dormer, hip-to-gable, L-shape and mansard conversions across Hounslow and West London, with structural design, planning and building regulations coordinated.</p>
             <div className="blog-article-meta reveal in d2">
               <span>Delta Construction</span>
               <span>Building London since 2019</span>
@@ -96,7 +96,7 @@ export default function LoftConversionsClient() {
               <li><strong>Director-led</strong>, fixed-price quotes — you know the number before we start.</li>
               <li><strong>Structural design in-house</strong> — the steel and staircase drawn properly before you commit.</li>
               <li><strong>Guaranteed</strong> — 1-year workmanship guarantee, £2M public liability, building-regs sign-off included.</li>
-              <li><strong>Local</strong> — Hounslow-based, across <Link href="/areas">West, South West, North, South East, East and Central London</Link>.</li>
+              <li><strong>Local</strong> — Hounslow-based and serving <Link href="/areas/hounslow">Hounslow</Link>, <Link href="/areas/west-london">West London</Link>, <Link href="/areas/chiswick">Chiswick</Link> and <Link href="/areas/ealing">Ealing</Link>.</li>
             </ul>
           </section>
 

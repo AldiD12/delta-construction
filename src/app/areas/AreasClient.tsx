@@ -23,6 +23,16 @@ const areas = [
     subAreas: "Hounslow, Isleworth, Brentford, Feltham, Heston",
   },
   {
+    name: "Chiswick",
+    href: "/areas/chiswick",
+    subAreas: "Chiswick, Bedford Park, Gunnersbury, Turnham Green, Grove Park",
+  },
+  {
+    name: "Ealing",
+    href: "/areas/ealing",
+    subAreas: "Ealing, West Ealing, Northfields, Hanwell, Pitshanger",
+  },
+  {
     name: "North London",
     href: "/areas/north-london",
     subAreas: "Barnet, Enfield, Finchley, Muswell Hill, Crouch End",

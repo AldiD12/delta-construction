@@ -3,9 +3,9 @@ import { LocalBusinessSchema, ServiceSchema, BreadcrumbSchema, FAQSchema } from 
 import CarpentryClient from "./CarpentryClient";
 
 export const metadata: Metadata = {
-  title: "Carpentry & Joinery London | Bespoke Cabinetry, Doors & Staircases",
+  title: "Carpentry & Joinery London",
   description:
-    "Carpentry and bespoke joinery across London — fitted wardrobes, media units, alcove storage, staircases, doors, skirting and second-fix carpentry. Made to measure, fitted properly. Free quote.",
+    "Carpentry and bespoke joinery across London: fitted wardrobes, media units, alcove storage, doors, stairs and second-fix work. Free quote.",
   keywords: [
     "carpentry london",
     "bespoke joinery london",

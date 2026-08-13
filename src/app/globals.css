@@ -1299,6 +1299,45 @@ footer{padding: clamp(48px,5vw,80px) var(--pad) 32px;background:var(--bg)}
 /* Blog list section spacing */
 .blog-list-section{padding:40px 0 0}
 
+/* Roofing landing page */
+.roof-hero{padding-top:112px;padding-bottom:52px}
+.roof-hero .display{max-width:900px;font-size:clamp(58px,7.5vw,104px);line-height:.94}
+.roof-hero-actions,.roof-final-actions{display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin-top:28px}
+.roof-hero-actions .btn,.roof-final-actions .btn{text-decoration:none}
+.roof-photo-caption{font-size:12px;color:var(--mute);margin:9px 2px 0;text-align:right}
+.roof-proof-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin:0 0 56px;padding:0;background:var(--rule);border:1px solid var(--rule);border-radius:12px;overflow:hidden}
+.roof-proof-strip div{display:flex;flex-direction:column;gap:4px;padding:20px 16px;background:var(--bg);text-align:center}
+.roof-proof-strip strong{font-family:var(--serif);font-size:24px;font-weight:400;color:var(--ink)}
+.roof-proof-strip span{font-size:11px;line-height:1.35;letter-spacing:.06em;text-transform:uppercase;color:var(--mute)}
+.roof-local-card{margin:0 0 56px;padding:36px;border:1px solid var(--rule);border-radius:12px;background:var(--bg-2)}
+.roof-local-card h2{margin-top:8px}
+.roof-local-card p:last-child{margin-bottom:0}
+.roof-eyebrow{font-size:11px!important;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)!important;margin-bottom:8px!important}
+.roof-service-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:24px 0 8px}
+.roof-service-card{padding:24px;border:1px solid var(--rule);border-radius:10px;background:var(--bg)}
+.blog-article-body .roof-service-card h3{margin:0 0 8px;font-family:var(--serif);font-size:20px;font-weight:400}
+.roof-service-card p{font-size:14px;margin:0}
+.roof-process-section{margin:56px 0;padding:36px;border-radius:12px;background:var(--ink)}
+.roof-process-section h2{margin-top:8px;color:var(--bg)}
+.roof-process{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;margin-top:24px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.16)}
+.roof-process-step{padding:24px;background:var(--ink)}
+.roof-process-step>span{font-family:var(--mono);font-size:11px;color:rgba(255,255,255,.55)}
+.blog-article-body .roof-process-step h3{margin:12px 0 8px;color:var(--bg);font-size:17px}
+.blog-article-body .roof-process-step p{margin:0;color:rgba(255,255,255,.7);font-size:14px}
+.roof-review-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:24px}
+.roof-review{display:flex;flex-direction:column;margin:0;padding:28px;border:1px solid var(--rule);border-radius:12px;background:var(--bg-2)}
+.roof-stars{font-size:13px;letter-spacing:.08em;color:#a66a1f;margin-bottom:16px}
+.blog-article-body .roof-review p{font-family:var(--serif);font-size:17px;line-height:1.55;color:var(--ink);margin-bottom:24px}
+.roof-review footer{display:flex;flex-direction:column;gap:3px;margin-top:auto;font-size:12px;color:var(--mute)}
+.roof-review footer strong{font-size:13px;color:var(--ink)}
+.roof-review-link{font-size:14px!important;margin-top:16px!important}
+.roof-final-actions{justify-content:center;margin-top:22px}
+.blog-cta-inline .roof-final-actions .btn{margin:0}
+.blog-article-body .roof-final-actions .btn{color:var(--bg)}
+.blog-article-body .roof-final-actions .btn:hover{color:var(--ink)}
+.blog-article-body .roof-final-actions .btn.ghost{color:var(--ink)}
+.blog-article-body .roof-final-actions .btn.ghost:hover{color:var(--bg)}
+
 /* ── Blog responsive ── */
 @media (max-width:768px){
   .blog-grid{grid-template-columns:1fr;gap:24px}
@@ -1308,5 +1347,14 @@ footer{padding: clamp(48px,5vw,80px) var(--pad) 32px;background:var(--bg)}
   .blog-callout{padding:20px}
   .blog-cta-inline{padding:28px 20px}
   .blog-article-hero-img img{border-radius:8px;aspect-ratio:16/9}
+  .roof-hero{padding-bottom:40px}
+  .roof-hero .display{font-size:clamp(42px,12vw,58px);line-height:.96}
+  .roof-hero-actions,.roof-final-actions{align-items:stretch;flex-direction:column}
+  .roof-hero-actions .btn,.roof-final-actions .btn{width:100%}
+  .roof-photo-caption{text-align:left}
+  .roof-proof-strip{grid-template-columns:repeat(2,1fr);margin-bottom:40px}
+  .roof-proof-strip strong{font-size:21px}
+  .roof-local-card,.roof-process-section{padding:24px 20px;margin-bottom:40px}
+  .roof-service-grid,.roof-process,.roof-review-grid{grid-template-columns:1fr}
+  .roof-service-card,.roof-process-step,.roof-review{padding:20px}
 }
-

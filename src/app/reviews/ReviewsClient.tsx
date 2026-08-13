@@ -7,73 +7,71 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 
 const reviews = [
   {
-    name: "saeid modhej",
-    text: "Great build quality and very professional team. They completed our extension on time and the finish was excellent. Highly recommend Delta Construction.",
+    name: "Dylon Scott",
+    text: "I had a great experience working with Delta Construction Limited from the beginning to the end of my project. The team was professional, knowledgeable, and always willing to answer my questions. They took the time to understand my requirements and provided practical suggestions that improved the final outcome.",
   },
   {
-    name: "DMC",
-    text: "Fantastic job on our loft conversion. The team was punctual, tidy and the quality of work exceeded our expectations. Would definitely use again.",
+    name: "Michaela Virtos",
+    text: "Absolute game-changers! ⭐⭐⭐⭐⭐ We just had our kitchen and bathroom completely transformed, and the results are stunning. From day one, the team brought a sleek, modern vision to life with flawless execution. They maximized our space, nailed the contemporary aesthetic, and kept the entire process stress-free. Every tile, fixture, and finish looks premium. If you want a top-tier home renovation with zero hassle, this is the company to hire. Highly recommended!",
+  },
+  {
+    name: "saeid modhej",
+    text: "I want to thank Delta Construction for its great job. Tani and his team did a brilliant job with high quality finishing in a very short time we had to move to our new house. I strongly recommend them!!!",
+  },
+  {
+    name: "Power Academy UK (Panny)",
+    text: "Hi Delta Construction, I just wanted to say a big thank you for the fantastic job your team did fixing the damp issue at my place. You guys were awesome from start to finish. You didn't just spot the problem, but you sorted everything out perfectly — from the roof and gutters to the pointing. The attention to detail and quality of the work really stood out. Thanks to your hard work, my home is now damp-free and I feel confident about the repairs. I'll definitely recommend Delta Construction to anyone who needs construction work done.",
+  },
+  {
+    name: "DMC (David McKenzie-Cook)",
+    text: "My family and I would like to extend our utmost appreciation to Tani and his team at Delta Construction. Their professionalism is second to none. Tani himself provided valuable input regarding the interior layout and space saving units to maximise space while still providing an air of spaciousness in smaller areas of access. Since successfully completing our refurbishment, Tani has remained in touch with our family and dealt with a number of smaller projects for us, very often pro bono which shows the passion he has for his work!!!",
   },
   {
     name: "J Paterson",
-    text: "We used Delta for a full house refurbishment and couldn’t be happier. Great communication throughout and the attention to detail was superb.",
+    text: "Delta did a fantastic job removing a big bay tree from our front garden, and re-building the brick wall that had been damaged by its roots. The work was done quickly but carefully, and the price was great. The guys were very friendly and I will be using Delta again for any future jobs. Very happy to recommend!",
   },
   {
     name: "Keira D",
-    text: "Excellent roofing work. They were quick to respond, gave a fair quote and the work was done to a very high standard. Very impressed.",
+    text: "So happy with the work they did on our garden. Everything went as planned and was done to really high level and also completed quickly - so happy with the results! Definitely recommend!",
   },
   {
     name: "Elena Tsela",
-    text: "Delta Construction transformed our kitchen extension beautifully. Professional from start to finish with minimal disruption to our daily life.",
+    text: "We were very skeptical to using someone we didn't know even though recommended. Our usual builder unfortunately couldn't assist. I am extremely happy that we decided to go ahead. Full house renovation and we also extended the ground floor. Everything was great and high quality work. So easy to talk to and they accommodated all our requests and amendments. Highly recommend.",
   },
   {
     name: "Semiha Hoxha",
-    text: "Amazing brickwork on our garden wall and patio. The team was friendly, hardworking and left everything spotless. Couldn’t ask for more.",
+    text: "Thank you very much guys. I am elderly and I needed help with my garden, a few things done to my extension and the whole brick facade clean and repointed. Tani & team were so helpful. They prioritized me (I was in a hurry as I need to sell my house) and did an amazing job in no time. Cannot thank you enough.",
   },
   {
-    name: "Sam M",
-    text: "Brilliant loft conversion. The team were professional, reliable and delivered exactly what was promised. The quality speaks for itself.",
+    name: "zeinab alboghobeish",
+    text: "We had oure house renovated with Delta company and they are amazing for price and quality of job. Highly recommend them.",
   },
   {
-    name: "James R",
-    text: "Used Delta for structural work and an extension. Outstanding quality and project management. They handled everything including party wall agreements.",
+    name: "Jimmy Michael",
+    text: "Tani and his team where brilliant and completed the work in a timely manner. Always professional and delivered a high standard of work. Changed all of the gutters and fascia boards, rendering of two chimney stacks and painting of whole exterior.",
   },
   {
-    name: "Laura K",
-    text: "Our bathroom renovation looks incredible. They managed the plumbing, tiling and everything in between. Finished ahead of schedule too.",
+    name: "Annmarie Flynn",
+    text: "I have used Delta twice now for rental properties. Both times got a good roof repair carried out at short notice. Very pleasant to deal with, would use again.",
   },
   {
-    name: "Mark Stevens",
-    text: "True professionals. Our rear extension was a big project but Delta handled it brilliantly from planning to completion.",
+    name: "Michael Thomson",
+    text: "Delta are Efficient, and a great quality service, for an affordable price. I would recommend them to anyone.",
   },
   {
-    name: "Sarah W",
-    text: "We had our roof completely redone and the result is fantastic. Fair price, great team, zero hassle. Will be using them again for our extension.",
+    name: "Gary Cassidy",
+    text: "Ken has given us quite a bit of work in the past and always keeps us in the loop on anything he thinks we can help with.",
   },
   {
-    name: "Tom G",
-    text: "Exceptional brickwork and repointing on our Victorian terrace. They matched the original London stock perfectly. Genuinely impressed with the craftsmanship.",
-  },
-  {
-    name: "Nadia P",
-    text: "Delta Construction turned our dated ground floor into an open-plan dream. The underfloor heating was a game changer. Highly recommended.",
-  },
-  {
-    name: "Chris L",
-    text: "Reliable, skilled and easy to work with. Our loft conversion added real value to our home. The whole process was smooth and stress-free.",
-  },
-  {
-    name: "Rachel D",
-    text: "We chose Delta for our landscaping and driveway. Beautiful resin-bound finish and the retaining wall is solid. Very happy with the result.",
-  },
-  {
-    name: "Omar A",
-    text: "Full house refurbishment completed to an exceptional standard. Every room was finished with care and precision. The team kept us informed at every stage.",
+    name: "Matilda Goad",
+    text: "I was so pleased with the finished product, so tidy throughout and such nice person to have around thank you!",
   },
 ];
 
+const GOOGLE_REVIEW_COUNT = 18;
+
 const ratingBreakdown = [
-  { stars: 5, count: 16 },
+  { stars: 5, count: GOOGLE_REVIEW_COUNT },
   { stars: 4, count: 0 },
   { stars: 3, count: 0 },
   { stars: 2, count: 0 },
@@ -127,8 +125,6 @@ export default function ReviewsClient() {
     document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
     return () => io.disconnect();
   }, []);
-
-  const totalReviews = reviews.length;
 
   return (
     <>
@@ -185,7 +181,7 @@ export default function ReviewsClient() {
                 lineHeight: 1.5,
               }}
             >
-              5.0 out of 5 &middot; {totalReviews} Google reviews
+              5.0 out of 5 &middot; {GOOGLE_REVIEW_COUNT} Google reviews
             </span>
           </div>
         </div>
@@ -317,8 +313,8 @@ export default function ReviewsClient() {
                   <div
                     style={{
                       width:
-                        totalReviews > 0
-                          ? `${(row.count / totalReviews) * 100}%`
+                        GOOGLE_REVIEW_COUNT > 0
+                          ? `${(row.count / GOOGLE_REVIEW_COUNT) * 100}%`
                           : "0%",
                       height: "100%",
                       backgroundColor: "var(--accent)",

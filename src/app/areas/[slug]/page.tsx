@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import { locations } from "@/data/locations";
 import {
   LocalBusinessSchema,
@@ -19,11 +20,18 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const location = locations.find((l) => l.slug === slug);
-  if (!location) return {};
+  if (!location) notFound();
 
   return {
-    title: `${location.name} Builders | Extensions & Loft Conversions`,
-    description: location.description,
+    title: `Builders in ${location.name}`,
+    description: location.metaDescription ?? location.description,
+    keywords: [
+      `builders ${location.name}`,
+      `builders in ${location.name}`,
+      `house extensions ${location.name}`,
+      `loft conversions ${location.name}`,
+      `roofers ${location.name}`,
+    ],
     alternates: { canonical: `/areas/${location.slug}` },
     other: {
       "geo.region": location.region,
@@ -41,7 +49,7 @@ export default async function LocationPage({
 }) {
   const { slug } = await params;
   const location = locations.find((l) => l.slug === slug);
-  if (!location) return null;
+  if (!location) notFound();
 
   return (
     <>

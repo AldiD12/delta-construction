@@ -3,9 +3,9 @@ import { LocalBusinessSchema, ServiceSchema, BreadcrumbSchema, FAQSchema } from 
 import BrickworkClient from "./BrickworkClient";
 
 export const metadata: Metadata = {
-  title: "Brickwork & Repointing London | Structural Openings & Garden Walls",
+  title: "Brickwork & Repointing London",
   description:
-    "Brickwork and repointing across London — structural openings with steel, garden and retaining walls, period brick restoration and blockwork. Matched brickwork, done properly. Free quote.",
+    "Brickwork and repointing across London, including structural openings, garden walls, repairs and period restoration. Free site survey and quote.",
   keywords: [
     "brickwork london",
     "repointing london",

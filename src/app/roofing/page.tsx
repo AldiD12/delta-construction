@@ -3,23 +3,24 @@ import { LocalBusinessSchema, ServiceSchema, BreadcrumbSchema, FAQSchema } from 
 import RoofingClient from "./RoofingClient";
 
 export const metadata: Metadata = {
-  title: "Roofing London | Repairs, Reroofing, Slate, Tile & Flat Roofs",
+  title: "Roofers Hounslow & West London",
   description:
-    "Roofing across West London — repairs, full reroofs, slate and tile, flat roofs, leadwork and chimney work. Honest repair-vs-replace advice, free assessment, workmanship guaranteed.",
+    "Local roofers in Hounslow and West London for repairs, reroofing, slate, tile, flat roofs, leadwork and chimneys. Free roof assessment and guaranteed workmanship.",
   keywords: [
-    "roofing london",
-    "roof repair london",
-    "reroofing london",
-    "slate roof london",
-    "flat roof london",
     "roofers hounslow",
-    "leadwork london",
+    "roofing hounslow",
+    "roof repair hounslow",
+    "roofers west london",
+    "roof repair west london",
+    "reroofing west london",
+    "flat roofing hounslow",
+    "slate roof west london",
   ],
   alternates: { canonical: "/roofing" },
   openGraph: {
-    title: "Roofing London | Delta Construction",
+    title: "Roofers Hounslow & West London | Delta Construction",
     description:
-      "Repairs, reroofs, slate & tile, flat roofs, leadwork and chimney work across West London. Free assessment, guaranteed.",
+      "Hounslow-based roofers for repairs, reroofs, slate and tile, flat roofs, leadwork and chimney work across West London.",
     type: "website",
     url: "https://deltaconstructionltd.co.uk/roofing",
     images: [{ url: "/uploads/project-03.jpg", width: 1200, height: 630, alt: "New slate roof with leadwork by Delta Construction" }],
@@ -52,6 +53,11 @@ const faqs = [
     answer:
       "Yes — our workmanship carries a guarantee, and roofing materials come with their own manufacturer warranties (typically 15–30 years depending on the tile or membrane). We're fully insured with £2M public liability.",
   },
+  {
+    question: "Which areas do your roofers cover?",
+    answer:
+      "We are based in Hounslow and cover nearby West London, including Isleworth, Brentford, Feltham, Heston, Cranford, Chiswick and Ealing.",
+  },
 ];
 
 export default function RoofingPage() {
@@ -62,9 +68,9 @@ export default function RoofingPage() {
         items={[{ name: "Roofing", url: "https://deltaconstructionltd.co.uk/roofing" }]}
       />
       <ServiceSchema
-        name="Roofing"
-        description="Roof repairs, reroofing, slate and tile roofs, flat roofs, leadwork and chimney work across West London."
-        areaServed="London"
+        name="Roofers in Hounslow and West London"
+        description="Hounslow-based roofers for roof repairs, reroofing, slate and tile roofs, flat roofs, leadwork, chimney work and roofline repairs across West London."
+        areaServed="Hounslow and West London"
       />
       <FAQSchema faqs={faqs} />
       <RoofingClient />

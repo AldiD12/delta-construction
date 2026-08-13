@@ -32,7 +32,7 @@ const accreditations = [
 
 const stats = [
   { figure: "80+", label: "Projects completed" },
-  { figure: "5.0", label: "Google rating (16 reviews)" },
+  { figure: "5.0", label: "Google rating (18 reviews)" },
   { figure: "2019", label: "Year founded" },
   { figure: "£2M", label: "Public liability insurance" },
 ];
@@ -40,18 +40,18 @@ const stats = [
 const testimonials = [
   {
     quote:
-      "True professionals. Our rear extension was a big project but Delta handled it brilliantly from planning to completion.",
-    name: "Mark Stevens",
+      "I had a great experience working with Delta Construction Limited from the beginning to the end of my project. The team was professional, knowledgeable, and always willing to answer my questions.",
+    name: "Dylon Scott",
   },
   {
     quote:
-      "Every room was finished with care and precision. The team kept us informed at every stage.",
-    name: "Omar A",
+      "We just had our kitchen and bathroom completely transformed, and the results are stunning. From day one, the team brought a sleek, modern vision to life with flawless execution.",
+    name: "Michaela Virtos",
   },
   {
     quote:
-      "Great communication throughout and the attention to detail was superb.",
-    name: "J Paterson",
+      "So happy with the work they did on our garden. Everything went as planned and was done to really high level and also completed quickly.",
+    name: "Keira D",
   },
 ];
 

@@ -35,6 +35,15 @@ export default function SharedFooter() {
               <Link href="/areas">Areas we cover</Link>
             </li>
             <li>
+              <Link href="/areas/hounslow">Builders in Hounslow</Link>
+            </li>
+            <li>
+              <Link href="/areas/chiswick">Builders in Chiswick</Link>
+            </li>
+            <li>
+              <Link href="/areas/ealing">Builders in Ealing</Link>
+            </li>
+            <li>
               <Link href="/blog">Blog</Link>
             </li>
             <li>

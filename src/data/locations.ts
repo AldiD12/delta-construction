@@ -5,6 +5,7 @@ export interface Location {
   lat: number;
   lng: number;
   description: string;
+  metaDescription?: string;
   subAreas: string[];
   nearby: string[];
   propertyTypes: string;
@@ -30,6 +31,8 @@ export const locations: Location[] = [
     lng: -0.2901,
     description:
       "Premium construction services across West London — from double-storey rear extensions in Ealing's tree-lined avenues to full refurbishments of Victorian terraces in Chiswick and side-return extensions in Hammersmith's conservation areas.",
+    metaDescription:
+      "West London builders for extensions, loft conversions, roofing and renovations. Director-led projects with free site surveys and clearly scoped quotes.",
     subAreas: [
       "Ealing",
       "Chiswick",
@@ -38,7 +41,7 @@ export const locations: Location[] = [
       "Acton",
       "Brentford",
     ],
-    nearby: ["hounslow", "twickenham-richmond", "central-london"],
+    nearby: ["hounslow", "chiswick", "ealing", "twickenham-richmond"],
     propertyTypes:
       "West London is defined by its Edwardian and Victorian terraced housing, 1930s semis on the Ealing borders, and period conversions around Chiswick High Road. Many properties here have untouched lofts and narrow galley kitchens — both prime candidates for conversion.",
     typicalProjects:
@@ -77,6 +80,8 @@ export const locations: Location[] = [
     lng: -0.3254,
     description:
       "Period-property specialists serving Twickenham, Richmond, Kingston and surrounding areas. From mansard loft conversions on Richmond Hill to full refurbishments of Strawberry Hill Victorians — delivered with meticulous attention to heritage detail.",
+    metaDescription:
+      "Builders in Twickenham and Richmond for loft conversions, extensions and period renovations. Free site surveys and clearly scoped quotes.",
     subAreas: [
       "Twickenham",
       "Richmond",
@@ -124,6 +129,8 @@ export const locations: Location[] = [
     lng: -0.3654,
     description:
       "Our home borough — we know every street. Roofing, brickwork, extensions and full refurbishments across Hounslow, Isleworth, Brentford, Feltham and Heston. Shorter travel times mean lower overheads and faster response for Hounslow clients.",
+    metaDescription:
+      "Local builders in Hounslow for extensions, loft conversions, roofing, brickwork and renovations. Free site surveys from our Hounslow-based team.",
     subAreas: [
       "Hounslow",
       "Isleworth",
@@ -132,7 +139,7 @@ export const locations: Location[] = [
       "Heston",
       "Cranford",
     ],
-    nearby: ["west-london", "twickenham-richmond"],
+    nearby: ["west-london", "chiswick", "ealing", "twickenham-richmond"],
     propertyTypes:
       "Hounslow is predominantly 1930s semi-detached and terraced housing, post-war council stock, and newer developments around the Great West Quarter in Brentford. The older housing stock frequently needs roof repairs, repointing, and modernisation of ground-floor layouts.",
     typicalProjects:
@@ -164,6 +171,102 @@ export const locations: Location[] = [
     ],
   },
   {
+    slug: "chiswick",
+    name: "Chiswick",
+    region: "GB-HNS",
+    lat: 51.4927,
+    lng: -0.2633,
+    description:
+      "Builders in Chiswick for house extensions, loft conversions, roofing and complete renovations. Our Hounslow base keeps us close to Chiswick, Bedford Park, Gunnersbury, Turnham Green and Grove Park for surveys and site management.",
+    metaDescription:
+      "Local builders in Chiswick for extensions, loft conversions, roofing and renovations. Free site surveys from our nearby Hounslow-based team.",
+    subAreas: [
+      "Chiswick",
+      "Bedford Park",
+      "Gunnersbury",
+      "Turnham Green",
+      "Grove Park",
+      "Strand-on-the-Green",
+    ],
+    nearby: ["west-london", "ealing", "hounslow", "twickenham-richmond"],
+    propertyTypes:
+      "Chiswick has a varied mix of Victorian and Edwardian terraces, larger period houses, mansion flats and later family homes. The right construction approach depends on the property: period brickwork and original details may need careful matching, while terraced layouts often need a well-planned structural opening to create a larger kitchen and living space.",
+    typicalProjects:
+      "Typical Chiswick enquiries include rear and side-return extensions, dormer or L-shape loft conversions, open-plan ground-floor renovations, roof repairs and bespoke joinery. We can coordinate the build with architectural drawings, structural calculations, party-wall work and building-control inspections rather than leaving the homeowner to manage separate trades.",
+    localContext:
+      "Planning constraints are address-specific in Chiswick, especially around conservation areas and properties that have already been extended. Before pricing a project, we review the existing house, access, design information and approval route so the quote reflects the real scope rather than a generic square-metre estimate.",
+    faqs: [
+      {
+        question: "Do you provide free building quotes in Chiswick?",
+        answer:
+          "Yes. Send us your address, photographs and any drawings you already have. We can then arrange a free site survey and prepare an itemised quote for the agreed scope.",
+      },
+      {
+        question: "Can you build an extension in a Chiswick conservation area?",
+        answer:
+          "Potentially, but the design and approval route depend on the exact property and conservation-area guidance. We can work with your architect, structural engineer and the relevant council process, and price the build once the design is sufficiently defined.",
+      },
+      {
+        question: "What loft conversions suit Chiswick houses?",
+        answer:
+          "Rear dormers and L-shape dormers are common options for period terraces, while other roof shapes may suit a hip-to-gable or rooflight conversion. We inspect the roof structure and usable head height before recommending a layout.",
+      },
+      {
+        question: "Do you manage structural work and building regulations?",
+        answer:
+          "Yes. We coordinate structural steel installation and the construction work with the approved calculations, then work through the required building-control inspections to completion.",
+      },
+    ],
+  },
+  {
+    slug: "ealing",
+    name: "Ealing",
+    region: "GB-EAL",
+    lat: 51.513,
+    lng: -0.3089,
+    description:
+      "Builders in Ealing for house extensions, loft conversions, kitchen renovations, roofing and structural work. We cover Ealing, West Ealing, Northfields, Hanwell and Pitshanger from our nearby Hounslow base.",
+    metaDescription:
+      "Builders in Ealing for extensions, loft conversions, kitchens, roofing and renovations. See our Ealing work and request a free site survey.",
+    subAreas: [
+      "Ealing",
+      "West Ealing",
+      "Northfields",
+      "Hanwell",
+      "Pitshanger",
+      "South Ealing",
+    ],
+    nearby: ["west-london", "chiswick", "hounslow", "twickenham-richmond"],
+    propertyTypes:
+      "Ealing combines Victorian and Edwardian terraces with larger family houses and many 1930s semis. These homes often have the roof volume or rear plot needed to add useful space, but the original layout, previous alterations, drainage and access all need checking before the design and price can be finalised.",
+    typicalProjects:
+      "The common Ealing brief is more family space: a rear extension and open-plan kitchen, a loft bedroom with an en-suite, or a full ground-floor renovation with new electrics, plumbing and finishes. Our published work includes an open-plan renovation and kitchen fit-out completed in Ealing.",
+    localContext:
+      "A successful Ealing renovation needs the structural work, services and finish coordinated as one job. We build from approved drawings, set out what is included in the quote and keep a director involved from the initial survey through the site programme and final handover.",
+    faqs: [
+      {
+        question: "Do you build house extensions in Ealing?",
+        answer:
+          "Yes. We build rear, side-return, wrap-around and double-storey extensions, subject to the design and approvals for the property. We can also complete the kitchen, flooring, decoration and external making-good as part of the same project.",
+      },
+      {
+        question: "Can you show completed work in Ealing?",
+        answer:
+          "Yes. Our website portfolio includes an open-plan renovation and kitchen fit-out completed in Ealing. Ask us about relevant project photographs when arranging your survey.",
+      },
+      {
+        question: "Do you handle loft conversions in Ealing?",
+        answer:
+          "Yes. Depending on the house and roof shape, options can include a rear dormer, hip-to-gable, L-shape or rooflight conversion. We assess head height, stairs, structure and the approval route before quoting.",
+      },
+      {
+        question: "How do I get an accurate quote for an Ealing renovation?",
+        answer:
+          "Send the address, a short brief, photographs and any plans. After a site survey, we can price the defined work and clearly state allowances or exclusions so different quotes can be compared properly.",
+      },
+    ],
+  },
+  {
     slug: "north-london",
     name: "North London",
     region: "GB-LND",
@@ -171,6 +274,8 @@ export const locations: Location[] = [
     lng: -0.1543,
     description:
       "Loft conversions, extensions and structural work across North London — from L-shape dormers on Victorian terraces in Crouch End to double-storey rears in Barnet's 1930s semis and full refurbishments of Edwardian villas in Muswell Hill.",
+    metaDescription:
+      "North London builders for loft conversions, extensions, roofing and renovations across Barnet, Enfield, Finchley, Muswell Hill and Crouch End.",
     subAreas: [
       "Barnet",
       "Enfield",
@@ -220,6 +325,8 @@ export const locations: Location[] = [
     lng: -0.2065,
     description:
       "Side-returns, rear extensions and full refurbishments across South West London's most desirable postcodes. From Clapham's Victorian terraces to Wimbledon's Edwardian villas — precision building for homeowners who expect the best.",
+    metaDescription:
+      "South West London builders for side-return extensions, loft conversions and renovations across Wimbledon, Putney, Wandsworth and Clapham.",
     subAreas: [
       "Wimbledon",
       "Putney",
@@ -266,6 +373,8 @@ export const locations: Location[] = [
     lng: -0.1278,
     description:
       "High-specification refurbishments and structural work in Central London's most prestigious postcodes. From lateral apartment reconfigurations in Mayfair to full townhouse renovations in Chelsea — delivered with the discretion and precision these properties demand.",
+    metaDescription:
+      "Central London builders for high-spec renovations, structural work and heritage projects across Westminster, Kensington, Chelsea and Mayfair.",
     subAreas: [
       "Westminster",
       "Kensington",
@@ -316,6 +425,8 @@ export const locations: Location[] = [
     lng: -0.0556,
     description:
       "Extensions, loft conversions and full refurbishments across South East London — from Victorian terraces in Dulwich and Forest Hill to suburban semis in Beckenham, Bromley and Croydon. Fixed-price, director-led building with building-regs sign-off as standard.",
+    metaDescription:
+      "South East London builders for extensions, loft conversions and renovations across Dulwich, Forest Hill, Lewisham, Bromley and Croydon.",
     subAreas: [
       "Dulwich",
       "Forest Hill",
@@ -405,6 +516,8 @@ export const locations: Location[] = [
     lng: -0.0286,
     description:
       "Loft conversions, extensions and refurbishments across East London — from Victorian terraces in Hackney and Bethnal Green to larger family homes on the Essex border in Loughton and Chigwell. Director-led, fixed-price and fully guaranteed.",
+    metaDescription:
+      "East London builders for loft conversions, extensions and renovations across Hackney, Bethnal Green, Walthamstow, Stratford and Loughton.",
     subAreas: [
       "Bethnal Green",
       "Hackney",

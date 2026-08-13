@@ -3,9 +3,9 @@ import { LocalBusinessSchema, BreadcrumbSchema, FAQSchema } from "@/components/S
 import PermittedDevClient from "./PermittedDevClient";
 
 export const metadata: Metadata = {
-  title: "Permitted Development Rules for Extensions in London (2026 Guide)",
+  title: "Permitted Development London (2026)",
   description:
-    "What you can build without planning permission in London in 2026. Size limits, height rules, conservation areas, and when you need to apply. Practical guide from London builders.",
+    "London permitted development rules for extensions in 2026: size and height limits, conservation areas, building regulations and when to apply.",
   keywords: [
     "permitted development",
     "permitted development extension",

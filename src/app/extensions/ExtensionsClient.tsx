@@ -44,10 +44,10 @@ export default function ExtensionsClient() {
           <div className="container">
             <div className="blog-article-tags">
               <span className="blog-tag">Extensions</span>
-              <span className="blog-tag">London</span>
+              <span className="blog-tag">Hounslow &amp; West London</span>
             </div>
-            <h1 className="display reveal in">House Extensions&nbsp;in&nbsp;London</h1>
-            <p className="blog-article-subtitle reveal in d1">More space without the move. We design and build single-storey rear, side-return, wrap-around and double-storey extensions across London — director-led, fixed-price, and managed from the first survey to building-regs sign-off.</p>
+            <h1 className="display reveal in">House Extensions in Hounslow &amp; West London</h1>
+            <p className="blog-article-subtitle reveal in d1">More space without the move. We build single-storey rear, side-return, wrap-around and double-storey extensions across Hounslow and West London — director-led and managed from the first survey to building-regulations sign-off.</p>
             <div className="blog-article-meta reveal in d2">
               <span>Delta Construction</span>
               <span>Building London since 2019</span>
@@ -118,7 +118,7 @@ export default function ExtensionsClient() {
 
           <section className="reveal">
             <h2>Our approach to extensions</h2>
-            <p>Our extensions are managed end to end by a director — first survey, structural design, planning or permitted-development, party-wall coordination with your neighbours, and the fit-out all under one roof. That means fewer gaps between trades, one point of accountability, and no finger-pointing when a detail matters. Every project is fixed-price with an itemised quote before we start, comes with building-regulations completion sign-off, and carries our 1-year workmanship guarantee. Fully insured with £2M public liability, based in <Link href="/areas/hounslow">Hounslow</Link>, working across <Link href="/areas">West, South West, North, South East, East and Central London</Link>.</p>
+            <p>Our extensions are managed end to end by a director — first survey, structural design, planning or permitted-development, party-wall coordination with your neighbours, and the fit-out all under one roof. That means fewer gaps between trades, one point of accountability, and no finger-pointing when a detail matters. Every project is fixed-price with an itemised quote before we start, comes with building-regulations completion sign-off, and carries our 1-year workmanship guarantee. Fully insured with £2M public liability, based in <Link href="/areas/hounslow">Hounslow</Link> and serving <Link href="/areas/west-london">West London</Link>, <Link href="/areas/chiswick">Chiswick</Link> and <Link href="/areas/ealing">Ealing</Link>.</p>
           </section>
 
           <section className="reveal blog-faq">

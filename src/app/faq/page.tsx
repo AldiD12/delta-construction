@@ -7,7 +7,7 @@ import {
 import FAQClient from "./FAQClient";
 
 export const metadata: Metadata = {
-  title: "FAQ — Delta Construction",
+  title: "Frequently Asked Questions",
   description:
     "Common questions about our construction services, pricing, timelines, insurance and guarantees. Delta Construction — London's trusted builder.",
   alternates: { canonical: "/faq" },

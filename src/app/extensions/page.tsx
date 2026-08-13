@@ -3,11 +3,13 @@ import { LocalBusinessSchema, ServiceSchema, BreadcrumbSchema, FAQSchema } from 
 import ExtensionsClient from "./ExtensionsClient";
 
 export const metadata: Metadata = {
-  title: "House Extensions London | Rear, Side-Return & Double-Storey",
+  title: "House Extensions Hounslow & West London",
   description:
-    "Director-led house extensions across London — single-storey rear, side-return, wrap-around and double-storey. Fixed-price, building-regs sign-off included, fully guaranteed. Free survey and quote.",
+    "House extensions in Hounslow and West London. Rear, side-return, wrap-around and double-storey builds with planning and building regulations managed.",
   keywords: [
     "house extensions london",
+    "house extensions hounslow",
+    "house extensions west london",
     "rear extension london",
     "side return extension",
     "double storey extension",
@@ -18,7 +20,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "/extensions" },
   openGraph: {
-    title: "House Extensions London | Delta Construction",
+    title: "House Extensions Hounslow & West London | Delta Construction",
     description:
       "Single-storey rear, side-return, wrap-around and double-storey extensions across London. Director-led, fixed-price, guaranteed.",
     type: "website",
@@ -65,7 +67,7 @@ export default function ExtensionsPage() {
       <ServiceSchema
         name="House Extensions"
         description="Single-storey rear, side-return, wrap-around and double-storey house extensions across London. Design, planning, structural engineering, party-wall and build managed end to end."
-        areaServed="London"
+        areaServed="Hounslow and West London"
       />
       <FAQSchema faqs={faqs} />
       <ExtensionsClient />

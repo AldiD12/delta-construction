@@ -71,7 +71,7 @@ Add under **Services**, grouped by category. Suggested items + short description
 ## 🟢 ONGOING (compounding trust)
 
 ### 8. Reviews — your strongest local-pack signal
-- You have 16 five-stars. Set up a routine: every finished job → ask for a Google review, send the review link by text.
+- You have 18 five-stars. Set up a routine: every finished job → ask for a Google review, send the review link by text.
 - Reply to **every** review (thank them, name the project/area — adds relevance).
 - Steady, recent reviews matter more than a big one-off batch.
 

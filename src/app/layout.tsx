@@ -6,11 +6,14 @@ import ChatBot from "@/components/ChatBot";
 export const metadata: Metadata = {
   metadataBase: new URL("https://deltaconstructionltd.co.uk"),
   title: {
-    default: "Delta Construction — Building London Since 2019",
+    default: "Builders in Hounslow & West London | Delta Construction",
     template: "%s | Delta Construction",
   },
   description:
-    "Delta Construction Ltd UK — premium residential and commercial construction across London. Extensions, loft conversions, roofing, brickwork and landscaping. Director-led, fixed-price, guaranteed.",
+    "Hounslow and West London builders for extensions, loft conversions, roofing, brickwork and renovations. Free site survey and clearly scoped quote.",
+  alternates: {
+    canonical: "/",
+  },
   keywords: [
     "construction company London",
     "builders London",
@@ -27,24 +30,22 @@ export const metadata: Metadata = {
     locale: "en_GB",
     url: "https://deltaconstructionltd.co.uk",
     siteName: "Delta Construction",
-    title: "Delta Construction — Building London Since 2019",
+    title: "Builders in Hounslow & West London | Delta Construction",
     description:
-      "Premium residential and commercial construction across London. Director-led, fixed-price, guaranteed.",
+      "Director-led builders in Hounslow and West London for extensions, loft conversions, roofing, brickwork and complete renovations.",
     images: [
       {
-        url: "/assets/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Delta Construction — Building London Since 2019",
+        url: "/assets/01-kitchen-navy.jpg",
+        alt: "Bespoke kitchen completed by Delta Construction in London",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Delta Construction — Building London Since 2019",
+    title: "Builders in Hounslow & West London | Delta Construction",
     description:
-      "Premium residential and commercial construction across London.",
-    images: ["/assets/og-image.jpg"],
+      "Director-led building services across Hounslow and West London.",
+    images: ["/assets/01-kitchen-navy.jpg"],
   },
   robots: {
     index: true,

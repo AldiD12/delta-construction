@@ -3,9 +3,9 @@ import { LocalBusinessSchema, BreadcrumbSchema, FAQSchema } from "@/components/S
 import LoftConversionClient from "./LoftConversionClient";
 
 export const metadata: Metadata = {
-  title: "How Much Does a Loft Conversion Cost in London? (2026 Guide)",
+  title: "Loft Conversion Cost London (2026)",
   description:
-    "London loft conversion costs in 2026 by type: rooflight from £30k, dormer £45–70k, hip-to-gable £55–80k, L-shape £60–95k, mansard £65–110k. Plus planning, building regs and what really drives the price.",
+    "2026 London loft conversion costs by type: rooflight £30–45k, dormer £45–70k, hip-to-gable £55–80k, L-shape £60–95k and mansard £65–110k.",
   keywords: [
     "loft conversion cost london",
     "loft conversion london",
