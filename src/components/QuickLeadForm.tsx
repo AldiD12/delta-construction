@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { FormEvent, useRef, useState } from "react";
+import { track } from "@/lib/track";
 import styles from "./QuickQuotePage.module.css";
 
 type QuickLeadFormProps = {
@@ -15,14 +16,8 @@ type QuickLeadFormProps = {
   formspreeId?: string;
 };
 
-// No cookies or third-party tags. Events go to window.dataLayer only, which
-// does nothing unless a tag manager is added later.
-function pushDataLayer(event: string, data: Record<string, string>) {
-  const trackingWindow = window as Window & { dataLayer?: unknown[] };
-  trackingWindow.dataLayer = trackingWindow.dataLayer ?? [];
-  trackingWindow.dataLayer.push({ event, ...data });
-}
-
+// Each step is sent to Clarity via track() (cookieless). Never pass the
+// visitor's name, phone or postcode to track().
 export default function QuickLeadForm({
   service,
   heading,
@@ -41,17 +36,32 @@ export default function QuickLeadForm({
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
   const started = useRef(false);
+  const invalidFields = useRef<Set<string>>(new Set());
+
+  // The browser fires "invalid" once per empty field (and once per radio
+  // button); collect them and send a single event per Send tap.
+  const recordInvalid = (field: string) => {
+    const fields = invalidFields.current;
+    if (fields.size === 0) {
+      queueMicrotask(() => {
+        track("form_invalid", { invalid_fields: [...fields].join(",") });
+        fields.clear();
+      });
+    }
+    fields.add(field);
+  };
 
   const markStarted = () => {
     if (started.current) return;
     started.current = true;
-    pushDataLayer("ads_lead_form_start", { service });
+    track("form_start", { service });
   };
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setSubmitting(true);
     setError("");
+    track("form_submit", { service, problem });
 
     const params = new URLSearchParams(window.location.search);
     const payload: Record<string, string> = {
@@ -76,9 +86,10 @@ export default function QuickLeadForm({
       });
       if (!response.ok) throw new Error("Lead endpoint rejected the request");
 
-      pushDataLayer("generate_lead", { service, lead_type: "quote_form" });
+      track("form_sent", { service, problem });
       setSubmitted(true);
     } catch {
+      track("form_failed", { service });
       setError(`Sorry, that didn't send. Please try again or call ${phoneDisplay}.`);
     } finally {
       setSubmitting(false);
@@ -87,7 +98,7 @@ export default function QuickLeadForm({
 
   if (submitted) {
     return (
-      <div className={styles.success} role="status" aria-live="polite">
+      <div className={styles.success} role="status" aria-live="polite" data-clarity-mask="true">
         <h2>Thanks{name ? `, ${name.split(" ")[0]}` : ""}. We have your request.</h2>
         <p>
           We&apos;ll call you on {phone} to arrange your free roof assessment
@@ -96,7 +107,7 @@ export default function QuickLeadForm({
         <a
           className={styles.callButton}
           href={phoneHref}
-          onClick={() => pushDataLayer("ads_phone_click", { service, placement: "form_success" })}
+          onClick={() => track("call_tap_form_success", { service })}
         >
           Need us sooner? Call {phoneDisplay}
         </a>
@@ -105,7 +116,14 @@ export default function QuickLeadForm({
   }
 
   return (
-    <form className={styles.form} onSubmit={handleSubmit}>
+    <form
+      className={styles.form}
+      onSubmit={handleSubmit}
+      onInvalidCapture={(event) =>
+        recordInvalid((event.target as HTMLInputElement).name || "unknown")
+      }
+      data-clarity-mask="true"
+    >
       <h2>{heading}</h2>
 
       <fieldset className={styles.problems}>
@@ -122,6 +140,7 @@ export default function QuickLeadForm({
                 onChange={() => {
                   markStarted();
                   setProblem(option);
+                  track("problem_selected", { problem: option });
                 }}
               />
               <span>{option}</span>
@@ -185,7 +204,12 @@ export default function QuickLeadForm({
         </p>
       ) : null}
 
-      <button className={styles.submitButton} type="submit" disabled={submitting}>
+      <button
+        className={styles.submitButton}
+        type="submit"
+        disabled={submitting}
+        onClick={() => track("form_submit_tap", { service })}
+      >
         {submitting ? "Sending…" : submitLabel}
       </button>
 

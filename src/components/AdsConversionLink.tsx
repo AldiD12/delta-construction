@@ -1,6 +1,7 @@
 "use client";
 
 import { ReactNode } from "react";
+import { track } from "@/lib/track";
 
 type AdsConversionLinkProps = {
   href: string;
@@ -19,17 +20,10 @@ export default function AdsConversionLink({
   className,
   target,
 }: AdsConversionLinkProps) {
+  // e.g. call_tap_header, call_tap_mobile_bar, whatsapp_tap_hero
   const trackIntent = () => {
-    const trackingWindow = window as Window & {
-      dataLayer?: Array<Record<string, string>>;
-    };
-
-    trackingWindow.dataLayer = trackingWindow.dataLayer ?? [];
-    trackingWindow.dataLayer.push({
-      event: href.startsWith("tel:") ? "ads_phone_click" : "ads_whatsapp_click",
-      service,
-      placement,
-    });
+    const kind = href.startsWith("tel:") ? "call_tap" : "whatsapp_tap";
+    track(`${kind}_${placement}`, { service });
   };
 
   return (

@@ -120,6 +120,14 @@ export default function CookiesPage() {
             enquiry form you choose to submit so we can see which adverts lead
             to enquiries. No cookie is set for this.
           </p>
+          <p style={p}>
+            We use <strong>Microsoft Clarity</strong> to understand how visitors
+            use our pages, for example how far they scroll and which buttons
+            they tap. On this site Clarity is set up without cookies: it gives
+            each page view its own temporary ID instead of recognising you
+            across visits, and anything you type into a form is masked and
+            never recorded.
+          </p>
 
           <h2 style={h2}>Third-party cookies</h2>
           <p style={p}>
