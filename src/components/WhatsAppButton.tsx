@@ -1,6 +1,14 @@
 "use client";
 
+import { usePathname } from "next/navigation";
+
+const adLandingPages = new Set(["/roofing/quote", "/extensions/quote"]);
+
 export default function WhatsAppButton() {
+  const pathname = usePathname();
+
+  if (adLandingPages.has(pathname)) return null;
+
   return (
     <a
       href="https://wa.me/447479389996"

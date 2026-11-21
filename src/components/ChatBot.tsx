@@ -1,24 +1,38 @@
 "use client";
 
 import { useEffect } from "react";
+import { usePathname } from "next/navigation";
+
+const adLandingPages = new Set(["/roofing/quote", "/extensions/quote"]);
+
+type ChatbaseFunction = ((...args: unknown[]) => unknown) & {
+  q?: unknown[][];
+};
+
+type ChatbaseWindow = Window & {
+  chatbase?: ChatbaseFunction;
+};
 
 function injectChatbase() {
   if (document.getElementById("M3VkRmS61n6ANnEwSY5OB")) return;
 
+  const chatWindow = window as ChatbaseWindow;
+
   if (
-    !(window as any).chatbase ||
-    (window as any).chatbase("getState") !== "initialized"
+    !chatWindow.chatbase ||
+    chatWindow.chatbase("getState") !== "initialized"
   ) {
-    (window as any).chatbase = (...args: any[]) => {
-      if (!(window as any).chatbase.q) {
-        (window as any).chatbase.q = [];
+    const queuedChatbase: ChatbaseFunction = (...args: unknown[]) => {
+      if (!queuedChatbase.q) {
+        queuedChatbase.q = [];
       }
-      (window as any).chatbase.q.push(args);
+      queuedChatbase.q.push(args);
     };
-    (window as any).chatbase = new Proxy((window as any).chatbase, {
-      get(target: any, prop: string) {
+
+    chatWindow.chatbase = new Proxy(queuedChatbase, {
+      get(target, prop: string) {
         if (prop === "q") return target.q;
-        return (...args: any[]) => target(prop, ...args);
+        return (...args: unknown[]) => target(prop, ...args);
       },
     });
   }
@@ -31,7 +45,11 @@ function injectChatbase() {
 }
 
 export default function ChatBot() {
+  const pathname = usePathname();
+
   useEffect(() => {
+    if (adLandingPages.has(pathname)) return;
+
     let loaded = false;
 
     const load = () => {
@@ -49,7 +67,7 @@ export default function ChatBot() {
       clearTimeout(timer);
       window.removeEventListener("scroll", load);
     };
-  }, []);
+  }, [pathname]);
 
   return null;
 }

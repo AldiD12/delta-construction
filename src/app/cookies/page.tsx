@@ -87,7 +87,7 @@ export default function CookiesPage() {
               fontStyle: "italic",
             }}
           >
-            Last updated: May 2026
+            Last updated: November 2026
           </p>
 
           <h2 style={h2}>What are cookies?</h2>
@@ -112,26 +112,13 @@ export default function CookiesPage() {
             </li>
           </ul>
 
-          <h2 style={h2}>Analytics cookies</h2>
+          <h2 style={h2}>Analytics and advertising cookies</h2>
           <p style={p}>
-            We use Google Analytics to understand how visitors interact with our
-            website. These cookies collect information in an anonymised form,
-            including the number of visitors, where they came from and which
-            pages they viewed. This helps us improve the site for future
-            visitors.
-          </p>
-          <ul style={ul}>
-            <li>
-              <strong>_ga / _ga_*</strong> &mdash; Google Analytics, used to
-              distinguish users. Expires after 2 years.
-            </li>
-            <li>
-              <strong>_gid</strong> &mdash; Google Analytics, used to
-              distinguish users. Expires after 24 hours.
-            </li>
-          </ul>
-          <p style={p}>
-            IP addresses are anonymised before being stored by Google Analytics.
+            We do not use analytics or advertising cookies on this website. If
+            you reach us from one of our Google adverts, the web address may
+            include a click reference from Google, which is sent with any
+            enquiry form you choose to submit so we can see which adverts lead
+            to enquiries. No cookie is set for this.
           </p>
 
           <h2 style={h2}>Third-party cookies</h2>
