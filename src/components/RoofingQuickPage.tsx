@@ -4,7 +4,7 @@ import AdsConversionLink from "./AdsConversionLink";
 import QuickLeadForm from "./QuickLeadForm";
 import StickyContactBar from "./StickyContactBar";
 import { LandingTracker, SeenMarker, TrackedLink } from "./TrackingBits";
-import { CalendarIcon, GoogleG, PinIcon, SealIcon, ShieldIcon } from "./TrustIcons";
+import { CalendarIcon, ClockIcon, GoogleG, SealIcon, ShieldIcon } from "./TrustIcons";
 import styles from "./QuickQuotePage.module.css";
 
 // ---------------------------------------------------------------------------
@@ -14,7 +14,9 @@ import styles from "./QuickQuotePage.module.css";
 const SERVICE = "roofing";
 const PHONE_DISPLAY = "07479 389 996";
 const PHONE_HREF = "tel:+447479389996";
-const HOURS = "Mon–Sat, 8am–6pm"; // from Delta's Google Business Profile
+// Confirmed by Aldi with the owner, 21 Nov 2026: calls answered at all hours and
+// leaks attended within 24h (team has capacity). Remove/soften if that changes.
+const HOURS = "7 days a week";
 const CALLBACK_PROMISE: string | null = null; // e.g. "within 1 hour, Mon–Sat 8am–6pm"
 const REVIEW_COUNT = 18; // Google Business Profile, 21 Nov 2026 — re-check before launch
 const LEGAL_NAME = "Delta Construction Limited UK Ltd"; // as registered at Companies House
@@ -35,7 +37,7 @@ const problems = [
 const trustTiles = [
   { Icon: ShieldIcon, value: "£2m", label: "public liability insurance" },
   { Icon: SealIcon, value: "1-year", label: "workmanship guarantee" },
-  { Icon: PinIcon, value: "Hounslow", label: "based, local team" },
+  { Icon: ClockIcon, value: "Within 24h", label: "leak inspections, usually" },
   { Icon: CalendarIcon, value: "Est. 2019", label: "Company No. 12023312" },
 ];
 
@@ -219,7 +221,7 @@ export default function RoofingQuickPage() {
             </TrackedLink>
           </div>
           <p className={styles.hours}>
-            Lines open {HOURS}
+            Calls answered {HOURS}
             {CALLBACK_PROMISE ? ` · we call back ${CALLBACK_PROMISE}` : ""}
           </p>
 
@@ -320,7 +322,7 @@ export default function RoofingQuickPage() {
       <section className={styles.final}>
         <SeenMarker event="final_cta_seen" />
         <h2>Tell us what&apos;s wrong with your roof</h2>
-        <p>Free assessment, no obligation. Lines open {HOURS}.</p>
+        <p>Free assessment, no obligation. Calls answered {HOURS}.</p>
         <div className={styles.ctas}>
           <AdsConversionLink
             href={PHONE_HREF}
