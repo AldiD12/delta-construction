@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import ChatBot from "@/components/ChatBot";
+import ClarityScript from "@/components/ClarityScript";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://deltaconstructionltd.co.uk"),
@@ -97,6 +98,7 @@ export default function RootLayout({
         {children}
         <WhatsAppButton />
         <ChatBot />
+        <ClarityScript />
       </body>
     </html>
   );

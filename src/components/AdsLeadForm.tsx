@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { FormEvent, useRef, useState } from "react";
+import { track } from "@/lib/track";
 import styles from "./AdsLandingPage.module.css";
 
 type AdsLeadFormProps = {
@@ -31,13 +32,9 @@ const initialForm: FormState = {
   details: "",
 };
 
+// Sends the step to Clarity (cookieless) as well as window.dataLayer.
 function pushDataLayer(event: string, data: Record<string, string>) {
-  const trackingWindow = window as Window & {
-    dataLayer?: Array<Record<string, string>>;
-  };
-
-  trackingWindow.dataLayer = trackingWindow.dataLayer ?? [];
-  trackingWindow.dataLayer.push({ event, ...data });
+  track(event, data);
 }
 
 export default function AdsLeadForm({
@@ -116,7 +113,7 @@ export default function AdsLeadForm({
 
   if (submitted) {
     return (
-      <div className={styles.success} role="status" aria-live="polite">
+      <div className={styles.success} role="status" aria-live="polite" data-clarity-mask="true">
         <span className={styles.successMark} aria-hidden="true">
           ✓
         </span>
@@ -142,7 +139,12 @@ export default function AdsLeadForm({
   }
 
   return (
-    <form className={styles.leadForm} onSubmit={handleSubmit} noValidate={false}>
+    <form
+      className={styles.leadForm}
+      onSubmit={handleSubmit}
+      noValidate={false}
+      data-clarity-mask="true"
+    >
       <div className={styles.formHeading}>
         <span>Free, no-obligation request</span>
         <h2>{heading}</h2>

@@ -81,7 +81,7 @@ export default function PrivacyPage() {
             Privacy Policy
           </h1>
           <p style={{ ...p, marginTop: "16px", fontStyle: "italic" }}>
-            Last updated: May 2026
+            Last updated: November 2026
           </p>
 
           <h2 style={h2}>1. Who we are</h2>
@@ -105,8 +105,11 @@ export default function PrivacyPage() {
             <li>Details of the work you are enquiring about</li>
           </ul>
           <p style={p}>
-            We also collect anonymised usage data through Google Analytics (see
-            our Cookie Policy for details).
+            We also collect website usage data through Microsoft Clarity, such
+            as which pages you view, how you scroll and which buttons you tap,
+            to improve the site. Clarity runs without cookies on our site and
+            does not record what you type into forms (see our Cookie Policy for
+            details).
           </p>
 
           <h2 style={h2}>3. How we use your data</h2>
@@ -148,8 +151,9 @@ export default function PrivacyPage() {
               submissions on our behalf
             </li>
             <li>
-              <strong>Google Analytics</strong> &mdash; collects anonymised
-              website usage statistics
+              <strong>Microsoft Clarity</strong> &mdash; records how visitors
+              use the website (page views, scrolling, taps) to help us improve
+              it; form inputs are masked and no cookies are set
             </li>
           </ul>
           <p style={p}>

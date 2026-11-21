@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import AdsConversionLink from "./AdsConversionLink";
 import QuickLeadForm from "./QuickLeadForm";
+import { LandingTracker, SeenMarker, TrackedLink } from "./TrackingBits";
 import { CalendarIcon, GoogleG, PinIcon, SealIcon, ShieldIcon } from "./TrustIcons";
 import styles from "./QuickQuotePage.module.css";
 
@@ -175,6 +176,7 @@ function ReviewCard({
 export default function RoofingQuickPage() {
   return (
     <main className={styles.page}>
+      <LandingTracker service={SERVICE} />
       <header className={styles.header}>
         <Link href="/" className={styles.brand} aria-label="Delta Construction home">
           <Image src="/assets/logo.png" width={44} height={44} alt="" loading="eager" />
@@ -211,9 +213,9 @@ export default function RoofingQuickPage() {
             >
               Call now · {PHONE_DISPLAY}
             </AdsConversionLink>
-            <a href="#quote" className={styles.outlineButton}>
+            <TrackedLink href="#quote" event="assessment_tap_hero" className={styles.outlineButton}>
               Get a free roof assessment
-            </a>
+            </TrackedLink>
           </div>
           <p className={styles.hours}>
             Lines open {HOURS}
@@ -224,6 +226,7 @@ export default function RoofingQuickPage() {
         </div>
 
         <div id="quote" className={styles.formCard}>
+          <SeenMarker event="form_seen" />
           <QuickLeadForm
             service={SERVICE}
             heading="Free roof assessment"
@@ -237,6 +240,7 @@ export default function RoofingQuickPage() {
       </section>
 
       <section className={styles.gallerySection}>
+        <SeenMarker event="gallery_seen" />
         <div className={styles.galleryHead}>
           <h2>Recent roof jobs</h2>
           <span className={styles.photoTag}>Our own photos, not stock</span>
@@ -275,6 +279,7 @@ export default function RoofingQuickPage() {
         </figure>
 
         <div className={styles.reviews}>
+          <SeenMarker event="reviews_seen" />
           <h2>What customers say</h2>
           <GoogleBadge />
           {reviews.map((review, index) => (
@@ -282,12 +287,12 @@ export default function RoofingQuickPage() {
           ))}
           <div className={styles.verify}>
             <p>Check us yourself:</p>
-            <a href={GOOGLE_REVIEWS_URL} target="_blank" rel="noopener noreferrer">
+            <TrackedLink href={GOOGLE_REVIEWS_URL} event="verify_google_tap" external>
               Read all {REVIEW_COUNT} reviews on Google ↗
-            </a>
-            <a href={COMPANIES_HOUSE_URL} target="_blank" rel="noopener noreferrer">
+            </TrackedLink>
+            <TrackedLink href={COMPANIES_HOUSE_URL} event="verify_companies_house_tap" external>
               Registered company No. {COMPANY_NO}, active since 2019. View on Companies House ↗
-            </a>
+            </TrackedLink>
           </div>
         </div>
       </section>
@@ -312,6 +317,7 @@ export default function RoofingQuickPage() {
       </section>
 
       <section className={styles.final}>
+        <SeenMarker event="final_cta_seen" />
         <h2>Tell us what&apos;s wrong with your roof</h2>
         <p>Free assessment, no obligation. Lines open {HOURS}.</p>
         <div className={styles.ctas}>
@@ -323,17 +329,17 @@ export default function RoofingQuickPage() {
           >
             Call now · {PHONE_DISPLAY}
           </AdsConversionLink>
-          <a href="#quote" className={styles.outlineButtonLight}>
+          <TrackedLink href="#quote" event="assessment_tap_final" className={styles.outlineButtonLight}>
             Send the form
-          </a>
+          </TrackedLink>
         </div>
       </section>
 
       <footer className={styles.footer}>
         <span>{LEGAL_NAME} · 7 Southland Way, Hounslow TW3 2RH</span>
-        <a href={COMPANIES_HOUSE_URL} target="_blank" rel="noopener noreferrer">
+        <TrackedLink href={COMPANIES_HOUSE_URL} event="verify_companies_house_tap_footer" external>
           Company No. {COMPANY_NO}
-        </a>
+        </TrackedLink>
         <Link href="/privacy">Privacy</Link>
       </footer>
 
@@ -341,7 +347,9 @@ export default function RoofingQuickPage() {
         <AdsConversionLink href={PHONE_HREF} service={SERVICE} placement="mobile_bar">
           Call now
         </AdsConversionLink>
-        <a href="#quote">Free assessment</a>
+        <TrackedLink href="#quote" event="assessment_tap_mobile_bar">
+          Free assessment
+        </TrackedLink>
       </nav>
     </main>
   );
