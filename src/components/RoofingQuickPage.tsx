@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import AdsConversionLink from "./AdsConversionLink";
 import QuickLeadForm from "./QuickLeadForm";
+import StickyContactBar from "./StickyContactBar";
 import { LandingTracker, SeenMarker, TrackedLink } from "./TrackingBits";
 import { CalendarIcon, GoogleG, PinIcon, SealIcon, ShieldIcon } from "./TrustIcons";
 import styles from "./QuickQuotePage.module.css";
@@ -343,14 +344,7 @@ export default function RoofingQuickPage() {
         <Link href="/privacy">Privacy</Link>
       </footer>
 
-      <nav className={styles.mobileBar} aria-label="Quick contact">
-        <AdsConversionLink href={PHONE_HREF} service={SERVICE} placement="mobile_bar">
-          Call now
-        </AdsConversionLink>
-        <TrackedLink href="#quote" event="assessment_tap_mobile_bar">
-          Free assessment
-        </TrackedLink>
-      </nav>
+      <StickyContactBar service={SERVICE} phoneHref={PHONE_HREF} />
     </main>
   );
 }
